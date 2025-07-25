@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Visual from '../../visual/Visual';
+import Content1 from '../../cont1/Content1';
 
 const MainContainer = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -13,6 +14,7 @@ const MainContainer = () => {
   return (
     <S.MainContainer>
       <Visual />
+      <Content1 />
       <div style={{ height: '100dvh', backgroundColor: 'white' }}>cscdsc</div>
       <div style={{ height: '100dvh', backgroundColor: 'white' }}>cscdsc</div>
     </S.MainContainer>

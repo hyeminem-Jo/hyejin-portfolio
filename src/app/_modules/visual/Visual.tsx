@@ -8,13 +8,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 
 const logoList = [
-  { id: 'j', src: '/assets/images/logo/L_J.png', alt: 'J' },
-  { id: 'y', src: '/assets/images/logo/L_Y.png', alt: 'Y' },
-  { id: 'o', src: '/assets/images/logo/L_O.png', alt: 'O' },
-  { id: 'u', src: '/assets/images/logo/L_U.png', alt: 'U' },
+  { id: 'f', src: '/assets/images/logo/fat-logo-01.png', alt: 'F' },
+  { id: 'e', src: '/assets/images/logo/fat-logo-02.png', alt: 'E' },
+  { id: 'h', src: '/assets/images/logo/fat-logo-03.png', alt: 'H' },
+  { id: 'j', src: '/assets/images/logo/fat-logo-04.png', alt: 'J' },
 ];
 
-const MainContainer = () => {
+const Visual = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
@@ -28,7 +28,7 @@ const MainContainer = () => {
         },
       })
       .to(
-        '.logoWrap #j',
+        '.logoWrap #f',
         {
           x: -150,
           y: 250,
@@ -39,7 +39,7 @@ const MainContainer = () => {
         0,
       )
       .to(
-        '.logoWrap #y',
+        '.logoWrap #e',
         {
           x: -30,
           y: 150,
@@ -50,18 +50,18 @@ const MainContainer = () => {
         0,
       )
       .to(
-        '.logoWrap #o',
+        '.logoWrap #h',
         {
           x: 100,
-          y: 100,
-          rotation: -10,
+          y: 200,
+          rotation: -30,
           ease: 'none',
           duration: 5,
         },
         0,
       )
       .to(
-        '.logoWrap #u',
+        '.logoWrap #j',
         {
           x: 50,
           y: 450,
@@ -99,4 +99,4 @@ const MainContainer = () => {
   );
 };
 
-export default MainContainer;
+export default Visual;

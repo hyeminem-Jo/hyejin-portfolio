@@ -29,7 +29,7 @@ export const HeaderLogo = styled.div`
 export const HeaderNav = styled.nav`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 `;
 
 export const HeaderNavItem = styled(Link)`
@@ -38,6 +38,6 @@ export const HeaderNavItem = styled(Link)`
   color: #222;
   text-decoration: none;
   &:hover {
-    color: #000;
+    color: rgba(0, 0, 0, 0.5);
   }
 `;

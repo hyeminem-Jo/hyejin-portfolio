@@ -22,19 +22,19 @@ export const MainTextList = styled.h1`
 export const MainTextInner = styled.span`
   overflow: hidden;
 
-  /* &:nth-of-type(1) i {
-    animation-delay: 0.1s;
-  }
-
-  &:nth-of-type(2) i {
+  &:nth-of-type(1) i {
     animation-delay: 0.3s;
-  } */
+  }
+  &:nth-of-type(2) i {
+    animation-delay: 0.5s;
+  }
 `;
 
 export const MainText = styled.i`
   display: inline-block;
   transition: transform 0.5s linear;
   font-style: normal;
+  opacity: 0;
 
   @keyframes slideUp {
     from {
@@ -42,6 +42,7 @@ export const MainText = styled.i`
     }
     to {
       transform: translateY(0);
+      opacity: 1;
     }
   }
 
