@@ -14,8 +14,8 @@ export const Content1Inner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
-  height: 65dvh;
+  gap: 50px;
+  height: 60dvh;
   border-radius: 10px;
   background-color: #f0f0f0;
   padding: 30px 80px;
@@ -41,6 +41,7 @@ export const Content1InnerBoxMiddle = styled.strong`
   margin-top: 120px;
   font-size: 30px;
   line-height: 1.5;
+  letter-spacing: -0.02em;
   font-style: italic;
 `;
 
@@ -67,7 +68,7 @@ export const Content1Image = styled.div`
 `;
 
 export const Content1TextAni = styled.div`
-  margin-top: 50px;
+  margin-top: 60px;
   color: #444;
 `;
 
@@ -88,4 +89,5 @@ export const Content1TextAniItem = styled.li`
   transform: translateX(30px);
   opacity: 0;
   list-style: none;
+  color: chocolate;
 `;

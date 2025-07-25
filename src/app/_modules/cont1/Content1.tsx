@@ -8,6 +8,7 @@ import { useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Inner from '../common/layout/Inner';
 import Image from 'next/image';
+import Button from '../common/button/Button';
 
 const aniTextList = [
   'JUST DO IT ✔️',
@@ -63,7 +64,8 @@ const Content1 = () => {
           <S.Content1InnerBox>
             <S.Content1InnerBoxTitle>ABOUT ME</S.Content1InnerBoxTitle>
             <S.Content1InnerBoxMiddle>
-              &quot;사용자의 경험을 디자인하는 4년차 프론트엔드 개발자&quot;
+              &quot;사용자의 경험을 디자인하는 <br />
+              4년차 프론트엔드 개발자&quot;
             </S.Content1InnerBoxMiddle>
             <S.Content1InnerBoxDesc>
               안녕하세요, 3년차에 접어든 프론트엔드 개발자 조혜진입니다. <br />
@@ -98,6 +100,11 @@ const Content1 = () => {
               </S.Content1TextAniItem>
             ))}
           </S.Content1TextAniList>
+          <Button
+            style={{ margin: '170px 0 0 auto' }}
+            text='Notion 이력서 보기'
+            onClick={() => {}}
+          />
         </S.Content1TextAni>
       </Inner>
     </S.Content1>
