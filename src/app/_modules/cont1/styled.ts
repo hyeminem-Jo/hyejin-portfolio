@@ -5,7 +5,8 @@ export const Content1 = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: calc(100dvh - 80px);
+  height: 100dvh;
+  /* height: calc(100dvh - 80px); */
   padding: 0 30px;
 `;
 
@@ -18,7 +19,7 @@ export const Content1Inner = styled.div`
   height: 60dvh;
   border-radius: 10px;
   background-color: #f0f0f0;
-  padding: 30px 80px;
+  padding: 50px 80px;
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(25px);
@@ -68,7 +69,7 @@ export const Content1Image = styled.div`
 `;
 
 export const Content1TextAni = styled.div`
-  margin-top: 60px;
+  margin-top: 80px;
   color: #444;
 `;
 
