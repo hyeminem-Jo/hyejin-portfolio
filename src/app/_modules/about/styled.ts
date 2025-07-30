@@ -1,22 +1,20 @@
 import styled from '@emotion/styled';
 
-export const Content1 = styled.section`
+export const About = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 100dvh;
-  /* height: calc(100dvh - 80px); */
-  padding: 0 30px;
 `;
 
-export const Content1Inner = styled.div`
+export const AboutInner = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
-  height: 60dvh;
+  gap: 70px;
+  height: 65dvh;
   border-radius: 10px;
   background-color: #f0f0f0;
   padding: 50px 80px;
@@ -25,42 +23,36 @@ export const Content1Inner = styled.div`
   backdrop-filter: blur(25px);
 `;
 
-export const Content1InnerBox = styled.div`
-  flex: 1;
+export const AboutInnerBoxTitleInner = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  justify-content: space-around;
+  height: 300px;
 `;
 
-export const Content1InnerBoxTitle = styled.div`
-  font-size: 60px;
-  font-weight: 700;
-`;
-
-export const Content1InnerBoxMiddle = styled.strong`
-  margin-top: 120px;
-  font-size: 30px;
+export const AboutInnerBoxMiddle = styled.strong`
+  font-size: 28px;
   line-height: 1.5;
   letter-spacing: -0.02em;
   font-style: italic;
+  color: chocolate;
 `;
 
-export const Content1InnerBoxDesc = styled.p`
-  margin-top: 35px;
-  font-size: 22px;
+export const AboutInnerBoxDesc = styled.p`
+  font-size: 20px;
   line-height: 1.5;
   color: #222;
 `;
 
-export const Content1InnerBoxText = styled.div`
+export const AboutInnerBoxText = styled.div`
   font-size: 16px;
 `;
 
-export const Content1Image = styled.div`
-  height: 100%;
-  aspect-ratio: 1/1.2;
-  border-radius: 10px;
+export const AboutImage = styled.div`
+  flex-shrink: 0;
+  width: 350px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
   overflow: hidden;
   position: relative;
   img {
@@ -68,12 +60,16 @@ export const Content1Image = styled.div`
   }
 `;
 
-export const Content1TextAni = styled.div`
+export const AboutTextAni = styled.div`
   margin-top: 80px;
   color: #444;
+
+  button {
+    position: relative;
+  }
 `;
 
-export const Content1TextAniList = styled.ul`
+export const AboutTextAniList = styled.ul`
   position: relative;
   max-width: 900px;
   display: flex;
@@ -81,7 +77,7 @@ export const Content1TextAniList = styled.ul`
   gap: 10px;
 `;
 
-export const Content1TextAniItem = styled.li`
+export const AboutTextAniItem = styled.li`
   position: absolute;
   top: 0;
   left: 0;
@@ -90,5 +86,5 @@ export const Content1TextAniItem = styled.li`
   transform: translateX(30px);
   opacity: 0;
   list-style: none;
-  color: chocolate;
+  color: #444;
 `;

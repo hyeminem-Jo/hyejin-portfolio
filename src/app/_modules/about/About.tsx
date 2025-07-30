@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Inner from '../common/layout/Inner';
 import Image from 'next/image';
 import Button from '../common/button/Button';
+import Title from '../common/title/Title';
 
 const aniTextList = [
   'JUST DO IT ✔️',
@@ -18,7 +19,7 @@ const aniTextList = [
   'STAY HUNGRY, STAY FOOLISH',
 ];
 
-const Content1 = () => {
+const About = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   // 여러 요소를 참조할 때는 배열 ref 사용
@@ -58,37 +59,35 @@ const Content1 = () => {
   });
 
   return (
-    <S.Content1 className='cont1'>
+    <S.About>
       <Inner>
-        <S.Content1Inner>
-          <S.Content1InnerBox>
-            <S.Content1InnerBoxTitle>ABOUT ME</S.Content1InnerBoxTitle>
-            <S.Content1InnerBoxMiddle>
-              &quot;사용자의 경험을 디자인하는 <br />
-              4년차 프론트엔드 개발자&quot;
-            </S.Content1InnerBoxMiddle>
-            <S.Content1InnerBoxDesc>
-              안녕하세요, 3년차에 접어든 프론트엔드 개발자 조혜진입니다. <br />
-              저는 평소 “역지사지” 를 생활 신조로 가지는데, 이는 서비스를 구현할 때에도 마찬가지
-              입니다. <br />늘 사용자의 관점이 되어 ‘어떻게 구현해야 가장 사용자 친화적인 형태로
-              사용할 수 있을까?’ <br />
-              하는 마음가짐으로 업무에 임하며, 견고하고 유연한 UI/UX 를 화면에 그려나갑니다.
-            </S.Content1InnerBoxDesc>
-          </S.Content1InnerBox>
-          <S.Content1Image>
+        <S.AboutInner>
+          <S.AboutImage>
             <Image
               src='/assets/images/profile.JPG'
-              alt='cont1-01'
+              alt='프로필 이미지'
               fill
               priority
               style={{ objectFit: 'cover' }}
             />
-          </S.Content1Image>
-        </S.Content1Inner>
-        <S.Content1TextAni>
-          <S.Content1TextAniList>
+          </S.AboutImage>
+          <S.AboutInnerBoxTitleInner>
+            <S.AboutInnerBoxMiddle>
+              &quot;사용자의 경험을 디자인하는 프론트엔드 개발자&quot;
+            </S.AboutInnerBoxMiddle>
+            <S.AboutInnerBoxDesc>
+              안녕하세요, 4년차에 접어든 프론트엔드 개발자 조혜진입니다. <br />
+              저는 평소 “역지사지” 를 생활 신조로 가지는데, 이는 서비스를 구현할 때에도 마찬가지
+              입니다. 늘 사용자의 관점이 되어 ‘어떻게 구현해야 가장 사용자 친화적인 형태로 사용할 수
+              있을까?’ 하는 마음가짐으로 업무에 임하며, 견고하고 유연한 UI/UX 를 화면에
+              그려나갑니다.
+            </S.AboutInnerBoxDesc>
+          </S.AboutInnerBoxTitleInner>
+        </S.AboutInner>
+        <S.AboutTextAni>
+          <S.AboutTextAniList>
             {aniTextList.map((text, index) => (
-              <S.Content1TextAniItem
+              <S.AboutTextAniItem
                 className='aniText'
                 key={index}
                 ref={(el) => {
@@ -97,18 +96,18 @@ const Content1 = () => {
                 style={{ opacity: 0 }}
               >
                 {text}
-              </S.Content1TextAniItem>
+              </S.AboutTextAniItem>
             ))}
-          </S.Content1TextAniList>
+          </S.AboutTextAniList>
           <Button
-            style={{ margin: '170px 0 0 auto' }}
+            style={{ margin: '120px 0 0 auto' }}
             text='Notion 이력서 보기'
             onClick={() => {}}
           />
-        </S.Content1TextAni>
+        </S.AboutTextAni>
       </Inner>
-    </S.Content1>
+    </S.About>
   );
 };
 
-export default Content1;
+export default About;

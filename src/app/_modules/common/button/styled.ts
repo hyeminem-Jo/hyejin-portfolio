@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 interface ButtonProps {
   $mode: 'light' | 'dark';
+  $size: 'sm' | 'md';
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -13,9 +14,9 @@ export const Button = styled.button<ButtonProps>`
   border: none;
   border-radius: 100px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: ${({ $size }) => ($size === 'sm' ? '14px' : '16px')};
   font-weight: 600;
-  padding: 15px 25px;
+  padding: ${({ $size }) => ($size === 'sm' ? '10px 20px' : '15px 25px')};
   transition: all 0.3s ease;
   border: 1px solid #222;
 

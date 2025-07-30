@@ -16,7 +16,6 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* width: 1200px; */
   padding: 0 30px;
   height: 100%;
   margin: 0 auto;

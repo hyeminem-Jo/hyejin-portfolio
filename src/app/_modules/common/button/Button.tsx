@@ -7,6 +7,7 @@ interface ButtonProps {
   disabled?: boolean;
   style?: React.CSSProperties;
   mode?: 'light' | 'dark';
+  size?: 'sm' | 'md';
 }
 
 const Button = ({
@@ -16,9 +17,17 @@ const Button = ({
   type = 'button',
   style,
   mode = 'dark',
+  size = 'md',
 }: ButtonProps) => {
   return (
-    <S.Button onClick={onClick} type={type} disabled={disabled} style={style} $mode={mode}>
+    <S.Button
+      onClick={onClick}
+      type={type}
+      disabled={disabled}
+      style={style}
+      $mode={mode}
+      $size={size}
+    >
       {text}
     </S.Button>
   );

@@ -5,6 +5,5 @@ export const MainContainer = styled.main`
   background-color: lavender;
   background-color: antiquewhite;
   background-color: whitesmoke;
-
   /* background-color: floralwhite; */
 `;

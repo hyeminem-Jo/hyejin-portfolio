@@ -6,7 +6,10 @@ import { useGSAP } from '@gsap/react';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Visual from '../../visual/Visual';
-import Content1 from '../../cont1/Content1';
+import About from '../../about/About';
+import Skill from '../../skill/Skill';
+import Works from '../../works/Works';
+import SideProjects from '../../side-projects/SideProjects';
 
 const MainContainer = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -14,9 +17,10 @@ const MainContainer = () => {
   return (
     <S.MainContainer>
       <Visual />
-      <Content1 />
-      <div style={{ height: '100dvh', backgroundColor: 'white' }}>cscdsc</div>
-      <div style={{ height: '100dvh', backgroundColor: 'white' }}>cscdsc</div>
+      <About />
+      <Skill />
+      <Works />
+      <SideProjects />
     </S.MainContainer>
   );
 };
