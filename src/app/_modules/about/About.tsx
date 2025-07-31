@@ -22,7 +22,6 @@ const aniTextList = [
 const About = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-  // 여러 요소를 참조할 때는 배열 ref 사용
   const aniTextRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   useGSAP(() => {

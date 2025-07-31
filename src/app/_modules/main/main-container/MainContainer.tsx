@@ -21,6 +21,7 @@ const MainContainer = () => {
       <Skill />
       <Works />
       <SideProjects />
+      <div style={{ height: '100dvh', border: '1px solid red' }}></div>
     </S.MainContainer>
   );
 };
