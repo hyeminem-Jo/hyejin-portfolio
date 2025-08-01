@@ -25,7 +25,7 @@ const Footer = () => {
       .to(
         '.logoWrap',
         {
-          y: 100,
+          y: -50,
           scale: 1.1,
           duration,
           ease,
