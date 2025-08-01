@@ -65,7 +65,6 @@ const SideProjects = () => {
               start: '0% 20%',
               end: '0% 0%',
               scrub: 1,
-              // markers: true,
             },
           })
           .to(
@@ -74,8 +73,6 @@ const SideProjects = () => {
               transform: 'rotateX(-10deg) scale(0.9)',
               transformOrigin: 'top',
               filter: 'brightness(0.95)',
-              // duration: 1,
-              // ease: 'power4.out',
             },
             0,
           );

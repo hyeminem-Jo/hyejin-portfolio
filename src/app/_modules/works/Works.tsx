@@ -22,12 +22,12 @@ const companyList = [
         projectPeriod: '2024.01 - 2024.06',
         skillList: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
         projectWorkList: [
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
+          'Next.js 서버 컴포넌트를 활용한 API 라우터 최소화 및 SEO 대응',
+          'TypeScript를 활용한 타입 안정성 확보 및 개발 생산성 향상',
+          'Tailwind CSS를 활용한 반응형 디자인 구현',
+          'Framer Motion을 활용한 부드러운 애니메이션 효과 구현',
+          'React Hook을 활용한 상태 관리 최적화',
+          'Next.js App Router를 활용한 라우팅 구조 개선',
         ],
         projectLink: 'https://www.solp.co.kr',
         projectImgList: ['https://picsum.photos/200/300', 'https://picsum.photos/200/300'],
@@ -38,12 +38,12 @@ const companyList = [
         projectPeriod: '2024.01 - 2024.06',
         skillList: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
         projectWorkList: [
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
+          'Next.js 서버 컴포넌트를 활용한 API 라우터 최소화 및 SEO 대응',
+          'TypeScript를 활용한 타입 안정성 확보 및 개발 생산성 향상',
+          'Tailwind CSS를 활용한 반응형 디자인 구현',
+          'Framer Motion을 활용한 부드러운 애니메이션 효과 구현',
+          'React Hook을 활용한 상태 관리 최적화',
+          'Next.js App Router를 활용한 라우팅 구조 개선',
         ],
         projectLink: 'https://www.solp.co.kr',
         projectImgList: ['https://picsum.photos/200/300', 'https://picsum.photos/200/300'],
@@ -61,12 +61,12 @@ const companyList = [
         projectPeriod: '2024.01 - 2024.06',
         skillList: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
         projectWorkList: [
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
+          'Next.js 서버 컴포넌트를 활용한 API 라우터 최소화 및 SEO 대응',
+          'TypeScript를 활용한 타입 안정성 확보 및 개발 생산성 향상',
+          'Tailwind CSS를 활용한 반응형 디자인 구현',
+          'Framer Motion을 활용한 부드러운 애니메이션 효과 구현',
+          'React Hook을 활용한 상태 관리 최적화',
+          'Next.js App Router를 활용한 라우팅 구조 개선',
         ],
         projectLink: 'https://www.solp.co.kr',
         projectImgList: ['https://picsum.photos/200/300', 'https://picsum.photos/200/300'],
@@ -77,12 +77,12 @@ const companyList = [
         projectPeriod: '2024.01 - 2024.06',
         skillList: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
         projectWorkList: [
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
-          'Next.js 의 서버 컴포넌트를 활용해 API 라우터 최소화 및 SEO 대응',
+          'Next.js 서버 컴포넌트를 활용한 API 라우터 최소화 및 SEO 대응',
+          'TypeScript를 활용한 타입 안정성 확보 및 개발 생산성 향상',
+          'Tailwind CSS를 활용한 반응형 디자인 구현',
+          'Framer Motion을 활용한 부드러운 애니메이션 효과 구현',
+          'React Hook을 활용한 상태 관리 최적화',
+          'Next.js App Router를 활용한 라우팅 구조 개선',
         ],
         projectLink: 'https://www.solp.co.kr',
         projectImgList: ['https://picsum.photos/200/300', 'https://picsum.photos/200/300'],
@@ -147,8 +147,10 @@ const Works = () => {
                             </S.WorksProjectSkillList>
                           </S.WorksProjectInfo>
                           <S.WorksProjectWorkList>
-                            {project.projectWorkList.map((work) => (
-                              <S.WorksProjectWorkItem key={work}>{work}</S.WorksProjectWorkItem>
+                            {project.projectWorkList.map((work, index) => (
+                              <S.WorksProjectWorkItem key={`${project.projectName}-work-${index}`}>
+                                {work}
+                              </S.WorksProjectWorkItem>
                             ))}
                           </S.WorksProjectWorkList>
                         </S.WorksProjectItem>

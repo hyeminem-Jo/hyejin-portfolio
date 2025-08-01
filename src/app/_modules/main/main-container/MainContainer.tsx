@@ -10,6 +10,7 @@ import About from '../../about/About';
 import Skill from '../../skill/Skill';
 import Works from '../../works/Works';
 import SideProjects from '../../side-projects/SideProjects';
+import Footer from '../../footer/Footer';
 
 const MainContainer = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -21,7 +22,7 @@ const MainContainer = () => {
       <Skill />
       <Works />
       <SideProjects />
-      <div style={{ height: '100dvh', border: '1px solid red' }}></div>
+      <Footer />
     </S.MainContainer>
   );
 };

@@ -5,8 +5,7 @@ export const SideProjects = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 120px 0 130px;
-  /* background-color: #555; */
+  padding: 120px 0 110px;
 `;
 
 export const SideProjectsInner = styled.ul`

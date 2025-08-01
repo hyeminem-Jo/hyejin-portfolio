@@ -61,20 +61,3 @@ export const SubText = styled.h4`
   letter-spacing: 0.05em;
   color: #555;
 `;
-
-export const LogoWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-
-  span {
-    width: 24%;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-`;

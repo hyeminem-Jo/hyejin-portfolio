@@ -15,8 +15,7 @@ export const AboutInner = styled.div`
   align-items: center;
   gap: 70px;
   height: 65dvh;
-  border-radius: 10px;
-  background-color: #f0f0f0;
+  border-radius: 20px;
   padding: 50px 80px;
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.6);

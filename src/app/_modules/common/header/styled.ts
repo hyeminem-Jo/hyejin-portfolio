@@ -22,9 +22,18 @@ export const HeaderContent = styled.div`
 `;
 
 export const HeaderLogo = styled.div`
-  width: 50px;
-  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 100px;
 `;
+
+export const HeaderLogoTitle = styled.h1`
+  font-size: 30px;
+  font-weight: 600;
+  color: #222;
+`;
+
 export const HeaderNav = styled.nav`
   display: flex;
   align-items: center;
