@@ -76,7 +76,7 @@ const Visual = () => {
         </S.MainTextInner>
       </S.MainTextList>
       <S.SubText className='subText'>
-        Designing & developing user-friendly web experiences.
+        Designing & developing user-friendly <br className='mo-only' /> web experiences.
         <br />
         <span>On screen. And behind the scenes.</span>
       </S.SubText>

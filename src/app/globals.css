@@ -42,6 +42,15 @@ li {
   list-style: none;
 }
 
+@media (max-width: 1200px) {
+  .mo-only {
+    display: block;
+  }
+  .pc-only {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

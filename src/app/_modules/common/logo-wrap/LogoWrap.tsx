@@ -12,15 +12,16 @@ const logoList = [
 
 interface LogoWrapProps {
   className?: string;
+  isVisual?: boolean;
 }
 
-const LogoWrap = ({ className }: LogoWrapProps) => {
+const LogoWrap = ({ className, isVisual = true }: LogoWrapProps) => {
   return (
     <S.LogoWrap className={className}>
       {logoList.map((logo) => (
-        <span id={logo.id} key={logo.id}>
+        <S.LogoImageWrap id={logo.id} key={logo.id} $isVisual={isVisual}>
           <Image src={logo.src} alt={logo.alt} width={100} height={100} />
-        </span>
+        </S.LogoImageWrap>
       ))}
     </S.LogoWrap>
   );
