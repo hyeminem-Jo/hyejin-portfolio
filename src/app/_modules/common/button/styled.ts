@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@/app/_constant/breakpoint';
 
 interface ButtonProps {
   $mode: 'light' | 'dark';
@@ -23,5 +24,10 @@ export const Button = styled.button<ButtonProps>`
   &:hover {
     background-color: ${({ $mode }) => ($mode === 'light' ? '#222' : '#fff')};
     color: ${({ $mode }) => ($mode === 'light' ? '#fff' : '#222')};
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 14px;
+    padding: ${({ $size }) => ($size === 'sm' ? '8px 15px' : '12px 20px')};
   }
 `;

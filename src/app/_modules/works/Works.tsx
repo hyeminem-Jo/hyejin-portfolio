@@ -9,6 +9,7 @@ import Inner from '../common/layout/Inner';
 import Title from '../common/title/Title';
 import Button from '../common/button/Button';
 import { useRouter } from 'next/navigation';
+import { useIsMobile } from '../common/hooks/useIsMobile';
 
 const companyList = [
   {
@@ -91,10 +92,32 @@ const companyList = [
   },
 ];
 
+const Buttons = ({ projectLink }: { projectLink: string }) => {
+  const router = useRouter();
+
+  return (
+    <>
+      <Button
+        size='sm'
+        text='Link 보기'
+        onClick={() => {
+          router.push(projectLink);
+        }}
+      />
+      <Button
+        size='sm'
+        text='화면 보기'
+        onClick={() => {
+          // router.push(project.projectLink);
+        }}
+      />
+    </>
+  );
+};
+
 const Works = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-  const router = useRouter();
+  const { isMobile } = useIsMobile();
 
   return (
     <S.Works>
@@ -120,20 +143,7 @@ const Works = () => {
                         <S.WorksProjectItem key={project.projectName}>
                           <S.WorksProjectNameAndLink>
                             <S.WorksProjectName>{project.projectName}</S.WorksProjectName>
-                            <Button
-                              size='sm'
-                              text='Link 보기'
-                              onClick={() => {
-                                router.push(project.projectLink);
-                              }}
-                            />
-                            <Button
-                              size='sm'
-                              text='화면 보기'
-                              onClick={() => {
-                                // router.push(project.projectLink);
-                              }}
-                            />
+                            {!isMobile && <Buttons projectLink={project.projectLink} />}
                           </S.WorksProjectNameAndLink>
                           <S.WorksProjectInfo>
                             <S.WorksProjectPeriod>{project.projectPeriod}</S.WorksProjectPeriod>
@@ -153,6 +163,11 @@ const Works = () => {
                               </S.WorksProjectWorkItem>
                             ))}
                           </S.WorksProjectWorkList>
+                          {isMobile && (
+                            <S.WorksButtonList>
+                              <Buttons projectLink={project.projectLink} />
+                            </S.WorksButtonList>
+                          )}
                         </S.WorksProjectItem>
                       ))}
                     </S.WorksProjectList>
