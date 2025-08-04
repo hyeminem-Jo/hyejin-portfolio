@@ -7,6 +7,10 @@ export const About = styled.section`
   justify-content: space-between;
   align-items: center;
   height: 100dvh;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    height: auto;
+  }
 `;
 
 export const AboutInner = styled.div`
@@ -88,6 +92,14 @@ export const AboutTextAni = styled.div`
 
   button {
     position: relative;
+    margin: 120px 0 0 auto;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    margin-top: 40px;
+    button {
+      margin: 160px auto 0;
+    }
   }
 `;
 
@@ -109,4 +121,8 @@ export const AboutTextAniItem = styled.li`
   opacity: 0;
   list-style: none;
   color: #444;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 40px;
+  }
 `;

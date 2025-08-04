@@ -98,11 +98,7 @@ const About = () => {
               </S.AboutTextAniItem>
             ))}
           </S.AboutTextAniList>
-          <Button
-            style={{ margin: '120px 0 0 auto' }}
-            text='Notion 이력서 보기'
-            onClick={() => {}}
-          />
+          <Button text='Notion 이력서 보기' onClick={() => {}} />
         </S.AboutTextAni>
       </Inner>
     </S.About>
