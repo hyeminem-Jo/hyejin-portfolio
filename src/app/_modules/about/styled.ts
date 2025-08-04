@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@/app/_constant/breakpoint';
 
 export const About = styled.section`
   display: flex;
@@ -20,6 +21,13 @@ export const AboutInner = styled.div`
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(25px);
+
+  @media (max-width: ${BREAKPOINT}px) {
+    margin-top: 60px;
+    flex-direction: column;
+    height: auto;
+    padding: 25px 20px 30px;
+  }
 `;
 
 export const AboutInnerBoxTitleInner = styled.div`
@@ -27,20 +35,31 @@ export const AboutInnerBoxTitleInner = styled.div`
   flex-direction: column;
   justify-content: space-around;
   height: 300px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    height: auto;
+  }
 `;
 
 export const AboutInnerBoxMiddle = styled.strong`
   font-size: 28px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  font-style: italic;
-  color: chocolate;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 24px;
+  }
 `;
 
 export const AboutInnerBoxDesc = styled.p`
   font-size: 20px;
   line-height: 1.5;
   color: #222;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    margin-top: 20px;
+    font-size: 17px;
+  }
 `;
 
 export const AboutInnerBoxText = styled.div`
@@ -56,6 +75,10 @@ export const AboutImage = styled.div`
   position: relative;
   img {
     object-fit: cover;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    display: none;
   }
 `;
 

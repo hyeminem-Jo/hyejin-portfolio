@@ -9,7 +9,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Inner from '../common/layout/Inner';
 import Image from 'next/image';
 import Button from '../common/button/Button';
-import Title from '../common/title/Title';
 
 const aniTextList = [
   'JUST DO IT ✔️',
@@ -72,7 +71,8 @@ const About = () => {
           </S.AboutImage>
           <S.AboutInnerBoxTitleInner>
             <S.AboutInnerBoxMiddle>
-              &quot;사용자의 경험을 디자인하는 프론트엔드 개발자&quot;
+              &quot;사용자의 경험을 디자인하는 <br className='mo-only' />
+              프론트엔드 개발자&quot;
             </S.AboutInnerBoxMiddle>
             <S.AboutInnerBoxDesc>
               안녕하세요, 4년차에 접어든 프론트엔드 개발자 조혜진입니다. <br />

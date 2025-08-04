@@ -13,6 +13,14 @@ export const Visual = styled.section`
     height: auto;
     padding: 0 20px;
   }
+
+  /* 모바일에서 GSAP 애니메이션 비활성화 */
+  &.mobile .logoWrap #f,
+  &.mobile .logoWrap #e,
+  &.mobile .logoWrap #h,
+  &.mobile .logoWrap #j {
+    transform: none !important;
+  }
 `;
 
 export const MainTextList = styled.h1`
@@ -25,7 +33,7 @@ export const MainTextList = styled.h1`
   width: 100%;
 
   @media (max-width: ${BREAKPOINT}px) {
-    margin-top: 60px;
+    /* margin-top: 60px; */
     line-height: 0.8;
     align-items: flex-start;
   }

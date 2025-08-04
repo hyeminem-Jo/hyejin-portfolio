@@ -23,7 +23,7 @@ const Footer = () => {
         },
       })
       .to(
-        '.logoWrap',
+        '.logoWrap2',
         {
           y: -50,
           scale: 1.1,
@@ -33,7 +33,7 @@ const Footer = () => {
         0,
       )
       .to(
-        '.logoWrap #f',
+        '.logoWrap2 #f',
         {
           x: -30,
           y: -50,
@@ -44,7 +44,7 @@ const Footer = () => {
         0,
       )
       .to(
-        '.logoWrap #e',
+        '.logoWrap2 #e',
         {
           x: -30,
           y: -30,
@@ -55,7 +55,7 @@ const Footer = () => {
         0,
       )
       .to(
-        '.logoWrap #h',
+        '.logoWrap2 #h',
         {
           x: 20,
           y: -80,
@@ -66,7 +66,7 @@ const Footer = () => {
         0,
       )
       .to(
-        '.logoWrap #j',
+        '.logoWrap2 #j',
         {
           x: -10,
           y: -60,
@@ -102,7 +102,7 @@ const Footer = () => {
           <Button text='Blog' mode='light' onClick={() => {}} />
         </S.FooterButtons>
       </S.FooterInner>
-      <LogoWrap className='logoWrap' />
+      <LogoWrap className='logoWrap2' />
       <S.FooterBottomText>
         <p>Portfolio - by Hye Jin</p>
         <p>Copyright 2025.</p>

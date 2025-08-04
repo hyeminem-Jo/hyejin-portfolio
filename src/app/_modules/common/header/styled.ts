@@ -54,7 +54,7 @@ export const HeaderLogoTitle = styled.h1`
 export const HeaderNav = styled.nav`
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
 
   @media (max-width: ${BREAKPOINT}px) {
     position: absolute;

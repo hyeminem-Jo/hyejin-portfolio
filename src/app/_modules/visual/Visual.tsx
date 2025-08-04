@@ -5,11 +5,16 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LogoWrap from '../common/logo-wrap/LogoWrap';
+import { useIsMobile } from '../common/hooks/useIsMobile';
 
 const Visual = () => {
+  const { isMobile, isLoaded } = useIsMobile();
+
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
+    if (!isLoaded || isMobile) return;
+
     gsap
       .timeline({
         scrollTrigger: {
@@ -63,10 +68,10 @@ const Visual = () => {
         },
         0,
       );
-  });
+  }, [isLoaded, isMobile]);
 
   return (
-    <S.Visual className='visual'>
+    <S.Visual className={`visual ${isMobile ? 'mobile' : ''}`}>
       <S.MainTextList className='mainText'>
         <S.MainTextInner>
           <S.MainText>FRONTEND</S.MainText>
@@ -76,11 +81,12 @@ const Visual = () => {
         </S.MainTextInner>
       </S.MainTextList>
       <S.SubText className='subText'>
-        Designing & developing user-friendly <br className='mo-only' /> web experiences.
+        Designing & developing <br className='mo-only' />
+        user-friendly web experiences.
         <br />
         <span>On screen. And behind the scenes.</span>
       </S.SubText>
-      <LogoWrap className='logoWrap' />
+      <LogoWrap className={`logoWrap ${isMobile ? 'mobile' : ''}`} />
     </S.Visual>
   );
 };

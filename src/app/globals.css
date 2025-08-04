@@ -51,6 +51,15 @@ li {
   }
 }
 
+@media (min-width: 1201px) {
+  .mo-only {
+    display: none;
+  }
+  .pc-only {
+    display: block;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
