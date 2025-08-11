@@ -1,6 +1,5 @@
 'use client';
 
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
 import Image from 'next/image';
 import { useState } from 'react';
 import * as S from './styled';

@@ -19,7 +19,8 @@ export const SideProjectsInner = styled.ul`
   flex-direction: column;
   gap: 50px;
   margin-top: 50px;
-  perspective: 900px;
+  perspective: 1200px;
+  transform-style: preserve-3d; /* 3D 변환을 위한 속성 추가 */
 `;
 
 export const SideProjectsInnerBox = styled.li`
@@ -37,7 +38,9 @@ export const SideProjectsInnerBox = styled.li`
   height: 350px;
   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.05);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease; /* transform transition 제거 */
+  transform-style: preserve-3d; /* 3D 변환을 위한 속성 추가 */
+  backface-visibility: hidden; /* 3D 변환 최적화 */
 
   &:hover {
     transform: translateY(-5px);

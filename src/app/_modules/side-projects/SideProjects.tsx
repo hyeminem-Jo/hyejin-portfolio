@@ -86,6 +86,8 @@ const SideProjects = () => {
               transform: 'rotateX(-10deg) scale(0.9)',
               transformOrigin: 'top',
               filter: 'brightness(0.95)',
+              duration: 1,
+              ease: 'none',
             },
             0,
           );
