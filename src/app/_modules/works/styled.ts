@@ -169,6 +169,7 @@ export const WorksProjectInfo = styled.div`
 export const WorksProjectDesc = styled.p`
   font-size: 16px;
   font-weight: 400;
+  line-height: 1.5;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.08);
   border-radius: 10px;
@@ -205,6 +206,7 @@ export const WorksProjectWorkList = styled.ul`
 export const WorksProjectWorkItem = styled.li`
   list-style: disc;
   margin-left: 20px;
+  line-height: 1.3;
 `;
 
 export const WorksProjectSkillList = styled.ul`
