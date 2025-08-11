@@ -2,9 +2,9 @@
 
 import { BREAKPOINT } from '@/app/_constant/breakpoint';
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import * as S from './styled';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const menuItems = [
   { href: '/', text: 'HOME' },
@@ -15,7 +15,7 @@ const menuItems = [
 ];
 
 const Header = () => {
-  const isMobile = useMediaQuery({ query: `(max-width: ${BREAKPOINT}px)` });
+  const { isMobile } = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
