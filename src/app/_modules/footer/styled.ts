@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Title } from '../common/title/styled';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 
 export const Footer = styled.footer`
   position: relative;
@@ -10,6 +11,11 @@ export const Footer = styled.footer`
   background-color: #f5f5f5;
   min-height: 100dvh;
   position: relative;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    padding: 0;
+    min-height: 90dvh;
+  }
 `;
 
 export const FooterInner = styled.div`
@@ -30,6 +36,16 @@ export const FooterInner = styled.div`
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(25px);
   z-index: 10;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    width: calc(100% - 40px);
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    top: 30%;
+    transform: translate(-50%, -30%);
+    gap: 40px;
+  }
 `;
 
 export const FooterText = styled.div`
@@ -39,21 +55,39 @@ export const FooterText = styled.div`
   align-items: center;
   gap: 20px;
   width: 100%;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    /* gap: 15px; */
+  }
 `;
 
 export const StyledTitle = styled(Title)`
   margin-bottom: 30px;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const FooterTextWrap = styled.div`
   display: flex;
   gap: 20px;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
 `;
 
 export const FooterInnerTextTitle = styled.h3`
   font-size: 25px;
   font-weight: 700;
   color: #000;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    font-size: 20px;
+  }
 `;
 
 export const FooterInnerTextDesc = styled.p`
@@ -63,6 +97,12 @@ export const FooterInnerTextDesc = styled.p`
   font-size: 18px;
   font-weight: 500;
   color: #444;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    font-size: 15px;
+    text-align: center;
+    color: #777;
+  }
 `;
 
 export const FooterBottomText = styled.strong`
@@ -79,9 +119,17 @@ export const FooterBottomText = styled.strong`
   font-size: 14px;
   font-weight: 600;
   background-color: #fff;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    justify-content: center;
+  }
 `;
 
 export const FooterButtons = styled.div`
   display: flex;
   gap: 20px;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    gap: 10px;
+  }
 `;

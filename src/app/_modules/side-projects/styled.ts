@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
+import Link from 'next/link';
 
 export const SideProjects = styled.section`
   display: flex;
@@ -9,7 +10,7 @@ export const SideProjects = styled.section`
   padding: 120px 0 110px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding: 0 0 100px;
+    padding: 0;
   }
 `;
 
@@ -21,6 +22,11 @@ export const SideProjectsInner = styled.ul`
   margin-top: 50px;
   perspective: 1200px;
   transform-style: preserve-3d; /* 3D 변환을 위한 속성 추가 */
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    gap: 20px;
+    margin-top: 30px;
+  }
 `;
 
 export const SideProjectsInnerBox = styled.li`
@@ -35,9 +41,7 @@ export const SideProjectsInnerBox = styled.li`
   z-index: 10;
   background-color: #fff;
   border-radius: 20px;
-  height: 350px;
   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
   transition: box-shadow 0.3s ease; /* transform transition 제거 */
   transform-style: preserve-3d; /* 3D 변환을 위한 속성 추가 */
   backface-visibility: hidden; /* 3D 변환 최적화 */
@@ -45,6 +49,20 @@ export const SideProjectsInnerBox = styled.li`
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 -15px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    flex-direction: column;
+    padding: 25px;
+    gap: 15px;
   }
 `;
 
@@ -59,34 +77,97 @@ export const SideProjectsImageWrap = styled.div`
     object-fit: cover;
     bottom: 0 !important;
   }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    flex: initial;
+    aspect-ratio: initial;
+    height: 180px;
+  }
 `;
 
 export const SideProjectsInfo = styled.div`
-  flex: 5;
+  flex: 1.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    flex: 2;
+  }
+`;
+
+export const SideProjectsInfoTop = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
+export const SideProjectsButtons = styled.div`
+  margin-top: 50px;
+  display: flex;
+  gap: 5px;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    margin-top: 20px;
+  }
 `;
 
 export const SideProjectsTitle = styled.h4`
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: 700;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const SideProjectsDesc = styled.p`
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   color: #555;
+  line-height: 1.6;
+  white-space: pre-line;
 `;
 
 export const SideProjectsSkills = styled.ul`
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
   font-size: 14px;
   font-weight: 400;
   color: #555;
+`;
 
-  li {
-    background-color: #f5f5f5;
-    padding: 5px 10px;
+export const SideProjectsSkillsItem = styled.li`
+  padding: 5px 10px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  border-radius: 8px;
+  background-color: #e5e5e5;
+  color: #222;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    padding: 4px 8px;
+  }
+`;
+
+export const SideProjectsSkillsLink = styled(Link)`
+  display: inline-block;
+  padding: 7px 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  border-radius: 50px;
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #222;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
+    color: #222;
+    border: 1px solid #222;
   }
 `;
 

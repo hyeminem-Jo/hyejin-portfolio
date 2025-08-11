@@ -5,13 +5,16 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import LogoWrap from '../common/logo-wrap/LogoWrap';
 import Button from '../common/button/Button';
+import { useIsMobile } from '../common/hooks/useIsMobile';
 
 const Footer = () => {
+  const { isMobile, isLoaded } = useIsMobile();
   gsap.registerPlugin(useGSAP);
   const duration = 1;
   const ease = 'power1.inOut';
 
   useGSAP(() => {
+    if (!isLoaded || isMobile) return;
     gsap
       .timeline({
         duration: 2,
@@ -76,7 +79,7 @@ const Footer = () => {
         },
         0,
       );
-  });
+  }, [isLoaded, isMobile]);
 
   return (
     <S.Footer className='footer'>
@@ -88,25 +91,37 @@ const Footer = () => {
           <S.FooterTextWrap>
             <S.FooterInnerTextTitle>Education</S.FooterInnerTextTitle>
             <S.FooterInnerTextDesc>
-              홍익대학교 (커뮤니케이션디자인학과) 2016 - 2021
+              홍익대학교 커뮤니케이션디자인학과 {!isMobile && '(2016 - 2021)'}
             </S.FooterInnerTextDesc>
+            {isMobile && <S.FooterInnerTextDesc>2016 - 2021</S.FooterInnerTextDesc>}
           </S.FooterTextWrap>
           <S.FooterTextWrap>
             <S.FooterInnerTextTitle>Contact</S.FooterInnerTextTitle>
-            <S.FooterInnerTextDesc>Phone: 010-1234-5678</S.FooterInnerTextDesc>
-            <S.FooterInnerTextDesc>Email: jjang0101@naver.com</S.FooterInnerTextDesc>
+            <S.FooterInnerTextDesc>Phone: 010-9275-5637</S.FooterInnerTextDesc>
+            <S.FooterInnerTextDesc>Email: konnimey@naver.com</S.FooterInnerTextDesc>
           </S.FooterTextWrap>
         </S.FooterText>
         <S.FooterButtons>
-          <Button text='GitHub' onClick={() => {}} />
-          <Button text='Blog' mode='light' onClick={() => {}} />
+          <Button
+            text='GitHub'
+            onClick={() => {
+              window.open('https://github.com/hyeminem-Jo', '_blank');
+            }}
+          />
+          <Button
+            text='Blog'
+            mode='light'
+            onClick={() => {
+              window.open('https://velog.io/@h_jinny/posts', '_blank');
+            }}
+          />
         </S.FooterButtons>
       </S.FooterInner>
-      <LogoWrap className='logoWrap2' />
+      {!isMobile && <LogoWrap className='logoWrap2' />}
       <S.FooterBottomText>
         <p>Portfolio - by Hye Jin</p>
-        <p>Copyright 2025.</p>
-        <p>Created: 2025.08.01</p>
+        {!isMobile && <p>Copyright 2025.</p>}
+        {!isMobile && <p>Created: 2025.08.01</p>}
       </S.FooterBottomText>
     </S.Footer>
   );

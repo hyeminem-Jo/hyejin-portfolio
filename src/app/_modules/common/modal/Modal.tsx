@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Global, css } from '@emotion/react';
+import React, { useEffect } from 'react';
 import * as S from './styled';
 
 interface ModalProps {
@@ -21,8 +20,6 @@ const Modal = ({
   showCloseButton = true,
   closeOnOverlayClick = true,
 }: ModalProps) => {
-  const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -31,30 +28,13 @@ const Modal = ({
     };
 
     if (isOpen) {
-      const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
-
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${currentScrollY}px`;
-      document.body.style.width = '100%';
-
       document.addEventListener('keydown', handleEscape);
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
-
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-
-      if (scrollY > 0) {
-        window.scrollTo(0, scrollY);
-      }
     };
-  }, [isOpen, onClose, scrollY]);
+  }, [isOpen, onClose]);
 
   const handleOverlayClick = (event: React.MouseEvent) => {
     if (closeOnOverlayClick && event.target === event.currentTarget) {

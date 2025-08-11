@@ -28,9 +28,9 @@ const companyList = [
         projectPeriod: '2025.05 - 2025.07',
         skillList: ['React', 'Next.js', 'TypeScript', 'Redux', 'Emotion'],
         projectWorkList: [
+          '메인 페이지를 담당하여 메인피드 화면을 구현하였으며, 메인 피드, 실시간 알림 배너 및 카드 배너 기능 등을 구현',
           '설문을 통해 사용자의 성향을 분석하고, 결과값에 따라 데이터를 조회하거나 조건부로 화면이 변경되는 기능 구현',
           '투표 기능이 있는 게시글의 경우 OX 퀴즈, 정답 여부의 퀴즈를 통해 사용자의 투표 결과를 조회하고, 투표 결과에 따라 화면이 변경되는 기능 구현',
-          '메인 페이지를 담당하여 메인피드 화면을 구현하였으며, 메인 피드, 실시간 알림 배너 및 카드 배너 기능 등을 구현',
           'Story book 을 도입하여 팀원간의 컴포넌트 공유 및 디자인 통일성 유지',
         ],
         projectLink: 'https://sople.me/',
@@ -195,7 +195,6 @@ const companyList = [
         skillList: ['React', 'Next.js', 'Emotion'],
         projectWorkList: [
           '업무 등록, 업무 일지 작성 페이지 구현 및 이메일 서명 기능 구현 및 배포',
-          '업무일지 등록, 수정, 삭제 등 기능 구현',
           '프로젝트, 참여자, 등급 등을 한 눈에 알아볼 수 있도록 엑셀 프로그램과 유사한 형태로 구현',
         ],
         projectImgList: [
@@ -209,7 +208,7 @@ const companyList = [
       {
         projectName: '삼성 지속가능성경영 사이트 운영',
         projectDesc:
-          '사원 정보, 업무일지 및 프로젝트 진행현황을 파악할 수 있는 어드민 페이지입니다. 현재 본인이 속한 파트 뿐만이 아닌 다른 파트에서도 어떤 업무가 진행중인지 한 눈에 알 수 있고, 프로젝트에 대한 현황 정보가 객관적인 지표로 표시되어 있습니다. 반응형으로 대응하였으며 구축 및 운영을 진행하였습니다',
+          '환경, 사회, 거버넌스 분야에 걸쳐 삼성전자의 전략과 주요 성과를 담은 보고서 형식의 웹사이트',
         projectPeriod: '2023.04 - 2023.12',
         skillList: ['javascript', 'jQuery', 'scss'],
         projectWorkList: [
@@ -254,9 +253,15 @@ const companyList = [
         projectDesc:
           '메타클럽은 상품권 전환 및 포인트를 충전할 수 있는 포인트 테크 플랫폼으로, 문화상품권, 도서문화상품권의 핀번호를 등록하여 다양한 곳에서 사용할 수 있게 해줍니다. 구축으로 진행되었습니다.',
         projectPeriod: '2022.08 - 2022.11',
-        skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'Emotion', 'scss'],
+        skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'scss'],
         projectWorkList: [
           '포인트 충전 및 포인트 전환 페이지 개발 및 퍼블리싱 구현 (상품권 갯수 입력, PIN 번호 입력칸 및 입력 제한 기능 구현 등)',
+        ],
+        projectImgList: [
+          '/assets/images/works/metapoint/metapoint-01.png',
+          '/assets/images/works/metapoint/metapoint-02.png',
+          '/assets/images/works/metapoint/metapoint-03.png',
+          '/assets/images/works/metapoint/metapoint-04.png',
         ],
       },
     ],
@@ -320,7 +325,7 @@ const Works = () => {
   };
 
   return (
-    <S.Works>
+    <S.Works id='works'>
       <Inner>
         <Title text='WORK EXPERIENCE' isCenter />
         <S.WorksInner>

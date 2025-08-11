@@ -10,53 +10,50 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useState } from 'react';
+import { useIsMobile } from '../common/hooks/useIsMobile';
 
 const sideProjectsList = [
   {
-    title: 'J-stagram (인스타그램 클론)',
+    title: 'J-stagram',
     image: '/assets/images/side-project/side-project-05.png',
-    introduction: '회원가입, 로그인, 및 실시간 채팅 기능을 구현한 인스타그램 클론 프로젝트',
-    description:
-      'React와 Next.js를 활용하여 인스타그램의 핵심 기능들을 구현했습니다. 회원가입과 로그인 기능, 실시간 채팅, 게시물 업로드 및 피드 기능을 포함하여 실제 SNS와 유사한 사용자 경험을 제공합니다.',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    link: 'https://www.google.com',
-    github: 'https://github.com/example/j-stagram',
+    introduction:
+      '회원가입, 로그인, 및 메시지 기능의 인스타그램 클론 프로젝트입니다. \n 카카오 소셜로그인 및 supabase 의 리얼타임 기능을 활용하여 \n실시간으로 채팅이 가능하도록 구현하였습니다.\n Jotai 를 사용하여 내 정보 상태관리를 구현하였습니다.',
+    skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
+    link: 'https://hyejin-toy-project.vercel.app/j-stagram',
+    github: 'https://github.com/hyeminem-Jo/toy-project',
     demo: 'https://j-stagram-demo.vercel.app',
   },
   {
-    title: '나의 할 일(To Do List)',
+    title: '나의 할 일',
     image: '/assets/images/side-project/side-project-01.png',
     introduction:
-      '하루 일과를 관리하는 할 일 목록 프로젝트 (할 일 등록, 삭제, 수정 및 검색 기능 구현)',
-    description:
-      '일상적인 할 일 관리를 위한 웹 애플리케이션입니다. 할 일 등록, 삭제, 수정 기능과 함께 검색 기능을 구현하여 사용자가 효율적으로 일정을 관리할 수 있도록 했습니다.',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    link: 'https://www.google.com',
-    github: 'https://github.com/example/todo-app',
+      '일상적인 할 일 관리를 위한 웹 애플리케이션입니다. \n할 일 등록, 삭제, 수정 기능과 함께 검색 기능을 구현하여 \n사용자가 효율적으로 일정을 관리할 수 있도록 했습니다.',
+
+    skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Supabase'],
+    link: 'https://hyejin-toy-project.vercel.app/todo',
+    github: 'https://github.com/hyeminem-Jo/toy-project',
     demo: 'https://todo-app-demo.vercel.app',
   },
   {
-    title: 'Netflix (넷플릭스 클론)',
+    title: 'Netflix',
     image: '/assets/images/side-project/side-project-02.png',
     introduction:
-      '여러 영화를 검색하고 영화 정보를 확인할 수 있는 넷플릭스 클론 프로젝트 (무한 스크롤링, 검색 기능)',
+      '여러 영화를 검색하고 영화 정보를 확인할 수 있는 넷플릭스 클론 프로젝트 입니다. \n상세정보를 볼 수 있는 상세페이지가 있으며, react-query 를 활용하여 \n무한 스크롤링과 실시간 검색 기능을 통해 사용자가 원하는 영화를 쉽게 찾을 수 있습니다.',
     description:
       '넷플릭스의 UI/UX를 참고하여 영화 검색 및 정보 확인 기능을 구현했습니다. 무한 스크롤링과 실시간 검색 기능을 통해 사용자가 원하는 영화를 쉽게 찾을 수 있습니다.',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    link: 'https://www.google.com',
-    github: 'https://github.com/example/netflix-clone',
+    skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
+    link: 'https://hyejin-toy-project.vercel.app/movie',
+    github: 'https://github.com/hyeminem-Jo/toy-project',
     demo: 'https://netflix-clone-demo.vercel.app',
   },
   {
-    title: '갤러리(Gallery)',
+    title: '갤러리',
     image: '/assets/images/side-project/side-project-03.png',
     introduction:
-      '여러 이미지를 저장하거나 삭제할 수 있는 갤러리 프로젝트 (파일 등록 및 삭제 기능 구현)',
-    description:
-      '개인 이미지 갤러리 관리 애플리케이션입니다. 이미지 업로드, 삭제, 정렬 기능을 구현하여 사용자가 개인 이미지를 체계적으로 관리할 수 있도록 했습니다.',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    link: 'https://www.google.com',
-    github: 'https://github.com/example/gallery-app',
+      '개인 이미지 갤러리 관리 애플리케이션입니다. \n supabase 의 Storge 기능을 사용하였으며,\n다중 이미지 업로드/삭제 및 체크 여부에 따른 정렬을 구현하였습니다. ',
+    skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Supabase'],
+    link: 'https://hyejin-toy-project.vercel.app/gallery',
+    github: 'https://github.com/hyeminem-Jo/toy-project',
     demo: 'https://gallery-app-demo.vercel.app',
   },
 ];
@@ -65,8 +62,10 @@ const SideProjects = () => {
   const boxRefs = useRef<(HTMLLIElement | null)[]>([]);
   const [selectedProject, setSelectedProject] = useState<(typeof sideProjectsList)[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isMobile, isLoaded } = useIsMobile();
 
   useGSAP(() => {
+    if (!isLoaded || isMobile) return;
     const boxList = boxRefs.current;
 
     boxList.forEach((box, i) => {
@@ -93,7 +92,7 @@ const SideProjects = () => {
           );
       }
     });
-  });
+  }, [isLoaded, isMobile]);
 
   const handleProjectClick = (project: (typeof sideProjectsList)[0]) => {
     setSelectedProject(project);
@@ -106,7 +105,7 @@ const SideProjects = () => {
   };
 
   return (
-    <S.SideProjects>
+    <S.SideProjects id='side-projects'>
       <Inner>
         <Title text='SIDE PROJECT' isCenter />
         <S.SideProjectsInner>
@@ -116,26 +115,46 @@ const SideProjects = () => {
               ref={(el) => {
                 boxRefs.current[index] = el;
               }}
-              onClick={() => handleProjectClick(item)}
+              // onClick={() => handleProjectClick(item)}
             >
               <S.SideProjectsImageWrap>
                 <Image src={item.image} alt={item.title} width={500} height={500} />
               </S.SideProjectsImageWrap>
               <S.SideProjectsInfo>
-                <S.SideProjectsTitle>{item.title}</S.SideProjectsTitle>
-                <S.SideProjectsDesc>{item.introduction}</S.SideProjectsDesc>
-                <S.SideProjectsSkills>
-                  {item.skills.map((skill, index) => (
-                    <li key={`${skill}-${index}`}>{skill}</li>
-                  ))}
-                </S.SideProjectsSkills>
+                <S.SideProjectsInfoTop>
+                  <S.SideProjectsTitle>{item.title}</S.SideProjectsTitle>
+                  <S.SideProjectsDesc>{item.introduction}</S.SideProjectsDesc>
+                  <S.SideProjectsSkills>
+                    {item.skills.map((skill, index) => (
+                      <S.SideProjectsSkillsItem key={`${skill}-${index}`}>
+                        {skill}
+                      </S.SideProjectsSkillsItem>
+                    ))}
+                  </S.SideProjectsSkills>
+                </S.SideProjectsInfoTop>
+                <S.SideProjectsButtons>
+                  <S.SideProjectsSkillsLink
+                    href={item.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    Link
+                  </S.SideProjectsSkillsLink>
+                  <S.SideProjectsSkillsLink
+                    href={item.github}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    GitHub
+                  </S.SideProjectsSkillsLink>
+                </S.SideProjectsButtons>
               </S.SideProjectsInfo>
             </S.SideProjectsInnerBox>
           ))}
         </S.SideProjectsInner>
 
         {/* 프로젝트 상세 모달 */}
-        <Modal
+        {/* <Modal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           title={selectedProject?.title}
@@ -188,7 +207,7 @@ const SideProjects = () => {
               </S.ModalSection>
             </S.ModalContent>
           )}
-        </Modal>
+        </Modal> */}
       </Inner>
     </S.SideProjects>
   );

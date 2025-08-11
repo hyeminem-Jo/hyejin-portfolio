@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -64,7 +64,6 @@ export const WorksCompanyItemLeft = styled.div`
   flex-direction: column;
   gap: 20px;
   flex: 1;
-  /* border: 1px solid red; */
 
   @media (max-width: ${BREAKPOINT}px) {
     position: static;
@@ -134,6 +133,10 @@ export const WorksProjectList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 80px;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    gap: 50px;
+  }
 `;
 
 export const WorksProjectItem = styled.li`

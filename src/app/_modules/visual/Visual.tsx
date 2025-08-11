@@ -71,7 +71,7 @@ const Visual = () => {
   }, [isLoaded, isMobile]);
 
   return (
-    <S.Visual className={`visual ${isMobile ? 'mobile' : ''}`}>
+    <S.Visual id='visual' className={`visual ${isMobile ? 'mobile' : ''}`}>
       <S.MainTextList className='mainText'>
         <S.MainTextInner>
           <S.MainText>FRONTEND</S.MainText>

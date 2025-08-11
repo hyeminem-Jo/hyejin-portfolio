@@ -84,6 +84,8 @@ export const HeaderNavItem = styled(Link)`
   font-weight: 600;
   color: #222;
   text-decoration: none;
+  cursor: pointer;
+  user-select: none;
   &:hover {
     color: rgba(0, 0, 0, 0.5);
   }

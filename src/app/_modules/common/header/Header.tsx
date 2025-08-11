@@ -6,11 +6,11 @@ import * as S from './styled';
 import { useIsMobile } from '../hooks/useIsMobile';
 
 const menuItems = [
-  { href: '/', text: 'HOME' },
-  { href: '/about', text: 'ABOUT' },
-  { href: '/skills', text: 'SKILLS' },
-  { href: '/contact', text: 'WORKS' },
-  { href: '/contact', text: 'SIDE PROJECT' },
+  { href: '#visual', text: 'HOME' },
+  { href: '#about', text: 'ABOUT' },
+  { href: '#skills', text: 'SKILLS' },
+  { href: '#works', text: 'WORKS' },
+  { href: '#side-projects', text: 'SIDE PROJECT' },
 ];
 
 const Header = () => {
@@ -19,6 +19,26 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleMenuClick = (href: string) => {
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const headerHeight = isMobile ? 65 : 80; // 헤더 높이
+      const targetPosition = targetElement.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      });
+    }
+
+    // 모바일에서 메뉴가 열려있다면 닫기
+    if (isMobile && isMenuOpen) {
+      setIsMenuOpen(false);
+    }
   };
 
   return (
@@ -39,6 +59,10 @@ const Header = () => {
               key={item.text}
               href={item.href}
               className={isMenuOpen ? 'menu-open' : ''}
+              onClick={(e) => {
+                e.preventDefault();
+                handleMenuClick(item.href);
+              }}
             >
               {item.text}
             </S.HeaderNavItem>

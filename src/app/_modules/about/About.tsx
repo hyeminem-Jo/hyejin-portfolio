@@ -57,7 +57,7 @@ const About = () => {
   });
 
   return (
-    <S.About>
+    <S.About id='about'>
       <Inner>
         <S.AboutInner>
           <S.AboutImage>
