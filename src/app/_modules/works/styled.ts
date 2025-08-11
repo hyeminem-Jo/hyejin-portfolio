@@ -11,7 +11,7 @@ export const Works = styled.section`
   padding: 80px 0 120px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding: 0 0 100px;
+    padding: 0 0 80px;
   }
 `;
 
