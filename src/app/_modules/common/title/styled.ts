@@ -13,6 +13,6 @@ export const Title = styled.h2<TitleProps>`
   color: ${({ $color }) => ($color === 'white' ? '#fff' : '#222')};
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 40px;
+    font-size: 35px;
   }
 `;

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { BREAKPOINT } from '../../../_constant/breakpoint';
 
-export const useIsMobile = () => {
+export const useIsMobile = (breakpoint: number = BREAKPOINT) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const checkIsMobile = () => {
-      const mobile = window.innerWidth <= BREAKPOINT;
+      const mobile = window.innerWidth <= breakpoint;
       setIsMobile(mobile);
       setIsLoaded(true);
     };

@@ -73,11 +73,13 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h2`
+  flex: 1;
   margin: 0;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   color: #222;
   line-height: 1.4;
+  text-align: center;
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 16px;
@@ -85,16 +87,20 @@ export const Title = styled.h2`
 `;
 
 export const CloseButton = styled.button`
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  padding: 8px;
+  padding-top: 11px;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
   transition: background-color 0.2s ease;
   color: #666;
+  cursor: pointer;
 
   &:hover {
     background-color: #f0f0f0;
@@ -102,8 +108,7 @@ export const CloseButton = styled.button`
   }
 
   &:focus {
-    outline: 2px solid #007bff;
-    outline-offset: 2px;
+    outline: none;
   }
 `;
 

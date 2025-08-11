@@ -170,6 +170,7 @@ export const WorksProjectDesc = styled.p`
   background-color: rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   max-width: 70%;
+  white-space: pre-line;
 
   @media (max-width: ${BREAKPOINT}px) {
     max-width: 100%;
@@ -227,4 +228,81 @@ export const WorksButtonList = styled.div`
   display: flex;
   gap: 5px;
   margin-top: 10px;
+`;
+
+// 이미지 슬라이더 모달을 위한 스타일
+export const ImageSliderContainer = styled.div`
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  /* 좌우 화살표 스타일 */
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+      /* transform: translateY(-50%) scale(1.1); */
+    }
+
+    &::before {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: #222;
+    }
+  }
+
+  .slick-prev {
+    left: -10px;
+    &::before {
+      content: '<';
+    }
+  }
+
+  .slick-next {
+    right: -10px;
+    &::before {
+      content: '>';
+    }
+  }
+
+  .slick-arrow {
+    font-size: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .slick-dots {
+    position: static;
+  }
+`;
+
+export const SliderImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
 `;

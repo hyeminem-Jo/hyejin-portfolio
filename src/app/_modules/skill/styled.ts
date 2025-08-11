@@ -33,6 +33,37 @@ export const SkillInner = styled.div`
   }
 `;
 
+export const SkillInnerDesc = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`;
+
+export const SkillDescTitle = styled.h3`
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-left: -10px;
+`;
+
+export const SkillDescBox = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const SkillDescItem = styled.li`
+  /* display: flex;
+  align-items: center;
+  gap: 10px; */
+  list-style: disc !important;
+  white-space: pre-line;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+`;
+
 export const SkillInnerBox = styled.div`
   flex: 1;
   display: flex;
