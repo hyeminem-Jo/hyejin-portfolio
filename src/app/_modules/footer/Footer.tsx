@@ -6,9 +6,10 @@ import { gsap } from 'gsap';
 import LogoWrap from '../common/logo-wrap/LogoWrap';
 import Button from '../common/button/Button';
 import { useIsMobile } from '../common/hooks/useIsMobile';
+import { BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 
 const Footer = () => {
-  const { isMobile, isLoaded } = useIsMobile();
+  const { isMobile, isLoaded } = useIsMobile(BREAKPOINT_SM);
   gsap.registerPlugin(useGSAP);
   const duration = 1;
   const ease = 'power1.inOut';

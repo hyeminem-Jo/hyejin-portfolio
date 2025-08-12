@@ -129,6 +129,10 @@ export const SideProjectsDesc = styled.p`
   color: #555;
   line-height: 1.6;
   white-space: pre-line;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    white-space: initial;
+  }
 `;
 
 export const SideProjectsSkills = styled.ul`

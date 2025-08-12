@@ -1,4 +1,4 @@
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import styled from '@emotion/styled';
 
 interface Props {
@@ -13,7 +13,11 @@ export const Skill = styled.section`
   padding: 120px 0 100px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding: 80px 0 100px;
+    padding: 120px 0 100px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 160px 0 100px;
   }
 `;
 
