@@ -75,6 +75,7 @@ const companyList = [
         projectWorkList: [
           '사용자 앱에서 사용자의 정보 및 공지사항, 회사 소식 등 페이지별 게시글을 조회하는 기능 구현',
           '관리자 페이지는 웹으로 진행되었으며 사용자 앱의 데이터를 검색,조회하고 관리할 수 있는 기능 구현',
+          'Chart.js를 활용하여 사용자 앱의 데이터를 시각화하여 표시하는 기능 구현',
         ],
         projectImgList: [
           '/assets/images/works/yeep/yeep-06.png',
