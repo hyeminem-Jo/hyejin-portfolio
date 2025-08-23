@@ -16,12 +16,11 @@ export const About = styled.section`
 export const AboutInner = styled.div`
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 70px;
-  height: 65dvh;
   border-radius: 20px;
-  padding: 50px 80px;
+  padding: 60px 80px;
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(25px);
@@ -38,7 +37,7 @@ export const AboutInnerBoxTitleInner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 300px;
+  /* height: 270px; */
 
   @media (max-width: ${BREAKPOINT}px) {
     height: auto;
@@ -49,6 +48,8 @@ export const AboutInnerBoxMiddle = styled.strong`
   font-size: 28px;
   line-height: 1.5;
   letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 50px;
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 24px;
@@ -56,13 +57,25 @@ export const AboutInnerBoxMiddle = styled.strong`
 `;
 
 export const AboutInnerBoxDesc = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   color: #222;
+  text-align: center;
 
   @media (max-width: ${BREAKPOINT}px) {
     margin-top: 20px;
-    font-size: 17px;
+    font-size: 16px;
+  }
+`;
+
+export const AboutInnerBoxDescBold = styled.strong`
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 18px;
   }
 `;
 

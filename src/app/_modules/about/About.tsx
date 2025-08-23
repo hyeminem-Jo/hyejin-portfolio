@@ -60,26 +60,47 @@ const About = () => {
     <S.About id='about'>
       <Inner>
         <S.AboutInner>
-          <S.AboutImage>
-            <Image
-              src='/assets/images/profile.JPG'
-              alt='프로필 이미지'
-              fill
-              priority
-              style={{ objectFit: 'cover' }}
-            />
-          </S.AboutImage>
           <S.AboutInnerBoxTitleInner>
             <S.AboutInnerBoxMiddle>
-              &quot;사용자의 경험을 디자인하는 <br className='mo-only' />
+              &quot;사용자, 팀원의 경험을 동시에 고민하는 <br className='mo-only' />
               프론트엔드 개발자&quot;
             </S.AboutInnerBoxMiddle>
             <S.AboutInnerBoxDesc>
-              안녕하세요, 4년차에 접어든 프론트엔드 개발자 조혜진입니다. <br />
-              저는 평소 “역지사지” 를 생활 신조로 가지는데, 이는 서비스를 구현할 때에도 마찬가지
-              입니다. 늘 사용자의 관점이 되어 ‘어떻게 구현해야 가장 사용자 친화적인 형태로 사용할 수
-              있을까?’ 하는 마음가짐으로 업무에 임하며, 견고하고 유연한 UI/UX 를 화면에
-              그려나갑니다.
+              <S.AboutInnerBoxDescBold>
+                저는 사용자와 팀 모두에게 가치를 주는 프론트엔드 개발자입니다.
+              </S.AboutInnerBoxDescBold>
+              UI를 단순히 만드는 것에서 그치지 않고, 사용자가 더 빠르고 편리하게 서비스를 이용할 수
+              있도록 개선하는 과정에 집중해왔습니다. <br />
+              예를 들어 신세계 백화점 APP 운영에서는 Axios 기반 요청 로직을 React Query로 전환하여
+              캐싱을 최적화하고, <br />
+              API 호출을 줄여 화면 반응 속도를 높였습니다. 또한 소플 고도화 프로젝트에서는 Next.js
+              서버 컴포넌트를 도입하여 <br />
+              API 라우터 구조를 간소화하고 SEO 성능을 개선해, 서비스 품질을 한 단계 끌어올렸습니다.{' '}
+              <br />
+              <br />
+              <br />
+              <S.AboutInnerBoxDescBold>
+                저는 협업을 통해 더 큰 성과가 나온다고 믿습니다.
+              </S.AboutInnerBoxDescBold>
+              Storybook을 활용해 공통 컴포넌트를 제작하며 디자이너와 개발자가 같은 화면을 바라볼 수
+              있게 했고, <br />
+              Postman으로 API 테스트를 진행하여 백엔드와의 소통 효율을 높였습니다. <br />이 과정에서
+              팀 전체의 생산성이 향상되는 것을 경험하며, 좋은 개발은 혼자 하는 것이 아니라 <br />
+              함께 만드는 것이라는 확신을 갖게 되었습니다. <br />
+              <br />
+              <br />
+              <S.AboutInnerBoxDescBold>
+                제품을 단순한 결과물이 아니라 팀이 함께 키우는 자산으로 생각합니다.
+              </S.AboutInnerBoxDescBold>
+              기획·디자인 단계에서도 의견을 주고받으며, 사용자 경험을 개선할 수 있는 방법을
+              적극적으로 제안합니다. <br />
+              실제로 맞춤 추천 피드나 실시간 투표 기능을 구현해 사용자 참여도를 높였고,
+              <br />
+              react-hook-form 기반 검증을 통해 입력 오류를 줄이며 더 안정적인 서비스를 제공했습니다.{' '}
+              <br />
+              <br />
+              앞으로도 저는 새로운 기술을 빠르게 학습하고, 프로젝트에 적합하게 적용해 <br />
+              서비스 품질과 사용자 경험을 동시에 개선하는 개발자로 성장해 나가고자 합니다.
             </S.AboutInnerBoxDesc>
           </S.AboutInnerBoxTitleInner>
         </S.AboutInner>
