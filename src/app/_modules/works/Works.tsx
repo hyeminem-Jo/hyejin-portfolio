@@ -28,10 +28,10 @@ const companyList = [
         projectPeriod: '2025.05 - 2025.07',
         skillList: ['React', 'Next.js', 'TypeScript', 'Redux', 'Emotion'],
         projectWorkList: [
-          '메인 페이지를 담당하여 메인피드 화면을 구현하였으며, 메인 피드, 실시간 알림 배너 및 카드 배너 기능 등을 구현',
-          '설문을 통해 사용자의 성향을 분석하고, 결과값에 따라 데이터를 조회하거나 조건부로 화면이 변경되는 기능 구현',
-          '투표 기능이 있는 게시글의 경우 OX 퀴즈, 정답 여부의 퀴즈를 통해 사용자의 투표 결과를 조회하고, 투표 결과에 따라 화면이 변경되는 기능 구현',
-          'Story book 을 도입하여 팀원간의 컴포넌트 공유 및 디자인 통일성 유지',
+          '퍼블리싱 및 프론트엔드 개발, 주요 기능 고도화 담당',
+          'Next.js 서버 컴포넌트로 API 라우터 최소화 및 SEO 대응',
+          '무한 스크롤, 맞춤 추천 피드, 실시간 투표 기능 구현으로 사용자 경험 개선',
+          '공통 컴포넌트화와 Storybook을 통한 협업 효율 향상',
         ],
         projectLink: 'https://sople.me/',
         projectImgList: [],
@@ -43,10 +43,9 @@ const companyList = [
         projectPeriod: '2025.03 - 2025.04',
         skillList: ['React', 'Next.js', 'TypeScript', 'Styled-components'],
         projectWorkList: [
-          '검색기능에서 대한상의에서 제공되는 자료를 바탕으로 한 ai와 일반 (gpt-o) 기반의 ai 검색 결과를 조회 및 반응하는 기능 구현',
-          'AI 글쓰기에서 사용자가 원하는 방향에 따른 AI 글 혹은 투표 내용을 받아온 후 게시글을 업로드할 수 있는 기능 구현',
-          '경제뉴스룸 목록에 검색 기능 추가 및 상세페이지에 신규 기능을 추가하여 더 사용성이 풍부한 페이지로 구현',
-          'Redux를 통한 중앙데이터를 관리하는 과정에서 불필요한 리렌더링이 일어나는 부분을 발견 후 문제 해결',
+          '경제뉴스룸·AI 검색/글쓰기 페이지 개발 및 퍼블리싱',
+          'Redux 기반 인증 체크, 불필요한 리렌더링이 일어나는 부분을 발견 후 문제 해결',
+          'Swiper, 색상 랜덤 배경 등 인터랙션 강화로 UI 개선',
         ],
         projectImgList: [
           '/assets/images/works/sople1/sople1-07.png',
@@ -73,7 +72,7 @@ const companyList = [
         projectPeriod: '2025.02 - 2025.04',
         skillList: ['React', 'React Native', 'TypeScript', 'Tailwind CSS'],
         projectWorkList: [
-          '사용자 앱에서 사용자의 정보 및 공지사항, 회사 소식 등 페이지별 게시글을 조회하는 기능 구현',
+          '사용자 페이지의 경우 React Native 기반 FAQ/공지사항/헬프데스크 개발 및 퍼블리싱',
           '관리자 페이지는 웹으로 진행되었으며 사용자 앱의 데이터를 검색,조회하고 관리할 수 있는 기능 구현',
           'Chart.js를 활용하여 사용자 앱의 데이터를 시각화하여 표시하는 기능 구현',
         ],
@@ -100,8 +99,8 @@ const companyList = [
         projectPeriod: '2025.01 - 2025.02',
         skillList: ['React', 'Styled-components'],
         projectWorkList: [
-          '회사에 대한 정보를 제공하며, 탭 및 스크롤 인터렉션을 활용하여 사용자가 쉽게 정보를 확인할 수 있도록 구현',
-          '모바일 환경을 고려하여 반응형 디자인 구현',
+          'React.js 기반 모바일 및 PC 반응형 UI 퍼블리싱 총괄(PL)',
+          '조건부 스크롤 및 적응형 레이아웃 구현',
         ],
         projectImgList: [
           '/assets/images/works/homepage/hompage-01.png',
@@ -118,9 +117,9 @@ const companyList = [
         projectPeriod: '2024.10 - 2025.01',
         skillList: ['React', 'Next.js', 'TypeScript', 'Redux', 'Styled-components'],
         projectWorkList: [
-          '프로그램 신청 페이지, 방송사 선택페이지, 마이페이지, 공지사항 등 사용자 페이지 구현',
-          '콘텐츠 업로드를 비롯하여 회원가입, 본인인증, 회원정보 수정 등 회원 관리 기능 구현',
-          '관리자 페이지에서는 회원 관리, 프로그램 관리, 방송사 관리 등 관리자 페이지 구현',
+          '공지, FAQ, 마이페이지 개발, 단계별 폼 검증 및 에러처리 도입',
+          '관리자 페이지에서 상단 고정, 파일 요약 기능 등 관리 기능 강화',
+          'Input 등 폼 공통 컴포넌트를 react-hook-form 로 제작하여 더 편리하게 사용할 수 있도록 개선',
         ],
         projectLink: 'https://pa.kcmf.or.kr/',
         projectImgList: [
@@ -155,8 +154,9 @@ const companyList = [
         projectPeriod: '2023.12 - 2024.09',
         skillList: ['React', 'Next.js', 'TypeScript', 'Styled-components', 'Redux', 'React-Query'],
         projectWorkList: [
-          'APP 사용자의 메인페이지/온보딩페이지 ui/ux 개선 작업 진행하였으며, \n커뮤니티 페이지의 기존 axios 처리방식에서 리액트 쿼리로 대체하여 캐싱 및 손쉬운 업데이트로 성능 개선',
-          'APP 어드민 페이지에서 이벤트 폼 입력기능 및 팝업 기능 개선 작업 진행',
+          '메인 및 온보딩 UI/UX 개선, 커뮤니티 페이지 고도화',
+          'Axios 요청 로직을 react-query로 전환, API 호출 최적화',
+          'APP 어드민 페이지에서 이벤트 폼 입력기능 및 팝업 기능 개선',
           'APP 이벤트 페이지 구현 및 운영',
           'WEB 홈페이지 및 매거진, 켐페인 페이지 퍼블리싱 및 인터렉션 구현',
         ],
@@ -182,8 +182,8 @@ const companyList = [
         projectPeriod: '2023.08 - 2023.10',
         skillList: ['React', 'Next.js', 'Emotion'],
         projectWorkList: [
-          '축하금 관리, 약관, 회원정보 수정 및 등록 기능 구현',
-          '축하금 기한 정보를 변경하는 부분에서 react-hook-form 을 이용하여 select box, input 기능 구현',
+          'Next.js 기반 마이페이지, 축하금 관리, 약관, 회원정보 페이지 개발',
+          'react-hook-form으로 사용자 입력 검증 및 공통 컴포넌트화',
         ],
         projectImgList: [
           '/assets/images/works/wedding/wedding-01.png',
@@ -203,8 +203,8 @@ const companyList = [
         projectPeriod: '2023.05 - 2023.11',
         skillList: ['React', 'Next.js', 'Emotion'],
         projectWorkList: [
-          '업무 등록, 업무 일지 작성 페이지 구현 및 이메일 서명 기능 구현 및 배포',
-          '프로젝트, 참여자, 등급 등을 한 눈에 알아볼 수 있도록 엑셀 프로그램과 유사한 형태로 구현',
+          '사내 업무 등록 및 일지 작성 페이지 및 이메일 서명 자동화 기능 개발',
+          'Excel 과 유사한 UI 구현을 통한 프로젝트/등급 관리 편의성 향상',
         ],
         projectImgList: [
           '/assets/images/works/pms/pms-01.jpg',
@@ -221,9 +221,8 @@ const companyList = [
         projectPeriod: '2023.04 - 2023.12',
         skillList: ['javascript', 'jQuery', 'scss'],
         projectWorkList: [
-          '지속가능경영 메인 및 서브페이지 운영 및 구축',
-          '세로 슬라이드 페이지, 캠페인 참여 입력폼 페이지 등 새로운 기능이 추가된 페이지 구현',
-          '웹표준 및 웹접근성 작업 (background 로 삽입된 이미지 처리, 스크린 리더기 등)',
+          '지속가능경영 메인/서브페이지 참여신청 페이지 운영 및 구축',
+          '웹표준·접근성 준수로 품질 향상 (background 로 삽입된 이미지 처리, 스크린 리더기 등)',
         ],
         projectLink: 'https://www.samsung.com/sec/sustainability/main/',
         projectImgList: [
@@ -241,8 +240,8 @@ const companyList = [
         projectPeriod: '2022.11 - 2023.02',
         skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'Emotion', 'scss'],
         projectWorkList: [
-          '퍼블리싱 및 인터렉션 구현, 상세 데이터 조회 및 수정/등록 기능 구현',
-          '메인 페이지 외 서브페이지(회사소개 페이지, 입사 지원 페이지 등) 고도화 작업 (적응형)',
+          'Vue.js 기반 서브페이지 고도화, 데이터 조회 및 수정 기능 구현',
+          '반응형 퍼블리싱 및 인터랙션 추가',
         ],
         projectLink: 'https://www.emotion.co.kr/',
       },
@@ -264,7 +263,8 @@ const companyList = [
         projectPeriod: '2022.08 - 2022.11',
         skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'scss'],
         projectWorkList: [
-          '포인트 충전 및 포인트 전환 페이지 개발 및 퍼블리싱 구현 (상품권 갯수 입력, PIN 번호 입력칸 및 입력 제한 기능 구현 등)',
+          'Vue(Nuxt.js) 기반 퍼블리싱 및 데이터 연동',
+          '포인트 충전/전환 페이지 개발, 입력 제한 기능 구현',
         ],
         projectImgList: [
           '/assets/images/works/metapoint/metapoint-01.png',
