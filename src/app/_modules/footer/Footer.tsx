@@ -99,8 +99,8 @@ const Footer = () => {
           <S.FooterTextWrap>
             <S.FooterInnerTextTitle>Contact</S.FooterInnerTextTitle>
             <S.FooterInnerTextDesc>_</S.FooterInnerTextDesc>
-            {/* <S.FooterInnerTextDesc>Phone: 010-9275-5637</S.FooterInnerTextDesc> */}
-            {/* <S.FooterInnerTextDesc>Email: konnimey@naver.com</S.FooterInnerTextDesc> */}
+            <S.FooterInnerTextDesc>Phone: 010-9275-5637</S.FooterInnerTextDesc>
+            <S.FooterInnerTextDesc>Email: konnimey@naver.com</S.FooterInnerTextDesc>
           </S.FooterTextWrap>
         </S.FooterText>
         <S.FooterButtons>
