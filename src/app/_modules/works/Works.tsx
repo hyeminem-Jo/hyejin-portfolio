@@ -57,7 +57,7 @@ const companyList = [
         projectPeriod: '2025.03 - 2025.04',
         skillList: ['React', 'Next.js', 'TypeScript', 'Styled-components'],
         projectWorkList: [
-          '경제뉴스룸·AI 검색/글쓰기 페이지 개발 및 퍼블리싱',
+          '경제뉴스룸·AI 검색/글쓰기 페이지 개발',
           'Redux 기반 인증 체크, 불필요한 리렌더링이 일어나는 부분을 발견 후 문제 해결',
           'Swiper, 색상 랜덤 배경 등 인터랙션 강화로 UI 개선',
         ],
@@ -86,7 +86,7 @@ const companyList = [
         projectPeriod: '2025.02 - 2025.04',
         skillList: ['React', 'React Native', 'TypeScript', 'Tailwind CSS'],
         projectWorkList: [
-          '사용자 페이지의 경우 React Native 기반 FAQ/공지사항/헬프데스크 개발 및 퍼블리싱',
+          '사용자 페이지의 경우 React Native 기반 FAQ/공지사항/헬프데스크 개발',
           '관리자 페이지는 웹으로 진행되었으며 사용자 앱의 데이터를 검색,조회하고 관리할 수 있는 기능 구현',
           'Chart.js를 활용하여 사용자 앱의 데이터를 시각화하여 표시하는 기능 구현',
         ],
