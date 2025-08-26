@@ -24,22 +24,36 @@ const companyList = [
       {
         projectName: '소플 고도화 2차',
         projectDesc:
-          '상공업의 경쟁력 강화와 기업의 경제 발전을 지원하는 대한상공회의소 소통플랫폼의 전반적인 신규 기능 및 디자인 개편 고도화 작업을 2차로 진행하였으며, 메인페이지 외 다양한 페이지 구현 및 디자인 개편 작업을 진행하였습니다.',
+          '상공업의 경쟁력 강화와 기업의 경제 발전을 지원하는 대한상공회의소 소통플랫폼의 전반적인 신규 기능 및 디자인 개편 고도화 작업을 2차로 진행하였으며, 메인페이지 외 다양한 페이지를 반응형으로 구현 및 디자인 개편 작업을 진행하였습니다.',
         projectPeriod: '2025.05 - 2025.07',
         skillList: ['React', 'Next.js', 'TypeScript', 'Redux', 'Emotion'],
         projectWorkList: [
-          '퍼블리싱 및 프론트엔드 개발, 주요 기능 고도화 담당',
+          '메인 및 서브 페이지 주요 기능 고도화 담당',
           'Next.js 서버 컴포넌트로 API 라우터 최소화 및 SEO 대응',
           '무한 스크롤, 맞춤 추천 피드, 실시간 투표 기능 구현으로 사용자 경험 개선',
           '공통 컴포넌트화와 Storybook을 통한 협업 효율 향상',
         ],
         projectLink: 'https://sople.me/',
-        projectImgList: [],
+        projectImgList: [
+          '/assets/images/works/sople2/sople2-01.png',
+          '/assets/images/works/sople2/sople2-02.png',
+          '/assets/images/works/sople2/sople2-12.png',
+          '/assets/images/works/sople2/sople2-13.png',
+          '/assets/images/works/sople2/sople2-03.png',
+          '/assets/images/works/sople2/sople2-04.png',
+          '/assets/images/works/sople2/sople2-05.png',
+          '/assets/images/works/sople2/sople2-06.png',
+          '/assets/images/works/sople2/sople2-07.png',
+          '/assets/images/works/sople2/sople2-08.png',
+          '/assets/images/works/sople2/sople2-09.png',
+          '/assets/images/works/sople2/sople2-10.png',
+          '/assets/images/works/sople2/sople2-11.png',
+        ],
       },
       {
         projectName: '소플 고도화 1차',
         projectDesc:
-          '대한상의 플랫폼인 소플에 AI 기능 도입을 위한 고도화 작업을 1차로 진행하였습니다. \n AI 검색 기능 및 AI 글쓰기 신규 구현 및 경제뉴스룸 페이지 고도화에 참여하였습니다.',
+          '대한상의 플랫폼인 소플에 AI 기능 도입을 위한 고도화 작업을 1차로 진행하였습니다. \n 반응형 웹 환경에서 AI 검색 기능 및 AI 글쓰기 신규 구현 및 경제뉴스룸 페이지 고도화에 참여하였습니다.',
         projectPeriod: '2025.03 - 2025.04',
         skillList: ['React', 'Next.js', 'TypeScript', 'Styled-components'],
         projectWorkList: [
