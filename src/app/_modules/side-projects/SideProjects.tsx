@@ -17,7 +17,7 @@ const sideProjectsList = [
     title: 'J-stagram',
     image: '/assets/images/side-project/side-project-05.png',
     introduction:
-      '회원가입, 로그인, 및 메시지 기능의 인스타그램 클론 프로젝트입니다. \n 카카오 소셜로그인 및 supabase 의 리얼타임 기능을 활용하여 \n실시간으로 채팅이 가능하도록 구현하였습니다.\n Jotai 를 사용하여 내 정보 상태관리를 구현하였습니다.',
+      '회원가입, 로그인, 및 메시지 기능의 인스타그램 클론 프로젝트입니다. \n 카카오 소셜로그인 및 supabase 의 리얼타임 기능을 활용하여 \n실시간으로 채팅이 가능하도록 구현하였습니다.\n Jotai 를 사용하여 내 정보 상태관리를 구현하였습니다. \n (일반 회원가입의 경우 이메일 인증 횟수가 제한되어있어 인증 이메일이 발송되지 않을 수 있습니다.)',
     skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
     link: 'https://hyejin-toy-project.vercel.app/j-stagram',
     github: 'https://github.com/hyeminem-Jo/toy-project',

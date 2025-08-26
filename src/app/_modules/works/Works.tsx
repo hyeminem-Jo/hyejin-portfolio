@@ -24,7 +24,7 @@ const companyList = [
       {
         projectName: '소플 고도화 2차',
         projectDesc:
-          '상공업의 경쟁력 강화와 기업의 경제 발전을 지원하는 대한상공회의소 소통플랫폼의 전반적인 신규 기능 및 디자인 개편 고도화 작업을 2차로 진행하였습니다. \n 메인페이지 외 다양한 페이지 구현 및 디자인 개편 작업을 진행하였습니다.',
+          '상공업의 경쟁력 강화와 기업의 경제 발전을 지원하는 대한상공회의소 소통플랫폼의 전반적인 신규 기능 및 디자인 개편 고도화 작업을 2차로 진행하였으며, 메인페이지 외 다양한 페이지 구현 및 디자인 개편 작업을 진행하였습니다.',
         projectPeriod: '2025.05 - 2025.07',
         skillList: ['React', 'Next.js', 'TypeScript', 'Redux', 'Emotion'],
         projectWorkList: [
@@ -39,7 +39,7 @@ const companyList = [
       {
         projectName: '소플 고도화 1차',
         projectDesc:
-          '대한상의 플랫폼인 소플에 AI 기능 도입을 위한 고도화 작업을 1차로 진행하였습니다. \n AI 검색 기능 및 AI 글쓰기 신규 구현 및 경제뉴스룸 페이지 고도화를 진행하였습니다.',
+          '대한상의 플랫폼인 소플에 AI 기능 도입을 위한 고도화 작업을 1차로 진행하였습니다. \n AI 검색 기능 및 AI 글쓰기 신규 구현 및 경제뉴스룸 페이지 고도화에 참여하였습니다.',
         projectPeriod: '2025.03 - 2025.04',
         skillList: ['React', 'Next.js', 'TypeScript', 'Styled-components'],
         projectWorkList: [
@@ -217,7 +217,7 @@ const companyList = [
       {
         projectName: '삼성 지속가능성경영 사이트 운영',
         projectDesc:
-          '환경, 사회, 거버넌스 분야에 걸쳐 삼성전자의 전략과 주요 성과를 담은 보고서 형식의 웹사이트',
+          '환경, 사회, 거버넌스 분야에 걸쳐 삼성전자의 전략과 주요 성과를 담은 보고서 형식의 웹사이트입니다. 새롭게 바뀌는 내용에 대응하여 운영을 진행하였습니다.',
         projectPeriod: '2023.04 - 2023.12',
         skillList: ['javascript', 'jQuery', 'scss'],
         projectWorkList: [
@@ -236,7 +236,7 @@ const companyList = [
       {
         projectName: '자사(이모션글로벌) 홈페이지 고도화',
         projectDesc:
-          '자회사인 이모션 글로벌 홈페이지이며, 본사에 대한 정보, 포트폴리오, 의뢰 서비스, 입사지원 서비스 등을 제공하는 웹사이트 입니다. 고도화 및 운영 업무를 진행하였습니다.',
+          '자회사인 이모션 글로벌 홈페이지이며, 본사에 대한 정보, 포트폴리오, 의뢰 서비스, 입사지원 서비스 등을 제공하는 웹사이트이며, 고도화 및 운영 업무를 진행하였습니다.',
         projectPeriod: '2022.11 - 2023.02',
         skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'Emotion', 'scss'],
         projectWorkList: [
@@ -248,7 +248,7 @@ const companyList = [
       {
         projectName: '대상 사이트(종가, 오푸드) 운영',
         projectDesc:
-          '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다. 고도화 및 운영 업무를 진행하였습니다.',
+          '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다. 추가되거나 수정된 건을 바탕으로 운영 업무를 진행하였습니다.',
         projectPeriod: '2022.08 - 2022.12',
         skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'Emotion', 'scss'],
         projectWorkList: [
