@@ -25,6 +25,10 @@ const skillList = [
         name: 'CSS',
         color: '#FF6B35',
       },
+      {
+        name: 'Scss',
+        color: '#FF69B4',
+      },
     ],
   },
   {
