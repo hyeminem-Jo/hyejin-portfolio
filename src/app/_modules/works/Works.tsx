@@ -264,7 +264,7 @@ const companyList = [
         projectDesc:
           '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다. 추가되거나 수정된 건을 바탕으로 운영 업무를 진행하였습니다.',
         projectPeriod: '2022.08 - 2022.12',
-        skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'Emotion', 'scss'],
+        skillList: ['jQuery', 'css'],
         projectWorkList: [
           'jsp 환경에서 css, jQuery 를 사용하여 작업, 종가 /오푸드 메인 및 서브페이지 퍼블리싱 및 인터렉션 구현',
         ],
