@@ -12,8 +12,8 @@
 ### 사용된 기술
 `Next.js` `Typescript` `gsap` `Emotion` `react-slick`
 - 편리한 내장 기능과 더불어 추후 저의 포트폴리오 사이트를 검색할 수 있도록 SEO 기능에 최적화된 Next.js 를 사용하였습니다.
-- 스크롤 시 동적으로 움직이는 오브젝트로 분위기를 살리고자 GSAP 을 사용하였습니다. react 환경에서 사용할 수 있도록 useGsap 을 사용하였습니다.
-- 간편한 슬라이드 동작을 위해 react 환경에 최적화된 react-slick 을 이용하였습니다.
+- 스크롤 시 동적으로 움직이는 오브젝트로 분위기를 살리고자 `GSAP` 을 사용하였습니다. react 환경에서 사용할 수 있도록 `useGsap` 을 사용하였습니다.
+- 간편한 슬라이드 동작을 위해 React 환경에 최적화된 `react-slick` 을 이용하였습니다.
 
 
 <br>
@@ -26,7 +26,7 @@
 <br>
 <br>
 
-- ScrollTrigger 를 활용하여 사용했습니다.
+- `ScrollTrigger` 를 활용하여 사용했습니다.
 - 스크롤 시 인트로에 있던 텍스트 요소들이 다양한 방향으로 떨어지도록 효과를 구현했습니다.
 
 ```
@@ -93,8 +93,8 @@
   }, [isLoaded, isMobile]);
 ```
 
-- 모바일일 경우를 위해 useIsMobile 이라는 커스텀 훅을 만들어 GSAP 을 구현하는 과정에서도 사용하였습니다.
-- isLoaded 는 페이지 로드가 완료된 후 GSAP 애니메이션이 시작되도록 하기 위해 사용되었습니다.
+- 모바일일 경우를 위해 `useIsMobile` 이라는 커스텀 훅을 만들어 `GSAP` 을 구현하는 과정에서도 사용하였습니다.
+- `isLoaded` 는 페이지 로드가 완료된 후 `GSAP` 애니메이션이 시작되도록 하기 위해 사용되었습니다.
 
   ```
     import { useState, useEffect } from 'react';
@@ -125,7 +125,7 @@
 <br>
 <br>
 
-- GSAP 을 사용하여 수 초 간격으로 슬로건이 표시되도록 구현하였습니다.
+- `GSAP` 을 사용하여 수 초 간격으로 슬로건이 표시되도록 구현하였습니다.
   
   <img width="1357" height="361" alt="image" src="https://github.com/user-attachments/assets/91f0718f-9c0c-4471-b325-6495e5dd64b5" />
 
@@ -242,7 +242,7 @@
 <br>
 
 - 토이프로젝트에 관한 설명과 배포 링크를 함께 첨부하였습니다. github 링크의 경우, 한 프로젝트에 담긴 내용이기에 리드미 위치를 링크로 잡아두었습니다.
-- 요소의 경우 GSAP 을 활용하여 스크롤 시 이전 요소가 뒤로 접혀지는 느낌을 주었습니다. 이는 모바일 화면에서는 다소 산만한하다 판단하여 PC 환경에서만 작동되도록 구현하였습니다.
+- 요소의 경우 `GSAP` 을 활용하여 스크롤 시 이전 요소가 뒤로 접혀지는 느낌을 주었습니다. 이는 모바일 화면에서는 다소 산만한하다 판단하여 PC 환경에서만 작동되도록 구현하였습니다.
 
 <img width="1448" height="616" alt="image" src="https://github.com/user-attachments/assets/98f45663-2624-4888-a16c-3e826793ff84" />
 
@@ -253,9 +253,9 @@
 
 ## 문제 해결 및 성능 개선
 
-- Works 의 화면 보기 모달 슬라이드 부분에서 첫 이미지부터 빠르게 로드될 수 있도록 Next.js Image 의 priority 기능을 활용
-- 모바일에서 막아놨던 GSAP 이 계속 작동되는 이슈가 발생했는데, 이를 useIsMobile 커스텀 훅에서 클라이언트 사이드 코드 실행 시점을 제어하여 해결
-- Works 의 position: sticky 속성을 사용하려 하는 중 GSAP 의 스크롤 이벤트와 충돌때문에 작동하지 않는 이슈가 발생했는데, 이는 global 에서 body 에 overflow-x: hidden; 속성 대신 overflow-x: clip; 을 주는 것으로 해결
+- Works 의 화면 보기 모달 슬라이드 부분에서 첫 이미지부터 빠르게 로드될 수 있도록 `Next.js` `Image` 의 `priority` 기능을 활용
+- 모바일에서 막아놨던 GSAP 이 계속 작동되는 이슈가 발생했는데, 이를 `useIsMobile` 커스텀 훅에서 클라이언트 사이드 코드 실행 시점을 제어하여 해결
+- Works 의 `position: sticky` 속성을 사용하려 하는 중 `GSAP` 의 스크롤 이벤트와 충돌때문에 작동하지 않는 이슈가 발생했는데, 이는 global 에서 body 에 `overflow-x: hidden` 속성 대신 `overflow-x: clip` 을 주는 것으로 해결
   
 <br>
 <br>
