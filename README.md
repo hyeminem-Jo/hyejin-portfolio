@@ -19,14 +19,15 @@
 <br>
 
 ## 1. About
->개발자로서의 저를 설명할 수 있는 가장 강력한 3가지 요인을 표현하였습니다. 스크롤 시 인트로에 있던 텍스트 요소들이 다양한 방향으로 떨어지도록 효과를 구현했습니다.
+>개발자로서의 저를 설명할 수 있는 가장 강력한 3가지 요인을 표현하였습니다.
 
 <img width="1451" height="829" alt="image" src="https://github.com/user-attachments/assets/c5765fc8-2f99-4ee2-875c-8fa41ef46bf0" />
 
 <br>
 <br>
 
-- ScrollTrigger 를 활용하여 사용
+- ScrollTrigger 를 활용하여 사용했습니다.
+- 스크롤 시 인트로에 있던 텍스트 요소들이 다양한 방향으로 떨어지도록 효과를 구현했습니다.
 
 ```
   const { isMobile, isLoaded } = useIsMobile();
