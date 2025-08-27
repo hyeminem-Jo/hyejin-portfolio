@@ -134,34 +134,34 @@
     useGSAP(() => {
     const textAniList = aniTextRefs.current;
     const textAni = gsap.timeline({ repeat: -1 });
-
-    textAniList.forEach((el, i) => {
-      if (el) {
-        textAni.to(
-          el,
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.8,
-            ease: 'power4.out',
-          },
-          i * 1.5,
-        );
-        // 퇴장
-        textAni.to(
-          el,
-          {
-            opacity: 0,
-            x: -100,
-            duration: 0.8,
-            ease: 'power4.in',
-          },
-          i * 1.5 + 0.7,
-        );
-      }
+  
+      textAniList.forEach((el, i) => {
+        if (el) {
+          textAni.to(
+            el,
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.8,
+              ease: 'power4.out',
+            },
+            i * 1.5,
+          );
+          // 퇴장
+          textAni.to(
+            el,
+            {
+              opacity: 0,
+              x: -100,
+              duration: 0.8,
+              ease: 'power4.in',
+            },
+            i * 1.5 + 0.7,
+          );
+        }
+      });
+      textAni.play();
     });
-    textAni.play();
-  });
   ```
 
 <br>
@@ -233,7 +233,7 @@
 ---
 
 
-## Side Project
+## 4. Side Project
 >풀스택 개발경험을 위해 진행한 토이프로젝트를 담은 페이지 입니다.
 
 <img width="1451" height="828" alt="image" src="https://github.com/user-attachments/assets/91508375-d2de-4411-8f99-63277b9ceb27" />
@@ -245,6 +245,38 @@
 - 요소의 경우 `GSAP` 을 활용하여 스크롤 시 이전 요소가 뒤로 접혀지는 느낌을 주었습니다. 이는 모바일 화면에서는 다소 산만한하다 판단하여 PC 환경에서만 작동되도록 구현하였습니다.
 
 <img width="1448" height="616" alt="image" src="https://github.com/user-attachments/assets/98f45663-2624-4888-a16c-3e826793ff84" />
+
+```
+  useGSAP(() => {
+    if (!isLoaded || isMobile) return;
+    const boxList = boxRefs.current;
+
+    boxList.forEach((box, i) => {
+      if (box) {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: box,
+              start: '0% 20%',
+              end: '0% 0%',
+              scrub: 1,
+            },
+          })
+          .to(
+            box,
+            {
+              transform: 'rotateX(-10deg) scale(0.9)',
+              transformOrigin: 'top',
+              filter: 'brightness(0.95)',
+              duration: 1,
+              ease: 'none',
+            },
+            0,
+          );
+      }
+    });
+  }, [isLoaded, isMobile]);
+```
 
 
 <br>
