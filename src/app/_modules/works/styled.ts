@@ -238,7 +238,7 @@ export const WorksButtonList = styled.div`
 // 이미지 슬라이더 모달을 위한 스타일
 export const ImageSliderContainer = styled.div`
   width: 100%;
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 0 auto;
 
   /* 좌우 화살표 스타일 */
@@ -289,25 +289,155 @@ export const ImageSliderContainer = styled.div`
   .slick-arrow {
     font-size: 0;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    @media (max-width: ${BREAKPOINT}px) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   .slick-dots {
     position: static;
+
+    @media (max-width: ${BREAKPOINT}px) {
+      display: none !important;
+    }
   }
 `;
 
 export const SliderImage = styled.div`
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   height: 600px;
   padding: 20px;
-  background: #f5f5f5;
+  background: #f8f8f8;
   border-radius: 8px;
 
   img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    height: 300px;
+  }
+`;
+
+// 모달 스타일
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+`;
+
+export const ModalImageWrap = styled.div`
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: ${BREAKPOINT}px) {
+    height: 200px;
+  }
+`;
+
+export const ModalSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+export const ModalSectionTitle = styled.h3`
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 16px;
+  }
+`;
+
+export const ModalDescription = styled.p`
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 14px;
+  }
+`;
+
+export const ModalSkills = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    gap: 6px;
+  }
+`;
+
+export const SkillTag = styled.span`
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+`;
+
+export const ModalLinks = styled.div`
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    flex-direction: column;
+  }
+`;
+
+export const LinkButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border: 1px solid #222;
+
+  &:hover {
+    background-color: #fff;
+    color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    padding: 12px 16px;
+    font-size: 13px;
   }
 `;

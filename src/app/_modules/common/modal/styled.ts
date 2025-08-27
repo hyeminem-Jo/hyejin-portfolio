@@ -30,7 +30,7 @@ export const ModalContainer = styled.div<ModalContainerProps>`
       case 'md':
         return '600px';
       case 'lg':
-        return '800px';
+        return '1200px';
       default:
         return '600px';
     }

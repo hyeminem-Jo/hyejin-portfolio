@@ -49,6 +49,18 @@ const companyList = [
           '/assets/images/works/sople2/sople2-10.png',
           '/assets/images/works/sople2/sople2-11.png',
         ],
+        projectProblemSolving: [
+          '소플 고도화 2차 프로젝트 문제점 및 해결방안',
+          '소플 고도화 2차 프로젝트 문제점 및 해결방안',
+          '소플 고도화 2차 프로젝트 문제점 및 해결방안',
+          '소플 고도화 2차 프로젝트 문제점 및 해결방안',
+        ],
+        projectResult: ['오늘의 지식에서  ', '소플 고도화 2차 프로젝트 문제점 및 해결방안'],
+        projectMainFunction: [
+          '메인, 메인배너, 소플뉴스룸, 소플서베이, 오늘의 지식, 기업에 바란다, 사용자 페이지 등 서비스',
+          '메인 내 컨텐츠 및 피드, 오늘의 지식 투표 기능, 기업에 바란다 글쓰기 기능, 소플뉴스룸 뉴스 기능, 소플서베이 조건부 페이지 기능',
+        ],
+        projectReview: '소플 고도화 2차 프로젝트 리뷰',
       },
       {
         projectName: '소플 고도화 1차',
@@ -56,6 +68,7 @@ const companyList = [
           '대한상의 플랫폼인 소플에 AI 기능 도입을 위한 고도화 작업을 1차로 진행하였습니다. \n 반응형 웹 환경에서 AI 검색 기능 및 AI 글쓰기 신규 구현 및 경제뉴스룸 페이지 고도화에 참여하였습니다.',
         projectPeriod: '2025.03 - 2025.04',
         skillList: ['React', 'Next.js', 'TypeScript', 'Styled-components'],
+        projectReview: '소플 고도화 1차 프로젝트 리뷰',
         projectWorkList: [
           '경제뉴스룸·AI 검색/글쓰기 페이지 개발',
           'Redux 기반 인증 체크, 불필요한 리렌더링이 일어나는 부분을 발견 후 문제 해결',
@@ -85,6 +98,7 @@ const companyList = [
           '노스페이스 회사 필리핀지사의 전 사원을 관리할 수 있는 프로그램의 사용자 앱 및 관리자 페이지 구축을 진행하였습니다.',
         projectPeriod: '2025.02 - 2025.04',
         skillList: ['React', 'React Native', 'TypeScript', 'Tailwind CSS'],
+        projectReview: 'YEEP 프로젝트 리뷰',
         projectWorkList: [
           '사용자 페이지의 경우 React Native 기반 FAQ/공지사항/헬프데스크 개발',
           '관리자 페이지는 웹으로 진행되었으며 사용자 앱의 데이터를 검색,조회하고 관리할 수 있는 기능 구현',
@@ -112,6 +126,7 @@ const companyList = [
         projectDesc: '오래된 자사 홈페이지를 리뉴얼하고자 구축을 진행하였습니다.',
         projectPeriod: '2025.01 - 2025.02',
         skillList: ['React', 'Styled-components'],
+        projectReview: '자사 홈페이지 프로젝트 리뷰',
         projectWorkList: [
           'React.js 기반 모바일 및 PC 반응형 UI 퍼블리싱 총괄(PL)',
           '조건부 스크롤 및 적응형 레이아웃 구현',
@@ -130,6 +145,7 @@ const companyList = [
           '시청자미디어재단에서 참여형 방송 문화를 위해 시청자가 방송사를 선택하여 직접 프로그램을 제작 및 신청할 수 있는 플랫폼이며, 사용자 및 관리자 페이지를 구축하였습니다.',
         projectPeriod: '2024.10 - 2025.01',
         skillList: ['React', 'Next.js', 'TypeScript', 'Redux', 'Styled-components'],
+        projectReview: 'KCMF 프로젝트 리뷰',
         projectWorkList: [
           '공지, FAQ, 마이페이지 개발, 단계별 폼 검증 및 에러처리 도입',
           '관리자 페이지에서 상단 고정, 파일 요약 기능 등 관리 기능 강화',
@@ -295,11 +311,13 @@ const Buttons = ({
   projectLink,
   projectImgList,
   onImageClick,
+  onProjectClick,
   isMobile,
 }: {
   projectLink: string;
   projectImgList: string[];
   onImageClick: () => void;
+  onProjectClick: () => void;
   isMobile: boolean;
 }) => {
   const router = useRouter();
@@ -315,9 +333,10 @@ const Buttons = ({
           }}
         />
       )}
-      {projectImgList.length > 0 && !isMobile && (
+      {/* {projectImgList.length > 0 && !isMobile && (
         <Button size='sm' text='화면 보기' onClick={onImageClick} />
-      )}
+      )} */}
+      <Button size='sm' text='History' onClick={onProjectClick} />
     </>
   );
 };
@@ -327,6 +346,8 @@ const Works = () => {
   const { isMobile } = useIsMobile(BREAKPOINT_SM);
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   const handleImageClick = (images: string[]) => {
     setSelectedImages(images);
@@ -336,6 +357,16 @@ const Works = () => {
   const handleCloseImageModal = () => {
     setIsImageModalOpen(false);
     setSelectedImages([]);
+  };
+
+  const handleProjectClick = (project: any) => {
+    setSelectedProject(project);
+    setIsProjectModalOpen(true);
+  };
+
+  const handleCloseProjectModal = () => {
+    setIsProjectModalOpen(false);
+    setSelectedProject(null);
   };
 
   const sliderSettings = {
@@ -376,6 +407,7 @@ const Works = () => {
                                 projectLink={project.projectLink || ''}
                                 projectImgList={project.projectImgList || []}
                                 onImageClick={() => handleImageClick(project.projectImgList || [])}
+                                onProjectClick={() => handleProjectClick(project)}
                                 isMobile={isMobile}
                               />
                             )}
@@ -404,6 +436,7 @@ const Works = () => {
                                 projectLink={project.projectLink || ''}
                                 projectImgList={project.projectImgList || []}
                                 onImageClick={() => handleImageClick(project.projectImgList || [])}
+                                onProjectClick={() => handleProjectClick(project)}
                                 isMobile={isMobile}
                               />
                             </S.WorksButtonList>
@@ -420,7 +453,7 @@ const Works = () => {
       </Inner>
 
       {/* 이미지 슬라이더 모달 */}
-      <Modal
+      {/* <Modal
         title='화면 이미지'
         isOpen={isImageModalOpen}
         onClose={handleCloseImageModal}
@@ -447,6 +480,83 @@ const Works = () => {
             ))}
           </Slider>
         </S.ImageSliderContainer>
+      </Modal> */}
+
+      <Modal
+        title={selectedProject?.projectName}
+        isOpen={isProjectModalOpen}
+        onClose={handleCloseProjectModal}
+        size='lg'
+        showCloseButton={true}
+        closeOnOverlayClick={true}
+      >
+        {selectedProject && (
+          <S.ModalContent>
+            {/* <S.ModalImageWrap>
+              <Image
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                width={600}
+                height={400}
+                style={{ objectFit: 'cover', borderRadius: '8px' }}
+              />
+            </S.ModalImageWrap> */}
+            <S.ModalSection>
+              <S.ModalSectionTitle>프로젝트 소개</S.ModalSectionTitle>
+              <S.ModalDescription>{selectedProject.projectDesc}</S.ModalDescription>
+            </S.ModalSection>
+
+            <S.ModalSection>
+              <S.ModalSectionTitle>사용 기술</S.ModalSectionTitle>
+              <S.ModalSkills>
+                {selectedProject.skillList.map((skill: string, index: number) => (
+                  <S.SkillTag key={`${skill}-${index}`}>{skill}</S.SkillTag>
+                ))}
+              </S.ModalSkills>
+            </S.ModalSection>
+
+            <S.ModalSection>
+              <S.ModalSectionTitle>프로젝트 리뷰</S.ModalSectionTitle>
+              <S.ModalDescription>{selectedProject.projectReview}</S.ModalDescription>
+            </S.ModalSection>
+
+            <S.ImageSliderContainer>
+              <Slider {...sliderSettings}>
+                {selectedProject.projectImgList.map((imageUrl: string, index: number) => (
+                  <S.SliderImage key={index}>
+                    <Image
+                      src={imageUrl}
+                      alt={`화면 이미지 ${index + 1}`}
+                      width={800}
+                      height={600}
+                      style={{ objectFit: 'contain' }}
+                      priority={index === 0}
+                      onError={(e) => {
+                        console.error('이미지 로드에 실패했습니다.', imageUrl);
+                      }}
+                    />
+                  </S.SliderImage>
+                ))}
+              </Slider>
+            </S.ImageSliderContainer>
+
+            <S.ModalSection>
+              <S.ModalSectionTitle>링크</S.ModalSectionTitle>
+              <S.ModalLinks>
+                <S.LinkButton
+                  href={selectedProject.github}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  GitHub
+                </S.LinkButton>
+                <S.LinkButton href={selectedProject.demo} target='_blank' rel='noopener noreferrer'>
+                  Live Demo
+                </S.LinkButton>
+              </S.ModalLinks>
+            </S.ModalSection>
+          </S.ModalContent>
+        )}
       </Modal>
     </S.Works>
   );
