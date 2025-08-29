@@ -118,7 +118,15 @@ const About = () => {
               </S.AboutTextAniItem>
             ))}
           </S.AboutTextAniList>
-          {/* <Button text='Notion 이력서 보기' onClick={() => {}} /> */}
+          <Button
+            text='Notion 이력서 보기'
+            onClick={() => {
+              window.open(
+                'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c',
+                '_blank',
+              );
+            }}
+          />
         </S.AboutTextAni>
       </Inner>
     </S.About>
