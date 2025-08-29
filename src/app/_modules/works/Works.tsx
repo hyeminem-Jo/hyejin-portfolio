@@ -54,7 +54,7 @@ const companyList = [
         projectName: '소플 고도화 1차',
         projectDesc:
           '대한상의 플랫폼인 소플에 AI 기능 도입을 위한 고도화 작업을 1차로 진행하였습니다. \n 반응형 웹 환경에서 AI 검색 기능 및 AI 글쓰기 신규 구현 및 경제뉴스룸 페이지 고도화에 참여하였습니다.',
-        projectPeriod: '2025.03 - 2025.04',
+        projectPeriod: '2025.03 - 2025.05',
         skillList: ['React', 'Next.js', 'TypeScript', 'Styled-components'],
         projectWorkList: [
           '경제뉴스룸·AI 검색/글쓰기 페이지 개발',
