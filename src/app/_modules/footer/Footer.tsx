@@ -98,26 +98,10 @@ const Footer = () => {
           </S.FooterTextWrap>
           <S.FooterTextWrap>
             <S.FooterInnerTextTitle>Contact</S.FooterInnerTextTitle>
-            <S.FooterInnerTextDesc>_</S.FooterInnerTextDesc>
             <S.FooterInnerTextDesc>Phone: 010-9275-5637</S.FooterInnerTextDesc>
             <S.FooterInnerTextDesc>Email: konnimey@naver.com</S.FooterInnerTextDesc>
           </S.FooterTextWrap>
         </S.FooterText>
-        <S.FooterButtons>
-          <Button
-            text='GitHub'
-            onClick={() => {
-              window.open('https://github.com/hyeminem-Jo', '_blank');
-            }}
-          />
-          <Button
-            text='Blog'
-            mode='light'
-            onClick={() => {
-              window.open('https://velog.io/@h_jinny/posts', '_blank');
-            }}
-          />
-        </S.FooterButtons>
       </S.FooterInner>
       {!isMobile && <LogoWrap className='logoWrap2' />}
       <S.FooterBottomText>

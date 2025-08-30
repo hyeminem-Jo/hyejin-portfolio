@@ -118,15 +118,24 @@ const About = () => {
               </S.AboutTextAniItem>
             ))}
           </S.AboutTextAniList>
-          <Button
-            text='Notion 이력서 보기'
-            onClick={() => {
-              window.open(
-                'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c',
-                '_blank',
-              );
-            }}
-          />
+          <S.AboutTextAniBtns>
+            <Button
+              text='Notion 이력서 보기'
+              onClick={() => {
+                window.open(
+                  'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c',
+                  '_blank',
+                );
+              }}
+            />
+            <Button
+              text='Blog'
+              mode='light'
+              onClick={() => {
+                window.open('https://velog.io/@h_jinny/posts', '_blank');
+              }}
+            />
+          </S.AboutTextAniBtns>
         </S.AboutTextAni>
       </Inner>
     </S.About>
