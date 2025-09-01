@@ -107,23 +107,23 @@ const companyList = [
           '/assets/images/works/yeep/yeep-14.png',
         ],
       },
-      {
-        projectName: '자사 홈페이지 구축',
-        projectDesc: '오래된 자사 홈페이지를 리뉴얼하고자 구축을 진행하였습니다.',
-        projectPeriod: '2025.01 - 2025.02',
-        skillList: ['React', 'Styled-components'],
-        projectWorkList: [
-          'React.js 기반 모바일 및 PC 반응형 UI 퍼블리싱 총괄(PL)',
-          '조건부 스크롤 및 적응형 레이아웃 구현',
-        ],
-        projectImgList: [
-          '/assets/images/works/homepage/hompage-01.png',
-          '/assets/images/works/homepage/hompage-02.png',
-          '/assets/images/works/homepage/hompage-03.png',
-          '/assets/images/works/homepage/hompage-04.png',
-          '/assets/images/works/homepage/hompage-05.png',
-        ],
-      },
+      // {
+      //   projectName: '자사 홈페이지 구축',
+      //   projectDesc: '오래된 자사 홈페이지를 리뉴얼하고자 구축을 진행하였습니다.',
+      //   projectPeriod: '2025.01 - 2025.02',
+      //   skillList: ['React', 'Styled-components'],
+      //   projectWorkList: [
+      //     'React.js 기반 모바일 및 PC 반응형 UI 퍼블리싱 총괄(PL)',
+      //     '조건부 스크롤 및 적응형 레이아웃 구현',
+      //   ],
+      //   projectImgList: [
+      //     '/assets/images/works/homepage/hompage-01.png',
+      //     '/assets/images/works/homepage/hompage-02.png',
+      //     '/assets/images/works/homepage/hompage-03.png',
+      //     '/assets/images/works/homepage/hompage-04.png',
+      //     '/assets/images/works/homepage/hompage-05.png',
+      //   ],
+      // },
       {
         projectName: 'KCMF 사용자/관리자 페이지 구축',
         projectDesc:
