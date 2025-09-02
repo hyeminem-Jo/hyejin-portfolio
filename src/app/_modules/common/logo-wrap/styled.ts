@@ -25,6 +25,8 @@ export const LogoWrap = styled.div`
 export const LogoImageWrap = styled.span<LogoImageWrapProps>`
   width: 24%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: ${({ $isVisual }) => ($isVisual ? 0 : 1)};
+  transform: ${({ $isVisual }) => ($isVisual ? 'translateY(20px)' : 'translateY(0)')};
 
   @media (max-width: ${BREAKPOINT}px) {
     ${({ $isVisual }) =>

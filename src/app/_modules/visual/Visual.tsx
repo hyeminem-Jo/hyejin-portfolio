@@ -6,11 +6,54 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LogoWrap from '../common/logo-wrap/LogoWrap';
 import { useIsMobile } from '../common/hooks/useIsMobile';
+import { useEffect, useRef } from 'react';
 
 const Visual = () => {
   const { isMobile, isLoaded } = useIsMobile();
+  const logoRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  useEffect(() => {
+    if (!isLoaded) return;
+
+    const timer = setTimeout(() => {
+      const logoElements = document.querySelectorAll('.logoWrap span');
+      const subTextElement = document.querySelector('.subText');
+
+      if (logoElements.length > 0) {
+        const tl = gsap.timeline();
+
+        logoElements.forEach((logo, index) => {
+          tl.to(
+            logo,
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              ease: 'power2.out',
+            },
+            (index + 0.5) * 0.3,
+          );
+        });
+
+        if (subTextElement) {
+          tl.to(
+            subTextElement,
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.5,
+              ease: 'power2.out',
+            },
+            1.5,
+          );
+        }
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [isLoaded]);
 
   useGSAP(() => {
     if (!isLoaded || isMobile) return;

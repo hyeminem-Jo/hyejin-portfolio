@@ -103,16 +103,21 @@ export const AboutTextAni = styled.div`
   margin-top: 80px;
   color: #444;
 
-  button {
-    position: relative;
-    margin: 120px 0 0 auto;
-  }
-
   @media (max-width: ${BREAKPOINT}px) {
     margin-top: 40px;
-    button {
-      margin: 160px auto 0;
-    }
+  }
+`;
+
+export const AboutTextAniBtns = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  position: relative;
+  margin: 120px 0 0 auto;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    /* flex-direction: column; */
+    margin: 160px auto 0;
   }
 `;
 

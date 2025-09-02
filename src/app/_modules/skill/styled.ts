@@ -15,10 +15,6 @@ export const Skill = styled.section`
   @media (max-width: ${BREAKPOINT}px) {
     padding: 120px 0 100px;
   }
-
-  @media (max-width: ${BREAKPOINT_SM}px) {
-    padding: 160px 0 100px;
-  }
 `;
 
 export const SkillInner = styled.div`

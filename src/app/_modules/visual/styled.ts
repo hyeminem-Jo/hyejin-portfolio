@@ -84,6 +84,8 @@ export const SubText = styled.h4`
   font-weight: 400;
   letter-spacing: 0.05em;
   color: #555;
+  opacity: 0;
+  transform: translateX(-50px);
 
   @media (max-width: ${BREAKPOINT}px) {
     justify-content: flex-start;
