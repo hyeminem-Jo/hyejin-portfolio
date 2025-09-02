@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import * as S from './styled';
 import { useIsMobile } from '../hooks/useIsMobile';
+import { usePathname, useRouter } from 'next/navigation';
+import Button from '@/app/_modules/common/button/Button';
 
 const menuItems = [
   { href: '#visual', text: 'HOME' },
@@ -16,7 +18,7 @@ const menuItems = [
 const Header = () => {
   const { isMobile } = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const router = useRouter();
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -44,35 +46,50 @@ const Header = () => {
   return (
     <S.HeaderContainer>
       <S.HeaderContent>
-        <S.HeaderLogo>
-          <Image
-            src='/assets/images/portfolio-logo.webp'
-            alt='logo'
-            width={isMobile ? 45 : 50}
-            height={isMobile ? 45 : 50}
+        {!usePathname().includes('/work') ? (
+          <S.HeaderLogo>
+            <Image
+              src='/assets/images/portfolio-logo.webp'
+              alt='logo'
+              width={isMobile ? 45 : 50}
+              height={isMobile ? 45 : 50}
+            />
+            <S.HeaderLogoTitle>HYEJIN </S.HeaderLogoTitle>
+          </S.HeaderLogo>
+        ) : (
+          <Button
+            text='← Go Back'
+            size='sm'
+            onClick={() => {
+              router.back();
+            }}
           />
-          <S.HeaderLogoTitle>HYEJIN </S.HeaderLogoTitle>
-        </S.HeaderLogo>
-        <S.HeaderNav className={isMenuOpen ? 'menu-open' : ''}>
-          {menuItems.map((item) => (
-            <S.HeaderNavItem
-              key={item.text}
-              href={item.href}
-              className={isMenuOpen ? 'menu-open' : ''}
-              onClick={(e) => {
-                e.preventDefault();
-                handleMenuClick(item.href);
-              }}
-            >
-              {item.text}
-            </S.HeaderNavItem>
-          ))}
-        </S.HeaderNav>
-        <S.HamburgerButton onClick={toggleMenu} className={isMenuOpen ? 'active' : ''}>
-          {[1, 2, 3].map((_, index) => (
-            <S.HamburgerLine key={index} className='line' />
-          ))}
-        </S.HamburgerButton>
+        )}
+
+        {!usePathname().includes('/work') && (
+          <>
+            <S.HeaderNav className={isMenuOpen ? 'menu-open' : ''}>
+              {menuItems.map((item) => (
+                <S.HeaderNavItem
+                  key={item.text}
+                  href={item.href}
+                  className={isMenuOpen ? 'menu-open' : ''}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleMenuClick(item.href);
+                  }}
+                >
+                  {item.text}
+                </S.HeaderNavItem>
+              ))}
+            </S.HeaderNav>
+            <S.HamburgerButton onClick={toggleMenu} className={isMenuOpen ? 'active' : ''}>
+              {[1, 2, 3].map((_, index) => (
+                <S.HamburgerLine key={index} className='line' />
+              ))}
+            </S.HamburgerButton>
+          </>
+        )}
       </S.HeaderContent>
     </S.HeaderContainer>
   );
