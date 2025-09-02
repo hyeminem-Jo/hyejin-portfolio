@@ -103,7 +103,7 @@ const Footer = () => {
           </S.FooterTextWrap>
         </S.FooterText>
       </S.FooterInner>
-      {!isMobile && <LogoWrap className='logoWrap2' />}
+      {!isMobile && <LogoWrap className='logoWrap2' isVisual={false} />}
       <S.FooterBottomText>
         <p>Portfolio - by Hye Jin</p>
         {!isMobile && <p>Copyright 2025.</p>}
