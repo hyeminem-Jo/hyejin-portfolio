@@ -108,7 +108,9 @@ const Works = () => {
                     {company.projectList.map((project) => (
                       <S.WorksItem key={project.projectName}>
                         <S.WorksItemImage
-                          src={project?.projectImgList?.[0] as string}
+                          src={
+                            project?.projectThumbnail || (project?.projectImgList?.[0] as string)
+                          }
                           alt={project.projectName}
                           width={400}
                           height={200}

@@ -18,6 +18,7 @@ export const companyList = [
           '공통 컴포넌트화와 Storybook을 통한 협업 효율 향상',
         ],
         projectLink: 'https://sople.me/',
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-sople2.png',
         projectImgList: [
           '/assets/images/works/sople2/sople2-01.png',
           '/assets/images/works/sople2/sople2-02.png',
@@ -59,6 +60,7 @@ export const companyList = [
           'Redux 기반 인증 체크, 불필요한 리렌더링이 일어나는 부분을 발견 후 문제 해결',
           'Swiper, 색상 랜덤 배경 등 인터랙션 강화로 UI 개선',
         ],
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-sople1.png',
         projectImgList: [
           '/assets/images/works/sople1/sople1-07.png',
           '/assets/images/works/sople1/sople1-05.png',
@@ -90,6 +92,7 @@ export const companyList = [
           '관리자 페이지는 웹으로 진행되었으며 사용자 앱의 데이터를 검색,조회하고 관리할 수 있는 기능 구현',
           'Chart.js를 활용하여 사용자 앱의 데이터를 시각화하여 표시하는 기능 구현',
         ],
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-yeep.png',
         projectImgList: [
           '/assets/images/works/yeep/yeep-06.png',
           '/assets/images/works/yeep/yeep-01.png',
@@ -138,6 +141,7 @@ export const companyList = [
           'Input 등 폼 공통 컴포넌트를 react-hook-form 로 제작하여 더 편리하게 사용할 수 있도록 개선',
         ],
         projectLink: 'https://pa.kcmf.or.kr/',
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-kcmf.png',
         projectImgList: [
           '/assets/images/works/kcmf/kcmf-01.png',
           '/assets/images/works/kcmf/kcmf-02.png',
@@ -177,6 +181,7 @@ export const companyList = [
           'APP 이벤트 페이지 구현 및 운영',
           'WEB 홈페이지 및 매거진, 켐페인 페이지 퍼블리싱 및 인터렉션 구현',
         ],
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-ssg.jpg',
         projectImgList: [
           '/assets/images/works/sinsegae/sinsegae-01.jpg',
           '/assets/images/works/sinsegae/sinsegae-02.png',
@@ -203,6 +208,7 @@ export const companyList = [
           'Next.js 기반 마이페이지, 축하금 관리, 약관, 회원정보 페이지 개발',
           'react-hook-form으로 사용자 입력 검증 및 공통 컴포넌트화',
         ],
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-swwl.png',
         projectImgList: [
           '/assets/images/works/wedding/wedding-01.png',
           '/assets/images/works/wedding/wedding-02.png',
@@ -212,25 +218,6 @@ export const companyList = [
           '/assets/images/works/wedding/wedding-06.png',
           '/assets/images/works/wedding/wedding-07.png',
           '/assets/images/works/wedding/wedding-08.png',
-        ],
-      },
-      {
-        id: 7,
-        projectName: '자사 업무관리 프로그램(PMS) 구축 및 운영',
-        projectDesc:
-          '사원 정보, 업무일지 및 프로젝트 진행현황을 파악할 수 있는 어드민 페이지입니다. 현재 본인이 속한 파트 뿐만이 아닌 다른 파트에서도 어떤 업무가 진행중인지 한 눈에 알 수 있고, 프로젝트에 대한 현황 정보가 객관적인 지표로 표시되어 있습니다. 반응형으로 대응하였으며 구축 및 운영을 진행하였습니다',
-        projectPeriod: '2023.05 - 2023.11',
-        skillList: ['React', 'Next.js', 'Emotion'],
-        projectWorkList: [
-          '사내 업무 등록 및 일지 작성 페이지 및 이메일 서명 자동화 기능 개발',
-          'Excel 과 유사한 UI 구현을 통한 프로젝트/등급 관리 편의성 향상',
-        ],
-        projectImgList: [
-          '/assets/images/works/pms/pms-01.jpg',
-          '/assets/images/works/pms/pms-02.png',
-          '/assets/images/works/pms/pms-03.png',
-          '/assets/images/works/pms/pms-04.jpg',
-          '/assets/images/works/pms/pms-05.jpg',
         ],
       },
       {
@@ -245,6 +232,7 @@ export const companyList = [
           '웹표준·접근성 준수로 품질 향상 (background 로 삽입된 이미지 처리, 스크린 리더기 등)',
         ],
         projectLink: 'https://www.samsung.com/sec/sustainability/main/',
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-samsung.png',
         projectImgList: [
           // '/assets/images/works/pms/pms-01.jpg',
           // '/assets/images/works/pms/pms-02.png',
@@ -260,6 +248,7 @@ export const companyList = [
           '자회사인 이모션 글로벌 홈페이지이며, 본사에 대한 정보, 포트폴리오, 의뢰 서비스, 입사지원 서비스 등을 제공하는 웹사이트이며, 고도화 및 운영 업무를 진행하였습니다.',
         projectPeriod: '2022.11 - 2023.02',
         skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'Emotion', 'scss'],
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-emotion.png',
         projectWorkList: [
           'Vue.js 기반 서브페이지 고도화, 데이터 조회 및 수정 기능 구현',
           '반응형 퍼블리싱 및 인터랙션 추가',
@@ -273,6 +262,7 @@ export const companyList = [
           '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다. 추가되거나 수정된 건을 바탕으로 운영 업무를 진행하였습니다.',
         projectPeriod: '2022.08 - 2022.12',
         skillList: ['jQuery', 'css'],
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-ds.png',
         projectWorkList: [
           'jsp 환경에서 css, jQuery 를 사용하여 작업, 종가 /오푸드 메인 및 서브페이지 퍼블리싱 및 인터렉션 구현',
         ],
@@ -285,6 +275,7 @@ export const companyList = [
           '메타클럽은 상품권 전환 및 포인트를 충전할 수 있는 포인트 테크 플랫폼으로, 문화상품권, 도서문화상품권의 핀번호를 등록하여 다양한 곳에서 사용할 수 있게 해줍니다. 구축으로 진행되었습니다.',
         projectPeriod: '2022.08 - 2022.11',
         skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'scss'],
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-meta.png',
         projectWorkList: [
           'Vue(Nuxt.js) 기반 퍼블리싱 및 데이터 연동',
           '포인트 충전/전환 페이지 개발, 입력 제한 기능 구현',
@@ -294,6 +285,26 @@ export const companyList = [
           '/assets/images/works/metapoint/metapoint-02.png',
           '/assets/images/works/metapoint/metapoint-03.png',
           '/assets/images/works/metapoint/metapoint-04.png',
+        ],
+      },
+      {
+        id: 7,
+        projectName: '자사 업무관리 프로그램(PMS) 구축 및 운영',
+        projectDesc:
+          '사원 정보, 업무일지 및 프로젝트 현황을 파악할 수 있는 어드민 페이지입니다. 부서별 진행 업무와 프로젝트 현황을 객관적인 지표로 확인할 수 있으며, 반응형으로 구축 및 운영하였습니다.',
+        projectPeriod: '2023.05 - 2023.11',
+        skillList: ['React', 'Next.js', 'Emotion'],
+        projectThumbnail: '/assets/images/thumbnails/thumbnail-pms.png',
+        projectWorkList: [
+          '사내 업무 등록 및 일지 작성 페이지 및 이메일 서명 자동화 기능 개발',
+          'Excel 과 유사한 UI 구현을 통한 프로젝트/등급 관리 편의성 향상',
+        ],
+        projectImgList: [
+          '/assets/images/works/pms/pms-01.jpg',
+          '/assets/images/works/pms/pms-02.png',
+          '/assets/images/works/pms/pms-03.png',
+          '/assets/images/works/pms/pms-04.jpg',
+          '/assets/images/works/pms/pms-05.jpg',
         ],
       },
     ],
