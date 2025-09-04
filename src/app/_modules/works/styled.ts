@@ -52,7 +52,8 @@ export const WorksList = styled.ul`
   gap: 15px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    gap: 10px;
+    flex-direction: column;
+    gap: 20px;
   }
 `;
 
@@ -117,6 +118,7 @@ export const WorksItem = styled.li`
   }
 
   @media (max-width: ${BREAKPOINT}px) {
+    width: 100%;
     flex-direction: column;
   }
 `;

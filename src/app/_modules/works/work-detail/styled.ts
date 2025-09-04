@@ -9,15 +9,19 @@ export const WorkDetailContainer = styled.div`
   padding: 40px 20px;
 
   @media (max-width: ${BREAKPOINT}px) {
+    width: 100%;
     padding: 20px 16px;
   }
 `;
 
 export const WorkDetailThumbnail = styled(Image)`
-  /* width: 100%; */
-  /* height: 100%; */
   object-fit: cover;
   border-radius: 12px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    width: 100%;
+    height: 200px;
+  }
 `;
 
 export const WorkDetailHeader = styled.div`
@@ -30,8 +34,10 @@ export const WorkDetailHeader = styled.div`
   border: 1px solid #e9ecef;
 
   @media (max-width: ${BREAKPOINT}px) {
+    flex-direction: column;
+    gap: 30px;
     padding: 30px 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -51,7 +57,8 @@ export const ProjectTitle = styled.h1`
   margin: 0 0 16px 0;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 28px;
+    font-size: 25px;
+    margin-bottom: 0;
   }
 `;
 
@@ -69,6 +76,10 @@ export const ProjectInfoItem = styled.li`
   display: flex;
   gap: 10px;
   font-size: 16px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 14px;
+  }
 `;
 
 export const ProjectInfoTitle = styled.p`
@@ -77,7 +88,7 @@ export const ProjectInfoTitle = styled.p`
   color: #222;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
@@ -95,6 +106,10 @@ export const ProjectProblemSolvingList = styled.ul`
   flex-direction: column;
   gap: 35px;
   margin-top: 35px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    margin-top: 20px;
+  }
 `;
 
 export const ProjectProblemSolvingItem = styled.li`
@@ -111,14 +126,26 @@ export const ProjectProblemSolvingItem = styled.li`
 `;
 
 export const ProjectProblemSolvingTitle = styled.p`
+  position: relative;
   margin-bottom: 12px;
   font-size: 20px;
   font-weight: 600;
   color: #222;
   letter-spacing: -0.02em;
+  padding-left: 20px;
+
+  &::before {
+    position: absolute;
+    left: -5px;
+    top: 0;
+    content: '📍';
+    margin-right: 8px;
+  }
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.3;
+    padding-left: 15px;
   }
 `;
 
@@ -133,7 +160,8 @@ export const ProjectProblemAndSolving = styled.p`
   }
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 14px;
+    font-size: 15px;
+    padding-left: 15px;
   }
 `;
 
@@ -143,7 +171,7 @@ export const WorkDetailContent = styled.div`
   gap: 50px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    gap: 40px;
+    gap: 20px;
   }
 `;
 
@@ -167,7 +195,7 @@ export const SectionTitle = styled.h3`
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 `;
 
@@ -179,7 +207,7 @@ export const ProjectDescription = styled.p`
   white-space: pre-line;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 16px;
+    font-size: 15px;
   }
 `;
 
@@ -187,6 +215,10 @@ export const SkillList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    gap: 7px;
+  }
 `;
 
 export const SkillTag = styled.span`
@@ -198,8 +230,8 @@ export const SkillTag = styled.span`
   border: 1px solid #e0e0e0;
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding: 8px 16px;
-    font-size: 13px;
+    padding: 3px 7px;
+    font-size: 12px;
   }
 `;
 
@@ -211,6 +243,10 @@ export const FunctionList = styled.ul`
 
   code {
     font-size: 0.8em;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    margin-top: 20px;
   }
 `;
 
@@ -225,6 +261,10 @@ export const FunctionPage = styled.h6`
   font-weight: 600;
   color: #222;
   margin: 0;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 18px;
+  }
 `;
 
 export const FunctionDescList = styled.ul`
@@ -245,6 +285,11 @@ export const FunctionMainDesc = styled.p`
     font-weight: bold;
     margin-right: 8px;
   }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    padding-left: 3px;
+    font-size: 15px;
+  }
 `;
 
 export const FunctionSubDescList = styled.ul`
@@ -254,12 +299,20 @@ export const FunctionSubDescList = styled.ul`
   padding-left: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    padding-left: 10px;
+  }
 `;
 
 export const FunctionSubDesc = styled.li`
   font-size: 17px;
   line-height: 1.4;
   color: #333;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 15px;
+  }
 `;
 
 export const ImageGrid = styled.div`
@@ -326,14 +379,16 @@ export const ImageSliderContainer = styled.div`
   .slick-prev {
     left: -10px;
     &::before {
-      content: '<';
+      content: '◀';
+      margin-left: -5px;
     }
   }
 
   .slick-next {
     right: -10px;
     &::before {
-      content: '>';
+      content: '▶';
+      margin-right: -5px;
     }
   }
 
@@ -384,6 +439,10 @@ export const CodeStyle = styled.code`
   font-size: 1em;
   font-weight: 600;
   border: 1px solid #e1e4e8;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 0.8em;
+  }
 `;
 
 export const BoldStyle = styled.span`

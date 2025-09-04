@@ -205,7 +205,7 @@ const WorkDetail = ({ id }: { id: string }) => {
             <S.ProjectProblemSolvingList>
               {targetProject.projectProblemSolving?.map((problem: ProblemSolving) => (
                 <S.ProjectProblemSolvingItem key={problem.title}>
-                  <S.ProjectProblemSolvingTitle>📍 {problem.title}</S.ProjectProblemSolvingTitle>
+                  <S.ProjectProblemSolvingTitle>{problem.title}</S.ProjectProblemSolvingTitle>
                   <S.ProjectProblemAndSolving>
                     <strong>문제:</strong> {formatText(problem.problem)}
                   </S.ProjectProblemAndSolving>
