@@ -627,7 +627,7 @@ export const companyList = [
   },
   {
     name: '이모션글로벌',
-    companyLogo: '/assets/images/logo/emotion-logo.webp',
+    companyLogo: '/assets/images/logo/emotion-logo.png',
     companyPeriod: '2022.07 - 2024.09',
     projectList: [
       {
