@@ -3,7 +3,7 @@ import WorkDetail from '@/app/_modules/works/work-detail/WorkDetail';
 import type { Metadata } from 'next';
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export const metadata: Metadata = {
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description: 'Work Detail 페이지 입니다.',
 };
 
-const WorkDetailPage = ({ params }: Props) => {
-  const { id } = params;
+const WorkDetailPage = async ({ params }: Props) => {
+  const { id } = await params;
 
   return <WorkDetail id={id} />;
 };

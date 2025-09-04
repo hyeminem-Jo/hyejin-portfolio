@@ -15,6 +15,7 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import { BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import { companyList } from '@/app/_data/companyList';
+import { Project } from '@/app/_constant/type';
 
 const Buttons = ({
   projectLink,
@@ -56,7 +57,7 @@ const Works = () => {
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const handleImageClick = (images: string[]) => {
     setSelectedImages(images);
@@ -68,7 +69,7 @@ const Works = () => {
     setSelectedImages([]);
   };
 
-  const handleProjectClick = (project: any) => {
+  const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
     setIsProjectModalOpen(true);
   };
