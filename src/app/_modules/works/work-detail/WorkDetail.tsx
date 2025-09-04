@@ -12,10 +12,14 @@ const WorkDetail = ({ id }: { id: string }) => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+    lazyLoad: 'ondemand' as const,
+    adaptiveHeight: true,
+    swipeToSlide: true,
+    touchThreshold: 10,
   };
 
   let targetProject: Project | null = null;
@@ -244,7 +248,12 @@ const WorkDetail = ({ id }: { id: string }) => {
                       width={800}
                       height={600}
                       style={{ objectFit: 'contain' }}
-                      priority={index === 0}
+                      priority={index <= 2}
+                      placeholder='blur'
+                      blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlOWVjZWY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZGllbnQpIiAvPgo8L3N2Zz4='
+                      quality={90}
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px'
+                      loading={index <= 2 ? 'eager' : 'lazy'}
                       onError={(e) => {
                         console.error('이미지 로드에 실패했습니다.', imageUrl);
                       }}
