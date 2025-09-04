@@ -63,14 +63,30 @@ const WorkDetail = ({ id }: { id: string }) => {
               <S.ProjectInfoItem>
                 <S.ProjectInfoTitle>링크</S.ProjectInfoTitle>
                 <S.ProjectInfoDesc>
-                  <Link
-                    href={targetProject.projectLink}
-                    style={{ color: '#007bff' }}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    {targetProject.projectLink}
-                  </Link>
+                  {Array.isArray(targetProject.projectLink) ? (
+                    targetProject.projectLink.map((link, index) => (
+                      <div key={index}>
+                        <Link
+                          href={link}
+                          style={{ color: '#007bff' }}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          {link}
+                        </Link>
+                        {index < targetProject.projectLink!.length - 1 && <br />}
+                      </div>
+                    ))
+                  ) : (
+                    <Link
+                      href={targetProject.projectLink}
+                      style={{ color: '#007bff' }}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      {targetProject.projectLink}
+                    </Link>
+                  )}
                 </S.ProjectInfoDesc>
               </S.ProjectInfoItem>
             )}
@@ -141,23 +157,37 @@ const WorkDetail = ({ id }: { id: string }) => {
                               📄 페이지 링크
                             </S.StyleLink>
                           )}
+                          {descItem.blogLink && (
+                            <S.StyleLink
+                              href={descItem.blogLink}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                            >
+                              ▶️ 블로그 링크
+                            </S.StyleLink>
+                          )}
                         </S.FunctionMainDesc>
                         {descItem.subDesc && descItem.subDesc.length > 0 && (
                           <S.FunctionSubDescList>
-                            {descItem.subDesc.map((sub: string, subIndex: number) => (
-                              <S.FunctionSubDesc key={subIndex}>
-                                - {formatText(sub)}{' '}
-                                {descItem.pageLink && (
-                                  <S.StyleLink
-                                    href={descItem.pageLink}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                  >
-                                    ▶️ 페이지 링크
-                                  </S.StyleLink>
-                                )}
-                              </S.FunctionSubDesc>
-                            ))}
+                            {descItem.subDesc.map(
+                              (
+                                sub: string | { desc: string; blogLink: string },
+                                subIndex: number,
+                              ) => (
+                                <S.FunctionSubDesc key={subIndex}>
+                                  - {formatText(typeof sub === 'string' ? sub : sub.desc)}{' '}
+                                  {typeof sub === 'object' && sub.blogLink && (
+                                    <S.StyleLink
+                                      href={sub.blogLink}
+                                      target='_blank'
+                                      rel='noopener noreferrer'
+                                    >
+                                      ▶️ 블로그 링크
+                                    </S.StyleLink>
+                                  )}
+                                </S.FunctionSubDesc>
+                              ),
+                            )}
                           </S.FunctionSubDescList>
                         )}
                       </S.FunctionDescItem>
@@ -169,27 +199,33 @@ const WorkDetail = ({ id }: { id: string }) => {
           </S.FunctionList>
         </S.Section>
 
-        <S.Section>
-          <S.SectionTitle>이슈 및 해결</S.SectionTitle>
-          <S.ProjectProblemSolvingList>
-            {targetProject.projectProblemSolving?.map((problem: ProblemSolving) => (
-              <S.ProjectProblemSolvingItem key={problem.title}>
-                <S.ProjectProblemSolvingTitle>📍 {problem.title}</S.ProjectProblemSolvingTitle>
-                <S.ProjectProblemAndSolving>
-                  <strong>문제:</strong> {formatText(problem.problem)}
-                </S.ProjectProblemAndSolving>
-                <S.ProjectProblemAndSolving>
-                  <strong>해결:</strong> {formatText(problem.solving)}{' '}
-                  {problem.blogLink && (
-                    <S.StyleLink href={problem.blogLink} target='_blank' rel='noopener noreferrer'>
-                      ▶️ 블로그 보기
-                    </S.StyleLink>
-                  )}
-                </S.ProjectProblemAndSolving>
-              </S.ProjectProblemSolvingItem>
-            ))}
-          </S.ProjectProblemSolvingList>
-        </S.Section>
+        {targetProject.projectProblemSolving && targetProject.projectProblemSolving.length > 0 && (
+          <S.Section>
+            <S.SectionTitle>이슈 및 해결</S.SectionTitle>
+            <S.ProjectProblemSolvingList>
+              {targetProject.projectProblemSolving?.map((problem: ProblemSolving) => (
+                <S.ProjectProblemSolvingItem key={problem.title}>
+                  <S.ProjectProblemSolvingTitle>📍 {problem.title}</S.ProjectProblemSolvingTitle>
+                  <S.ProjectProblemAndSolving>
+                    <strong>문제:</strong> {formatText(problem.problem)}
+                  </S.ProjectProblemAndSolving>
+                  <S.ProjectProblemAndSolving>
+                    <strong>해결:</strong> {formatText(problem.solving)}{' '}
+                    {problem.blogLink && (
+                      <S.StyleLink
+                        href={problem.blogLink}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        ▶️ 블로그 보기
+                      </S.StyleLink>
+                    )}
+                  </S.ProjectProblemAndSolving>
+                </S.ProjectProblemSolvingItem>
+              ))}
+            </S.ProjectProblemSolvingList>
+          </S.Section>
+        )}
 
         {targetProject.projectImgList && targetProject.projectImgList.length > 0 && (
           <S.Section>

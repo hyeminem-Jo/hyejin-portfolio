@@ -13,7 +13,7 @@ export interface Project {
   projectPeriod: string;
   skillList: string[];
   projectWorkList?: string[];
-  projectLink?: string;
+  projectLink?: string | string[];
   projectThumbnail: string;
   projectContribution?: string;
   projectRole?: string;
@@ -39,8 +39,9 @@ export interface MainFunction {
 
 export interface FunctionDesc {
   mainDesc: string;
-  subDesc?: string[];
+  subDesc?: (string | { desc: string; blogLink: string })[];
   pageLink?: string;
+  blogLink?: string;
 }
 
 export type CompanyList = Company[];

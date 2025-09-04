@@ -8,7 +8,7 @@ export const companyList = [
         id: 1,
         projectName: '소플 고도화 2차',
         projectDesc:
-          '상공업의 경쟁력 강화와 기업의 경제 발전을 지원하는 대한상공회의소 소통플랫폼의 전반적인 신규 기능 및 디자인 개편 고도화 작업을 2차로 진행하였으며, 메인페이지 외 다양한 페이지를 반응형으로 구현 및 디자인 개편 작업을 진행하였습니다.',
+          '대한상공회의소가 운영하는 ‘소통 플랫폼 소플(소리가 모이는 플랫폼)’은 경제 및 사회 이슈에 대해 누구나 제안, 투표, 글쓰기, 토론 등의 방식으로 자유롭게 의견을 표현하고 공유할 수 있는 참여형 플랫폼입니다.',
         projectDescDetail:
           '대한상공회의소는 141년의 전통을 지닌 종합 경제단체로, 기업과 지역 경제를 지원하는 다양한 활동을 이어오고 있습니다. \n소통 플랫폼 ‘소플’은 AI 요약, 토론 커뮤니티, 맞춤형 콘텐츠, 실시간 소통과 펀딩 기능을 통해 사회와 기업이 연결되는 경제 참여 공간을 제공합니다. \n<소플 1차 고도화 이후로 전반적인 시스템 개편을 위해 2차 이후로 새롭게 사이트를 구축을 시작하였습니다.>',
         projectPeriod: '2025.05 - 2025.07',
@@ -177,7 +177,7 @@ export const companyList = [
         id: 2,
         projectName: '소플 고도화 1차',
         projectDesc:
-          '대한상의 플랫폼인 소플에 AI 기능 도입을 위한 고도화 작업을 1차로 진행하였습니다. \n 반응형 웹 환경에서 AI 검색 기능 및 AI 글쓰기 신규 구현 및 경제뉴스룸 페이지 고도화에 참여하였습니다.',
+          '대한상공회의소가 운영하는 ‘소통 플랫폼 소플(소리가 모이는 플랫폼)’은 경제 및 사회 이슈에 대해 누구나 제안, 투표, 글쓰기, 토론 등의 방식으로 자유롭게 의견을 표현하고 공유할 수 있는 참여형 플랫폼입니다.',
         projectDescDetail:
           '대한상공회의소는 141년의 전통을 지닌 종합 경제단체로, 기업과 지역 경제를 지원하는 다양한 활동을 이어오고 있습니다. \n소통 플랫폼 ‘소플’은 AI 요약, 토론 커뮤니티, 맞춤형 콘텐츠, 실시간 소통과 펀딩 기능을 통해 사회와 기업이 연결되는 경제 참여 공간을 제공합니다. \n<1차 고도화 프로젝트에서는 소플에 AI 기능을 적극 도입하면서 AI 검색, AI 글쓰기 페이지를 새로 구축합니다.>',
         projectPeriod: '2025.03 - 2025.05',
@@ -304,7 +304,7 @@ export const companyList = [
         id: 3,
         projectName: 'YEEP 사용자/관리자 페이지 구축',
         projectDesc:
-          '노스페이스 회사 필리핀지사의 전 사원을 관리할 수 있는 프로그램의 사용자 앱 및 관리자 페이지 구축을 진행하였습니다.',
+          '노스페이스 회사 필리핀지사의 전 사원을 관리할 수 있는 프로그램의 사용자 앱 및 관리자 페이지 입니다.',
         projectDescDetail:
           'Yeep 프로젝트는 노스페이스 필리핀 지사의 전 사원을 체계적으로 관리할 수 있도록 설계된 시스템으로, \n사용자 앱과 관리자 페이지를 함께 구축한 프로젝트입니다. 직원 개개인이 자신의 정보를 확인하고 활용할 수 있는 앱을 제공하는 동시에, \n관리자 측에서는 사원 데이터 관리, 권한 설정, 업무 현황 파악 등이 가능하도록 직관적인 관리 페이지를 구현하였습니다.',
         projectPeriod: '2025.02 - 2025.04',
@@ -427,7 +427,7 @@ export const companyList = [
         id: 4,
         projectName: 'KCMF 사용자/관리자 페이지 구축',
         projectDesc:
-          '시청자미디어재단에서 참여형 방송 문화를 위해 시청자가 방송사를 선택하여 직접 프로그램을 제작 및 신청할 수 있는 플랫폼이며, 사용자 및 관리자 페이지를 구축하였습니다.',
+          '시청자미디어재단에서 참여형 방송 문화를 위해 시청자가 방송사를 선택하여 직접 프로그램을 제작 및 신청할 수 있는 플랫폼입니다.',
 
         projectPeriod: '2024.10 - 2025.01',
         skillList: ['React', 'TypeScript', 'Redux', 'Styled-components'],
@@ -634,7 +634,7 @@ export const companyList = [
         id: 5,
         projectName: '신세계 백화점 구축 및 운영',
         projectDesc:
-          '100만명 이상의 활동 고객을 보유한 신세계 백화점의 APP을 비롯한 WEB, 어드민 운영을 진행하였습니다.',
+          '신세계 백화점 앱과 홈페이지는 신세계 백화점의 쇼핑 정보와 혜택 및 브랜드 소통을 위한 라이프스타일 플랫폼입니다. 특히 앱에서는 고객과의 소통을 위한 커뮤니티, 상세한 브랜드관, 다양한 이벤트 참여 등을 경험할 수 있습니다. ',
         projectPeriod: '2023.12 - 2024.09',
         skillList: ['React', 'Next.js', 'TypeScript', 'Styled-components', 'Redux', 'React-Query'],
         projectWorkList: [
@@ -790,7 +790,7 @@ export const companyList = [
               '<웹 인스펙터를 활용해 실제 디바이스 환경에서 직접 테스트>를 진행하며 문제를 찾아 수정, <다양한 기기에서도 동일한 화면을 제공하도록 호환성을 확보>',
           },
           {
-            title: '불필요한 데이터 로딩 최적화',
+            title: '불필요한 데이터로딩 최적화',
             problem:
               '앱 초기 로딩 시 필요하지 않은 데이터까지 모두 불러와 로딩 시간이 길어지고, 사용자 이탈 가능성이 높아졌음',
             solving:
@@ -837,14 +837,135 @@ export const companyList = [
         id: 6,
         projectName: '삼성전자 비스포크 웨딩 캠페인 사이트 구축',
         projectDesc:
-          '비스포크 웨딩 펀딩(BESPOKE Wedding FUNding) 은 삼성전자가 신혼부부의 새로운 시작을 응원하는 캠페인입니다. \n캠페인에 참여한 예비 부부를 대상으로 웨딩 펀딩 프로그램에 필요한 기능들을 구현하였습니다.',
+          '비스포크 웨딩 펀딩(BESPOKE Wedding FUNding) 은 삼성전자가 신혼부부의 새로운 시작을 응원하는 캠페인입니다.',
         projectPeriod: '2023.08 - 2023.10',
-        skillList: ['React', 'Next.js', 'Emotion'],
+        skillList: ['React', 'Next.js', 'Emotion', 'SWR'],
         projectWorkList: [
           'Next.js 기반 마이페이지, 축하금 관리, 약관, 회원정보 페이지 개발',
           'react-hook-form으로 사용자 입력 검증 및 공통 컴포넌트화',
         ],
         projectThumbnail: '/assets/images/thumbnails/thumbnail-swwl.png',
+        projectDescDetail:
+          '‘비스포크 웨딩 펀딩(BESPOKE Wedding FUNding)’ 은 삼성전자가 신혼부부의 새로운 시작을 응원하는 캠페인입니다. \n캠페인에 참여한 예비 부부에게는 다양한 모바일 청첩장이 지원되며, 청첩장에 갖고 싶은 삼성 가전 위시리스트를 추가하면 \n펀딩금을 통해 해당 가전을 구매할 수 있습니다. \n<서브페이지를 중심으로 사용자의 PC/태블릿/모바일 디바이스 환경에 최적화된 반응형 웹을 구현하였습니다.>',
+        projectContribution: '20%',
+        projectRole: '프론트엔드 개발, 퍼블리싱(PA)',
+        projectDevice: '반응형 웹',
+        projectProcess:
+          '구축 프로젝트이며, Next.js 환경에서 emotion 이란 css 라이브러리를 사용하여 작업했습니다. 디자인 수급은 figma 로 이루어졌고 기획을 제외한, 디자인(7), 프론트엔드(6), 백엔드(5) 네이티브(2) 개발팀 전체가 TF팀으로 활동하였습니다. 기획의 경우 제일기획과의 협업으로 진행이 되었습니다.',
+        projectMainFunction: [
+          {
+            page: '1. 약관 동의 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '체크박스 컴포넌트 활용 → 전체 선택/해제 기능을 포함한 상태 관리 로직 구현',
+              },
+              {
+                mainDesc:
+                  '개별 약관 동의 상태를 감지해 모든 필수 약관 동의 완료 시에만 다음 단계 진행 버튼이 활성화되도록 조건부 렌더링 구현',
+              },
+              {
+                mainDesc:
+                  '약관 내용 아코디언 탭 기능 구현 및 재사용성을 고려한 <공통 컴포넌트 설계>',
+              },
+            ],
+          },
+          {
+            page: '2. 마이페이지',
+            desc: [
+              {
+                mainDesc: '사용자 정보 데이터 연동 및 수정 기능 구현',
+                subDesc: [
+                  '수정 버튼 클릭 시 입력폼 활성화 및 UI 상태 변경 →  직관적인 편집 경험 구현',
+                  '정규표현식과 [yup] 라이브러리를 활용한 입력값 검증 구현',
+                ],
+              },
+              {
+                mainDesc:
+                  '로그인 상태와 청첩장 생성 여부를 확인하여 <접근 가능한 기능을 동적으로 제한>하고, <권한에 맞게 UI를 제공>',
+              },
+              {
+                mainDesc: '청첩장 공유하기, 수정하기, 펀딩금 관리하기 등 페이지 진입 라우팅',
+              },
+              {
+                mainDesc:
+                  '펀딩금 관리페이지 D-DAY 시스템: 마감 기한까지 남은 일수를 실시간으로 계산하고, 기한 상태(진행중/마감임박/마감)에 따라 <조건부 디자인 적용>',
+              },
+              {
+                mainDesc:
+                  '로그아웃, 탈퇴 등 주요 액션 관련 confirm 및 에러코드 값에 따른 에러 confirm 모달 구현',
+              },
+            ],
+          },
+          {
+            page: '3. 축하금 전달 기한 설정 페이지',
+            desc: [
+              {
+                mainDesc: '축하금 액수 및 전달 기한 실시간 데이터 연동',
+              },
+              {
+                mainDesc: 'select box, input 등 입력폼',
+                subDesc: [
+                  '캠페인 기간 범위에서만 날짜 설정 가능',
+                  '<월별 일수 자동 조정 표시> (ex. 8월 - 31까지 표시, 9월 - 30일까지 표시)',
+                  '기한 설정 제한 (ex. 기한일을 오늘 이전으로는 설정 불가, 최대 기한 60일로 제한 등) 및 <중요도에 따라 프론트단/백엔드단 에러처리>',
+                ],
+              },
+              {
+                mainDesc:
+                  '펀딩금 전달 리스트 데이터 반복문으로 구현 (요청 여부, 전달리스트 여부에 따라 형태 구현)',
+              },
+              {
+                mainDesc: '자세히 보기 버튼 → 펀딩금 송금 안내 팝업 구현',
+              },
+            ],
+          },
+          {
+            page: '청첩장 공유하기 페이지',
+            desc: [
+              {
+                mainDesc: '반응형 퍼블리싱 작업',
+              },
+            ],
+          },
+        ],
+        projectProblemSolving: [
+          {
+            title: '폼 유효성 검사 에러 상태 초기화',
+            problem:
+              '날짜 선택 시 년도/월/일이 변경될 때마다 이전 에러 상태가 남아있어 사용자가 올바른 값을 입력해도 에러 메시지가 계속 표시되는 문제가 발생',
+            solving:
+              '[reat-hook-form] 의 [clearErrors] 함수를 각 필드 변경 시점에 호출하여 <에러 상태를 즉시 초기화>하고, 사용자 경험을 개선',
+          },
+          {
+            title: '날짜 선택 컴포넌트 상태 동기화',
+            problem:
+              '년도/월/일을 선택 시 각 필드가 독립적으로 변경되어 유효하지 않은 날짜 조합이 생성되거나, 월 변경 시 일 필드가 초기화되지 않는 문제가 발생',
+            solving:
+              '[useEffect] 를 활용하여 년도/월 변경 시 일 필드를 자동으로 초기화하고, <모든 필드가 완성되었을 때만 모든 년도/월/일이 기입된 값을 불러오는 로직>을 구현',
+          },
+          {
+            title: '날짜 유효성 검사 로직',
+            problem:
+              '펀딩금 전달 기한 설정에서 오늘 이전 날짜 선택 시 에러 처리가 즉시 반영되지 않고, 60일 제한 검사가 복잡하게 구현된 문제가 발생',
+            solving:
+              '수정일(당일) 이전일 경우를 구하는 함수에서 시간을 0으로 설정하여 <정확한 날짜 비교를 하고, 에러 상태를 즉시 업데이트하는 로직>으로 개선',
+          },
+          {
+            title: '무한스크롤 스크롤 이벤트 최적화',
+            problem:
+              '펀딩금 전달 리스트 페이지의 인피니트 스크롤 로직에서 이벤트가 너무 자주 발생하여 성능 저하와 불필요하게 API 호출이 발생함',
+            solving:
+              '[lodash/debounce] 를 활용하여 <15ms 딜레이를 적용하여 스크롤 이벤트를 최적화>하고 성능을 개선',
+          },
+          {
+            title: '스타일 관리의 비효율성 문제',
+            problem:
+              '기본적으로 스타일링의 경우 순수 scss를 사용해왔는데, 전역 네임스페이스 충돌 문제 혹은 컴포넌트 단위 스타일 관리에 어려움이 있거나 재사용성/유지보수 측면에서 한계가 드러남',
+            solving:
+              '[emotion] 라이브러리를 도입하여 컴포넌트 단위로 스타일링을 적용 → <동적 스타일 제어를 통해 코드 가독성과 유지보수성을 개선, 전역 스타일 충돌 문제를 해소>하여 개발 효율성과 환경을 향상',
+          },
+        ],
         projectImgList: [
           '/assets/images/works/wedding/wedding-02.png',
           '/assets/images/works/wedding/wedding-03.png',
@@ -859,31 +980,274 @@ export const companyList = [
         id: 8,
         projectName: '삼성 지속가능성경영 사이트 운영',
         projectDesc:
-          '환경, 사회, 거버넌스 분야에 걸쳐 삼성전자의 전략과 주요 성과를 담은 보고서 형식의 웹사이트입니다. 새롭게 바뀌는 내용에 대응하여 운영을 진행하였습니다.',
+          '환경, 사회, 거버넌스 분야에 걸쳐 삼성전자의 전략과 주요 성과를 담은 보고서 형식의 웹사이트입니다.',
         projectPeriod: '2023.04 - 2023.12',
-        skillList: ['javascript', 'jQuery', 'scss'],
+        skillList: ['Javascript', 'jQuery', 'CSS'],
         projectWorkList: [
           '지속가능경영 메인/서브페이지 참여신청 페이지 운영 및 구축',
           '웹표준·접근성 준수로 품질 향상 (background 로 삽입된 이미지 처리, 스크린 리더기 등)',
         ],
         projectLink: 'https://www.samsung.com/sec/sustainability/main/',
         projectThumbnail: '/assets/images/thumbnails/thumbnail-samsung.png',
+        projectDescDetail:
+          '환경, 사회, 거버넌스 분야에 걸쳐 삼성전자의 전략과 주요 성과를 담은 보고서 형식의 웹사이트입니다. \n이는 기업 활동이 외부에, 또는 외부요인이 기업에 미치는 영향을 모두 고려한 평가를 통해 지속가능경영에 대한 활동을 다루고있습니다.\n<해당 프로젝트에서 전반적으로 메인/서브페이지의 적응형 퍼블리싱 및 기능 개선, 접근성 강화를 주로 진행하였습니다.>',
+        projectProcess:
+          '운영 프로젝트이며, 기본적인 html 환경에서 Javascript / jQuery / CSS 를 사용하여 작업했습니다. 디자인 수급은 figma 로 이루어졌고, 본인을 포함한 프론트엔드 파트 2명은 본사, 그 외 디자이너와 기획, 백엔드 개발 각 1명씩은 PTK, 웨버샌드윅 측으로 팀즈(비즈니스 메신저)를 통해 원격으로 협업하였습니다.',
+        projectContribution: '50%',
+        projectRole: '퍼블리싱(PA)',
+        projectDevice: '적응형 웹',
+        projectMainFunction: [
+          {
+            page: '1. 운영 및 유지보수',
+          },
+          {
+            page: '1-1. 서브 페이지 (Planet, People, Principle, Focus, Digital Library)',
+            desc: [
+              {
+                mainDesc: '전체적인 유지보수 및 퍼블리싱 작업',
+              },
+              {
+                mainDesc: '탭, 스와이퍼 등 기존 기능 오류를 해결하여 사용자 경험을 개선',
+              },
+              {
+                mainDesc:
+                  '[alt], [aria] 속성, 포커스 이벤트 등을 전면 수정하여 <웹 접근성 표준을 충족, 다양한 사용자가 접근 가능한 환경>으로 구현',
+              },
+              {
+                mainDesc:
+                  '<중복된 기능을 공통 함수로 리팩토링>하여 코드의 효율성과 유지보수성을 크게 향상',
+              },
+              {
+                mainDesc: '팝업의 콘텐츠를 업데이트 하고 리뉴얼 퍼블리싱 진행',
+              },
+              {
+                mainDesc: '지속가능한 제품 페이지, 기후행동 페이지 고도화',
+                subDesc: [
+                  {
+                    desc: '[svg] 를 활용한 <페이지네이션 커스텀>',
+                    blogLink:
+                      'https://velog.io/@h_jinny/Swiper-svg-%EB%B2%84%ED%8A%BC%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-pagination-%EC%BB%A4%EC%8A%A4%ED%85%80-loop-update-%EA%B8%B0%EB%8A%A5',
+                  },
+                ],
+              },
+            ],
+          },
+          { page: '2. 구축' },
+          {
+            page: '2-1. 폐휴대폰 수거 캠패인 페이지',
+            desc: [
+              {
+                mainDesc: '폐휴대폰 캠페인 페이지 퍼블리싱 및 개발',
+                subDesc: [
+                  {
+                    desc: '[Swiper] 를 이용해 <세로 풀페이지 슬라이드 스크롤> 구현 (마우스휠 이벤트 활용, [throttle] 로 성능 최적화)',
+                    blogLink:
+                      'https://velog.io/@h_jinny/javascript-%EC%84%B8%EB%A1%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EA%B5%AC%ED%98%84',
+                  },
+                ],
+              },
+              {
+                mainDesc: '캠페인 신청 사이트 퍼블리싱 및 개발',
+                subDesc: [
+                  {
+                    desc: '[Swiper] 의 [hashNavigation] 을 이용해 <새로고침 없이 페이지 이동 구현>',
+                    blogLink:
+                      'https://velog.io/@h_jinny/Swiper.js-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A7%81%ED%81%AC-%EC%9D%B4%EB%8F%99-%ED%98%84%EC%9E%AC-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%ED%91%9C%EC%8B%9C-hash-navigation-%EC%98%B5%EC%85%98-1',
+                  },
+                  {
+                    desc: 'select 박스 option 선택에 따른 input 입력창 추가/삭제 기능 구현',
+                    blogLink:
+                      'https://velog.io/@h_jinny/javascriptselect-%EB%B0%95%EC%8A%A4-option-%EC%84%A0%ED%83%9D%EC%97%90-%EB%94%B0%EB%A5%B8-input-%EC%9E%85%EB%A0%A5%EC%B0%BD-%EC%B6%94%EA%B0%80%EC%82%AD%EC%A0%9C',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            page: '2-2. 모두가 가능한 경험 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '<GSAP을 활용해 마우스 휠 기반 이중 스크롤링>과 텍스트 딜레이 애니메이션을 구현한 인터랙션 구현',
+              },
+              {
+                mainDesc: '로띠 애니메이션을 적용 및 팝업 생성 기능 구현',
+              },
+            ],
+          },
+          {
+            page: '3. 모바일 대응',
+            desc: [
+              {
+                mainDesc:
+                  '적응형 퍼블리싱으로 PC와 모바일 모두에 최적화된 레이아웃을 제공해 접근성과 가독성을 향상',
+              },
+              {
+                mainDesc:
+                  '모바일 전용 로띠 애니메이션을 적용하여 <기기 특성에 맞는 인터랙션을 구현>',
+              },
+              {
+                mainDesc:
+                  '표는 가로 스크롤 방식으로, 리스트는 [Swiper] 슬라이드로 전환해 모바일 사용성을 크게 개선',
+              },
+            ],
+          },
+        ],
+        projectProblemSolving: [
+          {
+            title: '웹 접근성 강화',
+            problem:
+              '운영 페이지에서 일부 이미지에 [alt] 속성이 누락되거나, 컨텐츠에 접근 시 시/청각 문제가 있는 사용자가 보조기기를 사용하기 불편한 상황이 발생 → ex) 키보드를 이용시 포커싱이 순서대로 동작하지 않거나, 스크린리더기를 활용 시 내용을 제대로 인식하지 않는 문제 등',
+            solving:
+              '[alt], [aria] 속성을 적용하고 스크린리더기 테스트 및 포커스 이벤트를 전면 수정하여, <다양한 사용자가 접근 가능한 환경을 구현>',
+          },
+          {
+            title: '코드 중복으로 인한 유지보수성 저하',
+            problem:
+              '동일한 기능이 여러 페이지에서 반복적으로 작성되어 코드 관리와 유지보수가 어렵고, 수정 시 오류 가능성이 높았던 경우가 많았음',
+            solving: '공통 함수를 별도 모듈로 분리하여 재사용성을 높이고, 유지보수 효율성을 개선',
+          },
+          {
+            title: '퍼포먼스 저하 (마우스휠 슬라이드)',
+            problem:
+              '세로 풀페이지 슬라이드 구현 시 마우스휠 이벤트가 과도하게 발생하여 스크롤이 끊기는 등, 성능 저하가 발생',
+            solving:
+              '[throttle] <을 적용하여 이벤트 호출 빈도를 최적화>하고, 부드러운 인터랙션을 제공',
+          },
+        ],
         projectImgList: [
-          // '/assets/images/works/pms/pms-01.jpg',
-          // '/assets/images/works/pms/pms-02.png',
-          // '/assets/images/works/pms/pms-03.png',
-          // '/assets/images/works/pms/pms-04.jpg',
-          // '/assets/images/works/pms/pms-05.jpg',
+          '/assets/images/works/samsung/samsung-01.jpg',
+          '/assets/images/works/samsung/samsung-02.jpg',
+          '/assets/images/works/samsung/samsung-03.jpg',
+          '/assets/images/works/samsung/samsung-04.jpg',
+          '/assets/images/works/samsung/samsung-05.jpg',
+          '/assets/images/works/samsung/samsung-06.png',
+          '/assets/images/works/samsung/samsung-07.png',
+          '/assets/images/works/samsung/samsung-08.jpg',
+          '/assets/images/works/samsung/samsung-09.jpg',
+          '/assets/images/works/samsung/samsung-10.jpg',
+          '/assets/images/works/samsung/samsung-11.jpg',
+          '/assets/images/works/samsung/samsung-12.png',
+          '/assets/images/works/samsung/samsung-13.png',
+          '/assets/images/works/samsung/samsung-14.jpg',
+          '/assets/images/works/samsung/samsung-15.png',
+          '/assets/images/works/samsung/samsung-16.png',
         ],
       },
       {
         id: 9,
-        projectName: '자사(이모션글로벌) 홈페이지 고도화',
+        projectName: '이모션글로벌 홈페이지 고도화',
         projectDesc:
-          '자회사인 이모션 글로벌 홈페이지이며, 본사에 대한 정보, 포트폴리오, 의뢰 서비스, 입사지원 서비스 등을 제공하는 웹사이트이며, 고도화 및 운영 업무를 진행하였습니다.',
+          '자회사인 이모션 글로벌 홈페이지이며, 본사에 대한 정보, 포트폴리오, 의뢰 서비스, 입사지원 서비스 등을 제공하는 웹사이트입니다.',
         projectPeriod: '2022.11 - 2023.02',
-        skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'Emotion', 'scss'],
+        skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'SCSS'],
         projectThumbnail: '/assets/images/thumbnails/thumbnail-emotion.png',
+        projectDescDetail:
+          '자회사인 이모션 글로벌 홈페이지이며, 본사에 대한 정보, 포트폴리오, 의뢰 서비스, 입사지원 서비스 등을 제공하는 웹사이트입니다. \n<메인 및 서브페이지를 통틀어 고도화 작업을 진행하였습니다.>',
+        projectProcess:
+          '운영 프로젝트이며, Vue.js 환경에서 scss 를 사용하여 리뉴얼된 디자인을 바탕으로 고도화 작업을 진행했습니다. 디자인 수급은 figma 로 이루어졌으며, 본인을 포함한 프론트엔드(2), 백엔드(1), 기획자(2), 디자이너(2) 각 파트별로 2명씩 투입되었습니다.',
+        projectContribution: '50%',
+        projectRole: '프론트엔드 개발, 퍼블리싱(PA)',
+        projectDevice: '적응형 웹',
+        projectMainFunction: [
+          {
+            page: '1. 메인페이지',
+            desc: [
+              {
+                mainDesc: '퍼블리싱 및 개발',
+                subDesc: [
+                  '변경된 레이아웃과 콘텐츠를 반영하고, 메인 동영상 교체와 사운드 제어 버튼을 구현하여 직관적인 미디어 제어 경험을 제공',
+                  '객체 데이터 구조를 파악해 반복문으로 적용함으로써 콘텐츠 관리 효율성 및 재사용성을 높임',
+                  '[Swiper] 를 활용한 슬라이드 구현',
+                ],
+              },
+            ],
+          },
+          {
+            page: '2. ABOUT',
+            desc: [
+              {
+                mainDesc:
+                  '디자인에서 요구되는 인터랙션 → GSAP 기반 패럴렉스 스크롤, Lottie 애니메이션, 이미지 가로 스크롤 등을 적용하여 완성도를 높임',
+              },
+            ],
+          },
+          {
+            page: '3. CAREERS',
+            desc: [
+              {
+                mainDesc:
+                  '지원 자격 탭 기능, 입력 폼 검증, 실시간 value 반영 기능을 구축하여 <지원자가 직관적으로 값을 입력하고 오류를 줄일 수 있는 UX 환경 조성>',
+              },
+              {
+                mainDesc:
+                  '[aside] 영역의 [fixed] 적용으로 지원 진행 중 필요한 정보 확인에 대한 편의성 향상',
+              },
+              {
+                mainDesc:
+                  'Vue 의 기본 기능과 [Swiper] 라이브러리 <충돌 문제를 해결하여 안정적인 탭 기능 구현>',
+                blogLink:
+                  'https://velog.io/@h_jinny/Vue.js%ED%83%AD-%EA%B8%B0%EB%8A%A5-%EC%9D%B4%EC%9A%A9%EC%8B%9C-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%9E%91%EB%8F%99-%EC%98%A4%EB%A5%98',
+              },
+            ],
+          },
+          {
+            page: '4. REQUEST',
+            desc: [
+              {
+                mainDesc: '입사 지원 페이지(CAREERS / apply)와 동일한 로직으로 적용',
+              },
+            ],
+          },
+          {
+            page: '5. 모바일 대응',
+            desc: [
+              {
+                mainDesc:
+                  '적응형 퍼블리싱으로 PC와 모바일 모두에 최적화된 레이아웃을 제공해 접근성과 가독성을 향상',
+              },
+              {
+                mainDesc: '모바일 전용 로띠 애니메이션을 적용하여 기기 특성에 맞는 인터랙션을 구현',
+              },
+            ],
+          },
+        ],
+        projectProblemSolving: [
+          {
+            title: 'Vue와 Swiper 라이브러리 충돌 이슈',
+            problem:
+              '입사지원 페이지의 슬라이드에서 Vue의 기본 기능과 충돌하여 탭 기능이 정상 작동하지 않는 이슈 발생',
+            solving:
+              '[v-swiper] 디렉티브를 사용하여 Vue 컴포넌트와 Swiper 를 분리하고, [observer: true], [observerParents: true] 옵션을 추가하여 DOM 변경 감지 → 탭 전환 시에도 Swiper가 정상 작동하도록 개선',
+          },
+          {
+            title: 'GSAP 애니메이션 메모리 누수 방지',
+            problem:
+              'About 페이지에서 ScrollMagic과 GSAP를 사용한 패럴렉스 스크롤 애니메이션에서 컴포넌트 언마운트 시 Scene이 제대로 정리되지 않아 메모리 누수 발생',
+            solving:
+              '[destroyed()] 라이프사이클에서 [ScrollMagic] 의 이전 Scene을 완전히 정리하고, [activated()] 훅에서 새로운 Scene을 생성하도록 처리 → 메모리 누수 문제 해결',
+          },
+          {
+            title: '파일 업로드 크기 및 개수 제한 처리',
+            problem:
+              '입사지원 페이지에서 이력서 업로드 시 파일 크기와 개수 제한을 프론트엔드에서 체크해야 하는데, 사용자 경험이 좋지 않았음',
+            solving:
+              '특정 메서드에서 파일 크기를 체크하고, 초과 시 즉시 알림을 표시하여 사용자가 즉시 인지할 수 있도록 처리 → 업로드 실패율 감소',
+          },
+        ],
+        projectImgList: [
+          '/assets/images/works/emotion/emotion-01.jpg',
+          '/assets/images/works/emotion/emotion-02.jpg',
+          '/assets/images/works/emotion/emotion-03.jpg',
+          '/assets/images/works/emotion/emotion-04.jpg',
+          '/assets/images/works/emotion/emotion-05.jpg',
+          '/assets/images/works/emotion/emotion-06.jpg',
+          '/assets/images/works/emotion/emotion-07.jpg',
+          '/assets/images/works/emotion/emotion-08.jpg',
+          '/assets/images/works/emotion/emotion-09.jpg',
+          '/assets/images/works/emotion/emotion-10.png',
+          '/assets/images/works/emotion/emotion-11.png',
+        ],
         projectWorkList: [
           'Vue.js 기반 서브페이지 고도화, 데이터 조회 및 수정 기능 구현',
           '반응형 퍼블리싱 및 인터랙션 추가',
@@ -894,23 +1258,138 @@ export const companyList = [
         id: 10,
         projectName: '대상 사이트(종가, 오푸드) 운영',
         projectDesc:
-          '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다. 추가되거나 수정된 건을 바탕으로 운영 업무를 진행하였습니다.',
+          '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다.',
         projectPeriod: '2022.08 - 2022.12',
-        skillList: ['jQuery', 'css'],
+        skillList: ['JavaScript', 'jQuery', 'CSS'],
         projectThumbnail: '/assets/images/thumbnails/thumbnail-ds.png',
+        projectDescDetail:
+          '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다. \n종가의 경우 한식, 이른바 “K-푸드” 를 브랜드 고유의 스토리텔링으로 넣어 글로벌적인 브랜드 가치를 제안하고있으며, \n오푸드 역시 다채로운 한식에 대한 해외 소비자들의 이해를 높이기 위해 종가와 유사한 가치제안을 두고 있습니다.\n<두 프로젝트 모두 전반적인 페이지 고도화 퍼블리싱을 진행하였습니다.>\n\n* 종가(JONGGA) 웹사이트는 현재 리뉴얼되어 사이트 형태가 아래 구현내용과 상이할 수 있습니다.',
+        projectProcess:
+          '운영 프로젝트이며, jsp 환경에서 Javascript / jQuery / css 를 사용하여 작업했습니다. 디자인 수급은 zeplin 으로 이루어졌고, 본인 이외에 디자인 1명, BE 1명의 구성으로 작업이 진행되었습니다. jsp 환경이었기에 백엔드 개발자의 설정 도움(톰캣 설치 등)을 받아 작업했습니다.',
+        projectContribution: '100%',
+        projectRole: '퍼블리싱(PL) ',
+        projectDevice: '적응형 웹',
+        projectMainFunction: [
+          {
+            page: '오푸드(O’Food)',
+            desc: [
+              {
+                mainDesc: '메인/서브 페이지 퍼블리싱과 유지보수를 통해 변경된 콘텐츠를 반영',
+              },
+              {
+                mainDesc: '[Swiper] 를 통한 슬라이드 구현',
+              },
+              {
+                mainDesc: '모바일 적응형 퍼블리싱을 통해 PC 외 디바이스 호환성을 제공',
+              },
+            ],
+          },
+          {
+            page: '종가(JONGGA)',
+            desc: [
+              {
+                mainDesc: '메인/서브 페이지 퍼블리싱과 AOS 라이브러리를 기반으로 애니메이션 적용',
+              },
+              {
+                mainDesc:
+                  '팝업 상태를 URL 파라미터로 제어하여 공유 시 동일한 화면을 유지할 수 있도록 개선',
+                blogLink:
+                  'https://velog.io/@h_jinny/jQuery-%ED%8C%9D%EC%97%85%EC%9D%B4-%EC%97%B4%EB%A6%B0-%EC%83%81%ED%83%9C%EC%9D%98-URL-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0',
+              },
+              {
+                mainDesc: '모바일 적응형 퍼블리싱을 통해 PC 외 디바이스 호환성을 제공',
+              },
+            ],
+          },
+        ],
+        projectProblemSolving: [
+          {
+            title: 'AOS 애니메이션 최적화 이슈',
+            problem:
+              '페이지 스크롤 시 모든 요소에 애니메이션이 적용되어 다소 산만한 UX 경험과 부가적인 성능 저하가 우려됐음',
+            solving:
+              '[AOS.init()] 설정에서 [once: true] 옵션을 사용하여 애니메이션이 한 번만 실행되도록 최적화',
+          },
+          {
+            title: '팝업 URL 공유 이슈',
+            problem:
+              '링크로 공유 되어야할 팝업이 필요했으며, 열릴 때 이전 스크롤 위치가 유지되어 사용자가 맨 위부터 보지 못하는 문제가 발생',
+            solving:
+              '파라미터를 객체화하여 추출된 id 값으로 링크가 생성될 수 있게 추가하였으며, [setTimeout] 과 [scrollTop(0)] 을 사용하여 팝업 열림 후 스크롤 위치를 맨 위로 초기화하여 사용자 경험도 같이 개선',
+          },
+          {
+            title: '반응형 디자인 모바일 최적화',
+            problem: '모바일 환경에서 터치 인터랙션 시 기본 하이라이트 효과가 사용자 경험을 방해',
+            solving:
+              'CSS 에서 [-webkit-tap-highlight-color] 속성을 사용하여, 터치 시 발생하는 기본 하이라이트 효과를 제거하고 일관된 UX를 제공',
+          },
+        ],
+        projectImgList: [
+          '/assets/images/works/daesang/daesang-01.png',
+          '/assets/images/works/daesang/daesang-02.png',
+          '/assets/images/works/daesang/daesang-03.png',
+          '/assets/images/works/daesang/daesang-04.png',
+          '/assets/images/works/daesang/daesang-05.jpg',
+          '/assets/images/works/daesang/daesang-06.png',
+          '/assets/images/works/daesang/daesang-07.png',
+          '/assets/images/works/daesang/daesang-09.png',
+          '/assets/images/works/daesang/daesang-10.png',
+          '/assets/images/works/daesang/daesang-11.png',
+          '/assets/images/works/daesang/daesang-12.png',
+        ],
         projectWorkList: [
           'jsp 환경에서 css, jQuery 를 사용하여 작업, 종가 /오푸드 메인 및 서브페이지 퍼블리싱 및 인터렉션 구현',
         ],
-        projectLink: 'https://ofoodglobal.com/',
+        projectLink: ['https://ofoodglobal.com/', 'https://www.jongga.co.kr/'],
       },
       {
         id: 11,
-        projectName: '메타클럽 프로젝트 구축',
+        projectName: '메타클럽 구축',
         projectDesc:
-          '메타클럽은 상품권 전환 및 포인트를 충전할 수 있는 포인트 테크 플랫폼으로, 문화상품권, 도서문화상품권의 핀번호를 등록하여 다양한 곳에서 사용할 수 있게 해줍니다. 구축으로 진행되었습니다.',
+          '메타클럽은 상품권 전환 및 포인트를 충전할 수 있는 포인트 테크 플랫폼으로, 문화상품권, 도서문화상품권의 핀번호를 등록하여 다양한 곳에서 사용할 수 있게 해줍니다.',
         projectPeriod: '2022.08 - 2022.11',
-        skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'scss'],
+        skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'SCSS'],
         projectThumbnail: '/assets/images/thumbnails/thumbnail-meta.png',
+        projectDescDetail:
+          '메타클럽은 상품권 전환 및 포인트를 충전할 수 있는 포인트 테크 플랫폼입니다. \n문화상품권, 도서문화상품권의 핀번호를 등록하여 다양한 곳에서 사용할 수 있게 해줍니다. \n<해당 프로젝트에서 퍼블리싱을 중심으로 일부 기능 구현까지 담당하며 서비스 구축 과정에 참여하였습니다.>',
+        projectProcess:
+          '구축 프로젝트이며, Vue.js(Nuxt.js) 환경에서 scss 를 사용하여 작업했습니다. 디자인 수급은 figma 로 이루어졌으며, UI 컴포넌트 관리로는 Storybook 을 사용하였습니다. 기획(6), 디자인(7), 프론트엔드(6), 백엔드(5) 개발까지 한 부문 전체가 TF팀으로 협업하였습니다.',
+        projectContribution: '10%',
+        projectRole: '프론트엔드 개발, 퍼블리싱(PA)',
+        projectDevice: 'APP',
+        projectMainFunction: [
+          {
+            page: '1. 문화상품권 충전 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '정규표현식과 [yup] 라이브러리를 적용하여 입력 데이터의 유효성을 보장, 잘못된 입력으로 인한 오류를 사전에 방지',
+              },
+              {
+                mainDesc:
+                  '액수 계산 로직을 구현하여 <충전 금액/수수료/잔액 부족 여부를 직관적으로 확인>할 수 있게 해 사용자 편의성을 높임',
+                subDesc: [
+                  '1000원, 5000원, 5만원 권 단위로 +, - 버튼을 통해 갯수에 따른 액수 표현 및 충전된 액수에서 <수수료(%)계산, 잔액부족 등 계산하여 값 표시>',
+                ],
+              },
+              {
+                mainDesc:
+                  '모달 컴포넌트를 동적으로 구성하여 <상황별로 안내가 가능하도록 개선>, 사용자 경험을 강화',
+              },
+            ],
+          },
+          {
+            page: '2. 약관 / 에러페이지',
+            desc: [
+              {
+                mainDesc: '약관 페이지를 풀팝업 형태로 구현',
+              },
+              {
+                mainDesc: '<백엔드측 에러 코드를 기반으로 상황별로 화면을 제공>',
+              },
+            ],
+          },
+        ],
         projectWorkList: [
           'Vue(Nuxt.js) 기반 퍼블리싱 및 데이터 연동',
           '포인트 충전/전환 페이지 개발, 입력 제한 기능 구현',
@@ -926,10 +1405,147 @@ export const companyList = [
         id: 7,
         projectName: '자사 업무관리 프로그램(PMS) 구축 및 운영',
         projectDesc:
-          '사원 정보, 업무일지 및 프로젝트 현황을 파악할 수 있는 어드민 페이지입니다. 부서별 진행 업무와 프로젝트 현황을 객관적인 지표로 확인할 수 있으며, 반응형으로 구축 및 운영하였습니다.',
+          '사원 정보, 업무일지 및 프로젝트 현황을 파악할 수 있는 어드민 페이지입니다. 부서별 진행 업무와 프로젝트 현황을 객관적인 지표로 확인할 수 있습니다.',
         projectPeriod: '2023.05 - 2023.11',
-        skillList: ['React', 'Next.js', 'Emotion'],
+        skillList: ['React', 'TailwindCSS', 'SWR'],
         projectThumbnail: '/assets/images/thumbnails/thumbnail-pms.png',
+        projectDescDetail:
+          '사원 정보, 업무일지 및 프로젝트 진행현황을 파악할 수 있는 어드민 페이지입니다. 현재 본인이 속한 파트 뿐만이 아닌 다른 파트에서도 어떤 업무가 진행중인지 한 눈에 알 수 있고, 프로젝트에 대한 현황 정보가 객관적인 지표로 표시되어 있습니다. 이를 통해 더욱 정확하고 직관적인 관리가 가능합니다.',
+        projectProcess:
+          '구축 프로젝트이며, 이전에 개발된 기존 어드민 페이지를 참고하여 학습겸 진행되었습니다. 디자인은 무료 어드민 템플릿을 사용했으며, 빠르고 간단한 css 적용을 위해 tailwindcss 를 사용했습니다. 본인을 포함한 프론트엔드 2명, 백엔드 2명의 구성으로 협업하였습니다.',
+        projectContribution: '50%',
+        projectRole: '프론트엔드 개발, 퍼블리싱(PA)',
+        projectDevice: '반응형 웹',
+        projectMainFunction: [
+          {
+            page: '1. 업무일지 페이지 (메인)',
+            desc: [
+              {
+                mainDesc: '기존 컴포넌트를 활용해 업무일지 등록, 수정, 삭제 구현',
+              },
+              {
+                mainDesc: '업무일지 목록',
+                subDesc: [
+                  '전체적인 업무현황이 잘 보이도록 각 직원의 일지를 블록 형태로 표시',
+                  '<업무일지 검색 시 날짜에 따라 필터링하여 조회> 가능 (default 는 금일)',
+                  '유저가 담당중인 프로젝트들을 뱃지로 표시 → 프로젝트마다 구분이 되도록 뱃지 배경색을 랜덤으로 생성하여 구현',
+                ],
+              },
+              {
+                mainDesc: '업무일지 상세',
+                subDesc: [
+                  '<여러 개의 일감을 추가 선택 가능>하게 구현',
+                  '별점 기능 → 하루 업무에 대해 스스로 별점을 메길 수 있는 기능 구현',
+                ],
+              },
+              {
+                mainDesc: '동적 레이아웃 구현',
+                subDesc: [
+                  '세로 형태의 메인 [nav] 바 기능 → [nav] 가 열리고 닫힘에 따라 <전체적인 화면 레이아웃이 바뀌는 기능> 구현',
+                ],
+              },
+            ],
+          },
+          {
+            page: '2. 프로젝트 일감 목록 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '최신순으로 등록된 일감이 표시되고, 검색 시 <프로젝트 시작일과 종료일에 맞춰 조회가 가능>하도록 구현',
+              },
+              {
+                mainDesc:
+                  'Pagination 기능 구현 (백엔드 측에서 내려주는 페이지당 목록 갯수, 다음 페이지 여부 등 데이터를 활용)',
+              },
+            ],
+          },
+          {
+            page: '3. 프로젝트 일감 등록 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '새롭게 생긴 프로젝트 일감을 직접 작성할 수 있도록 등록, 수정, 삭제 기능 구현',
+              },
+            ],
+          },
+          {
+            page: '4. 직원 정보 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '사원의 인사정보(파트, 직급)와 조직 정보의 등록, 수정, 삭제 기능 구현(본인 혹은 관리자만 수정 가능하도록 제한)',
+              },
+              {
+                mainDesc: '현재 사원이 투입된 프로젝트의 현황과 최근 작성한 업무일지 데이터 표시',
+              },
+            ],
+          },
+          {
+            page: '5. 프로젝트 투입 정보 페이지',
+            desc: [
+              {
+                mainDesc: '프로젝트 현황, 프로젝트에 현재 투입된 인원에 대한 인적사항 등 구현',
+              },
+              {
+                mainDesc:
+                  '[table] 태그를 사용하고 이에 [map] 을 활용해 <엑셀처럼 만들어 한 번에 파악이 가능하도록 기능 구현>',
+              },
+              {
+                mainDesc: '투입 인원, 진행도(%) 입력폼 개발 및 구현 (등록, 수정, 삭제)',
+              },
+              {
+                mainDesc:
+                  '가장 상단의 [header] 의 경우 상하로 스크롤 시 [fixed] 로 고정, 좌우로 스크롤시 [fixed] 가 풀리고 아래 컨텐츠와 동시에 스크롤 되도록 동적으로 구현 (엑셀 동작을 참고)',
+              },
+            ],
+          },
+          {
+            page: '6. 모바일 대응',
+            desc: [
+              {
+                mainDesc:
+                  '각 페이지를 pc(1920px) - 탭(1024px) - 모바일(720px) 단위의 반응형으로 구현',
+              },
+            ],
+          },
+        ],
+        projectProblemSolving: [
+          {
+            title: '업무일지 날짜 검색 UX 개선',
+            problem:
+              '업무일지 검색 시 기본적으로 금일 데이터가 나오도록 했지만, 날짜를 변경해도 ‘검색’ 버튼을 눌러야만 결과가 조회되는 구조 → 사용성 저하',
+            solving:
+              '날짜 [input] 값이 변경될 때마다 API 호출이 즉시 실행되도록 수정하여, <검색 버튼 없이도 실시간 조회 가능하게 개선>',
+          },
+          {
+            title: '프로젝트 투입 정보 페이지 엑셀 구현 이슈',
+            problem:
+              '프로젝트 투입 현황 페이지를 엑셀 형태로 구현해달라는 요청이 있었음. 처음에는 [flex] 로 시도했지만 행/열 구조 유지 및 스크롤 고정 처리가 어려움',
+            solving:
+              '[table] 태그 기반으로 [map] 을 활용해 데이터를 출력하고, 헤더는 상단 고정 + 좌우 스크롤 동적 처리까지 반영하여 <엑셀과 유사한 UI/UX 구현>',
+          },
+          {
+            title: '반응형 대응 이슈',
+            problem:
+              'PC, 태블릿, 모바일 화면에 따라 레이아웃을 설정해야 했는데, 최대한 단순한 디자인 시스템이 필요했던 상황',
+            solving:
+              '[Tailwindcss] <의 반응형 유틸리티를 활용해 단위별 레이아웃을 조정>하고, 모바일에서도 동일한 기능을 원활히 사용할 수 있도록 개선',
+          },
+          {
+            title: '프로젝트 별 뱃지 가독성 개선',
+            problem:
+              '메인 화면에서 프로젝트별 뱃지를 표시할 때, 같은 스타일이라 프로젝트 간 구분이 어려움',
+            solving:
+              '프로젝트마다 배경색을 랜덤 생성하는 로직을 구현하여 <시각적으로 쉽게 구분할 수 있도록 개선>',
+          },
+          {
+            title: '전반적인 UI 개선 이슈',
+            problem:
+              '뚜렷한 디자인 시안이 없는 상황에서, 기획서에 표시된 단순한 화면을 바탕으로 개발을 진행한 상황 →  ex) 테이블 형식의 목록이 직원들에게 직관적으로 보이지 않다는 피드백이 발생하거나, 목록 별점 시스템을 도입할 때 상세페이지가 아닌 목록 페이지에서 표시될 때 레이아웃이 깨지는 현상이 발생',
+            solving:
+              '테이블 형태가 아닌 [Grid] 를 사용하여 <더 직관적으로 직원들의 일과가 보이게 개선>하였으며, 별점을 숫자로 단순 표시하는 방식으로 변경하여 <가독성과 직관성을 높임>',
+          },
+        ],
         projectWorkList: [
           '사내 업무 등록 및 일지 작성 페이지 및 이메일 서명 자동화 기능 개발',
           'Excel 과 유사한 UI 구현을 통한 프로젝트/등급 관리 편의성 향상',
