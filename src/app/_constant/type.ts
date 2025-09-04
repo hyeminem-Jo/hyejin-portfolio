@@ -40,6 +40,7 @@ export interface MainFunction {
 export interface FunctionDesc {
   mainDesc: string;
   subDesc?: string[];
+  pageLink?: string;
 }
 
 export type CompanyList = Company[];

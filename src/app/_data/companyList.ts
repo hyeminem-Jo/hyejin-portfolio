@@ -645,6 +645,179 @@ export const companyList = [
           'WEB 홈페이지 및 매거진, 켐페인 페이지 퍼블리싱 및 인터렉션 구현',
         ],
         projectThumbnail: '/assets/images/thumbnails/thumbnail-ssg.jpg',
+        projectDescDetail:
+          '신세계 백화점 앱과 홈페이지는 신세계 백화점의 쇼핑 정보와 혜택 및 브랜드 소통을 위한 라이프스타일 플랫폼입니다. \n특히 앱에서는 고객과의 소통을 위한 커뮤니티, 상세한 브랜드관, 다양한 이벤트 참여 등을 경험할 수 있습니다. \n<신세계 백화점 앱 운영, 앱 이벤트,  홈페이지 내 매거진 및 설날 카탈로그 고도화 등 다양한 프로젝트를 진행하며 서비스 안정성과 사용 편의성을 높였습니다.>',
+        projectContribution: '20%',
+        projectRole: '프론트엔드 개발, 퍼블리싱(PA)',
+        projectDevice: 'APP / 적응형 웹',
+        projectProcess:
+          '운영 프로젝트이며, 앱의 경우 React.js 환경에서 styled-component 를 사용하여 작업했고 웹의 경우 html / css / jQuery 환경에서 작업을 진행했습니다. 앱, 홈페이지의 디자인 수급은 figma 로 이루어졌으며, 기획(6), 디자인(7), 프론트엔드(6), 백엔드(5) 네이티브(2) 개발자까지 한 부문 전체가 TF팀으로 구성되어 협업하였습니다.',
+        projectMainFunction: [
+          {
+            page: '1. 신세계 백화점 APP',
+            desc: [
+              {
+                mainDesc:
+                  'iOS 및 안드로이드 환경별 UI 차이를 <웹 인스펙터를 활용해 실제 디바이스에서 직접 테스트>하며 호환성을 확보',
+              },
+              {
+                mainDesc:
+                  '페이지 진입 시 브릿지를 통해 스크립트 이벤트를 전송하여 사용자 조회수를 수집, 데이터 기반의 서비스 운영에 기여',
+              },
+            ],
+          },
+          {
+            page: '1-1. 메인 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '인디케이터를 리뉴얼하고, 슬라이드 등 <애니메이션 및 인터랙션 기능을 개선>',
+              },
+              {
+                mainDesc:
+                  '로띠(Lottie) 애니메이션을 도입해 아이콘 및 숏컷 버튼에 동적 효과를 추가, 첫 렌더링 제어 및 사용자 상태(일반/멤버십)에 따른 <맞춤형 UI 제공>',
+              },
+              {
+                mainDesc:
+                  '스플래시 화면 종료 로직을 네이티브 시간 제어에서 데이터 로딩 완료 시점으로 변경, <초기 로딩 경험 개선 및 불필요한 대기 시간 제거> → 퍼포먼스 최적화',
+              },
+              {
+                mainDesc: '인디케이터, 로띠 아이콘 등을 컴포넌트화하여 재사용성과 유지보수성 확보',
+              },
+            ],
+          },
+          {
+            page: '1-2. 커뮤니티 페이지',
+            desc: [
+              {
+                mainDesc:
+                  'axios 요청을 통해 데이터를 패치했던 리스트 페이지에 [react-query] 를 적용하여, <캐싱 및 손쉬운 업데이트로 성능 개선>',
+              },
+              {
+                mainDesc:
+                  '탭 기능 오류를 수정하고, <탭 콘텐츠 데이터 불일치 문제를 해결>해 안정적인 기능으로 개선',
+              },
+            ],
+          },
+          {
+            page: '1-3. 온보딩 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '<온보딩 콘텐츠 퍼블리싱 및 슬라이드 기능을 개선>하여 초기 화면의 완성도와 가독성을 향상',
+              },
+              {
+                mainDesc:
+                  '데이터 요청 시 조건을 적용해 <불필요한 로딩을 방지하고, 초기 로딩 속도를 최적화>',
+              },
+            ],
+          },
+          {
+            page: '1-4. 이벤트 페이지',
+            desc: [
+              {
+                mainDesc:
+                  'JavaScript 사용이 불가능한 환경에서 <CSS만으로 슬라이드, 모달, 탭 메뉴를 구현>, 제한된 조건에서도 동적 UI 제공',
+              },
+              {
+                mainDesc:
+                  '팝업창 기능: [label]과 [input:checked]를 활용해 클릭 이벤트 없이 팝업을 제어, <사용자 상태(일반/멤버십)에 따른 맞춤형 UI 제공>',
+              },
+              {
+                mainDesc:
+                  '[:has] 가상 클래스 적용으로 팝업 활성화 시 body 스크롤 차단을 구현, 사용자 경험을 개선',
+              },
+            ],
+          },
+          {
+            page: '1-5. 어드민 페이지',
+            desc: [
+              {
+                mainDesc: '<입력 제한 및 에러 처리 로직을 강화>해 입력폼 안정성을 개선',
+              },
+              {
+                mainDesc: '팝업 기능 개선을 통해 관리자 업무 효율성을 향상',
+              },
+            ],
+          },
+          {
+            page: '2. 신세계 백화점 홈페이지 WEB',
+            desc: [
+              {
+                mainDesc: '홈페이지 서브페이지 퍼블리싱 고도화로 콘텐츠 가독성과 UI 완성도 강화',
+              },
+              {
+                mainDesc: '상세 페이지 이동 후 뒤로가기 시 탭 상태를 유지하여 사용자 편의성 개선',
+              },
+              {
+                mainDesc: '적응형 모바일 작업',
+              },
+            ],
+          },
+          {
+            page: '2-1. 매거진 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '매거진 콘텐츠 추가 및 수정 퍼블리싱을 통해 최신 콘텐츠 업로드와 운영 효율성 증대',
+                pageLink: 'https://www.shinsegae.com/magazine/list.do',
+              },
+            ],
+          },
+          {
+            page: '2-2. 여행 이벤트 페이지',
+            desc: [
+              {
+                mainDesc:
+                  '<이중 탭 구조와 상태 유지, 스크롤 이동 기능>을 통해 탐색 흐름을 개선하고 사용자 편의성을 향상',
+              },
+              {
+                mainDesc: '[Iframe] 내 팝업 기능 구현으로 백엔드의 제약된 환경에서도 유연한 대응',
+              },
+              {
+                mainDesc:
+                  '약관 동의 기능 (전체 동의 및 부분 동의)을 적용하여 <사용자 흐름 제어, 조건에 따른 버튼 활성화 로직> 개선',
+              },
+            ],
+          },
+        ],
+        projectProblemSolving: [
+          {
+            title: '크로스 플랫폼 UI 에 대한 일관성',
+            problem:
+              '앱에서 iOS와 Android 환경마다 동일한 UI 요소가 다르게 표시되어 사용자 경험에 일관성이 떨어졌고, 단순 퍼블리싱으로는 기기별 차이를 확인하기 어려운 상황이었음',
+            solving:
+              '<웹 인스펙터를 활용해 실제 디바이스 환경에서 직접 테스트>를 진행하며 문제를 찾아 수정, <다양한 기기에서도 동일한 화면을 제공하도록 호환성을 확보>',
+          },
+          {
+            title: '불필요한 데이터 로딩 최적화',
+            problem:
+              '앱 초기 로딩 시 필요하지 않은 데이터까지 모두 불러와 로딩 시간이 길어지고, 사용자 이탈 가능성이 높아졌음',
+            solving:
+              '데이터 요청 조건을 세분화하여 꼭 필요한 데이터만 호출하도록 수정, <로딩 시간을 단축하고 초기 화면 접근성을 높임>',
+          },
+          {
+            title: '자바스크립트 사용 제한 환경에서의 인터랙션',
+            problem:
+              '이벤트 페이지 환경에서는 JavaScript 사용이 제한되어 슬라이드, 모달, 탭 등 기본적인 인터랙션 구현이 불가능하였고, 사용자 편의성이 크게 저하되는 문제가 발생',
+            solving:
+              'CSS의 [:has], [input:checked] 기능을 활용하여 JS 동작을 대체하고, <제한된 환경에서도 모달과 탭 메뉴가 정상 동작>하도록 구현해 UX를 개선',
+          },
+          {
+            title: '앱 스플래시 화면 타이밍 이슈',
+            problem:
+              '스플래시 화면이 무조건 3초 후 닫히는 방식이라, 네트워크 지연 시 공백 화면이 노출되어 사용자의 불편함 발생',
+            solving:
+              '스플래시 종료 시점을 데이터 로딩 완료 기준으로 변경, 안정적인 첫 화면 진입이 가능해지며 <초기 경험이 개선>됨',
+          },
+          {
+            title: '페이지 이동 시 탭 상태 유지',
+            problem:
+              '상세 페이지를 보고 뒤로가기 했을 때 기존에 열었던 탭 상태가 초기화되어, 사용자가 다시 탐색해야 하는 불편이 발생',
+            solving:
+              'URL 파라미터 기반으로 <탭 상태를 유지하도록 로직을 개선>하여, 뒤로가기를 하더라도 동일한 화면을 그대로 유지할 수 있도록 함',
+          },
+        ],
         projectImgList: [
           '/assets/images/works/sinsegae/sinsegae-02.png',
           '/assets/images/works/sinsegae/sinsegae-03.png',
@@ -653,6 +826,7 @@ export const companyList = [
           '/assets/images/works/sinsegae/sinsegae-06.png',
           '/assets/images/works/sinsegae/sinsegae-07.gif',
           '/assets/images/works/sinsegae/sinsegae-08.png',
+          '/assets/images/works/sinsegae/sinsegae-13.webp',
           '/assets/images/works/sinsegae/sinsegae-09.jpg',
           '/assets/images/works/sinsegae/sinsegae-10.png',
           '/assets/images/works/sinsegae/sinsegae-11.png',

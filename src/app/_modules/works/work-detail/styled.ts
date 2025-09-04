@@ -391,7 +391,7 @@ export const BoldStyle = styled.span`
   color: #000;
 `;
 
-export const BlogLink = styled(Link)`
+export const StyleLink = styled(Link)`
   display: inline-block;
   margin-left: 5px;
   font-weight: 600;

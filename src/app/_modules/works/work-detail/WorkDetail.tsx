@@ -130,12 +130,32 @@ const WorkDetail = ({ id }: { id: string }) => {
                   <S.FunctionDescList>
                     {func.desc?.map((descItem: FunctionDesc, descIndex: number) => (
                       <S.FunctionDescItem key={descIndex}>
-                        <S.FunctionMainDesc>{formatText(descItem.mainDesc)}</S.FunctionMainDesc>
+                        <S.FunctionMainDesc>
+                          {formatText(descItem.mainDesc)}{' '}
+                          {descItem.pageLink && (
+                            <S.StyleLink
+                              href={descItem.pageLink}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                            >
+                              📄 페이지 링크
+                            </S.StyleLink>
+                          )}
+                        </S.FunctionMainDesc>
                         {descItem.subDesc && descItem.subDesc.length > 0 && (
                           <S.FunctionSubDescList>
                             {descItem.subDesc.map((sub: string, subIndex: number) => (
                               <S.FunctionSubDesc key={subIndex}>
-                                - {formatText(sub)}
+                                - {formatText(sub)}{' '}
+                                {descItem.pageLink && (
+                                  <S.StyleLink
+                                    href={descItem.pageLink}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                  >
+                                    ▶️ 페이지 링크
+                                  </S.StyleLink>
+                                )}
                               </S.FunctionSubDesc>
                             ))}
                           </S.FunctionSubDescList>
@@ -161,9 +181,9 @@ const WorkDetail = ({ id }: { id: string }) => {
                 <S.ProjectProblemAndSolving>
                   <strong>해결:</strong> {formatText(problem.solving)}{' '}
                   {problem.blogLink && (
-                    <S.BlogLink href={problem.blogLink} target='_blank' rel='noopener noreferrer'>
+                    <S.StyleLink href={problem.blogLink} target='_blank' rel='noopener noreferrer'>
                       ▶️ 블로그 보기
-                    </S.BlogLink>
+                    </S.StyleLink>
                   )}
                 </S.ProjectProblemAndSolving>
               </S.ProjectProblemSolvingItem>
