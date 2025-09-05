@@ -1,4 +1,5 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import { BREAKPOINT } from '@/app/_constant/breakpoint';
 
 export const AppLayoutContainer = styled.div`
   width: 100%;
@@ -8,4 +9,8 @@ export const AppLayoutContainer = styled.div`
   background-color: whitesmoke;
   color: #222;
   padding-top: 80px;
-`
+
+  @media (max-width: ${BREAKPOINT}px) {
+    padding-top: 65px;
+  }
+`;
