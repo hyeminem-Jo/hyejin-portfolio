@@ -7,6 +7,7 @@ import * as S from './styled';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import Link from 'next/link';
+import ScrollTop from '@/app/_modules/common/scroll-top/ScrollTop';
 
 const WorkDetail = ({ id }: { id: string }) => {
   const sliderSettings = {
@@ -274,6 +275,7 @@ const WorkDetail = ({ id }: { id: string }) => {
           </S.Section>
         )}
       </S.WorkDetailContent>
+      <ScrollTop />
     </S.WorkDetailContainer>
   );
 };
