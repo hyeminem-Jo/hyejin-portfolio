@@ -904,7 +904,7 @@ export const companyList = [
                 mainDesc: '축하금 액수 및 전달 기한 실시간 데이터 연동',
               },
               {
-                mainDesc: 'select box, input 등 입력폼',
+                mainDesc: '[select box], [input] 등 입력폼',
                 subDesc: [
                   '캠페인 기간 범위에서만 날짜 설정 가능',
                   '<월별 일수 자동 조정 표시> (ex. 8월 - 31까지 표시, 9월 - 30일까지 표시)',

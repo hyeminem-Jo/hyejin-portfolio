@@ -59,7 +59,7 @@ const skillList = [
         color: '#A8E6CF',
       },
       {
-        name: 'Tailwind',
+        name: 'TailwindCSS',
         color: '#06B6D4',
       },
     ],
