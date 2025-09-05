@@ -230,8 +230,29 @@
 <br>
 <br>
 
----
 
+# + 수정
+
+<img width="1411" height="826" alt="image" src="https://github.com/user-attachments/assets/02d255c4-a32f-4c22-9c49-f222f85402aa" />
+
+<br>
+
+<img width="1410" height="825" alt="image" src="https://github.com/user-attachments/assets/e3ad0877-7e44-43fe-af43-8514de17735f" />
+
+<img width="1412" height="826" alt="image" src="https://github.com/user-attachments/assets/399df31a-3bd4-41dd-a66d-813139ec8af3" />
+
+
+
+## 개선사항:
+- 프로젝트와 관련해 어떤 성과를 어떤 이슈와 함께 작업했는지에 대해 상세한 내용이 많이 부족하다 느껴 그리드 형식으로 수정했습니다.
+- 목록의 경우 프로젝트들을 블록형태로 변경 및 상세페이지로 이동할 수 있도록 수정했습니다.
+- 내용이 많아 모달 형식보다는 아예 새로운 전체페이지에서 내용을 다루는 것이 낫다 판단하여 상세페이지로 구현하였습니다.
+- 상세페이지에서 프로젝트와 관련된 내용(개요, 진행방식, 주요 작업, 이슈 해결 사례, 화면 이미지) 표현, 화면 이미지들을 가장 아래에 슬라이더로 표현했습니다.
+
+<br>
+<br>
+
+---
 
 ## 4. Side Project
 >풀스택 개발경험을 위해 진행한 토이프로젝트를 담은 페이지 입니다.
