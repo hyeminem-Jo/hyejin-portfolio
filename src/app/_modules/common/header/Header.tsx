@@ -12,7 +12,7 @@ const menuItems = [
   { href: '#about', text: 'ABOUT' },
   { href: '#skills', text: 'SKILLS' },
   { href: '#works', text: 'WORKS' },
-  { href: '#side-projects', text: 'SIDE PROJECT' },
+  // { href: '#side-projects', text: 'SIDE PROJECT' },
 ];
 
 const Header = () => {
