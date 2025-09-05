@@ -21,7 +21,7 @@ const MainContainer = () => {
       <About />
       <Skill />
       <Works />
-      {/* <SideProjects /> */}
+      <SideProjects />
       <Footer />
     </S.MainContainer>
   );
