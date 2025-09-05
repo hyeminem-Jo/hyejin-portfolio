@@ -12,7 +12,7 @@ const menuItems = [
   { href: '#visual', text: 'HOME' },
   { href: '#about', text: 'ABOUT' },
   { href: '#skills', text: 'SKILLS' },
-  { href: '#works', text: 'WORKS' },
+  { href: '#work', text: 'WORKS' },
   { href: '#side-projects', text: 'SIDE PROJECT' },
 ];
 
@@ -75,10 +75,10 @@ const Header = () => {
           </S.HeaderLogo>
         ) : (
           <Button
-            text='← Go Back'
+            text='← Go To List'
             size='sm'
             onClick={() => {
-              router.back();
+              router.push('/#work');
             }}
           />
         )}

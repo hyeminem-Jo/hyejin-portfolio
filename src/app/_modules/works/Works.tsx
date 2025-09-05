@@ -89,7 +89,7 @@ const Works = () => {
   };
 
   return (
-    <S.Works id='works'>
+    <S.Works id='work'>
       <Inner>
         <Title text='WORK EXPERIENCE' isCenter />
         <S.WorksInner>

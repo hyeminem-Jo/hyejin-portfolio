@@ -8,6 +8,8 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollTop from '@/app/_modules/common/scroll-top/ScrollTop';
+import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const WorkDetail = ({ id }: { id: string }) => {
   const sliderSettings = {
@@ -50,6 +52,22 @@ const WorkDetail = ({ id }: { id: string }) => {
     });
   };
 
+  const getAllProjects = () => {
+    const allProjects: Array<{ project: Project; company: Company }> = [];
+    companyList.forEach((company) => {
+      company.projectList.forEach((project) => {
+        allProjects.push({ project, company });
+      });
+    });
+
+    return allProjects.sort((a, b) => a.project.id - b.project.id);
+  };
+
+  const allProjects = getAllProjects();
+  const currentIndex = allProjects.findIndex((item) => item.project.id === Number(id));
+  const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null;
+  const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null;
+
   return (
     <S.WorkDetailContainer>
       <S.WorkDetailHeader>
@@ -76,7 +94,7 @@ const WorkDetail = ({ id }: { id: string }) => {
                       <div key={index}>
                         <Link
                           href={link}
-                          style={{ color: '#007bff' }}
+                          style={{ color: '#007bff', wordBreak: 'break-all' }}
                           target='_blank'
                           rel='noopener noreferrer'
                         >
@@ -88,7 +106,7 @@ const WorkDetail = ({ id }: { id: string }) => {
                   ) : (
                     <Link
                       href={targetProject.projectLink}
-                      style={{ color: '#007bff' }}
+                      style={{ color: '#007bff', wordBreak: 'break-all' }}
                       target='_blank'
                       rel='noopener noreferrer'
                     >
@@ -261,20 +279,36 @@ const WorkDetail = ({ id }: { id: string }) => {
                 ))}
               </Slider>
             </S.ImageSliderContainer>
-            {/* <S.ImageGrid>
-              {targetProject.projectImgList.map((image: string, index: number) => (
-                <S.ProjectImage
-                  key={index}
-                  src={image}
-                  alt={`${targetProject.projectName} 이미지 ${index + 1}`}
-                  width={400}
-                  height={300}
-                />
-              ))}
-            </S.ImageGrid> */}
           </S.Section>
         )}
       </S.WorkDetailContent>
+
+      <S.NavigationContainer>
+        {prevProject && (
+          <S.NavigationItem href={`/work/${prevProject.project.id}`}>
+            <S.NavigationArrow>
+              <FaArrowLeft />
+            </S.NavigationArrow>
+            <S.NavigationLabel>이전 프로젝트</S.NavigationLabel>
+            <S.NavigationTitle>{prevProject.project.projectName}</S.NavigationTitle>
+          </S.NavigationItem>
+        )}
+        <S.NavigationCenter>
+          <S.NavigationCenterTxt>
+            {currentIndex + 1} / {allProjects.length}
+          </S.NavigationCenterTxt>
+        </S.NavigationCenter>
+        {nextProject && (
+          <S.NavigationItem href={`/work/${nextProject.project.id}`}>
+            <S.NavigationArrow>
+              <FaArrowRight />
+            </S.NavigationArrow>
+            <S.NavigationLabel>다음 프로젝트</S.NavigationLabel>
+            <S.NavigationTitle>{nextProject.project.projectName}</S.NavigationTitle>
+          </S.NavigationItem>
+        )}
+      </S.NavigationContainer>
+
       <ScrollTop />
     </S.WorkDetailContainer>
   );
