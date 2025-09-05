@@ -6,6 +6,7 @@ import * as S from './styled';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { usePathname, useRouter } from 'next/navigation';
 import Button from '@/app/_modules/common/button/Button';
+import { companyList } from '@/app/_data/companyList';
 
 const menuItems = [
   { href: '#visual', text: 'HOME' },
@@ -19,16 +20,33 @@ const Header = () => {
   const { isMobile } = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const getProjectNotionLink = () => {
+    if (pathname.includes('/work/')) {
+      const projectId = parseInt(pathname.split('/work/')[1]);
+      for (const company of companyList) {
+        const project = company.projectList.find((p) => p.id === projectId);
+        if (project && project.projectNotionLink) {
+          return project.projectNotionLink;
+        }
+      }
+    }
+    return null;
+  };
+
+  const notionLink = getProjectNotionLink();
 
   const handleMenuClick = (href: string) => {
     const targetId = href.replace('#', '');
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
-      const headerHeight = isMobile ? 65 : 80; // 헤더 높이
+      const headerHeight = isMobile ? 65 : 80;
       const targetPosition = targetElement.offsetTop - headerHeight;
 
       window.scrollTo({
@@ -37,7 +55,6 @@ const Header = () => {
       });
     }
 
-    // 모바일에서 메뉴가 열려있다면 닫기
     if (isMobile && isMenuOpen) {
       setIsMenuOpen(false);
     }
@@ -66,7 +83,7 @@ const Header = () => {
           />
         )}
 
-        {!usePathname().includes('/work') && (
+        {!usePathname().includes('/work') ? (
           <>
             <S.HeaderNav className={isMenuOpen ? 'menu-open' : ''}>
               {menuItems.map((item) => (
@@ -88,6 +105,21 @@ const Header = () => {
                 <S.HamburgerLine key={index} className='line' />
               ))}
             </S.HamburgerButton>
+          </>
+        ) : (
+          <>
+            {notionLink ? (
+              <Button
+                text='Notion 보기'
+                size='sm'
+                mode='light'
+                onClick={() => {
+                  if (notionLink) {
+                    window.open(notionLink, '_blank');
+                  }
+                }}
+              />
+            ) : null}
           </>
         )}
       </S.HeaderContent>

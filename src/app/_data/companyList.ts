@@ -172,6 +172,8 @@ export const companyList = [
           },
         ],
         projectReview: '소플 고도화 2차 프로젝트 리뷰',
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=7d070b1689334e568ebc4b6e4f4c327c&pm=c',
       },
       {
         id: 2,
@@ -299,6 +301,8 @@ export const companyList = [
           '/assets/images/works-webp/sople1/sople1-14.webp',
           '/assets/images/works-webp/sople1/sople1-15.webp',
         ],
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=25ccfffed1cd805e9b0ef5ec1203e6d2&pm=c',
       },
       {
         id: 3,
@@ -405,6 +409,8 @@ export const companyList = [
           '/assets/images/works-webp/yeep/yeep-13.webp',
           '/assets/images/works-webp/yeep/yeep-14.webp',
         ],
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=25ccfffed1cd80638d64c88bdda5f85c&pm=c',
       },
       // {
       //   projectName: '자사 홈페이지 구축',
@@ -622,6 +628,8 @@ export const companyList = [
           '/assets/images/works-webp/kcmf/kcmf-14.webp',
           '/assets/images/works-webp/kcmf/kcmf-15.webp',
         ],
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=25ccfffed1cd80c9b1f9e82a449bf8c6&pm=c',
       },
     ],
   },
@@ -832,6 +840,8 @@ export const companyList = [
           '/assets/images/works-webp/sinsegae/sinsegae-11.webp',
           '/assets/images/works-webp/sinsegae/sinsegae-12.webp',
         ],
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=25ccfffed1cd80528decf6efbe3177b8&pm=c',
       },
       {
         id: 6,
@@ -975,6 +985,8 @@ export const companyList = [
           '/assets/images/works-webp/wedding/wedding-07.webp',
           '/assets/images/works-webp/wedding/wedding-08.webp',
         ],
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=45338073cc094371811879b576a84f7e&pm=c',
       },
       {
         id: 8,
@@ -1133,6 +1145,8 @@ export const companyList = [
           '/assets/images/works-webp/samsung/samsung-15.webp',
           '/assets/images/works-webp/samsung/samsung-16.webp',
         ],
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=cbbc4c5cf4c7446b9f842ec244a1bca5&pm=c',
       },
       {
         id: 9,
@@ -1253,6 +1267,8 @@ export const companyList = [
           '반응형 퍼블리싱 및 인터랙션 추가',
         ],
         projectLink: 'https://www.emotion.co.kr/',
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=ff240012cbad468ba0af1a336d94e6ea&pm=c',
       },
       {
         id: 10,
@@ -1341,6 +1357,8 @@ export const companyList = [
           'jsp 환경에서 css, jQuery 를 사용하여 작업, 종가 /오푸드 메인 및 서브페이지 퍼블리싱 및 인터렉션 구현',
         ],
         projectLink: ['https://ofoodglobal.com/', 'https://www.jongga.co.kr/'],
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=486c9e9a037a4412853489423be7611c&pm=c',
       },
       {
         id: 11,
@@ -1400,6 +1418,8 @@ export const companyList = [
           '/assets/images/works-webp/metapoint/metapoint-03.webp',
           '/assets/images/works-webp/metapoint/metapoint-04.webp',
         ],
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=0d45c527dc324476a05f2920d772659e&pm=c',
       },
       {
         id: 7,
@@ -1557,6 +1577,8 @@ export const companyList = [
           '/assets/images/works-webp/pms/pms-04.webp',
           '/assets/images/works-webp/pms/pms-05.webp',
         ],
+        projectNotionLink:
+          'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=9f566ca948014fe19bc4415d4cdc2674&pm=c',
       },
     ],
   },
