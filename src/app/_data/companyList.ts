@@ -845,7 +845,7 @@ export const companyList = [
       },
       {
         id: 6,
-        projectName: '삼성전자 비스포크 웨딩 캠페인 사이트 구축',
+        projectName: '삼성전자 비스포크 웨딩 펀딩 사이트 구축',
         projectDesc:
           '비스포크 웨딩 펀딩(BESPOKE Wedding FUNding) 은 삼성전자가 신혼부부의 새로운 시작을 응원하는 캠페인입니다.',
         projectPeriod: '2023.08 - 2023.10',
