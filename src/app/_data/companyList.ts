@@ -1423,7 +1423,7 @@ export const companyList = [
       },
       {
         id: 7,
-        projectName: '자사 업무관리 프로그램(PMS) 구축 및 운영',
+        projectName: '자사 PMS 구축 및 운영',
         projectDesc:
           '사원 정보, 업무일지 및 프로젝트 현황을 파악할 수 있는 어드민 페이지입니다. 부서별 진행 업무와 프로젝트 현황을 객관적인 지표로 확인할 수 있습니다.',
         projectPeriod: '2023.05 - 2023.11',
