@@ -989,7 +989,7 @@ export const companyList = [
           'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=45338073cc094371811879b576a84f7e&pm=c',
       },
       {
-        id: 8,
+        id: 7,
         projectName: '삼성 지속가능성경영 사이트 운영',
         projectDesc:
           '환경, 사회, 거버넌스 분야에 걸쳐 삼성전자의 전략과 주요 성과를 담은 보고서 형식의 웹사이트입니다.',
@@ -1149,7 +1149,7 @@ export const companyList = [
           'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=cbbc4c5cf4c7446b9f842ec244a1bca5&pm=c',
       },
       {
-        id: 9,
+        id: 8,
         projectName: '이모션글로벌 홈페이지 고도화',
         projectDesc:
           '자회사인 이모션 글로벌 홈페이지이며, 본사에 대한 정보, 포트폴리오, 의뢰 서비스, 입사지원 서비스 등을 제공하는 웹사이트입니다.',
@@ -1273,7 +1273,7 @@ export const companyList = [
           'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=ff240012cbad468ba0af1a336d94e6ea&pm=c',
       },
       {
-        id: 10,
+        id: 9,
         projectName: '대상 사이트(종가, 오푸드) 운영',
         projectDesc:
           '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다.',
@@ -1363,7 +1363,7 @@ export const companyList = [
           'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=486c9e9a037a4412853489423be7611c&pm=c',
       },
       {
-        id: 11,
+        id: 10,
         projectName: '메타클럽 구축',
         projectDesc:
           '메타클럽은 상품권 전환 및 포인트를 충전할 수 있는 포인트 테크 플랫폼으로, 문화상품권, 도서문화상품권의 핀번호를 등록하여 다양한 곳에서 사용할 수 있게 해줍니다.',
@@ -1424,7 +1424,7 @@ export const companyList = [
           'https://noiseless-catfish-e41.notion.site/s-Frontend-Portfolio-f8511fdba73143d682a2a4c9377f763c?p=0d45c527dc324476a05f2920d772659e&pm=c',
       },
       {
-        id: 7,
+        id: 11,
         projectName: '자사 PMS 구축 및 운영',
         projectDesc:
           '사원 정보, 업무일지 및 프로젝트 현황을 파악할 수 있는 어드민 페이지입니다. 부서별 진행 업무와 프로젝트 현황을 객관적인 지표로 확인할 수 있습니다.',
