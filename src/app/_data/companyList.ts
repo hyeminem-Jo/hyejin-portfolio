@@ -1233,6 +1233,8 @@ export const companyList = [
               '입사지원 페이지의 슬라이드에서 Vue의 기본 기능과 충돌하여 탭 기능이 정상 작동하지 않는 이슈 발생',
             solving:
               '[v-swiper] 디렉티브를 사용하여 Vue 컴포넌트와 Swiper 를 분리하고, [observer: true], [observerParents: true] 옵션을 추가하여 DOM 변경 감지 → 탭 전환 시에도 Swiper가 정상 작동하도록 개선',
+            blogLink:
+              'https://velog.io/@h_jinny/Vue.js%ED%83%AD-%EA%B8%B0%EB%8A%A5-%EC%9D%B4%EC%9A%A9%EC%8B%9C-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%9E%91%EB%8F%99-%EC%98%A4%EB%A5%98',
           },
           {
             title: 'GSAP 애니메이션 메모리 누수 방지',
@@ -1530,6 +1532,15 @@ export const companyList = [
           },
         ],
         projectProblemSolving: [
+          {
+            title: 'SWR 캐시로 인한 댓글 작성 후 화면 미갱신 문제',
+            problem:
+              '댓글 작성 후 해당 댓글이 포함된 리스트 데이터가 클라이언트에서 즉시 갱신되지 않아, 새로고침을 해야만 화면에 반영되는 문제가 발생',
+            solving:
+              '[useSWR] 훅에서 제공하는 [mutate] <함수를 사용>하여, 댓글 작성 후 <해당 키의 캐시를 수동으로 갱신>하고 컴포넌트를 리렌더링하여 실시간으로 변경 사항을 반영',
+            blogLink:
+              'https://velog.io/@h_jinny/Next.js-SWR-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B0%B1%EC%8B%A0-%EC%95%88%EB%90%98%EB%8A%94-%ED%98%84%EC%83%81',
+          },
           {
             title: '업무일지 날짜 검색 UX 개선',
             problem:
