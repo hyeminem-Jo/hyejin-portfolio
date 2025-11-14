@@ -115,6 +115,14 @@ const Visual = () => {
 
   return (
     <S.Visual id='visual' className={`visual ${isMobile ? 'mobile' : ''}`}>
+      <S.MainTextList className='mainText'>
+        <S.MainTextInner>
+          <S.MainText>UI DEVELOPER</S.MainText>
+        </S.MainTextInner>
+        <S.MainTextInner>
+          <S.MainText>PORTFOLIO</S.MainText>
+        </S.MainTextInner>
+      </S.MainTextList>
       <S.SubText className='subText'>
         Designing & developing <br className='mo-only' />
         user-friendly web experiences.

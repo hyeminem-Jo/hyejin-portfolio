@@ -35,19 +35,15 @@ export const HeaderLogo = styled.div`
   align-items: center;
   gap: 15px;
   height: 100px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
 
   @media (max-width: ${BREAKPOINT}px) {
     height: 65px;
-  }
-`;
-
-export const HeaderLogoTitle = styled.h1`
-  font-size: 30px;
-  font-weight: 600;
-  color: #222;
-
-  @media (max-width: ${BREAKPOINT}px) {
-    display: none;
   }
 `;
 

@@ -55,6 +55,9 @@ export const MainText = styled.i`
   transition: transform 0.5s linear;
   font-style: normal;
   opacity: 0;
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 
   @keyframes slideUp {
     from {
@@ -86,6 +89,7 @@ export const SubText = styled.h4`
   color: #555;
   opacity: 0;
   transform: translateX(-50px);
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   @media (max-width: ${BREAKPOINT}px) {
     justify-content: flex-start;

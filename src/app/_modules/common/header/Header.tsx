@@ -64,14 +64,17 @@ const Header = () => {
     <S.HeaderContainer>
       <S.HeaderContent>
         {!usePathname().includes('/work') ? (
-          <S.HeaderLogo>
+          <S.HeaderLogo
+            onClick={() => {
+              handleMenuClick('#visual');
+            }}
+          >
             <Image
               src='/assets/images/portfolio-logo.webp'
               alt='logo'
               width={isMobile ? 45 : 50}
               height={isMobile ? 45 : 50}
             />
-            <S.HeaderLogoTitle>HYEJIN </S.HeaderLogoTitle>
           </S.HeaderLogo>
         ) : (
           <Button
