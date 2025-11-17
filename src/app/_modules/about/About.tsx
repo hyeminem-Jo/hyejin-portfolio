@@ -67,7 +67,7 @@ const About = () => {
             </S.AboutInnerBoxMiddle>
             <S.AboutInnerBoxDesc>
               <S.AboutInnerBoxDescBold>
-                저는 사용자와 팀 모두에게 가치를 주는 UI 개발자입니다.
+                저는 사용자와 팀 모두에게 가치를 주는 개발자입니다.
               </S.AboutInnerBoxDescBold>
               디자인 시안을 픽셀 단위로 정확하게 구현하는 퍼블리싱 역량과 함께, <br />
               더 나은 사용자 경험을 만드는 프론트엔드 개발까지 아우르는 전문성을 갖추고 있습니다.

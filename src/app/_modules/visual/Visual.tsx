@@ -117,7 +117,7 @@ const Visual = () => {
     <S.Visual id='visual' className={`visual ${isMobile ? 'mobile' : ''}`}>
       <S.MainTextList className='mainText'>
         <S.MainTextInner>
-          <S.MainText>UI DEVELOPER</S.MainText>
+          <S.MainText>FE DEVELOPER</S.MainText>
         </S.MainTextInner>
         <S.MainTextInner>
           <S.MainText>PORTFOLIO</S.MainText>

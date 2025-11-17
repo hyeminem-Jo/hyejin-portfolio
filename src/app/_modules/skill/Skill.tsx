@@ -80,15 +80,16 @@ const skillList = [
 ];
 
 const skillDescList = [
-  'React 및 TypeScript를 기반으로 개발했습니다.',
-  'SSR 환경의 경우 Next.js 서버 컴포넌트를 활용한 API 라우터 최소화 및 SEO 에 대응하였으며, App Router를 활용하여 라우팅 구조를 개선하였습니다.',
-  '상태관리의 경우 주로 Redux를 사용하여 중앙 집중식 관리를 구현하였으며, 이후 개인프로젝트에서 Jotai를 통해 더 간편한 구조의 상태관리를 구현한 경험이 있습니다.',
-  '데이터 연동으로는 axios 를 활용하여 다양한 CRUD 를 구현하였으며, 이후 React-Query 을 활용하여 서버상태에도 최적화된 데이터 패칭 및 캐싱을 구현하였습니다.',
-  '불필요한 리렌더링 최소화 및 네트워크 요청속도 개선, 반복되는 요청 중복 방지 등 다양한 프론트엔드 성능 개선 경험을 가지고 있습니다.',
-  'React-Hook-Form 및 yup 와 zod 를 활용하여 유효성 체크 및 효율적인 폼 관리를 구현하였습니다.',
-  '스타일링 라이브러리로는 Styled-component 를 사용하였으며, 추후 업데이트 이슈를 고려하여 Emotion을 활용하였습니다. \n관리자페이지 등 디자인이 비중이 적은 페이지에서는 Tailwind CSS를 활용하여 간단하게 css 를 형성 및 반응형 디자인을 구현하였습니다.',
-  'Swiper, GSAP 등을 활용하여 다양한 화면 인터렉션을 구현하였으며, react-infinite-scroll-component 를 통해 인피니트 스크롤링 기능을 구현하였습니다.',
-  '개인프로젝트에서 Supabase를 활용하여 더욱 쉽고 간단한 백엔드 환경을 구축하였으며, CRUD 를 구현하였습니다. \n배포의 경우 Vercel을 활용하여 간편한 배포를 구현하였습니다.',
+  'React와 TypeScript 기반으로 개발하며, Next.js(App Router, Server Component)를 활용해 SSR과 SEO에 대응합니다.',
+  '시멘틱 마크업을 지향하고 웹 접근성과 크로스브라우징에 최적화된 코드를 작성합니다.',
+  'SCSS 및 Styled-components, Emotion, Tailwind CSS를 상황에 맞게 활용하여 스타일링을 구현합니다.',
+  'Redux와 Jotai로 상태 관리를 구현하며, 프로젝트 특성에 맞는 상태 관리 방식을 선택합니다.',
+  'axios와 React Query를 통한 CRUD 구현, 데이터 캐싱 및 성능 최적화를 경험했습니다.',
+  'Swiper, GSAP, Infinite Scroll 등을 활용하여 다양한 UI 인터랙션을 구현합니다.',
+  'React-Hook-Form과 yup, zod를 활용하여 유효성 검증 및 효율적인 폼 관리를 구현합니다.',
+  'Supabase를 이용해 간단한 백엔드 환경과 CRUD 기능을 구축한 경험이 있으며, Vercel을 통해 배포를 진행합니다.',
+  '개발 과정에서 Cursor 등 AI 도구를 적극적으로 활용하며, 협업 도구로는 GitLab을 사용합니다.',
+  '디자인 협업은 Figma와 Photoshop을 활용하여 디자이너와 원활하게 소통합니다.',
 ];
 
 const Skill = () => {
