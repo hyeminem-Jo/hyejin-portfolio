@@ -22,7 +22,7 @@ export const companyList = [
         projectLink: 'https://sople.me/',
         projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-sople2.webp',
         projectContribution: '30%',
-        projectRole: '프론트엔드 개발',
+        projectRole: '프론트엔드 개발, 퍼블리싱',
         projectDevice: 'PC, 모바일',
         projectProcess:
           '구축 프로젝트이며, React.js 기반으로만 만들어졌던 이전 1차 소플을 SEO 기능 및 여러 편리한 내장 기능 처리를 위해 Next.js 환경으로 구현하였습니다. styled-component 의 지원중단을 계기로 대체 스타일 라이브러리로 emotion 을 사용하였으며, Redux 로 중앙데이터 관리를 진행하였습니다. 디자인 수급은 figma 로 이루어졌으며 기획은 sk cns 에서, 디자인은 더즈인터랙티브에서 작업을 하였습니다. 백엔드 3명, 프론트엔드 3명의 구성원으로 협업을 진행하였습니다.',
@@ -192,7 +192,7 @@ export const companyList = [
         ],
         projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-sople1.webp',
         projectContribution: '30%',
-        projectRole: '프론트엔드 개발',
+        projectRole: '프론트엔드 개발, 퍼블리싱',
         projectDevice: 'PC, 모바일',
         projectProcess:
           '고도화를 위한 운영 및 일부 구축 프로젝트이며, React.js 환경에서 작업을 진행하였습니다. 스타일 처리로는  styled-component 를 사용하였으며, Redux 로 중앙데이터 관리를 진행하였습니다. 디자인 수급은 figma 로 이루어졌으며 기획은 sk cns, 디자인은 더즈인터랙티브에서 작업을 하였습니다. 백엔드 3명, 프론트엔드 3명의 구성원으로 협업을 진행하였습니다.',
@@ -321,7 +321,7 @@ export const companyList = [
         ],
         projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-yeep.webp',
         projectContribution: '앱(10%) 관리자(90%)',
-        projectRole: '프론트엔드 개발',
+        projectRole: '프론트엔드 개발, 퍼블리싱',
         projectDevice: '앱(사용자) /  웹(관리자)',
         projectProcess:
           '고도화를 위한 운영 및 일부 구축 프로젝트이며, React Native 및 React.js 환경에서 작업을 진행하였습니다. 스타일 처리로는 TailwindCSS 를 사용하였으며, Redux 로 중앙데이터 관리를 진행하였습니다. 디자인 수급은 figma 로 이루어졌으며 기획자 1명, 디자이너 1명, 백엔드 2명, 프론트엔드 3명의 구성원으로 협업을 진행하였습니다.',
@@ -448,7 +448,7 @@ export const companyList = [
         projectDescDetail:
           '시청자미디어재단은 참여형 방송 문화를 위해 시청자가 직접 방송사를 선택하고 프로그램을 제작 및 신청할 수 있는 환경을 제공하고 있습니다. \n이 플랫폼은 시청자가 주체적으로 방송 제작에 참여할 수 있도록 기획되었으며, 방송사와 시청자를 연결하는 소통 창구 역할을 합니다. \n<해당 프로젝트에서 사용자 페이지와 관리자 페이지를 모두 맡아 개발을 진행하였습니다.>',
         projectContribution: '사용자(30%) 관리자(30%)',
-        projectRole: '프론트엔드 개발',
+        projectRole: '프론트엔드 개발, 퍼블리싱',
         projectDevice: '사용자/관리자 PC',
         projectProcess:
           '구축 프로젝트이며, React.js 환경에서 작업을 진행하였습니다. 스타일 처리로는  styled-component 를 사용하였으며, Redux 로 중앙데이터 관리를 진행하였습니다. 디자인 수급은 figma 로 이루어졌으며 기획자 1명, 디자이너 1명, 백엔드 2명, 프론트엔드 3명의 구성원으로 협업을 진행하였습니다.',
