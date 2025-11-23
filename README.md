@@ -22,7 +22,7 @@
 ## 1. About
 >개발자로서의 저를 설명할 수 있는 가장 강력한 3가지 요인을 표현하였습니다.
 
-<img width="1451" height="829" alt="image" src="https://github.com/user-attachments/assets/c5765fc8-2f99-4ee2-875c-8fa41ef46bf0" />
+<img width="1450" height="826" alt="Image" src="https://github.com/user-attachments/assets/0f8f613c-39cf-47e6-bca9-e7ac0c319c04" />
 
 <br>
 <br>
