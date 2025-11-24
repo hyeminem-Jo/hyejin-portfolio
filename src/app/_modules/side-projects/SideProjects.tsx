@@ -14,6 +14,16 @@ import { useIsMobile } from '../common/hooks/useIsMobile';
 
 const sideProjectsList = [
   {
+    title: 'J-stagram',
+    image: '/assets/images/side-project/side-project-05.png',
+    introduction:
+      '회원가입, 로그인, 및 메시지 기능의 인스타그램 클론 프로젝트입니다. \n 카카오 소셜로그인 및 supabase 의 리얼타임 기능을 활용하여 \n실시간으로 채팅이 가능하도록 구현하였습니다.\n Jotai 를 사용하여 내 정보 상태관리를 구현하였습니다. \n (일반 회원가입의 경우 이메일 인증 횟수가 제한되어있어 일정 시간 인증 이메일이 발송되지 않을 수 있습니다.)',
+    skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
+    link: 'https://hyejin-toy-project.vercel.app/j-stagram',
+    github: 'https://github.com/hyeminem-Jo/j-stagram/blob/main/README.md#j-stagram',
+    demo: 'https://j-stagram-demo.vercel.app',
+  },
+  {
     title: '나의 할 일',
     image: '/assets/images/side-project/side-project-01.png',
     introduction:
@@ -21,22 +31,9 @@ const sideProjectsList = [
 
     skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Supabase'],
     link: 'https://hyejin-toy-project.vercel.app/todo',
-    github:
-      'https://github.com/hyeminem-Jo/toy-project/tree/main?tab=readme-ov-file#1-%EB%82%98%EC%9D%98-%ED%95%A0-%EC%9D%BCtodo-list',
+    github: 'https://github.com/hyeminem-Jo/j-stagram/blob/main/README.md#side-project',
     demo: 'https://todo-app-demo.vercel.app',
   },
-  {
-    title: 'J-stagram',
-    image: '/assets/images/side-project/side-project-05.png',
-    introduction:
-      '회원가입, 로그인, 및 메시지 기능의 인스타그램 클론 프로젝트입니다. \n 카카오 소셜로그인 및 supabase 의 리얼타임 기능을 활용하여 \n실시간으로 채팅이 가능하도록 구현하였습니다.\n Jotai 를 사용하여 내 정보 상태관리를 구현하였습니다. \n (일반 회원가입의 경우 이메일 인증 횟수가 제한되어있어 일정 시간 인증 이메일이 발송되지 않을 수 있습니다.)',
-    skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
-    link: 'https://hyejin-toy-project.vercel.app/j-stagram',
-    github:
-      'https://github.com/hyeminem-Jo/toy-project/tree/main?tab=readme-ov-file#2-%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8-%ED%81%B4%EB%A1%A0-j-stagram',
-    demo: 'https://j-stagram-demo.vercel.app',
-  },
-
   {
     title: '갤러리',
     image: '/assets/images/side-project/side-project-03.png',
@@ -45,7 +42,7 @@ const sideProjectsList = [
     skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Supabase'],
     link: 'https://hyejin-toy-project.vercel.app/gallery',
     github:
-      'https://github.com/hyeminem-Jo/toy-project/tree/main?tab=readme-ov-file#3-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C-gallery',
+      'https://github.com/hyeminem-Jo/j-stagram/blob/main/README.md#3-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C-gallery',
     demo: 'https://gallery-app-demo.vercel.app',
   },
   {
@@ -58,7 +55,7 @@ const sideProjectsList = [
     skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
     link: 'https://hyejin-toy-project.vercel.app/movie',
     github:
-      'https://github.com/hyeminem-Jo/toy-project/tree/main?tab=readme-ov-file#4-%EB%84%B7%ED%94%8C%EB%A6%AD%EC%8A%A4-%ED%81%B4%EB%A1%A0',
+      'https://github.com/hyeminem-Jo/j-stagram/blob/main/README.md#4-%EB%84%B7%ED%94%8C%EB%A6%AD%EC%8A%A4-%ED%81%B4%EB%A1%A0',
     demo: 'https://netflix-clone-demo.vercel.app',
   },
 ];
