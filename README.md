@@ -3,7 +3,8 @@
 >저의 프론트엔드 개발 경력 및 스킬, 사이트 프로젝트에 대한 상세한 내용을 담은 포트폴리오 사이트입니다. 모바일웹 환경을 고려하여 작업을 진행했습니다.
 [링크](https://hyejin-portfolio.vercel.app/)
 
-<img width="1453" height="826" alt="image" src="https://github.com/user-attachments/assets/c9f2665e-938f-493c-a590-fc062d2eeb10" />
+<img width="1453" height="829" alt="Image" src="https://github.com/user-attachments/assets/67713c02-b280-4c83-888f-833afc52cfe5" />
+
 
 
 <br>
@@ -21,7 +22,7 @@
 ## 1. About
 >개발자로서의 저를 설명할 수 있는 가장 강력한 3가지 요인을 표현하였습니다.
 
-<img width="1451" height="829" alt="image" src="https://github.com/user-attachments/assets/c5765fc8-2f99-4ee2-875c-8fa41ef46bf0" />
+<img width="1450" height="826" alt="Image" src="https://github.com/user-attachments/assets/0f8f613c-39cf-47e6-bca9-e7ac0c319c04" />
 
 <br>
 <br>
