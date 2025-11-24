@@ -185,70 +185,70 @@
 >지난 시간동안의 어떤 경력을 쌓아왔는지에 대한 내용을 담은 페이지입니다. 
 지금껏 다닌 회사는 모두 에이전시였기 때문에 한 회사 당 여러 프로젝트를 나열하는 구조로 표현했습니다.
 
-<img width="1451" height="825" alt="image" src="https://github.com/user-attachments/assets/d72657b3-391f-4aab-b49a-6698157c7f11" />
-
-<br>
-<br>
-
-- Link 를 통해 작업물의 실제 배포된 사이트를 확인 할 수 있습니다.
-- 스크롤 시에도 왼쪽에 위치한 회사 정보는 그대로 보일 수 있도록 `position: sticky` 를 사용하였습니다.
-- 어떤 결과물인지 바로 확인이 가능도록 화면 보기 모달을 구현했습니다. 이때 모달은 공통컴포넌트로 생성했습니다.
-- 화면 보기 모달 내에서 화면들의 슬라이드 형성을 위해 `react-slick` 의 `Slider` 를 활용하였습니다.
-
-  <img width="1449" height="816" alt="image" src="https://github.com/user-attachments/assets/5fb57fc7-7ed4-4a08-946d-a033ce735a52" />
-
-```
-     <Modal
-        title='화면 이미지'
-        isOpen={isImageModalOpen}
-        onClose={handleCloseImageModal}
-        size='lg'
-        showCloseButton={true}
-        closeOnOverlayClick={true}
-      >
-        <S.ImageSliderContainer>
-          <Slider {...sliderSettings}>
-            {selectedImages.map((imageUrl, index) => (
-              <S.SliderImage key={index}>
-                <Image
-                  src={imageUrl}
-                  alt={`화면 이미지 ${index + 1}`}
-                  width={800}
-                  height={600}
-                  style={{ objectFit: 'contain' }}
-                  priority={index === 0}
-                  onError={(e) => {
-                    console.error('이미지 로드에 실패했습니다.', imageUrl);
-                  }}
-                />
-              </S.SliderImage>
-            ))}
-          </Slider>
-        </S.ImageSliderContainer>
-      </Modal>
-```
-
-<br>
-<br>
-
-
-# + 수정
-
-<img width="1411" height="826" alt="image" src="https://github.com/user-attachments/assets/02d255c4-a32f-4c22-9c49-f222f85402aa" />
+<img width="1453" height="796" alt="Image" src="https://github.com/user-attachments/assets/f31ac4db-4fc5-4034-9b78-2e746907545f" />
 
 <br>
 
-<img width="1410" height="825" alt="image" src="https://github.com/user-attachments/assets/e3ad0877-7e44-43fe-af43-8514de17735f" />
+<img width="1452" height="794" alt="Image" src="https://github.com/user-attachments/assets/42645b5c-e00f-46de-a9f2-c6385233e18a" />
 
-<img width="1412" height="826" alt="image" src="https://github.com/user-attachments/assets/399df31a-3bd4-41dd-a66d-813139ec8af3" />
-
-
-
-## 개선사항:
-- 프로젝트와 관련해 어떤 성과를 어떤 이슈와 함께 작업했는지에 대해 상세한 내용이 많이 부족하다 느껴 그리드 형식으로 수정했습니다.
 - 목록의 경우 프로젝트들을 블록형태로 변경 및 상세페이지로 이동할 수 있도록 수정했습니다.
-- 내용이 많아 모달 형식보다는 아예 새로운 전체페이지에서 내용을 다루는 것이 낫다 판단하여 상세페이지로 구현하였습니다.
+- 프로젝트와 관련해 어떤 성과를 어떤 이슈와 함께 작업했는지에 대해 상세한 내용을 담은 상세페이지입니다.
+- 상세 페이지 내에서 해당 프로젝트마다 Notion 으로도 확인할 수 있는 버튼이 있습니다.
 - 상세페이지에서 프로젝트와 관련된 내용(개요, 진행방식, 주요 작업, 이슈 해결 사례, 화면 이미지)을 표현, 화면 이미지들을 가장 아래에 슬라이더로 표현했습니다.
+- 이전 / 다음 프로젝트를 표시하고, 현재 몇 번째 프로젝트인지에 대한 정보도 포함하였습니다.
+
+<br>
+
+📄 WorkDetail.tsx
+
+```
+...
+  const getAllProjects = () => {
+    const allProjects: Array<{ project: Project; company: Company }> = [];
+    companyList.forEach((company) => {
+      company.projectList.forEach((project) => {
+        allProjects.push({ project, company });
+      });
+    });
+
+    return allProjects.sort((a, b) => a.project.id - b.project.id);
+  };
+
+  const allProjects = getAllProjects();
+  const currentIndex = allProjects.findIndex((item) => item.project.id === Number(id));
+  const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null;
+  const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null;
+
+...
+
+  <S.NavigationContainer>
+    {prevProject && (
+      <S.NavigationItem href={`/work/${prevProject.project.id}`}>
+        <S.NavigationArrow>
+          <FaArrowLeft />
+        </S.NavigationArrow>
+        <S.NavigationLabel>이전 프로젝트</S.NavigationLabel>
+        <S.NavigationTitle>{prevProject.project.projectName}</S.NavigationTitle>
+      </S.NavigationItem>
+    )}
+    <S.NavigationCenter>
+      <S.NavigationCenterTxt>
+        {currentIndex + 1} / {allProjects.length}
+      </S.NavigationCenterTxt>
+    </S.NavigationCenter>
+    {nextProject && (
+      <S.NavigationItem href={`/work/${nextProject.project.id}`}>
+        <S.NavigationArrow>
+          <FaArrowRight />
+        </S.NavigationArrow>
+        <S.NavigationLabel>다음 프로젝트</S.NavigationLabel>
+        <S.NavigationTitle>{nextProject.project.projectName}</S.NavigationTitle>
+      </S.NavigationItem>
+    )}
+  </S.NavigationContainer>
+
+  <ScrollTop />
+```
 
 <br>
 <br>
