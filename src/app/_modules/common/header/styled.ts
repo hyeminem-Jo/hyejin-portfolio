@@ -78,12 +78,19 @@ export const HeaderNav = styled.nav`
 export const HeaderNavItem = styled(Link)`
   font-size: 18px;
   font-weight: 600;
-  color: #222;
+  color: #bbb;
   text-decoration: none;
   cursor: pointer;
   user-select: none;
+  transition: color 0.1s ease-in-out;
+
   &:hover {
-    color: rgba(0, 0, 0, 0.5);
+    color: #222;
+  }
+
+  &.active {
+    color: #222;
+    font-weight: 700;
   }
 
   @media (max-width: ${BREAKPOINT}px) {
