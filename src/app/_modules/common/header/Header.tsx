@@ -20,6 +20,7 @@ const Header = () => {
   const { isMobile } = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('visual');
+  const [isMenuScrolling, setIsMenuScrolling] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -43,32 +44,59 @@ const Header = () => {
   const notionLink = getProjectNotionLink();
 
   useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout;
+
     const handleScroll = () => {
+      if (isMenuScrolling) return;
+
       const sections = ['visual', 'about', 'skills', 'work', 'side-projects'];
       const headerHeight = isMobile ? 65 : 80;
 
+      // 활성 섹션 즉시 업데이트 (메뉴 색상 변경)
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
         if (section) {
           const rect = section.getBoundingClientRect();
           if (rect.top <= headerHeight + 100) {
             setActiveSection(sections[i]);
-            // URL 해시 업데이트
-            const newHash = `#${sections[i]}`;
-            if (window.location.hash !== newHash) {
-              window.history.replaceState(null, '', newHash);
-            }
             break;
           }
         }
       }
+
+      // URL 해시 업데이트는 디바운스 적용
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = document.getElementById(sections[i]);
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= headerHeight + 100) {
+              if (sections[i] === 'visual') {
+                if (window.location.hash) {
+                  window.history.replaceState(null, '', window.location.pathname);
+                }
+              } else {
+                const newHash = `#${sections[i]}`;
+                if (window.location.hash !== newHash) {
+                  window.history.replaceState(null, '', newHash);
+                }
+              }
+              break;
+            }
+          }
+        }
+      }, 200);
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isMobile]);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, [isMobile, isMenuScrolling]);
 
   // 페이지 로드 시 URL 해시에 따라 스크롤
   useEffect(() => {
@@ -98,10 +126,27 @@ const Header = () => {
       const headerHeight = isMobile ? 65 : 80;
       const targetPosition = targetElement.offsetTop - headerHeight;
 
+      // 메뉴 클릭 시 즉시 활성화 및 스크롤 중 상태 설정
+      setIsMenuScrolling(true);
+
+      // URL 해시 즉시 업데이트 (메뉴 클릭 시에는 바로 적용)
+      if (targetId === 'visual') {
+        setActiveSection('visual');
+        window.history.pushState(null, '', window.location.pathname);
+      } else {
+        setActiveSection(targetId);
+        window.history.pushState(null, '', href);
+      }
+
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth',
       });
+
+      // 스크롤 완료 후 상태 해제 (스크롤 애니메이션 시간 고려)
+      setTimeout(() => {
+        setIsMenuScrolling(false);
+      }, 1000);
     }
 
     if (isMobile && isMenuOpen) {
