@@ -25,7 +25,7 @@ export const WorksInner = styled.div`
   z-index: 10;
 
   @media (max-width: ${BREAKPOINT}px) {
-    margin-top: 60px;
+    margin-top: 40px;
   }
 `;
 
