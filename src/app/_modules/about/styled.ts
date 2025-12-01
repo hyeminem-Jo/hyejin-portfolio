@@ -53,6 +53,7 @@ export const AboutInnerBoxMiddle = styled.strong`
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 24px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -61,6 +62,14 @@ export const AboutInnerBoxDesc = styled.p`
   line-height: 1.5;
   color: #222;
   text-align: center;
+
+  i {
+    color: #888;
+  }
+
+  strong {
+    font-weight: 600;
+  }
 
   @media (max-width: ${BREAKPOINT}px) {
     margin-top: 20px;
@@ -73,6 +82,7 @@ export const AboutInnerBoxDescBold = styled.strong`
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 600;
+  color: chocolate;
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 18px;
