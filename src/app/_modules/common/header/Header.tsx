@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import * as S from './styled';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { usePathname, useRouter } from 'next/navigation';
@@ -21,6 +22,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('visual');
   const [isMenuScrolling, setIsMenuScrolling] = useState(false);
+  const progressBarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -47,6 +49,18 @@ const Header = () => {
     let scrollTimeout: NodeJS.Timeout;
 
     const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+      if (progressBarRef.current) {
+        gsap.to(progressBarRef.current, {
+          width: `${progress}%`,
+          duration: 0.1,
+          ease: 'none',
+        });
+      }
+
       if (isMenuScrolling) return;
 
       const sections = ['visual', 'about', 'skills', 'work', 'side-projects'];
@@ -158,18 +172,26 @@ const Header = () => {
     <S.HeaderContainer>
       <S.HeaderContent>
         {!usePathname().includes('/work') ? (
-          <S.HeaderLogo
-            onClick={() => {
-              handleMenuClick('#visual');
-            }}
-          >
-            <Image
-              src='/assets/images/portfolio-logo.webp'
-              alt='logo'
-              width={isMobile ? 45 : 50}
-              height={isMobile ? 45 : 50}
-            />
-          </S.HeaderLogo>
+          <S.HeaderContentLeft>
+            <S.HeaderLogo
+              onClick={() => {
+                handleMenuClick('#visual');
+              }}
+            >
+              <Image
+                src='/assets/images/portfolio-logo.webp'
+                alt='logo'
+                width={isMobile ? 40 : 45}
+                height={isMobile ? 40 : 45}
+              />
+            </S.HeaderLogo>
+            <S.ProgressBarContainer>
+              <S.ProgressBarWrapper>
+                <S.ProgressBar ref={progressBarRef} />
+              </S.ProgressBarWrapper>
+              <S.PortfolioText>PORTFOLIO</S.PortfolioText>
+            </S.ProgressBarContainer>
+          </S.HeaderContentLeft>
         ) : (
           <Button
             text='← Go To List'

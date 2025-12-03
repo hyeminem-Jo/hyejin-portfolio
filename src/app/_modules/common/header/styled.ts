@@ -7,14 +7,71 @@ export const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
   z-index: 100;
 
   @media (max-width: ${BREAKPOINT}px) {
     height: 65px;
   }
+`;
+
+export const ProgressBarContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    gap: 10px;
+  }
+`;
+
+export const ProgressBarWrapper = styled.div`
+  width: 30vw;
+  height: 3px;
+  border-radius: 10px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    opacity: 0.1;
+    border-radius: 10px;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    width: 150px;
+  }
+`;
+
+export const PortfolioText = styled.span`
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 12px;
+  }
+`;
+
+export const ProgressBar = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ff9800;
+  z-index: 101;
+  border-radius: 10px;
 `;
 
 export const HeaderContent = styled.div`
@@ -28,6 +85,13 @@ export const HeaderContent = styled.div`
   @media (max-width: ${BREAKPOINT}px) {
     padding: 0 20px;
   }
+`;
+
+export const HeaderContentLeft = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
 `;
 
 export const HeaderLogo = styled.div`
@@ -78,7 +142,8 @@ export const HeaderNav = styled.nav`
 export const HeaderNavItem = styled(Link)`
   font-size: 18px;
   font-weight: 600;
-  color: #bbb;
+  color: #222;
+  opacity: 0.3;
   text-decoration: none;
   cursor: pointer;
   user-select: none;
@@ -90,6 +155,7 @@ export const HeaderNavItem = styled(Link)`
 
   &.active {
     color: #222;
+    opacity: 1;
     font-weight: 700;
   }
 
