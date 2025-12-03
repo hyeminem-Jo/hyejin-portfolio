@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Poppins, Righteous } from 'next/font/google';
 import './globals.css';
+import './_modules/common/styles/fonts.css';
 import AppLayout from './_modules/common/layout/AppLayout';
 import EmotionRegistry from './_modules/common/styles/EmotionRegistry';
 

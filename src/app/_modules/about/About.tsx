@@ -22,8 +22,30 @@ const About = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   const aniTextRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const buttonsContainerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    // 이미지 스크롤 애니메이션
+    if (imageRef.current) {
+      gsap.set(imageRef.current, {
+        opacity: 0,
+        y: 200,
+      });
+
+      gsap.to(imageRef.current, {
+        opacity: 1,
+        y: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: 'top 80%',
+          end: 'top 50%',
+          scrub: 0.8,
+        },
+      });
+    }
+
     const textAniList = aniTextRefs.current;
     const textAni = gsap.timeline({ repeat: -1 });
 
@@ -54,46 +76,74 @@ const About = () => {
       }
     });
     textAni.play();
+
+    // 버튼 스크롤 애니메이션
+    if (buttonsContainerRef.current) {
+      const buttons = buttonsContainerRef.current.querySelectorAll('button');
+
+      buttons.forEach((button) => {
+        gsap.set(button, {
+          opacity: 0,
+          x: 100,
+        });
+      });
+
+      const buttonTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: buttonsContainerRef.current,
+          start: 'top 80%',
+          end: 'top 80%',
+          scrub: 0.5,
+        },
+      });
+
+      buttons.forEach((button, index) => {
+        buttonTimeline.to(
+          button,
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+          },
+          index * 0.1,
+        );
+      });
+    }
   });
 
   return (
     <S.About id='about'>
       <Inner>
         <S.AboutInner>
+          <S.AboutInnerImage ref={imageRef}>
+            <Image src='/assets/images/profile.JPG' alt='profile' width={400} height={400} />
+          </S.AboutInnerImage>
           <S.AboutInnerBoxTitleInner>
-            <S.AboutInnerBoxMiddle>
-              &quot;디자인에 공감하고 <br className='mo-only' />
-              코드로 완성하는 <br className='mo-only' />
-              개발자&quot;
-            </S.AboutInnerBoxMiddle>
             <S.AboutInnerBoxDesc>
               <S.AboutInnerBoxDescBold>
-                🎨 디자인의 감각을 코드로 완성합니다.
+                안녕하세요, 👋🏻
+                <br />
+                4년차 FE 개발자 조혜진 입니다.
               </S.AboutInnerBoxDescBold>
-              저의 개발은 <strong>사용자의 눈과 디자인의 의도</strong>에서부터 시작됩니다. 디자인을
-              전공해온 만큼 픽셀 단위를 넘어, 고객 측에서 요구하는{' '}
-              <strong>미세한 감각과 인터랙션의 디테일</strong>을 정확하게 파악하고 구현하여
-              &apos;기대 이상&apos;이라는 평가를 받은 경험이 많습니다. 저는 직관적으로 좋아보이는
-              결과물이 <strong>더 나은 사용자 경험</strong>으로 이어지도록 주도적으로 고민합니다.
-              실제로 디자인 및 기획 회의 중 내용의 모순점이나 개선점을 발견했을 때, 능동적으로
-              의견을 제시하여{' '}
-              <i>&quot;그거 괜찮은데요? 혜진님 말씀대로 수정하는 게 더 나을 것 같아요&quot;</i> 라는
-              긍정적인 반응을 이끌어냈습니다. 저는 단순히 기능을 구현하는 것을 넘어, 제품의 가치를
-              시각적으로 극대화할 수 있는 <strong>감각적인 개발자</strong>입니다.
+              <S.AboutQuestionText>Q. 프론트엔드 개발자가 된 이유? </S.AboutQuestionText>
+              <S.AboutAnswerText>
+                디자인을 전공했지만, 디자인을 웹 화면으로 구현하는 과정에서 개발의 매력에
+                빠졌습니다. <br />
+                UI를 코드로 옮기는 흥미에서 시작해,{' '}
+                <strong>데이터까지 연결되는 전 과정을 직접 만들고 싶어</strong> <br />
+                프론트엔드 개발자가 되었습니다.
+              </S.AboutAnswerText>
+              <S.AboutQuestionText>Q. 개발자로써 자신만의 강점은? </S.AboutQuestionText>
+              <S.AboutAnswerText>
+                바이브코딩을 위한 LLM을 적극 활용해 컴포넌트 설계 및 리팩토링, 디버깅 등 개발
+                생산성을 크게 높입니다. 또한 사용자의 반응을 미리 예측해 디자인 및 기획단계에서
+                능동적인 개선을 이끌어내거나, Storybook 및 Postman 을 도입하는 등 팀 전체의 협업
+                흐름과 생산성 개선에도 큰 장점을 가지고 있습니다.
+              </S.AboutAnswerText>
+
               <br />
               <br />
               <br />
-              <S.AboutInnerBoxDescBold>
-                🤝 유연한 협업이 곧 개발 생산성입니다.
-              </S.AboutInnerBoxDescBold>
-              저는 <strong>동료와의 유연한 협업</strong>이 개발 속도와 최종 결과물의 품질을 좌우하는
-              핵심이라 믿습니다. 프론트엔드 개발 외 타 직군 동료들까지{' '}
-              <strong>같은 언어를 쓰고 같은 목표를 바라볼 수 있도록</strong> 환경을 구축하는 것에
-              집중합니다. 이런 믿음으로 디자이너와의 공통 기준을 위해 Storybook을, 백엔드 동료와의
-              API 소통 효율을 높이기 위해 Postman 사용을 제안하고 도입했습니다. 좋은 개발은 함께
-              만드는 것이라는 확신 아래에서 저는 기술적인 구현을 넘어 팀 전체의{' '}
-              <strong>생산성과 협업의 즐거움</strong>을 함께 끌어올리는 파트너가 되는 것에 기여하고
-              있습니다.
             </S.AboutInnerBoxDesc>
           </S.AboutInnerBoxTitleInner>
         </S.AboutInner>
@@ -112,7 +162,7 @@ const About = () => {
               </S.AboutTextAniItem>
             ))}
           </S.AboutTextAniList>
-          <S.AboutTextAniBtns>
+          <S.AboutTextAniBtns ref={buttonsContainerRef}>
             <Button
               text='Notion 이력서 보기'
               onClick={() => {

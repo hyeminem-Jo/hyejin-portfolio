@@ -7,6 +7,7 @@ export const About = styled.section`
   justify-content: space-between;
   align-items: center;
   height: 100dvh;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   @media (max-width: ${BREAKPOINT}px) {
     height: auto;
@@ -16,7 +17,6 @@ export const About = styled.section`
 export const AboutInner = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 70px;
   border-radius: 20px;
@@ -33,59 +33,92 @@ export const AboutInner = styled.div`
   }
 `;
 
+export const AboutInnerImage = styled.div`
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  transform: rotate(-13deg);
+  width: 400px;
+  height: 450px;
+  overflow: hidden;
+  border: 10px solid #fff;
+  border-bottom: 80px solid #fff;
+  background-color: #fff;
+  box-shadow: 12px 14px 2px 0 rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  img {
+    object-fit: cover;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    top: -10px;
+  }
+`;
+
 export const AboutInnerBoxTitleInner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  /* height: 270px; */
 
   @media (max-width: ${BREAKPOINT}px) {
     height: auto;
   }
 `;
 
-export const AboutInnerBoxMiddle = styled.strong`
-  font-size: 28px;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-  text-align: center;
-  margin-bottom: 50px;
-
-  @media (max-width: ${BREAKPOINT}px) {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-`;
-
 export const AboutInnerBoxDesc = styled.p`
+  position: relative;
+  width: 63%;
   font-size: 18px;
   line-height: 1.5;
   color: #222;
-  text-align: center;
 
   i {
     color: #888;
   }
 
-  strong {
-    font-weight: 600;
-  }
-
   @media (max-width: ${BREAKPOINT}px) {
+    width: 55%;
     margin-top: 20px;
     font-size: 16px;
   }
 `;
 
-export const AboutInnerBoxDescBold = styled.strong`
+export const AboutInnerBoxDescBold = styled.h3`
   display: block;
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: 600;
+  margin-bottom: 40px;
+  font-size: 33px;
   color: chocolate;
+  font-weight: 600;
+  font-family: 'Paperozi', sans-serif;
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 18px;
+  }
+`;
+
+export const AboutQuestionText = styled.strong`
+  display: block;
+  margin-top: 30px;
+  font-weight: 600;
+  color: #333;
+  font-size: 21px;
+  font-family: 'Paperozi', sans-serif;
+  line-height: 1.6;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 17px;
+  }
+`;
+
+export const AboutAnswerText = styled.span`
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+
+  strong {
+    font-weight: 600;
   }
 `;
 
