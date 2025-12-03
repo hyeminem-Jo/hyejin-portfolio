@@ -14,7 +14,7 @@ export const Button = styled.button<ButtonProps>`
   color: ${({ $mode }) => ($mode === 'light' ? '#222' : '#fff')};
   border: none;
   border-radius: 100px;
-  cursor: pointer;
+  cursor: none;
   font-size: ${({ $size }) => ($size === 'sm' ? '14px' : '16px')};
   font-weight: 600;
   padding: ${({ $size }) => ($size === 'sm' ? '10px 20px' : '15px 25px')};
