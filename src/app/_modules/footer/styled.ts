@@ -69,9 +69,18 @@ export const StyledTitle = styled(Title)`
   }
 `;
 
+export const FooterTextWrapList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+`;
+
 export const FooterTextWrap = styled.div`
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 
   @media (max-width: ${BREAKPOINT_SM}px) {
     flex-direction: column;
@@ -81,8 +90,9 @@ export const FooterTextWrap = styled.div`
 `;
 
 export const FooterInnerTextTitle = styled.h3`
+  margin-bottom: 10px;
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 600;
   color: #000;
 
   @media (max-width: ${BREAKPOINT_SM}px) {
@@ -96,7 +106,7 @@ export const FooterInnerTextDesc = styled.p`
   align-items: center;
   font-size: 18px;
   font-weight: 500;
-  color: #444;
+  color: #555;
 
   @media (max-width: ${BREAKPOINT_SM}px) {
     font-size: 15px;

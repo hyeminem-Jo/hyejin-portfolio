@@ -89,18 +89,24 @@ const Footer = () => {
           <S.StyledTitle $isCenter={false} $color='black'>
             ETC.
           </S.StyledTitle>
-          <S.FooterTextWrap>
-            <S.FooterInnerTextTitle>Education</S.FooterInnerTextTitle>
-            <S.FooterInnerTextDesc>
-              홍익대학교 커뮤니케이션디자인학과 {!isMobile && '(2016 - 2021)'}
-            </S.FooterInnerTextDesc>
-            {isMobile && <S.FooterInnerTextDesc>2016 - 2021</S.FooterInnerTextDesc>}
-          </S.FooterTextWrap>
-          <S.FooterTextWrap>
-            <S.FooterInnerTextTitle>Contact</S.FooterInnerTextTitle>
-            <S.FooterInnerTextDesc>Phone: 010-9275-5637</S.FooterInnerTextDesc>
-            <S.FooterInnerTextDesc>Email: konnimey@naver.com</S.FooterInnerTextDesc>
-          </S.FooterTextWrap>
+          <S.FooterTextWrapList>
+            <S.FooterTextWrap>
+              <S.FooterInnerTextTitle>Education</S.FooterInnerTextTitle>
+              <S.FooterInnerTextDesc>
+                홍익대학교 커뮤니케이션디자인 전공 {!isMobile && '(2016.02 - 2021.03)'}
+              </S.FooterInnerTextDesc>
+              <S.FooterInnerTextDesc>
+                웹퍼블리셔 프론트엔드 개발 디지털실무 양성과정 수료{' '}
+                {!isMobile && '(2021.03 - 2021.11)'}
+              </S.FooterInnerTextDesc>
+              {isMobile && <S.FooterInnerTextDesc>2016 - 2021</S.FooterInnerTextDesc>}
+            </S.FooterTextWrap>
+            <S.FooterTextWrap>
+              <S.FooterInnerTextTitle>Contact</S.FooterInnerTextTitle>
+              <S.FooterInnerTextDesc>Phone: 010-9275-5637</S.FooterInnerTextDesc>
+              <S.FooterInnerTextDesc>Email: konnimey@naver.com</S.FooterInnerTextDesc>
+            </S.FooterTextWrap>
+          </S.FooterTextWrapList>
         </S.FooterText>
       </S.FooterInner>
       {!isMobile && <LogoWrap className='logoWrap2' isVisual={false} />}
