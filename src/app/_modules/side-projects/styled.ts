@@ -16,20 +16,21 @@ export const SideProjects = styled.section`
 `;
 
 export const SideProjectsInner = styled.ul`
-  /* border: 2px solid red; */
-  width: calc(100vw + (100% - 1200px));
-  margin-left: calc((100% - 1200px) / 2);
-  display: flex;
-  overflow: hidden;
   position: relative;
+  display: flex;
+  overflow: visible;
+  margin-top: 50px;
   transition: none !important;
   gap: 100px;
+  will-change: transform;
+  left: -50px;
 
   @media (max-width: ${BREAKPOINT_SM}px) {
     flex-direction: column;
     gap: 20px;
     margin-top: 30px;
     overflow: visible;
+    margin-left: 0;
   }
 `;
 

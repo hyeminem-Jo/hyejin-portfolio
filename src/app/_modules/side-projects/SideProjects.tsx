@@ -78,33 +78,37 @@ const SideProjects = () => {
 
     if (sections.length === 0) return;
 
-    const gap = 100; // gap 값 (px)
-    const boxWidth = 800; // 각 박스 너비
+    const gap = 100;
+    const boxWidth = 800;
     const viewportWidth = window.innerWidth;
-    const centerOffset = (viewportWidth - boxWidth) / 2; // 중앙 정렬을 위한 오프셋
 
-    // 초기 위치 설정: 첫 번째 박스를 중앙에 배치
+    // wrapper의 실제 위치 계산 (margin-left를 고려)
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const wrapperLeft = wrapperRect.left;
+
+    // 첫 번째 박스를 중앙에 배치하기 위한 오프셋
+    // margin-left가 이미 적용되어 있으므로 이를 고려
+    const centerOffset = (viewportWidth - boxWidth) / 2 - wrapperLeft;
+
+    // 초기 위치 설정
     gsap.set(wrapper, { x: centerOffset });
 
     // 각 섹션이 중앙에 올 때까지의 이동 거리 계산
-    // 마지막 섹션이 중앙에 올 때까지의 거리
-    const lastSectionIndex = sections.length - 1;
-    const lastSectionStart = (boxWidth + gap) * lastSectionIndex;
-    const scrollDistance = lastSectionStart; // 마지막 섹션이 중앙에 올 때까지의 거리
+    const totalSections = sections.length;
+    const scrollDistance = (boxWidth + gap) * (totalSections - 1);
 
-    // 각 섹션이 중앙에 오는 정확한 progress 계산
-    const snapPoints = sections.map((_, index) => {
-      const sectionStart = (boxWidth + gap) * index;
-      return sectionStart / scrollDistance;
-    });
+    // 각 섹션의 snap 포인트 계산 (0부터 1까지)
+    const snapPoints = sections.map((_, index) => index / (totalSections - 1));
 
-    gsap.to(sections, {
-      x: -scrollDistance,
+    const animation = gsap.to(wrapper, {
+      x: centerOffset - scrollDistance,
       ease: 'none',
       scrollTrigger: {
         trigger: section,
+        start: 'top top',
+        end: () => `+=${scrollDistance + viewportWidth}`,
         pin: true,
-        scrub: 1,
+        scrub: 0.5,
         snap: {
           snapTo: (progress) => {
             // 가장 가까운 snap 포인트 찾기
@@ -121,15 +125,17 @@ const SideProjects = () => {
 
             return closest;
           },
-          duration: { min: 0.2, max: 0.6 },
+          duration: { min: 0.1, max: 0.3 }, // 빠른 snap
+          delay: 0,
         },
-        end: () => `+=${scrollDistance + window.innerHeight}`,
+        invalidateOnRefresh: true,
       },
     });
 
     ScrollTrigger.refresh();
 
     return () => {
+      animation.kill();
       ScrollTrigger.getAll().forEach((trigger) => {
         if (trigger.vars.trigger === section) {
           trigger.kill();
@@ -141,7 +147,7 @@ const SideProjects = () => {
   return (
     <S.SideProjects id='side-projects' ref={sectionRef}>
       <Inner>
-        <Title text='MY PROJECTS' />
+        <Title text={`MY \nPROJECTS`} />
 
         {/* 프로젝트 상세 모달 */}
         {/* <Modal
