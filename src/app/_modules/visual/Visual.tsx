@@ -6,11 +6,10 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LogoWrap from '../common/logo-wrap/LogoWrap';
 import { useIsMobile } from '../common/hooks/useIsMobile';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 const Visual = () => {
   const { isMobile, isLoaded } = useIsMobile();
-  const logoRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -64,7 +63,7 @@ const Visual = () => {
           trigger: '.visual',
           start: '100% 100%',
           end: '100% 0%',
-          scrub: true,
+          scrub: 0.3,
         },
       })
       .to(
@@ -74,7 +73,6 @@ const Visual = () => {
           y: 250,
           rotation: 20,
           ease: 'none',
-          duration: 5,
         },
         0,
       )
@@ -85,7 +83,6 @@ const Visual = () => {
           y: 150,
           rotation: -10,
           ease: 'none',
-          duration: 5,
         },
         0,
       )
@@ -96,7 +93,6 @@ const Visual = () => {
           y: 200,
           rotation: -30,
           ease: 'none',
-          duration: 5,
         },
         0,
       )
@@ -107,7 +103,6 @@ const Visual = () => {
           y: 450,
           rotation: 20,
           ease: 'none',
-          duration: 5,
         },
         0,
       );

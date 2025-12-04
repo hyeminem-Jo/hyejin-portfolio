@@ -90,8 +90,7 @@ const Works = () => {
 
   return (
     <S.Works id='work'>
-      <Inner>
-        <Title text='WORK EXPERIENCE' isCenter />
+      <Inner title={`WORKS`}>
         <S.WorksInner>
           <S.WorksInnerBox>
             <S.WorksCompanyList>

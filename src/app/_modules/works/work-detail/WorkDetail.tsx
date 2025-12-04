@@ -149,14 +149,14 @@ const WorkDetail = ({ id }: { id: string }) => {
 
       <S.WorkDetailContent>
         <S.Section>
-          <S.SectionTitle>프로젝트 개요</S.SectionTitle>
+          <S.SectionTitle>개요</S.SectionTitle>
           <S.ProjectDescription>
             {formatText(targetProject.projectDescDetail || '')}
           </S.ProjectDescription>
         </S.Section>
 
         <S.Section>
-          <S.SectionTitle>프로젝트 진행 방식</S.SectionTitle>
+          <S.SectionTitle>진행 방식</S.SectionTitle>
           <S.ProjectDescription>
             {formatText(targetProject.projectProcess || '')}
           </S.ProjectDescription>
@@ -227,7 +227,7 @@ const WorkDetail = ({ id }: { id: string }) => {
 
         {targetProject.projectProblemSolving && targetProject.projectProblemSolving.length > 0 && (
           <S.Section>
-            <S.SectionTitle>이슈 및 해결</S.SectionTitle>
+            <S.SectionTitle>💫 Trouble shooting</S.SectionTitle>
             <S.ProjectProblemSolvingList>
               {targetProject.projectProblemSolving?.map((problem: ProblemSolving) => (
                 <S.ProjectProblemSolvingItem key={problem.title}>
@@ -255,7 +255,7 @@ const WorkDetail = ({ id }: { id: string }) => {
 
         {targetProject.projectImgList && targetProject.projectImgList.length > 0 && (
           <S.Section>
-            <S.SectionTitle>프로젝트 이미지</S.SectionTitle>
+            <S.SectionTitle>📸 Images</S.SectionTitle>
             <S.ImageSliderContainer>
               <Slider {...sliderSettings}>
                 {targetProject.projectImgList.map((imageUrl: string, index: number) => (

@@ -4,11 +4,9 @@ import * as S from './styled';
 
 import Inner from '../common/layout/Inner';
 import Title from '../common/title/Title';
-import Modal from '../common/modal/Modal';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useState } from 'react';
 import { useIsMobile } from '../common/hooks/useIsMobile';
 
@@ -96,20 +94,9 @@ const SideProjects = () => {
     });
   }, [isLoaded, isMobile]);
 
-  const handleProjectClick = (project: (typeof sideProjectsList)[0]) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedProject(null);
-  };
-
   return (
     <S.SideProjects id='side-projects'>
-      <Inner>
-        <Title text='SIDE PROJECT' isCenter />
+      <Inner title='MY PROJECTS'>
         <S.SideProjectsInner>
           {sideProjectsList.map((item, index) => (
             <S.SideProjectsInnerBox
@@ -117,7 +104,6 @@ const SideProjects = () => {
               ref={(el) => {
                 boxRefs.current[index] = el;
               }}
-              // onClick={() => handleProjectClick(item)}
             >
               <S.SideProjectsImageWrap>
                 <Image src={item.image} alt={item.title} width={500} height={500} />

@@ -19,7 +19,6 @@ export const SideProjectsInner = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 50px;
-  margin-top: 50px;
   perspective: 1200px;
   transform-style: preserve-3d; /* 3D 변환을 위한 속성 추가 */
 

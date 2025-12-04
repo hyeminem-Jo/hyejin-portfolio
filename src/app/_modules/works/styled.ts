@@ -8,8 +8,9 @@ export const Works = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 0 120px;
-
+  padding: 160px 0 120px;
+  background-color: #e5e7eb;
+  /* background-color: #7152d6; */
   @media (max-width: ${BREAKPOINT}px) {
     padding: 0 0 80px;
   }
@@ -21,7 +22,6 @@ export const WorksInner = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 50px;
-  margin-top: 70px;
   z-index: 10;
 
   @media (max-width: ${BREAKPOINT}px) {
@@ -102,10 +102,9 @@ export const WorksItem = styled.li`
   width: calc((100% - 30px) / 3);
   display: flex;
   flex-direction: column;
-  border: 1px solid #e9ecef;
   border-radius: 15px;
   background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 
   &:hover {

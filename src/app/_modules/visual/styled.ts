@@ -85,7 +85,7 @@ export const SubText = styled.h4`
   padding-bottom: 20px;
   font-size: 15px;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   color: #555;
   opacity: 0;
   transform: translateX(-50px);

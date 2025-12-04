@@ -99,7 +99,7 @@ export const HeaderLogo = styled.div`
   align-items: center;
   gap: 15px;
   height: 100px;
-  cursor: pointer;
+  cursor: none;
   transition: opacity 0.2s ease-in-out;
 
   &:hover {
@@ -114,7 +114,7 @@ export const HeaderLogo = styled.div`
 export const HeaderNav = styled.nav`
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 
   @media (max-width: ${BREAKPOINT}px) {
     position: absolute;
@@ -140,6 +140,7 @@ export const HeaderNav = styled.nav`
 `;
 
 export const HeaderNavItem = styled(Link)`
+  position: relative;
   font-size: 18px;
   font-weight: 600;
   color: #222;
@@ -147,16 +148,29 @@ export const HeaderNavItem = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   user-select: none;
-  transition: color 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  padding: 5px;
 
   &:hover {
-    color: #222;
+    opacity: 1;
   }
 
   &.active {
     color: #222;
     opacity: 1;
     font-weight: 700;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(-50%);
+      left: -5px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #ff8200;
+    }
   }
 
   @media (max-width: ${BREAKPOINT}px) {
