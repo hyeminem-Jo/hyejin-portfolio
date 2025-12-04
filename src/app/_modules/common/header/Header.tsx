@@ -45,6 +45,14 @@ const Header = () => {
 
   const notionLink = getProjectNotionLink();
 
+  // 공통 스크롤 위치 계산 함수
+  const calculateScrollPosition = (element: HTMLElement): number => {
+    const headerHeight = isMobile ? 65 : 70;
+    const rect = element.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return rect.top + scrollTop - headerHeight;
+  };
+
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout;
 
@@ -64,7 +72,7 @@ const Header = () => {
       if (isMenuScrolling) return;
 
       const sections = ['visual', 'about', 'skills', 'work', 'my-projects'];
-      const headerHeight = isMobile ? 65 : 80;
+      const headerHeight = isMobile ? 65 : 70;
 
       // 활성 섹션 즉시 업데이트 (메뉴 색상 변경)
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -116,29 +124,42 @@ const Header = () => {
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
     if (hash) {
-      setTimeout(() => {
-        const targetElement = document.getElementById(hash);
-        if (targetElement) {
-          const headerHeight = isMobile ? 65 : 80;
-          const targetPosition = targetElement.offsetTop - headerHeight;
+      const performScroll = (element: HTMLElement) => {
+        const targetPosition = calculateScrollPosition(element);
 
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth',
-          });
-          setActiveSection(hash);
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+        setActiveSection(hash);
+      };
+
+      // 요소를 찾기 위해 재시도 로직 추가 (ScrollTrigger 초기화 대기)
+      const attemptScroll = (retryCount = 0) => {
+        const targetElement = document.getElementById(hash);
+
+        if (targetElement) {
+          performScroll(targetElement);
+        } else if (retryCount < 10) {
+          // 최대 10번까지 재시도 (약 1초)
+          setTimeout(() => {
+            attemptScroll(retryCount + 1);
+          }, 100);
         }
-      }, 100); // DOM이 완전히 로드된 후 실행
+      };
+
+      // 초기 지연 후 시도
+      setTimeout(() => {
+        attemptScroll();
+      }, 100);
     }
   }, [isMobile]);
 
   const handleMenuClick = (href: string) => {
     const targetId = href.replace('#', '');
-    const targetElement = document.getElementById(targetId);
 
-    if (targetElement) {
-      const headerHeight = isMobile ? 65 : 80;
-      const targetPosition = targetElement.offsetTop - headerHeight;
+    const performScroll = (element: HTMLElement) => {
+      const targetPosition = calculateScrollPosition(element);
 
       // 메뉴 클릭 시 즉시 활성화 및 스크롤 중 상태 설정
       setIsMenuScrolling(true);
@@ -161,6 +182,21 @@ const Header = () => {
       setTimeout(() => {
         setIsMenuScrolling(false);
       }, 1000);
+    };
+
+    // 요소를 찾기 위해 즉시 시도
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      performScroll(targetElement);
+    } else {
+      // 요소를 찾지 못한 경우 재시도 (ScrollTrigger 초기화 대기)
+      setTimeout(() => {
+        const retryElement = document.getElementById(targetId);
+        if (retryElement) {
+          performScroll(retryElement);
+        }
+      }, 100);
     }
 
     if (isMobile && isMenuOpen) {
