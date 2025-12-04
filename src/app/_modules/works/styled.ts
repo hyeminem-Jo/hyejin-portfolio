@@ -10,7 +10,7 @@ export const Works = styled.section`
   align-items: center;
   padding: 160px 0 120px;
   background-color: #e5e7eb;
-  /* background-color: #7152d6; */
+
   @media (max-width: ${BREAKPOINT}px) {
     padding: 0 0 80px;
   }
@@ -138,14 +138,11 @@ export const WorksItemInfo = styled.div`
 `;
 
 export const CompanyHeader = styled.div`
+  position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 20px;
-  margin-bottom: 30px;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  border: 1px solid #e9ecef;
+  margin-top: 20px;
 
   @media (max-width: ${BREAKPOINT}px) {
     flex-direction: column;

@@ -10,7 +10,7 @@ import Button from '../common/button/Button';
 import { useRouter } from 'next/navigation';
 import { useIsMobile } from '../common/hooks/useIsMobile';
 import Modal from '../common/modal/Modal';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import { BREAKPOINT_SM } from '@/app/_constant/breakpoint';
@@ -58,6 +58,8 @@ const Works = () => {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeCompanyIndex, setActiveCompanyIndex] = useState(0);
+  const companyRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleImageClick = (images: string[]) => {
     setSelectedImages(images);
@@ -88,21 +90,56 @@ const Works = () => {
     arrows: true,
   };
 
+  useGSAP(() => {
+    if (isMobile) return;
+
+    const triggers: ScrollTrigger[] = [];
+
+    companyRefs.current.forEach((ref, index) => {
+      if (!ref) return;
+
+      const trigger = ScrollTrigger.create({
+        trigger: ref,
+        start: 'top 20%',
+        end: 'bottom 20%',
+        onEnter: () => setActiveCompanyIndex(index),
+        onEnterBack: () => setActiveCompanyIndex(index),
+      });
+
+      triggers.push(trigger);
+    });
+
+    return () => {
+      triggers.forEach((trigger) => trigger.kill());
+    };
+  }, [isMobile]);
+
+  const activeCompany = companyList[activeCompanyIndex] || companyList[0];
+
   return (
     <S.Works id='work'>
-      <Inner title={`WORKS`}>
+      <Inner
+        title={`WORKS`}
+        stickyContent={
+          <S.CompanyHeader>
+            <S.CompanyLogo src={activeCompany.companyLogo} alt={activeCompany.name} />
+            <S.CompanyInfo>
+              <S.CompanyName>{activeCompany.name}</S.CompanyName>
+              <S.CompanyPeriod>{activeCompany.companyPeriod}</S.CompanyPeriod>
+            </S.CompanyInfo>
+          </S.CompanyHeader>
+        }
+      >
         <S.WorksInner>
           <S.WorksInnerBox>
             <S.WorksCompanyList>
-              {companyList.map((company) => (
-                <div key={company.name}>
-                  <S.CompanyHeader>
-                    <S.CompanyLogo src={company.companyLogo} alt={company.name} />
-                    <S.CompanyInfo>
-                      <S.CompanyName>{company.name}</S.CompanyName>
-                      <S.CompanyPeriod>{company.companyPeriod}</S.CompanyPeriod>
-                    </S.CompanyInfo>
-                  </S.CompanyHeader>
+              {companyList.map((company, index) => (
+                <div
+                  key={company.name}
+                  ref={(el) => {
+                    companyRefs.current[index] = el;
+                  }}
+                >
                   <S.WorksList>
                     {' '}
                     {company.projectList.map((project) => (
@@ -129,11 +166,6 @@ const Works = () => {
                         <S.WorksItemInfo>
                           <S.ProjectName>{project.projectName}</S.ProjectName>
                           <S.ProjectPeriod>{project.projectPeriod}</S.ProjectPeriod>
-                          {/* <S.SkillList>
-                            {project.skillList.map((skill, index) => (
-                              <S.SkillTag key={index}>{skill}</SSkillTag>
-                            ))}
-                          </S.SkillList> */}
                         </S.WorksItemInfo>
                       </S.WorksItem>
                     ))}
@@ -154,7 +186,7 @@ const Works = () => {
         showCloseButton={true}
         closeOnOverlayClick={true}
       >
-        <S.ImageSliderContainer>
+        <S.ImageSliderContainer></S.ImageSliderContainer>
           <Slider {...sliderSettings}>
             {selectedImages.map((imageUrl, index) => (
               <S.SliderImage key={index}>

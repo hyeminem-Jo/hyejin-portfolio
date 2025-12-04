@@ -23,15 +23,17 @@ export const InnerTitle = styled.div`
   flex: 1;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   position: sticky;
   top: 80px;
   align-self: flex-start;
   height: fit-content;
+  gap: 20px;
 
   @media (max-width: ${BREAKPOINT}px) {
     top: 65px;
+    gap: 15px;
   }
 `;
 
@@ -43,16 +45,19 @@ const Inner = ({
   children,
   title = '',
   titleColor = 'black',
+  stickyContent,
 }: {
   children: React.ReactNode;
   title?: string;
   titleColor?: 'white' | 'black';
+  stickyContent?: React.ReactNode;
 }) => {
   return (
     <InnerContent $hasTitle={!!title}>
       {title && (
         <InnerTitle>
           <Title text={title} color={titleColor} />
+          {stickyContent}
         </InnerTitle>
       )}
       <InnerContentChildren>{children}</InnerContentChildren>
