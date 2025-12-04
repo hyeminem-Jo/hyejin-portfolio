@@ -78,7 +78,7 @@ const SideProjects = () => {
 
     if (sections.length === 0) return;
 
-    const gap = 100;
+    const gap = 70;
     const boxWidth = 800;
     const viewportWidth = window.innerWidth;
 

@@ -49,7 +49,8 @@ export const WorksCompanyList = styled.ul`
 export const WorksList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 30px;
+  row-gap: 50px;
 
   @media (max-width: ${BREAKPOINT}px) {
     flex-direction: column;
@@ -99,7 +100,8 @@ export const WorksItemLink = styled(Link)`
 
 export const WorksItem = styled.li`
   position: relative;
-  width: calc((100% - 30px) / 3);
+  width: calc((100% - 30px) / 2);
+  aspect-ratio: 1/1.2;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
@@ -122,19 +124,66 @@ export const WorksItem = styled.li`
   }
 `;
 
+export const WorksItemImageWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+`;
+
 export const WorksItemImage = styled(Image)`
   width: 100%;
+  /* height: 100%; */
   object-fit: cover;
-  border-radius: 15px 15px 0 0;
 `;
 
 export const WorksItemInfo = styled.div`
-  flex: 1;
-  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  color: #fff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 0 0 15px 15px;
+  }
 
   @media (max-width: ${BREAKPOINT}px) {
     padding: 16px;
   }
+`;
+
+export const ProjectName = styled.h4`
+  font-size: 40px;
+  font-weight: 700;
+  z-index: 2;
+  white-space: pre-line;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 18px;
+  }
+`;
+
+export const ProjectPeriod = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+  z-index: 2;
 `;
 
 export const CompanyHeader = styled.div`
@@ -192,24 +241,6 @@ export const CompanyPeriod = styled.p`
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 14px;
   }
-`;
-
-export const ProjectName = styled.h4`
-  font-size: 20px;
-  font-weight: 600;
-  color: #333;
-  margin: 0 0 8px 0;
-
-  @media (max-width: ${BREAKPOINT}px) {
-    font-size: 18px;
-  }
-`;
-
-export const ProjectPeriod = styled.p`
-  font-size: 14px;
-  color: #888;
-  margin: 0 0 12px 0;
-  font-weight: 500;
 `;
 
 export const ProjectDesc = styled.p`

@@ -21,7 +21,7 @@ export const SideProjectsInner = styled.ul`
   overflow: visible;
   margin-top: 40px;
   transition: none !important;
-  gap: 100px;
+  gap: 70px;
   will-change: transform;
   left: -50px;
 

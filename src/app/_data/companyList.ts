@@ -20,7 +20,7 @@ export const companyList = [
           '공통 컴포넌트화와 Storybook을 통한 협업 효율 향상',
         ],
         projectLink: 'https://sople.me/',
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-sople2.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-sople2-new.webp',
         projectContribution: '30%',
         projectRole: '프론트엔드 개발, 퍼블리싱',
         projectDevice: 'PC, 모바일',
@@ -431,7 +431,7 @@ export const companyList = [
       // },
       {
         id: 4,
-        projectName: 'KCMF 사용자/관리자 페이지 구축',
+        projectName: 'KCMF',
         projectDesc:
           '시청자미디어재단에서 참여형 방송 문화를 위해 시청자가 방송사를 선택하여 직접 프로그램을 제작 및 신청할 수 있는 플랫폼입니다.',
 
@@ -640,7 +640,7 @@ export const companyList = [
     projectList: [
       {
         id: 5,
-        projectName: '신세계 백화점 구축 및 운영',
+        projectName: '신세계 백화점 \n APP & WEB',
         projectDesc:
           '신세계 백화점 앱과 홈페이지는 신세계 백화점의 쇼핑 정보와 혜택 및 브랜드 소통을 위한 라이프스타일 플랫폼입니다. 특히 앱에서는 고객과의 소통을 위한 커뮤니티, 상세한 브랜드관, 다양한 이벤트 참여 등을 경험할 수 있습니다. ',
         projectPeriod: '2023.12 - 2024.09',
@@ -845,7 +845,7 @@ export const companyList = [
       },
       {
         id: 6,
-        projectName: '삼성전자 비스포크 웨딩 펀딩 사이트 구축',
+        projectName: `삼성전자 \n비스포크 웨딩 펀딩`,
         projectDesc:
           '비스포크 웨딩 펀딩(BESPOKE Wedding FUNding) 은 삼성전자가 신혼부부의 새로운 시작을 응원하는 캠페인입니다.',
         projectPeriod: '2023.08 - 2023.10',
@@ -1274,7 +1274,7 @@ export const companyList = [
       },
       {
         id: 9,
-        projectName: '대상 사이트(종가, 오푸드) 운영',
+        projectName: '대상 \nJongga, O’Food',
         projectDesc:
           '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다.',
         projectPeriod: '2022.08 - 2022.12',
@@ -1364,7 +1364,7 @@ export const companyList = [
       },
       {
         id: 10,
-        projectName: '메타클럽 구축',
+        projectName: '메타클럽',
         projectDesc:
           '메타클럽은 상품권 전환 및 포인트를 충전할 수 있는 포인트 테크 플랫폼으로, 문화상품권, 도서문화상품권의 핀번호를 등록하여 다양한 곳에서 사용할 수 있게 해줍니다.',
         projectPeriod: '2022.08 - 2022.11',
