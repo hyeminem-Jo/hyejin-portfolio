@@ -8,6 +8,7 @@ export const SideProjects = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 120px 0 110px;
+  /* border: 2px solid gold; */
 
   @media (max-width: ${BREAKPOINT}px) {
     padding: 0;
@@ -15,50 +16,52 @@ export const SideProjects = styled.section`
 `;
 
 export const SideProjectsInner = styled.ul`
-  position: relative;
+  /* border: 2px solid red; */
+  width: calc(100vw + (100% - 1200px));
+  margin-left: calc((100% - 1200px) / 2);
   display: flex;
-  flex-direction: column;
-  gap: 50px;
-  perspective: 1200px;
-  transform-style: preserve-3d; /* 3D 변환을 위한 속성 추가 */
+  overflow: hidden;
+  position: relative;
+  transition: none !important;
+  gap: 100px;
 
   @media (max-width: ${BREAKPOINT_SM}px) {
+    flex-direction: column;
     gap: 20px;
     margin-top: 30px;
+    overflow: visible;
   }
 `;
 
 export const SideProjectsInnerBox = styled.li`
-  position: -webkit-sticky;
-  position: sticky;
-  top: 130px;
-  filter: brightness(1);
+  flex: 0 0 800px;
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
+  align-items: center;
   padding: 50px 80px;
-  z-index: 10;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease; /* transform transition 제거 */
-  transform-style: preserve-3d; /* 3D 변환을 위한 속성 추가 */
-  backface-visibility: hidden; /* 3D 변환 최적화 */
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 -15px 20px rgba(0, 0, 0, 0.1);
-  }
+  transition: none !important;
 
   @media (max-width: ${BREAKPOINT}px) {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 100%;
     padding: 40px;
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
+    flex: 0 0 100%;
+    flex-direction: column;
+    padding: 25px;
+    gap: 15px;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    padding: 40px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    flex: 0 0 100%;
+    height: auto;
     flex-direction: column;
     padding: 25px;
     gap: 15px;

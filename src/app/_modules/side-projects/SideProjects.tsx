@@ -7,6 +7,7 @@ import Title from '../common/title/Title';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useState } from 'react';
 import { useIsMobile } from '../common/hooks/useIsMobile';
 
@@ -59,87 +60,88 @@ const sideProjectsList = [
 ];
 
 const SideProjects = () => {
-  const boxRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const wrapperRef = useRef<HTMLUListElement | null>(null);
   const [selectedProject, setSelectedProject] = useState<(typeof sideProjectsList)[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { isMobile, isLoaded } = useIsMobile();
 
   useGSAP(() => {
     if (!isLoaded || isMobile) return;
-    const boxList = boxRefs.current;
+    if (!sectionRef.current || !wrapperRef.current) return;
 
-    boxList.forEach((box, i) => {
-      if (box) {
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: box,
-              start: '0% 20%',
-              end: '0% 0%',
-              scrub: 1,
-            },
-          })
-          .to(
-            box,
-            {
-              transform: 'rotateX(-10deg) scale(0.9)',
-              transformOrigin: 'top',
-              filter: 'brightness(0.95)',
-              duration: 1,
-              ease: 'none',
-            },
-            0,
-          );
-      }
+    gsap.registerPlugin(ScrollTrigger);
+
+    const section = sectionRef.current;
+    const wrapper = wrapperRef.current;
+    const sections = gsap.utils.toArray<HTMLLIElement>('.side-projects-section');
+
+    if (sections.length === 0) return;
+
+    const gap = 100; // gap 값 (px)
+    const boxWidth = 800; // 각 박스 너비
+    const viewportWidth = window.innerWidth;
+    const centerOffset = (viewportWidth - boxWidth) / 2; // 중앙 정렬을 위한 오프셋
+
+    // 초기 위치 설정: 첫 번째 박스를 중앙에 배치
+    gsap.set(wrapper, { x: centerOffset });
+
+    // 각 섹션이 중앙에 올 때까지의 이동 거리 계산
+    // 마지막 섹션이 중앙에 올 때까지의 거리
+    const lastSectionIndex = sections.length - 1;
+    const lastSectionStart = (boxWidth + gap) * lastSectionIndex;
+    const scrollDistance = lastSectionStart; // 마지막 섹션이 중앙에 올 때까지의 거리
+
+    // 각 섹션이 중앙에 오는 정확한 progress 계산
+    const snapPoints = sections.map((_, index) => {
+      const sectionStart = (boxWidth + gap) * index;
+      return sectionStart / scrollDistance;
     });
+
+    gsap.to(sections, {
+      x: -scrollDistance,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        pin: true,
+        scrub: 1,
+        snap: {
+          snapTo: (progress) => {
+            // 가장 가까운 snap 포인트 찾기
+            let closest = snapPoints[0];
+            let minDistance = Math.abs(progress - snapPoints[0]);
+
+            snapPoints.forEach((point) => {
+              const distance = Math.abs(progress - point);
+              if (distance < minDistance) {
+                minDistance = distance;
+                closest = point;
+              }
+            });
+
+            return closest;
+          },
+          duration: { min: 0.2, max: 0.6 },
+        },
+        end: () => `+=${scrollDistance + window.innerHeight}`,
+      },
+    });
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.vars.trigger === section) {
+          trigger.kill();
+        }
+      });
+    };
   }, [isLoaded, isMobile]);
 
   return (
-    <S.SideProjects id='side-projects'>
-      <Inner title='MY PROJECTS'>
-        <S.SideProjectsInner>
-          {sideProjectsList.map((item, index) => (
-            <S.SideProjectsInnerBox
-              key={`${item.title}-${index}`}
-              ref={(el) => {
-                boxRefs.current[index] = el;
-              }}
-            >
-              <S.SideProjectsImageWrap>
-                <Image src={item.image} alt={item.title} width={500} height={500} />
-              </S.SideProjectsImageWrap>
-              <S.SideProjectsInfo>
-                <S.SideProjectsInfoTop>
-                  <S.SideProjectsTitle>{item.title}</S.SideProjectsTitle>
-                  <S.SideProjectsDesc>{item.introduction}</S.SideProjectsDesc>
-                  <S.SideProjectsSkills>
-                    {item.skills.map((skill, index) => (
-                      <S.SideProjectsSkillsItem key={`${skill}-${index}`}>
-                        {skill}
-                      </S.SideProjectsSkillsItem>
-                    ))}
-                  </S.SideProjectsSkills>
-                </S.SideProjectsInfoTop>
-                <S.SideProjectsButtons>
-                  <S.SideProjectsSkillsLink
-                    href={item.link}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    Link
-                  </S.SideProjectsSkillsLink>
-                  <S.SideProjectsSkillsLink
-                    href={item.github}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    GitHub
-                  </S.SideProjectsSkillsLink>
-                </S.SideProjectsButtons>
-              </S.SideProjectsInfo>
-            </S.SideProjectsInnerBox>
-          ))}
-        </S.SideProjectsInner>
+    <S.SideProjects id='side-projects' ref={sectionRef}>
+      <Inner>
+        <Title text='MY PROJECTS' />
 
         {/* 프로젝트 상세 모달 */}
         {/* <Modal
@@ -197,6 +199,44 @@ const SideProjects = () => {
           )}
         </Modal> */}
       </Inner>
+      <S.SideProjectsInner ref={wrapperRef}>
+        {sideProjectsList.map((item, index) => (
+          <S.SideProjectsInnerBox key={`${item.title}-${index}`} className='side-projects-section'>
+            <S.SideProjectsImageWrap>
+              <Image src={item.image} alt={item.title} width={500} height={500} />
+            </S.SideProjectsImageWrap>
+            <S.SideProjectsInfo>
+              <S.SideProjectsInfoTop>
+                <S.SideProjectsTitle>{item.title}</S.SideProjectsTitle>
+                <S.SideProjectsDesc>{item.introduction}</S.SideProjectsDesc>
+                <S.SideProjectsSkills>
+                  {item.skills.map((skill, index) => (
+                    <S.SideProjectsSkillsItem key={`${skill}-${index}`}>
+                      {skill}
+                    </S.SideProjectsSkillsItem>
+                  ))}
+                </S.SideProjectsSkills>
+              </S.SideProjectsInfoTop>
+              <S.SideProjectsButtons>
+                <S.SideProjectsSkillsLink
+                  href={item.link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Link
+                </S.SideProjectsSkillsLink>
+                <S.SideProjectsSkillsLink
+                  href={item.github}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  GitHub
+                </S.SideProjectsSkillsLink>
+              </S.SideProjectsButtons>
+            </S.SideProjectsInfo>
+          </S.SideProjectsInnerBox>
+        ))}
+      </S.SideProjectsInner>
     </S.SideProjects>
   );
 };
