@@ -14,7 +14,7 @@ const menuItems = [
   { href: '#about', text: 'ABOUT' },
   { href: '#skills', text: 'SKILLS' },
   { href: '#work', text: 'WORKS' },
-  { href: '#side-projects', text: 'SIDE PROJECT' },
+  { href: '#my-projects', text: 'MY PROJECTS' },
 ];
 
 const Header = () => {
@@ -63,7 +63,7 @@ const Header = () => {
 
       if (isMenuScrolling) return;
 
-      const sections = ['visual', 'about', 'skills', 'work', 'side-projects'];
+      const sections = ['visual', 'about', 'skills', 'work', 'my-projects'];
       const headerHeight = isMobile ? 65 : 80;
 
       // 활성 섹션 즉시 업데이트 (메뉴 색상 변경)

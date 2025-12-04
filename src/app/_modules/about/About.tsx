@@ -91,7 +91,7 @@ const About = () => {
       const buttonTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: buttonsContainerRef.current,
-          start: 'top 80%',
+          start: 'top 100%',
           end: 'top 80%',
           scrub: 0.5,
         },

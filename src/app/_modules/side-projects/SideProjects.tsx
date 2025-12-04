@@ -74,7 +74,7 @@ const SideProjects = () => {
 
     const section = sectionRef.current;
     const wrapper = wrapperRef.current;
-    const sections = gsap.utils.toArray<HTMLLIElement>('.side-projects-section');
+    const sections = gsap.utils.toArray<HTMLLIElement>('.my-projects-section');
 
     if (sections.length === 0) return;
 
@@ -145,7 +145,7 @@ const SideProjects = () => {
   }, [isLoaded, isMobile]);
 
   return (
-    <S.SideProjects id='side-projects' ref={sectionRef}>
+    <S.SideProjects id='my-projects' ref={sectionRef}>
       <Inner>
         <Title text={`MY \nPROJECTS`} />
 
@@ -207,7 +207,7 @@ const SideProjects = () => {
       </Inner>
       <S.SideProjectsInner ref={wrapperRef}>
         {sideProjectsList.map((item, index) => (
-          <S.SideProjectsInnerBox key={`${item.title}-${index}`} className='side-projects-section'>
+          <S.SideProjectsInnerBox key={`${item.title}-${index}`} className='my-projects-section'>
             <S.SideProjectsImageWrap>
               <Image src={item.image} alt={item.title} width={500} height={500} />
             </S.SideProjectsImageWrap>

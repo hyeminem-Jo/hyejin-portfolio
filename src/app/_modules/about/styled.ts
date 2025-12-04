@@ -65,7 +65,7 @@ export const AboutInnerBoxTitleInner = styled.div`
   }
 `;
 
-export const AboutInnerBoxDesc = styled.p`
+export const AboutInnerBoxDesc = styled.div`
   position: relative;
   width: 63%;
   font-size: 18px;

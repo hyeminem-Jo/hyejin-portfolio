@@ -19,7 +19,7 @@ export const SideProjectsInner = styled.ul`
   position: relative;
   display: flex;
   overflow: visible;
-  margin-top: 50px;
+  margin-top: 40px;
   transition: none !important;
   gap: 100px;
   will-change: transform;
