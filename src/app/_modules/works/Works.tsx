@@ -148,6 +148,34 @@ const Works = () => {
       parallaxAnimations.push(animation);
     });
 
+    // // Images parallax 효과 (추가)
+    // const imageContainers = document.querySelectorAll('.works-item-image-wrap');
+
+    // imageContainers.forEach((container) => {
+    //   const img = container.querySelector('.works-item-image');
+    //   if (!img) return;
+
+    //   gsap
+    //     .timeline({
+    //       scrollTrigger: {
+    //         trigger: container,
+    //         scrub: 0.5,
+    //         pin: false,
+    //       },
+    //     })
+    //     .fromTo(
+    //       img,
+    //       {
+    //         yPercent: -5,
+    //         ease: 'none',
+    //       },
+    //       {
+    //         yPercent: 5,
+    //         ease: 'none',
+    //       },
+    //     );
+    // });
+
     return () => {
       triggers.forEach((trigger) => trigger.kill());
       parallaxAnimations.forEach((anim) => anim.kill());
@@ -184,7 +212,7 @@ const Works = () => {
                     {' '}
                     {company.projectList.map((project) => (
                       <S.WorksItem key={project.projectName} className='works-item-parallax'>
-                        <S.WorksItemImageWrap>
+                        <S.WorksItemImageWrap className='works-item-image-wrap'>
                           <S.WorksItemImage
                             className='works-item-image'
                             src={

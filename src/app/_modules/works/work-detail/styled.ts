@@ -4,22 +4,35 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const WorkDetailContainer = styled.div`
-  border: 1px solid red;
-
   @media (max-width: ${BREAKPOINT}px) {
   }
 `;
 
 export const WorkDetailVisual = styled.div`
+  position: relative;
   width: 100%;
-  height: 50dvh;
-  border: 1px solid blue;
+  height: 55dvh;
+  overflow: hidden;
+`;
+
+export const WorkDetailImageBg = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const WorkDetailImage = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: relative;
+  z-index: 1;
 `;
 
 export const WorkDetailThumbnail = styled(Image)`
@@ -38,7 +51,6 @@ export const WorkDetailHeader = styled.div`
   margin-bottom: 60px;
   padding: 40px;
   background: #f8f9fa;
-  border-radius: 20px;
   border: 1px solid #e9ecef;
 
   @media (max-width: ${BREAKPOINT}px) {
@@ -177,7 +189,6 @@ export const WorkDetailContentWrap = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  border: 1px solid red;
 
   @media (max-width: ${BREAKPOINT}px) {
     width: 100%;
