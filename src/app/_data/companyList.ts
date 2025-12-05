@@ -20,7 +20,8 @@ export const companyList = [
           '공통 컴포넌트화와 Storybook을 통한 협업 효율 향상',
         ],
         projectLink: 'https://sople.me/',
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-sople2-new.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-sople1-new.webp',
+        projectDetailImage: '/assets/images/details/detail-sople2.webp',
         projectContribution: '30%',
         projectRole: '프론트엔드 개발, 퍼블리싱',
         projectDevice: 'PC, 모바일',
@@ -190,7 +191,8 @@ export const companyList = [
           'Redux 기반 인증 체크, 불필요한 리렌더링이 일어나는 부분을 발견 후 문제 해결',
           'Swiper, 색상 랜덤 배경 등 인터랙션 강화로 UI 개선',
         ],
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-sople1.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-sople2-new.webp',
+        projectDetailImage: '/assets/images/details/detail-sople1.webp',
         projectContribution: '30%',
         projectRole: '프론트엔드 개발, 퍼블리싱',
         projectDevice: 'PC, 모바일',
@@ -306,7 +308,7 @@ export const companyList = [
       },
       {
         id: 3,
-        projectName: 'YEEP 사용자/관리자 페이지 구축',
+        projectName: 'YEEP',
         projectDesc:
           '노스페이스 회사 필리핀지사의 전 사원을 관리할 수 있는 프로그램의 사용자 앱 및 관리자 페이지 입니다.',
         projectDescDetail:
@@ -319,7 +321,8 @@ export const companyList = [
           '관리자 페이지는 웹으로 진행되었으며 사용자 앱의 데이터를 검색,조회하고 관리할 수 있는 기능 구현',
           'Chart.js를 활용하여 사용자 앱의 데이터를 시각화하여 표시하는 기능 구현',
         ],
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-yeep.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-yeep-new.webp',
+        projectDetailImage: '/assets/images/details/detail-yeep.webp',
         projectContribution: '앱(10%) 관리자(90%)',
         projectRole: '프론트엔드 개발, 퍼블리싱',
         projectDevice: '앱(사용자) /  웹(관리자)',
@@ -444,7 +447,8 @@ export const companyList = [
           'Input 등 폼 공통 컴포넌트를 react-hook-form 로 제작하여 더 편리하게 사용할 수 있도록 개선',
         ],
         projectLink: 'https://pa.kcmf.or.kr/',
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-kcmf.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-kcmf-new3.webp',
+        projectDetailImage: '/assets/images/details/detail-kcmf.webp',
         projectDescDetail:
           '시청자미디어재단은 참여형 방송 문화를 위해 시청자가 직접 방송사를 선택하고 프로그램을 제작 및 신청할 수 있는 환경을 제공하고 있습니다. \n이 플랫폼은 시청자가 주체적으로 방송 제작에 참여할 수 있도록 기획되었으며, 방송사와 시청자를 연결하는 소통 창구 역할을 합니다. \n<해당 프로젝트에서 사용자 페이지와 관리자 페이지를 모두 맡아 개발을 진행하였습니다.>',
         projectContribution: '사용자(30%) 관리자(30%)',
@@ -640,7 +644,7 @@ export const companyList = [
     projectList: [
       {
         id: 5,
-        projectName: '신세계 백화점 \n APP & WEB',
+        projectName: '신세계 백화점',
         projectDesc:
           '신세계 백화점 앱과 홈페이지는 신세계 백화점의 쇼핑 정보와 혜택 및 브랜드 소통을 위한 라이프스타일 플랫폼입니다. 특히 앱에서는 고객과의 소통을 위한 커뮤니티, 상세한 브랜드관, 다양한 이벤트 참여 등을 경험할 수 있습니다. ',
         projectPeriod: '2023.12 - 2024.09',
@@ -653,6 +657,7 @@ export const companyList = [
           'WEB 홈페이지 및 매거진, 켐페인 페이지 퍼블리싱 및 인터렉션 구현',
         ],
         projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-ssg.webp',
+        projectDetailImage: '/assets/images/details/detail-ssg.webp',
         projectDescDetail:
           '신세계 백화점 앱과 홈페이지는 신세계 백화점의 쇼핑 정보와 혜택 및 브랜드 소통을 위한 라이프스타일 플랫폼입니다. \n특히 앱에서는 고객과의 소통을 위한 커뮤니티, 상세한 브랜드관, 다양한 이벤트 참여 등을 경험할 수 있습니다. \n<신세계 백화점 앱 운영, 앱 이벤트,  홈페이지 내 매거진 및 설날 카탈로그 고도화 등 다양한 프로젝트를 진행하며 서비스 안정성과 사용 편의성을 높였습니다.>',
         projectContribution: '20%',
@@ -854,7 +859,8 @@ export const companyList = [
           'Next.js 기반 마이페이지, 축하금 관리, 약관, 회원정보 페이지 개발',
           'react-hook-form으로 사용자 입력 검증 및 공통 컴포넌트화',
         ],
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-swwl.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-swwl-new.webp',
+        projectDetailImage: '/assets/images/details/detail-swwl.webp',
         projectDescDetail:
           '‘비스포크 웨딩 펀딩(BESPOKE Wedding FUNding)’ 은 삼성전자가 신혼부부의 새로운 시작을 응원하는 캠페인입니다. \n캠페인에 참여한 예비 부부에게는 다양한 모바일 청첩장이 지원되며, 청첩장에 갖고 싶은 삼성 가전 위시리스트를 추가하면 \n펀딩금을 통해 해당 가전을 구매할 수 있습니다. \n<서브페이지를 중심으로 사용자의 PC/태블릿/모바일 디바이스 환경에 최적화된 반응형 웹을 구현하였습니다.>',
         projectContribution: '20%',
@@ -990,7 +996,7 @@ export const companyList = [
       },
       {
         id: 7,
-        projectName: '삼성 지속가능성경영 사이트 운영',
+        projectName: '삼성 \n지속가능성경영',
         projectDesc:
           '환경, 사회, 거버넌스 분야에 걸쳐 삼성전자의 전략과 주요 성과를 담은 보고서 형식의 웹사이트입니다.',
         projectPeriod: '2023.04 - 2023.12',
@@ -1000,7 +1006,8 @@ export const companyList = [
           '웹표준·접근성 준수로 품질 향상 (background 로 삽입된 이미지 처리, 스크린 리더기 등)',
         ],
         projectLink: 'https://www.samsung.com/sec/sustainability/main/',
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-samsung.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-samsung-new.webp',
+        projectDetailImage: '/assets/images/details/detail-samsung.webp',
         projectDescDetail:
           '환경, 사회, 거버넌스 분야에 걸쳐 삼성전자의 전략과 주요 성과를 담은 보고서 형식의 웹사이트입니다. \n이는 기업 활동이 외부에, 또는 외부요인이 기업에 미치는 영향을 모두 고려한 평가를 통해 지속가능경영에 대한 활동을 다루고있습니다.\n<해당 프로젝트에서 전반적으로 메인/서브페이지의 적응형 퍼블리싱 및 기능 개선, 접근성 강화를 주로 진행하였습니다.>',
         projectProcess:
@@ -1150,12 +1157,13 @@ export const companyList = [
       },
       {
         id: 8,
-        projectName: '이모션글로벌 홈페이지 고도화',
+        projectName: '이모션글로벌',
         projectDesc:
           '자회사인 이모션 글로벌 홈페이지이며, 본사에 대한 정보, 포트폴리오, 의뢰 서비스, 입사지원 서비스 등을 제공하는 웹사이트입니다.',
         projectPeriod: '2022.11 - 2023.02',
         skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'SCSS'],
         projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-emotion.webp',
+        projectDetailImage: '/assets/images/details/detail-emotion.webp',
         projectDescDetail:
           '자회사인 이모션 글로벌 홈페이지이며, 본사에 대한 정보, 포트폴리오, 의뢰 서비스, 입사지원 서비스 등을 제공하는 웹사이트입니다. \n<메인 및 서브페이지를 통틀어 고도화 작업을 진행하였습니다.>',
         projectProcess:
@@ -1279,7 +1287,8 @@ export const companyList = [
           '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다.',
         projectPeriod: '2022.08 - 2022.12',
         skillList: ['JavaScript', 'jQuery', 'CSS'],
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-ds.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-ds-new.webp',
+        projectDetailImage: '/assets/images/details/detail-ds.webp',
         projectDescDetail:
           '종가(JONGGA)와 오푸드(O’Food)는 대상의 글로벌 브랜드로, 제품의 통합 커뮤니케이션 플랫폼입니다. \n종가의 경우 한식, 이른바 “K-푸드” 를 브랜드 고유의 스토리텔링으로 넣어 글로벌적인 브랜드 가치를 제안하고있으며, \n오푸드 역시 다채로운 한식에 대한 해외 소비자들의 이해를 높이기 위해 종가와 유사한 가치제안을 두고 있습니다.\n<두 프로젝트 모두 전반적인 페이지 고도화 퍼블리싱을 진행하였습니다.>\n\n* 종가(JONGGA) 웹사이트는 현재 리뉴얼되어 사이트 형태가 아래 구현내용과 상이할 수 있습니다.',
         projectProcess:
@@ -1369,7 +1378,8 @@ export const companyList = [
           '메타클럽은 상품권 전환 및 포인트를 충전할 수 있는 포인트 테크 플랫폼으로, 문화상품권, 도서문화상품권의 핀번호를 등록하여 다양한 곳에서 사용할 수 있게 해줍니다.',
         projectPeriod: '2022.08 - 2022.11',
         skillList: ['Vue.js', 'Nuxt.js', 'SWR', 'SCSS'],
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-meta.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-meta-new.webp',
+        projectDetailImage: '/assets/images/details/detail-meta.webp',
         projectDescDetail:
           '메타클럽은 상품권 전환 및 포인트를 충전할 수 있는 포인트 테크 플랫폼입니다. \n문화상품권, 도서문화상품권의 핀번호를 등록하여 다양한 곳에서 사용할 수 있게 해줍니다. \n<해당 프로젝트에서 퍼블리싱을 중심으로 일부 기능 구현까지 담당하며 서비스 구축 과정에 참여하였습니다.>',
         projectProcess:
@@ -1425,12 +1435,13 @@ export const companyList = [
       },
       {
         id: 11,
-        projectName: '자사 PMS 구축 및 운영',
+        projectName: '이모션글로벌 PMS',
         projectDesc:
           '사원 정보, 업무일지 및 프로젝트 현황을 파악할 수 있는 어드민 페이지입니다. 부서별 진행 업무와 프로젝트 현황을 객관적인 지표로 확인할 수 있습니다.',
         projectPeriod: '2023.05 - 2023.11',
         skillList: ['React', 'TailwindCSS', 'SWR'],
-        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-pms.webp',
+        projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-pms-new.webp',
+        projectDetailImage: '/assets/images/details/detail-pms.webp',
         projectDescDetail:
           '사원 정보, 업무일지 및 프로젝트 진행현황을 파악할 수 있는 어드민 페이지입니다. 현재 본인이 속한 파트 뿐만이 아닌 다른 파트에서도 어떤 업무가 진행중인지 한 눈에 알 수 있고, 프로젝트에 대한 현황 정보가 객관적인 지표로 표시되어 있습니다. 이를 통해 더욱 정확하고 직관적인 관리가 가능합니다.',
         projectProcess:

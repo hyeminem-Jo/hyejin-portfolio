@@ -7,7 +7,7 @@ export const SideProjects = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 120px 0 110px;
+  padding: 80px 0 110px;
   /* border: 2px solid gold; */
 
   @media (max-width: ${BREAKPOINT}px) {

@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePathname } from 'next/navigation';
 import Header from '../header/Header';
 import CustomCursor from '../cursor/CustomCursor';
 import { useIsMobile } from '../hooks/useIsMobile';
@@ -11,6 +12,8 @@ import * as S from './styled';
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const { isMobile, isLoaded } = useIsMobile();
+  const pathname = usePathname();
+  const isWorkDetailPage = pathname?.startsWith('/work/');
 
   useEffect(() => {
     if (!isLoaded || isMobile) return;
@@ -45,7 +48,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
   }, [isLoaded, isMobile]);
 
   return (
-    <S.AppLayoutContainer>
+    <S.AppLayoutContainer $isWorkDetailPage={isWorkDetailPage}>
       <CustomCursor />
       <Header />
       {children}

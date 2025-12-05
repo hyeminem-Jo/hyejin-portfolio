@@ -25,6 +25,7 @@ const Header = () => {
   const progressBarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
+  const isWorkDetailPage = pathname?.startsWith('/work/');
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -205,7 +206,7 @@ const Header = () => {
   };
 
   return (
-    <S.HeaderContainer>
+    <S.HeaderContainer $isWorkDetailPage={isWorkDetailPage}>
       <S.HeaderContent>
         {!usePathname().includes('/work') ? (
           <S.HeaderContentLeft>

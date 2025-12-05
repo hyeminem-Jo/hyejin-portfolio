@@ -36,6 +36,6 @@ export const CursorSvg = styled.svg<CursorSvgProps>`
 `;
 
 export const CursorPath = styled.path<CursorSvgProps>`
-  fill: ${({ $isClicking }) => ($isClicking ? '#ff8200' : '#222')};
+  fill: ${({ $isClicking }) => ($isClicking ? '#ff8200' : 'chocolate')};
   transition: fill 0.15s ease-out;
 `;

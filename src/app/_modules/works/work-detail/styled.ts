@@ -4,14 +4,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const WorkDetailContainer = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  border: 1px solid red;
 
   @media (max-width: ${BREAKPOINT}px) {
-    width: 100%;
-    padding: 20px 16px;
   }
+`;
+
+export const WorkDetailVisual = styled.div`
+  width: 100%;
+  height: 50dvh;
+  border: 1px solid blue;
+`;
+
+export const WorkDetailImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const WorkDetailThumbnail = styled(Image)`
@@ -162,6 +170,18 @@ export const ProjectProblemAndSolving = styled.p`
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 15px;
     padding-left: 15px;
+  }
+`;
+
+export const WorkDetailContentWrap = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border: 1px solid red;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    width: 100%;
+    padding: 20px 16px;
   }
 `;
 

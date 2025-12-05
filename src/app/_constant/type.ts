@@ -15,6 +15,7 @@ export interface Project {
   projectWorkList?: string[];
   projectLink?: string | string[];
   projectThumbnail: string;
+  projectDetailImage: string;
   projectContribution?: string;
   projectRole?: string;
   projectDevice?: string;

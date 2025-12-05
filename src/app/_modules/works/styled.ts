@@ -9,7 +9,7 @@ export const Works = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 160px 0 120px;
-  background-color: #e5e7eb;
+  /* background-color: #e5e7eb; */
 
   @media (max-width: ${BREAKPOINT}px) {
     padding: 0 0 80px;
@@ -49,8 +49,7 @@ export const WorksCompanyList = styled.ul`
 export const WorksList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  row-gap: 50px;
+  gap: 60px;
 
   @media (max-width: ${BREAKPOINT}px) {
     flex-direction: column;
@@ -72,10 +71,11 @@ export const WorksItemOverview = styled.div`
   padding: 20px;
   opacity: 0;
   transition: all 0.3s ease;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   font-weight: 500;
   text-align: center;
+  z-index: 2;
 
   &.works-item-overview {
     opacity: 0;
@@ -100,11 +100,11 @@ export const WorksItemLink = styled(Link)`
 
 export const WorksItem = styled.li`
   position: relative;
-  width: calc((100% - 30px) / 2);
+  width: calc((100% - 60px) / 2);
   aspect-ratio: 1/1.2;
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
+  border-radius: 10px;
   background: white;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -118,6 +118,10 @@ export const WorksItem = styled.li`
     opacity: 1;
   }
 
+  &:hover .works-item-image {
+    transform: scale(1.05);
+  }
+
   @media (max-width: ${BREAKPOINT}px) {
     width: 100%;
     flex-direction: column;
@@ -125,16 +129,17 @@ export const WorksItem = styled.li`
 `;
 
 export const WorksItemImageWrap = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
 `;
 
 export const WorksItemImage = styled(Image)`
   width: 100%;
-  /* height: 100%; */
   object-fit: cover;
+  transition: transform 0.5s ease;
 `;
 
 export const WorksItemInfo = styled.div`
@@ -147,7 +152,7 @@ export const WorksItemInfo = styled.div`
   gap: 5px;
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: 0 30px 40px 30px;
   color: #fff;
 
   &::after {
@@ -160,7 +165,7 @@ export const WorksItemInfo = styled.div`
     background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
     pointer-events: none;
     z-index: 1;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 10px 10px;
   }
 
   @media (max-width: ${BREAKPOINT}px) {
@@ -169,7 +174,7 @@ export const WorksItemInfo = styled.div`
 `;
 
 export const ProjectName = styled.h4`
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 700;
   z-index: 2;
   white-space: pre-line;
@@ -246,6 +251,7 @@ export const CompanyPeriod = styled.p`
 export const ProjectDesc = styled.p`
   font-size: 16px;
   line-height: 1.6;
+  padding: 20px;
   color: #fff;
   margin: 0 0 16px 0;
 

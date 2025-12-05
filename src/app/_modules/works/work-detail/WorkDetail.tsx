@@ -70,9 +70,17 @@ const WorkDetail = ({ id }: { id: string }) => {
 
   return (
     <S.WorkDetailContainer>
+      <S.WorkDetailVisual>
+        <S.WorkDetailImage
+          src={targetProject.projectDetailImage}
+          alt={targetProject.projectName}
+          width={550}
+          height={350}
+        />
+      </S.WorkDetailVisual>
       <S.WorkDetailHeader>
         <S.WorkDetailThumbnail
-          src={targetProject.projectThumbnail}
+          src={targetProject.projectDetailImage}
           alt={targetProject.projectName}
           width={550}
           height={350}
@@ -139,175 +147,174 @@ const WorkDetail = ({ id }: { id: string }) => {
                 ))}
               </S.SkillList>
             </S.ProjectInfoItem>
-            <S.ProjectInfoItem>
-              <S.ProjectInfoTitle>소속 회사</S.ProjectInfoTitle>
-              <S.ProjectInfoDesc>{targetCompany?.name}</S.ProjectInfoDesc>
-            </S.ProjectInfoItem>
           </S.ProjectInfoList>
         </S.WorkDetailIntro>
       </S.WorkDetailHeader>
 
-      <S.WorkDetailContent>
-        <S.Section>
-          <S.SectionTitle>개요</S.SectionTitle>
-          <S.ProjectDescription>
-            {formatText(targetProject.projectDescDetail || '')}
-          </S.ProjectDescription>
-        </S.Section>
+      <S.WorkDetailContentWrap>
+        <S.WorkDetailContent>
+          <S.Section>
+            <S.SectionTitle>개요</S.SectionTitle>
+            <S.ProjectDescription>
+              {formatText(targetProject.projectDescDetail || '')}
+            </S.ProjectDescription>
+          </S.Section>
 
-        <S.Section>
-          <S.SectionTitle>진행 방식</S.SectionTitle>
-          <S.ProjectDescription>
-            {formatText(targetProject.projectProcess || '')}
-          </S.ProjectDescription>
-        </S.Section>
+          <S.Section>
+            <S.SectionTitle>진행 방식</S.SectionTitle>
+            <S.ProjectDescription>
+              {formatText(targetProject.projectProcess || '')}
+            </S.ProjectDescription>
+          </S.Section>
 
-        <S.Section>
-          <S.SectionTitle>주요 작업 내용</S.SectionTitle>
-          <S.FunctionList>
-            {targetProject.projectMainFunction?.map((func: MainFunction, index: number) => (
-              <S.FunctionItem key={index}>
-                <S.FunctionPage>{func.page}</S.FunctionPage>
-                {func.desc && func.desc.length > 0 && (
-                  <S.FunctionDescList>
-                    {func.desc?.map((descItem: FunctionDesc, descIndex: number) => (
-                      <S.FunctionDescItem key={descIndex}>
-                        <S.FunctionMainDesc>
-                          {formatText(descItem.mainDesc)}{' '}
-                          {descItem.pageLink && (
-                            <S.StyleLink
-                              href={descItem.pageLink}
-                              target='_blank'
-                              rel='noopener noreferrer'
-                            >
-                              📄 페이지 링크
-                            </S.StyleLink>
-                          )}
-                          {descItem.blogLink && (
-                            <S.StyleLink
-                              href={descItem.blogLink}
-                              target='_blank'
-                              rel='noopener noreferrer'
-                            >
-                              ▶️ 블로그 링크
-                            </S.StyleLink>
-                          )}
-                        </S.FunctionMainDesc>
-                        {descItem.subDesc && descItem.subDesc.length > 0 && (
-                          <S.FunctionSubDescList>
-                            {descItem.subDesc.map(
-                              (
-                                sub: string | { desc: string; blogLink: string },
-                                subIndex: number,
-                              ) => (
-                                <S.FunctionSubDesc key={subIndex}>
-                                  - {formatText(typeof sub === 'string' ? sub : sub.desc)}{' '}
-                                  {typeof sub === 'object' && sub.blogLink && (
-                                    <S.StyleLink
-                                      href={sub.blogLink}
-                                      target='_blank'
-                                      rel='noopener noreferrer'
-                                    >
-                                      ▶️ 블로그 링크
-                                    </S.StyleLink>
-                                  )}
-                                </S.FunctionSubDesc>
-                              ),
+          <S.Section>
+            <S.SectionTitle>주요 작업 내용</S.SectionTitle>
+            <S.FunctionList>
+              {targetProject.projectMainFunction?.map((func: MainFunction, index: number) => (
+                <S.FunctionItem key={index}>
+                  <S.FunctionPage>{func.page}</S.FunctionPage>
+                  {func.desc && func.desc.length > 0 && (
+                    <S.FunctionDescList>
+                      {func.desc?.map((descItem: FunctionDesc, descIndex: number) => (
+                        <S.FunctionDescItem key={descIndex}>
+                          <S.FunctionMainDesc>
+                            {formatText(descItem.mainDesc)}{' '}
+                            {descItem.pageLink && (
+                              <S.StyleLink
+                                href={descItem.pageLink}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                              >
+                                📄 페이지 링크
+                              </S.StyleLink>
                             )}
-                          </S.FunctionSubDescList>
-                        )}
-                      </S.FunctionDescItem>
-                    ))}
-                  </S.FunctionDescList>
-                )}
-              </S.FunctionItem>
-            ))}
-          </S.FunctionList>
-        </S.Section>
-
-        {targetProject.projectProblemSolving && targetProject.projectProblemSolving.length > 0 && (
-          <S.Section>
-            <S.SectionTitle>💫 Trouble shooting</S.SectionTitle>
-            <S.ProjectProblemSolvingList>
-              {targetProject.projectProblemSolving?.map((problem: ProblemSolving) => (
-                <S.ProjectProblemSolvingItem key={problem.title}>
-                  <S.ProjectProblemSolvingTitle>{problem.title}</S.ProjectProblemSolvingTitle>
-                  <S.ProjectProblemAndSolving>
-                    <strong>문제:</strong> {formatText(problem.problem)}
-                  </S.ProjectProblemAndSolving>
-                  <S.ProjectProblemAndSolving>
-                    <strong>해결:</strong> {formatText(problem.solving)}{' '}
-                    {problem.blogLink && (
-                      <S.StyleLink
-                        href={problem.blogLink}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                      >
-                        ▶️ 블로그 보기
-                      </S.StyleLink>
-                    )}
-                  </S.ProjectProblemAndSolving>
-                </S.ProjectProblemSolvingItem>
+                            {descItem.blogLink && (
+                              <S.StyleLink
+                                href={descItem.blogLink}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                              >
+                                ▶️ 블로그 링크
+                              </S.StyleLink>
+                            )}
+                          </S.FunctionMainDesc>
+                          {descItem.subDesc && descItem.subDesc.length > 0 && (
+                            <S.FunctionSubDescList>
+                              {descItem.subDesc.map(
+                                (
+                                  sub: string | { desc: string; blogLink: string },
+                                  subIndex: number,
+                                ) => (
+                                  <S.FunctionSubDesc key={subIndex}>
+                                    - {formatText(typeof sub === 'string' ? sub : sub.desc)}{' '}
+                                    {typeof sub === 'object' && sub.blogLink && (
+                                      <S.StyleLink
+                                        href={sub.blogLink}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                      >
+                                        ▶️ 블로그 링크
+                                      </S.StyleLink>
+                                    )}
+                                  </S.FunctionSubDesc>
+                                ),
+                              )}
+                            </S.FunctionSubDescList>
+                          )}
+                        </S.FunctionDescItem>
+                      ))}
+                    </S.FunctionDescList>
+                  )}
+                </S.FunctionItem>
               ))}
-            </S.ProjectProblemSolvingList>
+            </S.FunctionList>
           </S.Section>
-        )}
 
-        {targetProject.projectImgList && targetProject.projectImgList.length > 0 && (
-          <S.Section>
-            <S.SectionTitle>📸 Images</S.SectionTitle>
-            <S.ImageSliderContainer>
-              <Slider {...sliderSettings}>
-                {targetProject.projectImgList.map((imageUrl: string, index: number) => (
-                  <S.SliderImage key={index}>
-                    <Image
-                      src={imageUrl}
-                      alt={`화면 이미지 ${index + 1}`}
-                      width={800}
-                      height={600}
-                      style={{ objectFit: 'contain' }}
-                      priority={true}
-                      quality={90}
-                      placeholder='blur'
-                      blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlOWVjZWY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZGllbnQpIiAvPgo8L3N2Zz4='
-                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px'
-                      onError={(e) => {
-                        console.error('이미지 로드에 실패했습니다.', imageUrl);
-                      }}
-                    />
-                  </S.SliderImage>
-                ))}
-              </Slider>
-            </S.ImageSliderContainer>
-          </S.Section>
-        )}
-      </S.WorkDetailContent>
+          {targetProject.projectProblemSolving &&
+            targetProject.projectProblemSolving.length > 0 && (
+              <S.Section>
+                <S.SectionTitle>💫 Trouble shooting</S.SectionTitle>
+                <S.ProjectProblemSolvingList>
+                  {targetProject.projectProblemSolving?.map((problem: ProblemSolving) => (
+                    <S.ProjectProblemSolvingItem key={problem.title}>
+                      <S.ProjectProblemSolvingTitle>{problem.title}</S.ProjectProblemSolvingTitle>
+                      <S.ProjectProblemAndSolving>
+                        <strong>문제:</strong> {formatText(problem.problem)}
+                      </S.ProjectProblemAndSolving>
+                      <S.ProjectProblemAndSolving>
+                        <strong>해결:</strong> {formatText(problem.solving)}{' '}
+                        {problem.blogLink && (
+                          <S.StyleLink
+                            href={problem.blogLink}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            ▶️ 블로그 보기
+                          </S.StyleLink>
+                        )}
+                      </S.ProjectProblemAndSolving>
+                    </S.ProjectProblemSolvingItem>
+                  ))}
+                </S.ProjectProblemSolvingList>
+              </S.Section>
+            )}
 
-      <S.NavigationContainer>
-        {prevProject && (
-          <S.NavigationItem href={`/work/${prevProject.project.id}`}>
-            <S.NavigationArrow>
-              <FaArrowLeft />
-            </S.NavigationArrow>
-            <S.NavigationLabel>이전 프로젝트</S.NavigationLabel>
-            <S.NavigationTitle>{prevProject.project.projectName}</S.NavigationTitle>
-          </S.NavigationItem>
-        )}
-        <S.NavigationCenter>
-          <S.NavigationCenterTxt>
-            {currentIndex + 1} / {allProjects.length}
-          </S.NavigationCenterTxt>
-        </S.NavigationCenter>
-        {nextProject && (
-          <S.NavigationItem href={`/work/${nextProject.project.id}`}>
-            <S.NavigationArrow>
-              <FaArrowRight />
-            </S.NavigationArrow>
-            <S.NavigationLabel>다음 프로젝트</S.NavigationLabel>
-            <S.NavigationTitle>{nextProject.project.projectName}</S.NavigationTitle>
-          </S.NavigationItem>
-        )}
-      </S.NavigationContainer>
+          {targetProject.projectImgList && targetProject.projectImgList.length > 0 && (
+            <S.Section>
+              <S.SectionTitle>📸 Images</S.SectionTitle>
+              <S.ImageSliderContainer>
+                <Slider {...sliderSettings}>
+                  {targetProject.projectImgList.map((imageUrl: string, index: number) => (
+                    <S.SliderImage key={index}>
+                      <Image
+                        src={imageUrl}
+                        alt={`화면 이미지 ${index + 1}`}
+                        width={800}
+                        height={600}
+                        style={{ objectFit: 'contain' }}
+                        priority={true}
+                        quality={90}
+                        placeholder='blur'
+                        blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlOWVjZWY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZGllbnQpIiAvPgo8L3N2Zz4='
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px'
+                        onError={(e) => {
+                          console.error('이미지 로드에 실패했습니다.', imageUrl);
+                        }}
+                      />
+                    </S.SliderImage>
+                  ))}
+                </Slider>
+              </S.ImageSliderContainer>
+            </S.Section>
+          )}
+        </S.WorkDetailContent>
+
+        <S.NavigationContainer>
+          {prevProject && (
+            <S.NavigationItem href={`/work/${prevProject.project.id}`}>
+              <S.NavigationArrow>
+                <FaArrowLeft />
+              </S.NavigationArrow>
+              <S.NavigationLabel>이전 프로젝트</S.NavigationLabel>
+              <S.NavigationTitle>{prevProject.project.projectName}</S.NavigationTitle>
+            </S.NavigationItem>
+          )}
+          <S.NavigationCenter>
+            <S.NavigationCenterTxt>
+              {currentIndex + 1} / {allProjects.length}
+            </S.NavigationCenterTxt>
+          </S.NavigationCenter>
+          {nextProject && (
+            <S.NavigationItem href={`/work/${nextProject.project.id}`}>
+              <S.NavigationArrow>
+                <FaArrowRight />
+              </S.NavigationArrow>
+              <S.NavigationLabel>다음 프로젝트</S.NavigationLabel>
+              <S.NavigationTitle>{nextProject.project.projectName}</S.NavigationTitle>
+            </S.NavigationItem>
+          )}
+        </S.NavigationContainer>
+      </S.WorkDetailContentWrap>
 
       <ScrollTop />
     </S.WorkDetailContainer>

@@ -2,14 +2,22 @@ import { BREAKPOINT } from '@/app/_constant/breakpoint';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-export const HeaderContainer = styled.header`
+interface HeaderContainerProps {
+  $isWorkDetailPage?: boolean;
+}
+
+export const HeaderContainer = styled.header<HeaderContainerProps>`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 70px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
+  ${({ $isWorkDetailPage }) =>
+    !$isWorkDetailPage &&
+    `
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+  `}
   z-index: 100;
 
   @media (max-width: ${BREAKPOINT}px) {
