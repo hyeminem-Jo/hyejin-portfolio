@@ -201,6 +201,7 @@ export const ProjectProblemAndSolving = styled.p`
 
 export const WorkDetailContentBg = styled.div`
   background-color: whitesmoke;
+  box-shadow: 0 -15px 30px -15px rgba(0, 0, 0, 0.2);
 `;
 
 export const WorkDetailContentWrap = styled.div`
@@ -377,7 +378,145 @@ export const ProjectImage = styled(Image)`
   }
 `;
 
-// 이미지 슬라이더 스타일
+// 이미지 그리드 카드 스타일
+export const ImageGridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+`;
+
+interface ImageCardProps {
+  $isActive: boolean;
+}
+
+export const ImageCard = styled.div<ImageCardProps>`
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/2;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid ${({ $isActive }) => ($isActive ? '#007bff' : 'transparent')};
+  box-shadow: ${({ $isActive }) =>
+    $isActive ? '0 4px 12px rgba(0, 123, 255, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.1)'};
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-color: #007bff;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    border-width: 2px;
+  }
+`;
+
+// 모달 내 슬라이더 스타일
+export const ModalSliderContainer = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .slick-prev {
+    left: 20px;
+  }
+
+  .slick-next {
+    right: 20px;
+  }
+
+  .slick-arrow {
+    font-size: 0;
+
+    @media (max-width: ${BREAKPOINT}px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+`;
+
+export const CustomArrow = styled.button`
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    color: #007bff;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 18px;
+  }
+`;
+
+export const ModalSliderImage = styled.div`
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    min-height: 300px;
+    padding: 15px;
+  }
+`;
+
+// 이미지 슬라이더 스타일 (레거시 - 필요시 유지)
 export const ImageSliderContainer = styled.div`
   width: 100%;
   /* max-width: 800px; */
@@ -415,7 +554,7 @@ export const ImageSliderContainer = styled.div`
   }
 
   .slick-prev {
-    left: -10px;
+    left: -50px;
     &::before {
       content: '◀';
       margin-left: -5px;
@@ -455,7 +594,6 @@ export const SliderImage = styled.div`
   align-items: center;
   height: 600px;
   padding: 20px;
-  background: #f8f8f8;
   border-radius: 8px;
 
   img {

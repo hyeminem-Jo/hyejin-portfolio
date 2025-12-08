@@ -7,20 +7,17 @@ interface ModalContainerProps {
 
 export const Overlay = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 2000;
   padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
 `;
 
 export const ModalContainer = styled.div<ModalContainerProps>`
-  background-color: #fff;
+  position: relative;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   max-width: ${({ $size }) => {
@@ -37,10 +34,10 @@ export const ModalContainer = styled.div<ModalContainerProps>`
   }};
   width: 100%;
   max-height: 90vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   animation: modalSlideIn 0.3s ease-out;
+  border: 2px solid green;
 
   @keyframes modalSlideIn {
     from {
@@ -57,6 +54,18 @@ export const ModalContainer = styled.div<ModalContainerProps>`
     max-width: 95vw;
     margin: 10px;
   }
+`;
+
+export const ImageModalContainer = styled.div`
+  position: fixed;
+  max-width: 1100px;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  top: 50px;
+  left: calc((100vw - 1100px - 20px) / 2);
+  padding-bottom: 50px;
 `;
 
 export const Header = styled.div`
@@ -87,6 +96,9 @@ export const Title = styled.h2`
 `;
 
 export const CloseButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,25 +109,13 @@ export const CloseButton = styled.button`
   padding: 8px;
   padding-top: 11px;
   border-radius: 50%;
-  border: 1px solid #e5e5e5;
   transition: background-color 0.2s ease;
   color: #666;
   cursor: pointer;
 
-  &:hover {
-    background-color: #f0f0f0;
-    color: #222;
-  }
-
   &:focus {
     outline: none;
   }
-`;
-
-export const CloseIcon = styled.span`
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 1;
 `;
 
 export const Content = styled.div`
@@ -125,5 +125,141 @@ export const Content = styled.div`
 
   @media (max-width: ${BREAKPOINT}px) {
     padding: 20px;
+  }
+`;
+
+export const ImageContent = styled.div`
+  position: relative;
+  flex: 1;
+`;
+
+export const ImageContentInner = styled.div``;
+
+export const ImageCloseButton = styled.button`
+  position: fixed;
+  top: 40px;
+  right: calc((100vw - 1200px - 20px) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  transition: all 0.2s ease;
+  color: #222;
+  cursor: pointer;
+  z-index: 10;
+  background-color: transparent;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+`;
+
+// 모달 내 슬라이더 스타일
+export const ModalSliderContainer = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  .slick-prev,
+  .slick-next {
+    position: fixed;
+    top: 50%;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      display: none;
+    }
+  }
+
+  .slick-prev {
+    left: calc((100vw - 1200px - 20px) / 2);
+  }
+
+  .slick-next {
+    right: calc((100vw - 1200px - 20px) / 2);
+  }
+
+  .slick-arrow {
+    font-size: 0;
+    z-index: 20;
+
+    @media (max-width: ${BREAKPOINT}px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+`;
+
+export const CustomArrow = styled.button`
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  font-size: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 21;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    fill: #fff;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 20px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+`;
+
+export const ModalSliderImage = styled.div`
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  border-radius: 8px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    min-height: 300px;
+    padding: 15px;
   }
 `;

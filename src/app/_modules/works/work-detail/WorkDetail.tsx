@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { companyList } from '@/app/_data/companyList';
 import { Company, Project, ProblemSolving, MainFunction, FunctionDesc } from '@/app/_constant/type';
 import * as S from './styled';
@@ -13,6 +13,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Modal from '@/app/_modules/common/modal/Modal';
 
 const WorkDetail = ({ id }: { id: string }) => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -21,6 +22,9 @@ const WorkDetail = ({ id }: { id: string }) => {
   const bgRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const sliderSettings = {
     dots: true,
@@ -32,6 +36,9 @@ const WorkDetail = ({ id }: { id: string }) => {
     adaptiveHeight: true,
     swipeToSlide: true,
     touchThreshold: 10,
+    beforeChange: (current: number, next: number) => {
+      setCurrentImageIndex(next);
+    },
   };
 
   let targetProject: Project | null = null;
@@ -377,30 +384,48 @@ const WorkDetail = ({ id }: { id: string }) => {
             {targetProject.projectImgList && targetProject.projectImgList.length > 0 && (
               <S.Section>
                 <S.SectionTitle>📸 Images</S.SectionTitle>
-                <S.ImageSliderContainer>
-                  <Slider {...sliderSettings}>
-                    {targetProject.projectImgList.map((imageUrl: string, index: number) => (
-                      <S.SliderImage key={index}>
-                        <Image
-                          src={imageUrl}
-                          alt={`화면 이미지 ${index + 1}`}
-                          width={800}
-                          height={600}
-                          style={{ objectFit: 'contain' }}
-                          priority={true}
-                          quality={90}
-                          placeholder='blur'
-                          blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlOWVjZWY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZGllbnQpIiAvPgo8L3N2Zz4='
-                          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px'
-                          onError={(e) => {
-                            console.error('이미지 로드에 실패했습니다.', imageUrl);
-                          }}
-                        />
-                      </S.SliderImage>
-                    ))}
-                  </Slider>
-                </S.ImageSliderContainer>
+                <S.ImageGridContainer>
+                  {targetProject.projectImgList.map((imageUrl: string, index: number) => (
+                    <S.ImageCard
+                      key={index}
+                      $isActive={currentImageIndex === index}
+                      onClick={() => {
+                        setCurrentImageIndex(index);
+                        setIsModalOpen(true);
+                      }}
+                    >
+                      <Image
+                        src={imageUrl}
+                        alt={`화면 이미지 ${index + 1}`}
+                        width={300}
+                        height={200}
+                        style={{ objectFit: 'cover' }}
+                        quality={80}
+                        placeholder='blur'
+                        blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlOWVjZWY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZGllbnQpIiAvPgo8L3N2Zz4='
+                        sizes='(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 300px'
+                        onError={(e) => {
+                          console.error('이미지 로드에 실패했습니다.', imageUrl);
+                        }}
+                      />
+                    </S.ImageCard>
+                  ))}
+                </S.ImageGridContainer>
               </S.Section>
+            )}
+
+            {targetProject.projectImgList && targetProject.projectImgList.length > 0 && (
+              <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                size='lg'
+                showCloseButton={true}
+                closeOnOverlayClick={true}
+                isImageModal={true}
+                imageList={targetProject.projectImgList}
+                currentImageIndex={currentImageIndex}
+                onImageChange={setCurrentImageIndex}
+              />
             )}
           </S.WorkDetailContent>
 
