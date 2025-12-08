@@ -4,15 +4,30 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const WorkDetailContainer = styled.div`
+  background-color: whitesmoke;
   @media (max-width: ${BREAKPOINT}px) {
   }
 `;
 
 export const WorkDetailVisual = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 55dvh;
   overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
 `;
 
 export const WorkDetailImageBg = styled.div`
@@ -62,18 +77,20 @@ export const WorkDetailHeader = styled.div`
 `;
 
 export const WorkDetailIntro = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  color: #fff;
+  z-index: 2;
 
   @media (max-width: ${BREAKPOINT}px) {
   }
 `;
 
 export const ProjectTitle = styled.h1`
-  font-size: 36px;
+  font-size: 50px;
   font-weight: 700;
-  color: #111;
   margin: 0 0 16px 0;
 
   @media (max-width: ${BREAKPOINT}px) {
@@ -105,7 +122,6 @@ export const ProjectInfoItem = styled.li`
 export const ProjectInfoTitle = styled.p`
   min-width: 100px;
   font-weight: 600;
-  color: #222;
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 14px;
@@ -113,7 +129,6 @@ export const ProjectInfoTitle = styled.p`
 `;
 
 export const ProjectInfoDesc = styled.p`
-  color: #666;
   margin: 0;
 
   @media (max-width: ${BREAKPOINT}px) {
@@ -139,7 +154,6 @@ export const ProjectProblemSolvingItem = styled.li`
   & > p:last-child {
     margin-top: 10px;
   }
-
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 14px;
   }
@@ -185,6 +199,10 @@ export const ProjectProblemAndSolving = styled.p`
   }
 `;
 
+export const WorkDetailContentBg = styled.div`
+  background-color: whitesmoke;
+`;
+
 export const WorkDetailContentWrap = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -207,7 +225,7 @@ export const WorkDetailContent = styled.div`
 `;
 
 export const Section = styled.section`
-  background: white;
+  background: #fff;
   padding: 40px;
   border-radius: 16px;
   border: 1px solid #e9ecef;

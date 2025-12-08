@@ -107,8 +107,8 @@ export const HeaderLogo = styled.div`
   align-items: center;
   gap: 15px;
   height: 100px;
-  cursor: none;
   transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.7;

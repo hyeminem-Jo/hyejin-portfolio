@@ -20,6 +20,7 @@ const WorkDetail = ({ id }: { id: string }) => {
   const visualRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const introRef = useRef<HTMLDivElement>(null);
 
   const sliderSettings = {
     dots: true,
@@ -114,6 +115,16 @@ const WorkDetail = ({ id }: { id: string }) => {
         pin: true,
         pinSpacing: false,
       });
+
+      gsap.to(introRef.current, {
+        y: -window.innerHeight / 20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: visualRef.current,
+          start: 'bottom bottom',
+          scrub: true,
+        },
+      });
     }
   }, [targetProject]);
 
@@ -121,9 +132,68 @@ const WorkDetail = ({ id }: { id: string }) => {
     <S.WorkDetailContainer>
       <S.WorkDetailVisual ref={visualRef}>
         <S.WorkDetailImageBg ref={bgRef} />
+        <S.WorkDetailIntro ref={introRef}>
+          <S.ProjectTitle>{targetProject.projectName}</S.ProjectTitle>
+          <S.ProjectInfoList>
+            {targetProject.projectLink && (
+              <S.ProjectInfoItem>
+                <S.ProjectInfoTitle>링크</S.ProjectInfoTitle>
+                <S.ProjectInfoDesc>
+                  {Array.isArray(targetProject.projectLink) ? (
+                    targetProject.projectLink.map((link, index) => (
+                      <div key={index}>
+                        <Link
+                          href={link}
+                          style={{ color: '#007bff', wordBreak: 'break-all' }}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          {link}
+                        </Link>
+                        {index < targetProject.projectLink!.length - 1 && <br />}
+                      </div>
+                    ))
+                  ) : (
+                    <Link
+                      href={targetProject.projectLink}
+                      style={{ color: '#007bff', wordBreak: 'break-all' }}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      {targetProject.projectLink}
+                    </Link>
+                  )}
+                </S.ProjectInfoDesc>
+              </S.ProjectInfoItem>
+            )}
+
+            <S.ProjectInfoItem>
+              <S.ProjectInfoTitle>작업 기간</S.ProjectInfoTitle>
+              <S.ProjectInfoDesc>{targetProject.projectPeriod}</S.ProjectInfoDesc>
+            </S.ProjectInfoItem>
+            <S.ProjectInfoItem>
+              <S.ProjectInfoTitle>업무/기여도</S.ProjectInfoTitle>
+              <S.ProjectInfoDesc>
+                {targetProject.projectRole} / {targetProject.projectContribution}
+              </S.ProjectInfoDesc>
+            </S.ProjectInfoItem>
+            <S.ProjectInfoItem>
+              <S.ProjectInfoTitle>기기 환경</S.ProjectInfoTitle>
+              <S.ProjectInfoDesc>{targetProject.projectDevice}</S.ProjectInfoDesc>
+            </S.ProjectInfoItem>
+            <S.ProjectInfoItem>
+              <S.ProjectInfoTitle>사용 기술</S.ProjectInfoTitle>
+              <S.SkillList>
+                {targetProject.skillList.map((skill: string, index: number) => (
+                  <S.SkillTag key={index}>{skill}</S.SkillTag>
+                ))}
+              </S.SkillList>
+            </S.ProjectInfoItem>
+          </S.ProjectInfoList>
+        </S.WorkDetailIntro>
       </S.WorkDetailVisual>
-      <div ref={contentRef} style={{ backgroundColor: '#fff' }}>
-        <S.WorkDetailHeader>
+      <S.WorkDetailContentBg ref={contentRef}>
+        {/* <S.WorkDetailHeader>
           <S.WorkDetailThumbnail
             src={targetProject.projectDetailImage}
             alt={targetProject.projectName}
@@ -194,7 +264,7 @@ const WorkDetail = ({ id }: { id: string }) => {
               </S.ProjectInfoItem>
             </S.ProjectInfoList>
           </S.WorkDetailIntro>
-        </S.WorkDetailHeader>
+        </S.WorkDetailHeader> */}
 
         <S.WorkDetailContentWrap>
           <S.WorkDetailContent>
@@ -360,7 +430,7 @@ const WorkDetail = ({ id }: { id: string }) => {
             )}
           </S.NavigationContainer>
         </S.WorkDetailContentWrap>
-      </div>
+      </S.WorkDetailContentBg>
 
       <ScrollTop />
     </S.WorkDetailContainer>

@@ -1,41 +1,41 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-interface CursorProps {
+interface CursorCircleProps {
   $isHovering: boolean;
   $isClicking: boolean;
 }
 
-interface CursorSvgProps {
-  $isHovering: boolean;
-  $isClicking: boolean;
-}
-
-export const Cursor = styled.div<CursorProps>`
+export const CursorCircle = styled.div<CursorCircleProps>`
   position: fixed;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #ff8200;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.15s ease-out;
-  transform: translate(-6px, -6px)
-    scale(
-      ${({ $isHovering, $isClicking }) => {
-        const baseScale = $isHovering ? 1.2 : 1;
-        return $isClicking ? baseScale * 0.8 : baseScale;
-      }}
-    );
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out;
+
+  ${({ $isHovering, $isClicking }) =>
+    $isHovering &&
+    !$isClicking &&
+    css`
+      width: 40px;
+      height: 40px;
+      background-color: #ffd700;
+      opacity: 0.8;
+    `}
+
+  ${({ $isHovering, $isClicking }) =>
+    $isClicking &&
+    !$isHovering &&
+    css`
+      width: 20px;
+      height: 20px;
+    `}
 
   @media (max-width: 1200px) {
     display: none;
   }
-`;
-
-export const CursorSvg = styled.svg<CursorSvgProps>`
-  width: 100%;
-  height: 100%;
-`;
-
-export const CursorPath = styled.path<CursorSvgProps>`
-  fill: ${({ $isClicking }) => ($isClicking ? '#ff8200' : 'chocolate')};
-  transition: fill 0.15s ease-out;
 `;

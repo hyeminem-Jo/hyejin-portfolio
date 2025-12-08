@@ -26,7 +26,7 @@ export const InnerTitle = styled.div`
   flex-direction: column;
   justify-content: center;
   position: sticky;
-  top: 80px;
+  top: 100px;
   align-self: flex-start;
   height: fit-content;
   gap: 20px;

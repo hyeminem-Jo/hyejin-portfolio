@@ -26,7 +26,6 @@ body {
     sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none;
 }
 
 @media (max-width: 1200px) {
@@ -54,15 +53,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  cursor: none;
-}
-
-a,
-button,
-[role='button'],
-[type='button'],
-[type='submit'] {
-  cursor: none !important;
 }
 
 @media (max-width: 1200px) {

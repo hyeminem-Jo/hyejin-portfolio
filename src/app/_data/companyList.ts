@@ -1441,7 +1441,7 @@ export const companyList = [
         projectPeriod: '2023.05 - 2023.11',
         skillList: ['React', 'TailwindCSS', 'SWR'],
         projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-pms-new.webp',
-        projectDetailImage: '/assets/images/details/detail-pms.webp',
+        projectDetailImage: '/assets/images/details/detail-pms-new.webp',
         projectDescDetail:
           '사원 정보, 업무일지 및 프로젝트 진행현황을 파악할 수 있는 어드민 페이지입니다. 현재 본인이 속한 파트 뿐만이 아닌 다른 파트에서도 어떤 업무가 진행중인지 한 눈에 알 수 있고, 프로젝트에 대한 현황 정보가 객관적인 지표로 표시되어 있습니다. 이를 통해 더욱 정확하고 직관적인 관리가 가능합니다.',
         projectProcess:
