@@ -139,7 +139,7 @@ export const WorksItemImageWrap = styled.div`
 export const WorksItemImage = styled(Image)`
   width: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.5s ease;
 `;
 
 export const WorksItemInfo = styled.div`

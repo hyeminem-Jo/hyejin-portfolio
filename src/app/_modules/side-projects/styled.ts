@@ -39,11 +39,12 @@ export const SideProjectsInnerBox = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 80px;
+  height: 500px;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.05);
   transition: none !important;
+  overflow: hidden;
 
   @media (max-width: ${BREAKPOINT}px) {
     padding: 40px;
@@ -70,9 +71,9 @@ export const SideProjectsInnerBox = styled.li`
 `;
 
 export const SideProjectsImageWrap = styled.div`
-  flex: 1;
+  flex: 1.5;
   position: relative;
-  aspect-ratio: 1.6/1;
+  height: 100%;
 
   img {
     width: 100%;
@@ -89,9 +90,10 @@ export const SideProjectsImageWrap = styled.div`
 `;
 
 export const SideProjectsInfo = styled.div`
-  flex: 1.8;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 30px;
   justify-content: space-between;
   align-items: flex-start;
 

@@ -40,12 +40,14 @@ const Modal = ({
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 300,
+    speed: 0, // 슬라이드 애니메이션 없이 즉시 변경
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     adaptiveHeight: true,
     swipeToSlide: true,
+    waitForAnimate: false,
+    cssEase: 'linear',
     touchThreshold: 10,
     beforeChange: (current: number, next: number) => {
       onImageChange?.(next);

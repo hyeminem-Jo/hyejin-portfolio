@@ -23,30 +23,17 @@ const CustomCursor = () => {
 
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      const target = e.target as HTMLElement | null;
+      const isOnInteractive = target?.closest('a, button, [role="button"]');
+      setIsHovering(Boolean(isOnInteractive));
     };
 
-    const handleMouseEnter = () => setIsHovering(true);
-    const handleMouseLeave = () => setIsHovering(false);
     const handleMouseDown = () => setIsClicking(true);
-    const handleMouseUp = (e: MouseEvent) => {
-      setIsClicking(false);
-      const target = e.target as HTMLElement;
-      const isOnInteractive = target.closest('a, button, [role="button"]');
-      if (!isOnInteractive) {
-        setIsHovering(false);
-      }
-    };
+    const handleMouseUp = () => setIsClicking(false);
 
     window.addEventListener('mousemove', updateMousePosition);
     window.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mouseup', handleMouseUp);
-
-    // Button과 Link 요소에 이벤트 리스너 추가
-    const interactiveElements = document.querySelectorAll('a, button, [role="button"]');
-    interactiveElements.forEach((el) => {
-      el.addEventListener('mouseenter', handleMouseEnter);
-      el.addEventListener('mouseleave', handleMouseLeave);
-    });
 
     return () => {
       setIsHovering(false);
@@ -55,10 +42,6 @@ const CustomCursor = () => {
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
       document.body.style.cursor = '';
-      interactiveElements.forEach((el) => {
-        el.removeEventListener('mouseenter', handleMouseEnter);
-        el.removeEventListener('mouseleave', handleMouseLeave);
-      });
     };
   }, [isMobile, pathname]);
 

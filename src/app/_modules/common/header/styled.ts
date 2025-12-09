@@ -102,13 +102,16 @@ export const HeaderContentLeft = styled.div`
   height: 100%;
 `;
 
-export const HeaderLogo = styled.div`
+export const HeaderLogo = styled.button`
   display: flex;
   align-items: center;
   gap: 15px;
   height: 100px;
   transition: opacity 0.2s ease-in-out;
   cursor: pointer;
+  background: none;
+  height: 100%;
+  border: none;
 
   &:hover {
     opacity: 0.7;

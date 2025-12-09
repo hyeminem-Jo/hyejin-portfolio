@@ -135,10 +135,10 @@ const About = () => {
               </S.AboutAnswerText>
               <S.AboutQuestionText>Q. 개발자로써 자신만의 강점은? </S.AboutQuestionText>
               <S.AboutAnswerText>
-                바이브코딩을 위한 LLM을 적극 활용해 컴포넌트 설계 및 리팩토링, 디버깅 등 개발
-                생산성을 크게 높입니다. 또한 사용자의 반응을 미리 예측해 디자인 및 기획단계에서
-                능동적인 개선을 이끌어내거나, Storybook 및 Postman 을 도입하는 등 팀 전체의 협업
-                흐름과 생산성 개선에도 큰 장점을 가지고 있습니다.
+                프론트엔드의 본질을 이해하면서도 AI 도구를 적극 활용해 컴포넌트 설계 및 리팩토링,
+                디버깅 등 개발 생산성을 크게 높입니다. 또한 사용자의 반응을 미리 예측해 디자인 및
+                기획단계에서 능동적인 개선을 이끌어내거나, Storybook 및 Postman 을 도입하는 등 팀
+                전체의 협업 흐름과 생산성 개선에도 큰 장점을 가지고 있습니다.
               </S.AboutAnswerText>
 
               <br />

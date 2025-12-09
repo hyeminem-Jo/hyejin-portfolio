@@ -8,12 +8,12 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollTop from '@/app/_modules/common/scroll-top/ScrollTop';
-import { FaArrowRight } from 'react-icons/fa';
-import { FaArrowLeft } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Modal from '@/app/_modules/common/modal/Modal';
+import { FaChevronRight } from 'react-icons/fa';
+import WorkDetailNavigation from './work-detail-navigation/WorkDetailNavigation';
 
 const WorkDetail = ({ id }: { id: string }) => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -22,7 +22,7 @@ const WorkDetail = ({ id }: { id: string }) => {
   const bgRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
-
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -85,6 +85,11 @@ const WorkDetail = ({ id }: { id: string }) => {
   const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null;
   const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null;
 
+  // 페이지 진입 시 스크롤을 맨 위로 이동
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   useGSAP(() => {
     if (!bgRef.current || !visualRef.current || !contentRef.current || !targetProject) return;
 
@@ -124,11 +129,12 @@ const WorkDetail = ({ id }: { id: string }) => {
       });
 
       gsap.to(introRef.current, {
-        y: -window.innerHeight / 20,
+        yPercent: -500,
         ease: 'none',
         scrollTrigger: {
-          trigger: visualRef.current,
-          start: 'bottom bottom',
+          trigger: containerRef.current,
+          start: 'top top',
+          end: 'bottom bottom',
           scrub: true,
         },
       });
@@ -136,66 +142,67 @@ const WorkDetail = ({ id }: { id: string }) => {
   }, [targetProject]);
 
   return (
-    <S.WorkDetailContainer>
+    <S.WorkDetailContainer ref={containerRef}>
       <S.WorkDetailVisual ref={visualRef}>
         <S.WorkDetailImageBg ref={bgRef} />
         <S.WorkDetailIntro ref={introRef}>
           <S.ProjectTitle>{targetProject.projectName}</S.ProjectTitle>
           <S.ProjectInfoList>
-            {targetProject.projectLink && (
+            <S.ProjectInfoListInner>
               <S.ProjectInfoItem>
-                <S.ProjectInfoTitle>링크</S.ProjectInfoTitle>
+                <S.ProjectInfoTitle>작업 기간</S.ProjectInfoTitle>
+                <S.ProjectInfoDesc>{targetProject.projectPeriod}</S.ProjectInfoDesc>
+              </S.ProjectInfoItem>
+              <S.ProjectInfoItem>
+                <S.ProjectInfoTitle>업무/기여도</S.ProjectInfoTitle>
                 <S.ProjectInfoDesc>
-                  {Array.isArray(targetProject.projectLink) ? (
-                    targetProject.projectLink.map((link, index) => (
-                      <div key={index}>
-                        <Link
-                          href={link}
-                          style={{ color: '#007bff', wordBreak: 'break-all' }}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
-                          {link}
-                        </Link>
-                        {index < targetProject.projectLink!.length - 1 && <br />}
-                      </div>
-                    ))
-                  ) : (
-                    <Link
-                      href={targetProject.projectLink}
-                      style={{ color: '#007bff', wordBreak: 'break-all' }}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      {targetProject.projectLink}
-                    </Link>
-                  )}
+                  {targetProject.projectRole} / {targetProject.projectContribution}
                 </S.ProjectInfoDesc>
               </S.ProjectInfoItem>
-            )}
-
-            <S.ProjectInfoItem>
-              <S.ProjectInfoTitle>작업 기간</S.ProjectInfoTitle>
-              <S.ProjectInfoDesc>{targetProject.projectPeriod}</S.ProjectInfoDesc>
-            </S.ProjectInfoItem>
-            <S.ProjectInfoItem>
-              <S.ProjectInfoTitle>업무/기여도</S.ProjectInfoTitle>
-              <S.ProjectInfoDesc>
-                {targetProject.projectRole} / {targetProject.projectContribution}
-              </S.ProjectInfoDesc>
-            </S.ProjectInfoItem>
-            <S.ProjectInfoItem>
-              <S.ProjectInfoTitle>기기 환경</S.ProjectInfoTitle>
-              <S.ProjectInfoDesc>{targetProject.projectDevice}</S.ProjectInfoDesc>
-            </S.ProjectInfoItem>
-            <S.ProjectInfoItem>
-              <S.ProjectInfoTitle>사용 기술</S.ProjectInfoTitle>
-              <S.SkillList>
-                {targetProject.skillList.map((skill: string, index: number) => (
-                  <S.SkillTag key={index}>{skill}</S.SkillTag>
-                ))}
-              </S.SkillList>
-            </S.ProjectInfoItem>
+              {targetProject.projectLink && (
+                <S.ProjectInfoItem>
+                  <S.ProjectInfoTitle>링크</S.ProjectInfoTitle>
+                  <S.ProjectInfoDesc>
+                    {Array.isArray(targetProject.projectLink) ? (
+                      targetProject.projectLink.map((link, index) => (
+                        <React.Fragment key={index}>
+                          {index > 0 && <br />}
+                          <S.ProjectInfoDescLink
+                            href={link}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            {link}
+                          </S.ProjectInfoDescLink>
+                        </React.Fragment>
+                      ))
+                    ) : (
+                      <S.ProjectInfoDescLink
+                        href={targetProject.projectLink}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        {targetProject.projectLink}
+                      </S.ProjectInfoDescLink>
+                    )}
+                  </S.ProjectInfoDesc>
+                </S.ProjectInfoItem>
+              )}
+            </S.ProjectInfoListInner>
+            <S.ProjectInfoListInner>
+              <S.ProjectInfoItem>
+                <S.ProjectInfoTitle>기기 환경</S.ProjectInfoTitle>
+                <S.ProjectInfoDesc>{targetProject.projectDevice}</S.ProjectInfoDesc>
+              </S.ProjectInfoItem>
+              <S.ProjectInfoItem>
+                <S.ProjectInfoTitle>사용 기술</S.ProjectInfoTitle>
+                <S.SkillList>
+                  {targetProject.skillList.map((skill: string, index: number) => (
+                    <S.SkillTag key={index}>{skill}</S.SkillTag>
+                  ))}
+                </S.SkillList>
+              </S.ProjectInfoItem>
+            </S.ProjectInfoListInner>
           </S.ProjectInfoList>
         </S.WorkDetailIntro>
       </S.WorkDetailVisual>
@@ -316,7 +323,8 @@ const WorkDetail = ({ id }: { id: string }) => {
                                   target='_blank'
                                   rel='noopener noreferrer'
                                 >
-                                  ▶️ 블로그 링크
+                                  Blog
+                                  <FaChevronRight />
                                 </S.StyleLink>
                               )}
                             </S.FunctionMainDesc>
@@ -335,7 +343,8 @@ const WorkDetail = ({ id }: { id: string }) => {
                                           target='_blank'
                                           rel='noopener noreferrer'
                                         >
-                                          ▶️ 블로그 링크
+                                          Blog
+                                          <FaChevronRight />
                                         </S.StyleLink>
                                       )}
                                     </S.FunctionSubDesc>
@@ -371,7 +380,8 @@ const WorkDetail = ({ id }: { id: string }) => {
                               target='_blank'
                               rel='noopener noreferrer'
                             >
-                              ▶️ 블로그 보기
+                              Blog
+                              <FaChevronRight />
                             </S.StyleLink>
                           )}
                         </S.ProjectProblemAndSolving>
@@ -380,39 +390,6 @@ const WorkDetail = ({ id }: { id: string }) => {
                   </S.ProjectProblemSolvingList>
                 </S.Section>
               )}
-
-            {targetProject.projectImgList && targetProject.projectImgList.length > 0 && (
-              <S.Section>
-                <S.SectionTitle>📸 Images</S.SectionTitle>
-                <S.ImageGridContainer>
-                  {targetProject.projectImgList.map((imageUrl: string, index: number) => (
-                    <S.ImageCard
-                      key={index}
-                      $isActive={currentImageIndex === index}
-                      onClick={() => {
-                        setCurrentImageIndex(index);
-                        setIsModalOpen(true);
-                      }}
-                    >
-                      <Image
-                        src={imageUrl}
-                        alt={`화면 이미지 ${index + 1}`}
-                        width={300}
-                        height={200}
-                        style={{ objectFit: 'cover' }}
-                        quality={80}
-                        placeholder='blur'
-                        blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlOWVjZWY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZGllbnQpIiAvPgo8L3N2Zz4='
-                        sizes='(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 300px'
-                        onError={(e) => {
-                          console.error('이미지 로드에 실패했습니다.', imageUrl);
-                        }}
-                      />
-                    </S.ImageCard>
-                  ))}
-                </S.ImageGridContainer>
-              </S.Section>
-            )}
 
             {targetProject.projectImgList && targetProject.projectImgList.length > 0 && (
               <Modal
@@ -428,33 +405,46 @@ const WorkDetail = ({ id }: { id: string }) => {
               />
             )}
           </S.WorkDetailContent>
-
-          <S.NavigationContainer>
-            {prevProject && (
-              <S.NavigationItem href={`/work/${prevProject.project.id}`}>
-                <S.NavigationArrow>
-                  <FaArrowLeft />
-                </S.NavigationArrow>
-                <S.NavigationLabel>이전 프로젝트</S.NavigationLabel>
-                <S.NavigationTitle>{prevProject.project.projectName}</S.NavigationTitle>
-              </S.NavigationItem>
-            )}
-            <S.NavigationCenter>
-              <S.NavigationCenterTxt>
-                {currentIndex + 1} / {allProjects.length}
-              </S.NavigationCenterTxt>
-            </S.NavigationCenter>
-            {nextProject && (
-              <S.NavigationItem href={`/work/${nextProject.project.id}`}>
-                <S.NavigationArrow>
-                  <FaArrowRight />
-                </S.NavigationArrow>
-                <S.NavigationLabel>다음 프로젝트</S.NavigationLabel>
-                <S.NavigationTitle>{nextProject.project.projectName}</S.NavigationTitle>
-              </S.NavigationItem>
-            )}
-          </S.NavigationContainer>
         </S.WorkDetailContentWrap>
+        <S.WorkDetailContentBottom>
+          {targetProject.projectImgList && targetProject.projectImgList.length > 0 && (
+            <S.WorkDetailContentBottomWrap>
+              <S.WorkDetailContentBottomTitle>📸 Images</S.WorkDetailContentBottomTitle>
+              <S.ImageGridContainer>
+                {targetProject.projectImgList.map((imageUrl: string, index: number) => (
+                  <S.ImageCard
+                    key={index}
+                    $isActive={currentImageIndex === index}
+                    onClick={() => {
+                      setCurrentImageIndex(index);
+                      setIsModalOpen(true);
+                    }}
+                  >
+                    <Image
+                      src={imageUrl}
+                      alt={`화면 이미지 ${index + 1}`}
+                      width={300}
+                      height={200}
+                      style={{ objectFit: 'cover' }}
+                      quality={80}
+                      placeholder='blur'
+                      blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlOWVjZWY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y4ZjlmYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZGllbnQpIiAvPgo8L3N2Zz4='
+                      sizes='(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 300px'
+                      onError={(e) => {
+                        console.error('이미지 로드에 실패했습니다.', imageUrl);
+                      }}
+                    />
+                  </S.ImageCard>
+                ))}
+              </S.ImageGridContainer>
+            </S.WorkDetailContentBottomWrap>
+          )}
+          <WorkDetailNavigation
+            prevProject={prevProject}
+            nextProject={nextProject}
+            currentProjectName={targetProject.projectName}
+          />
+        </S.WorkDetailContentBottom>
       </S.WorkDetailContentBg>
 
       <ScrollTop />

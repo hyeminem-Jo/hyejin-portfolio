@@ -25,7 +25,7 @@ export const WorkDetailVisual = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
   }
 `;
@@ -38,7 +38,7 @@ export const WorkDetailImageBg = styled.div`
   height: 100%;
   z-index: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 `;
 
@@ -80,7 +80,7 @@ export const WorkDetailIntro = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 80px;
   color: #fff;
   z-index: 2;
 
@@ -92,6 +92,7 @@ export const ProjectTitle = styled.h1`
   font-size: 50px;
   font-weight: 700;
   margin: 0 0 16px 0;
+  text-align: center;
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 25px;
@@ -100,6 +101,15 @@ export const ProjectTitle = styled.h1`
 `;
 
 export const ProjectInfoList = styled.ul`
+  display: flex;
+  gap: 50px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    gap: 15px;
+  }
+`;
+
+export const ProjectInfoListInner = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -133,6 +143,15 @@ export const ProjectInfoDesc = styled.p`
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 14px;
+  }
+`;
+
+export const ProjectInfoDescLink = styled(Link)`
+  color: #ff8200;
+  word-break: break-all;
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 
@@ -201,18 +220,41 @@ export const ProjectProblemAndSolving = styled.p`
 
 export const WorkDetailContentBg = styled.div`
   background-color: whitesmoke;
+  /* background-color: #fff; */
   box-shadow: 0 -15px 30px -15px rgba(0, 0, 0, 0.2);
 `;
 
 export const WorkDetailContentWrap = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 20px 100px;
 
   @media (max-width: ${BREAKPOINT}px) {
     width: 100%;
     padding: 20px 16px;
   }
+`;
+
+export const WorkDetailContentBottom = styled.div`
+  background-color: #fff;
+
+  @media (max-width: ${BREAKPOINT}px) {
+  }
+`;
+
+export const WorkDetailContentBottomWrap = styled.div`
+  width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  @media (max-width: ${BREAKPOINT}px) {
+  }
+`;
+
+export const WorkDetailContentBottomTitle = styled.h3`
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 24px 0;
 `;
 
 export const WorkDetailContent = styled.div`
@@ -272,12 +314,13 @@ export const SkillList = styled.div`
 `;
 
 export const SkillTag = styled.span`
-  padding: 5px 7px;
+  padding: 4px 7px;
   border-radius: 7px;
   font-size: 13px;
   font-weight: 500;
   background-color: #eee;
   border: 1px solid #e0e0e0;
+  color: #222;
 
   @media (max-width: ${BREAKPOINT}px) {
     padding: 3px 7px;
@@ -383,8 +426,6 @@ export const ImageGridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  width: 100%;
-  margin: 0 auto;
 
   @media (max-width: ${BREAKPOINT}px) {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -404,14 +445,15 @@ export const ImageCard = styled.div<ImageCardProps>`
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 3px solid ${({ $isActive }) => ($isActive ? '#007bff' : 'transparent')};
+  border: 3px solid ${({ $isActive }) => ($isActive ? '#ffd700' : 'transparent')};
   box-shadow: ${({ $isActive }) =>
     $isActive ? '0 4px 12px rgba(0, 123, 255, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.1)'};
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    border-color: #007bff;
+    /* transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); */
+    transform: scale(1.02);
+    border-color: #ffd700;
   }
 
   img {
@@ -627,132 +669,21 @@ export const BoldStyle = styled.span`
 `;
 
 export const StyleLink = styled(Link)`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   margin-left: 5px;
   font-weight: 600;
-  color: #2b7de9;
-  text-decoration: underline;
-`;
-
-// 이전글/다음글 네비게이션 스타일
-export const NavigationContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 60px;
-  padding: 30px 40px;
-  background: #f8f9fa;
-  border-radius: 16px;
-  border: 1px solid #e9ecef;
-
-  @media (max-width: ${BREAKPOINT}px) {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-`;
-
-export const NavigationItem = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 300px;
-  aspect-ratio: 3/1;
-  padding: 20px;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid #e9ecef;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-  min-width: 200px;
-  max-width: 300px;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    border-color: #222;
-  }
-
-  @media (max-width: ${BREAKPOINT}px) {
-    min-width: 100%;
-    max-width: 100%;
-    padding: 15px;
-    aspect-ratio: initial;
-  }
-`;
-
-export const NavigationLabel = styled.span`
-  font-size: 14px;
+  color: #fff;
+  background-color: #333;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 1em;
   font-weight: 600;
-  color: #666;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-`;
+  border: 1px solid #e1e4e8;
 
-export const NavigationTitle = styled.h4`
-  font-size: 16px;
-  font-weight: 600;
-  color: #222;
-  margin: 0;
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  @media (max-width: ${BREAKPOINT}px) {
-    font-size: 15px;
+  svg {
+    width: 12px;
+    height: 12px;
   }
-`;
-
-export const NavigationArrow = styled.span`
-  font-size: 20px;
-  color: #444;
-  font-weight: bold;
-`;
-
-// export const NavigationDisabled = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 8px;
-//   padding: 20px;
-//   background: #f8f9fa;
-//   border-radius: 12px;
-//   border: 1px solid #e9ecef;
-//   min-width: 200px;
-//   max-width: 300px;
-//   opacity: 0.5;
-
-//   @media (max-width: ${BREAKPOINT}px) {
-//     min-width: 100%;
-//     max-width: 100%;
-//     padding: 15px;
-//   }
-// `;
-
-export const NavigationCenter = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: #666;
-  border: 1px solid #e9ecef;
-  padding: 10px 20px;
-  border-radius: 50px;
-  background: white;
-
-  @media (max-width: ${BREAKPOINT}px) {
-    order: -1;
-  }
-`;
-
-export const NavigationCenterTxt = styled.p`
-  margin: 0;
-  font-weight: 600;
-  font-size: 14px;
-  color: #666;
 `;
