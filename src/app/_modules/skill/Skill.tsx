@@ -5,9 +5,9 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef } from 'react';
-import { useIsMobile } from '../common/hooks/useIsMobile';
 import Inner from '../common/layout/Inner';
 import Title from '../common/title/Title';
+import { BREAKPOINT } from '@/app/_constant/breakpoint';
 
 const skillList = [
   {
@@ -118,39 +118,43 @@ const skillDescList = [
 
 const Skill = () => {
   const boxRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const { isMobile, isLoaded } = useIsMobile();
 
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
-    if (!isLoaded || isMobile) return;
-    const boxList = boxRefs.current;
+    const mm = gsap.matchMedia();
 
-    boxList.forEach((box, i) => {
-      if (box) {
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: box,
-              start: '0% 20%',
-              end: '0% 0%',
-              scrub: 1,
-            },
-          })
-          .to(
-            box,
-            {
-              transform: 'rotateX(-10deg) scale(0.9)',
-              transformOrigin: 'top',
-              filter: 'brightness(0.95)',
-              duration: 1,
-              ease: 'none',
-            },
-            0,
-          );
-      }
+    mm.add(`(min-width: ${BREAKPOINT + 1}px)`, () => {
+      const boxList = boxRefs.current;
+
+      boxList.forEach((box, i) => {
+        if (box) {
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: box,
+                start: '0% 20%',
+                end: '0% 0%',
+                scrub: 1,
+              },
+            })
+            .to(
+              box,
+              {
+                transform: 'rotateX(-10deg) scale(0.9)',
+                transformOrigin: 'top',
+                filter: 'brightness(0.95)',
+                duration: 1,
+                ease: 'none',
+              },
+              0,
+            );
+        }
+      });
     });
-  }, [isLoaded, isMobile]);
+
+    return () => mm.revert();
+  }, []);
 
   return (
     <S.Skill id='skills'>

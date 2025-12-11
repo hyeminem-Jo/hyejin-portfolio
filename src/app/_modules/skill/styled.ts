@@ -14,7 +14,7 @@ export const Skill = styled.section`
   padding: 280px 0 100px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding: 120px 0 100px;
+    padding: 120px 0 130px;
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
@@ -56,6 +56,9 @@ export const SkillInner = styled.div`
   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.05);
 
   @media (max-width: ${BREAKPOINT}px) {
+    position: static;
+    top: 0;
+    height: auto;
     top: 100px;
     flex-direction: column;
     gap: 20px;
@@ -67,10 +70,6 @@ export const SkillInner = styled.div`
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
-    position: static;
-    top: 0;
-    height: auto;
-
     &:last-of-type {
       margin-top: 25px;
     }

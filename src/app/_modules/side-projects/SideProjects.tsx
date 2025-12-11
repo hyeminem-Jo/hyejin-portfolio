@@ -92,22 +92,15 @@ const SideProjects = () => {
     const boxWidth = 800;
     const viewportWidth = window.innerWidth;
 
-    // wrapper의 실제 위치 계산 (margin-left를 고려)
     const wrapperRect = wrapper.getBoundingClientRect();
     const wrapperLeft = wrapperRect.left;
-
-    // 첫 번째 박스를 중앙에 배치하기 위한 오프셋
-    // margin-left가 이미 적용되어 있으므로 이를 고려
     const centerOffset = (viewportWidth - boxWidth) / 2 - wrapperLeft;
 
-    // 초기 위치 설정
     gsap.set(wrapper, { x: centerOffset });
 
-    // 각 섹션이 중앙에 올 때까지의 이동 거리 계산
     const totalSections = sections.length;
     const scrollDistance = (boxWidth + gap) * (totalSections - 1);
 
-    // 각 섹션의 snap 포인트 계산 (0부터 1까지)
     const snapPoints = sections.map((_, index) => index / (totalSections - 1));
 
     const animation = gsap.to(wrapper, {

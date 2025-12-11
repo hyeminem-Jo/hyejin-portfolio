@@ -9,10 +9,9 @@ export const Works = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 160px 0 120px;
-  /* background-color: #e5e7eb; */
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding: 0 0 80px;
+    padding: 0 0 130px;
   }
 `;
 
@@ -25,7 +24,7 @@ export const WorksInner = styled.div`
   z-index: 10;
 
   @media (max-width: ${BREAKPOINT}px) {
-    margin-top: 40px;
+    margin-top: 0;
   }
 `;
 
@@ -44,6 +43,10 @@ export const WorksCompanyList = styled.ul`
   @media (max-width: ${BREAKPOINT}px) {
     gap: 80px;
   }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    gap: 20px;
+  }
 `;
 
 export const WorksList = styled.ul`
@@ -52,6 +55,10 @@ export const WorksList = styled.ul`
   gap: 60px;
 
   @media (max-width: ${BREAKPOINT}px) {
+    gap: 30px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
     flex-direction: column;
     gap: 20px;
   }
@@ -102,6 +109,7 @@ export const WorksItem = styled.li`
   position: relative;
   width: calc((100% - 60px) / 2);
   aspect-ratio: 1/1.2;
+  height: auto;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -123,8 +131,13 @@ export const WorksItem = styled.li`
   }
 
   @media (max-width: ${BREAKPOINT}px) {
+    width: calc((100% - 30px) / 2);
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
     width: 100%;
-    flex-direction: column;
+    height: auto;
+    aspect-ratio: 1.5/1;
   }
 `;
 
@@ -134,12 +147,23 @@ export const WorksItemImageWrap = styled.div`
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    height: auto;
+    aspect-ratio: 1.5/1;
+  }
 `;
 
 export const WorksItemImage = styled(Image)`
   width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease, filter 0.5s ease;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    height: 100%;
+    object-position: center;
+  }
 `;
 
 export const WorksItemInfo = styled.div`
@@ -162,14 +186,28 @@ export const WorksItemInfo = styled.div`
     left: 0;
     width: 100%;
     height: 50%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
     pointer-events: none;
     z-index: 1;
     border-radius: 0 0 10px 10px;
   }
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding: 16px;
+    padding: 25px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 20px 15px;
+
+    &::after {
+      height: 70%;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.6) 10%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
   }
 `;
 
@@ -180,7 +218,11 @@ export const ProjectName = styled.h4`
   white-space: pre-line;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 18px;
+    font-size: 28px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    font-size: 23px;
   }
 `;
 
@@ -199,9 +241,11 @@ export const CompanyHeader = styled.div`
   margin-top: 20px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    flex-direction: column;
-    text-align: center;
     gap: 15px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    display: none;
   }
 `;
 
