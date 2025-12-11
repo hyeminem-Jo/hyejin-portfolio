@@ -2,26 +2,36 @@ import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import { HEADER_HEIGHT } from '@/app/_constant/commonSize';
 import { HEADER_HEIGHT_MD } from '@/app/_constant/commonSize';
 import { HEADER_HEIGHT_SM } from '@/app/_constant/commonSize';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
 interface HeaderContainerProps {
   $isWorkDetailPage?: boolean;
+  $isScrolled?: boolean;
 }
 
 export const HeaderContainer = styled.header<HeaderContainerProps>`
   position: fixed;
+  height: ${HEADER_HEIGHT}px;
   top: 0;
   left: 0;
   width: 100%;
-  height: ${HEADER_HEIGHT}px;
-  ${({ $isWorkDetailPage }) =>
-    !$isWorkDetailPage &&
-    `
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
-  `}
+  transition: width 0.3s ease, left 0.3s ease, transform 0.3s ease;
   z-index: 100;
+
+  @media (min-width: ${BREAKPOINT + 1}px) {
+    ${({ $isScrolled, $isWorkDetailPage }) =>
+      $isScrolled &&
+      !$isWorkDetailPage &&
+      css`
+        top: 15px;
+        left: 50%;
+        width: 1400px;
+        transform: translateX(-50%);
+        border-radius: 1000px;
+      `}
+  }
 
   @media (max-width: ${BREAKPOINT}px) {
     height: ${HEADER_HEIGHT_MD}px;
@@ -30,6 +40,13 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   @media (max-width: ${BREAKPOINT_SM}px) {
     height: ${HEADER_HEIGHT_SM}px;
   }
+
+  ${({ $isWorkDetailPage }) =>
+    !$isWorkDetailPage &&
+    css`
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+    `}
 `;
 
 export const ProgressBarContainer = styled.div`

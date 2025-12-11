@@ -22,6 +22,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('visual');
   const [isMenuScrolling, setIsMenuScrolling] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
@@ -61,6 +62,8 @@ const Header = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+      setIsScrolled(scrollTop > 0);
 
       if (progressBarRef.current) {
         gsap.to(progressBarRef.current, {
@@ -206,7 +209,7 @@ const Header = () => {
   };
 
   return (
-    <S.HeaderContainer $isWorkDetailPage={isWorkDetailPage}>
+    <S.HeaderContainer $isWorkDetailPage={isWorkDetailPage} $isScrolled={isScrolled}>
       <S.HeaderContent>
         {!usePathname().includes('/work') ? (
           <S.HeaderContentLeft>
