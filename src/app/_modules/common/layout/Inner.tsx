@@ -1,4 +1,4 @@
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import styled from '@emotion/styled';
 import Title from '../title/Title';
 
@@ -15,6 +15,10 @@ export const InnerContent = styled.div<{ $hasTitle: boolean }>`
 
   @media (max-width: ${BREAKPOINT}px) {
     width: 100%;
+    padding: 0 30px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
     padding: 0 20px;
   }
 `;

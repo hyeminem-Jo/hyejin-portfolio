@@ -123,14 +123,16 @@ const About = () => {
               <S.AboutInnerBoxDescBold>
                 안녕하세요, 👋🏻
                 <br />
-                4년차 FE 개발자 조혜진 입니다.
+                4년차 FE 개발자 <br className='mo-only' />
+                조혜진 입니다.
               </S.AboutInnerBoxDescBold>
               <S.AboutQuestionText>Q. 프론트엔드 개발자가 된 이유? </S.AboutQuestionText>
               <S.AboutAnswerText>
                 디자인을 전공했지만, 디자인을 웹 화면으로 구현하는 과정에서 개발의 매력에
-                빠졌습니다. <br />
+                빠졌습니다. <br className='pc-only' />
                 UI를 코드로 옮기는 흥미에서 시작해,{' '}
-                <strong>데이터까지 연결되는 전 과정을 직접 만들고 싶어</strong> <br />
+                <strong>데이터까지 연결되는 전 과정을 직접 만들고 싶어</strong>{' '}
+                <br className='pc-only' />
                 프론트엔드 개발자가 되었습니다.
               </S.AboutAnswerText>
               <S.AboutQuestionText>Q. 개발자로써 자신만의 강점은? </S.AboutQuestionText>

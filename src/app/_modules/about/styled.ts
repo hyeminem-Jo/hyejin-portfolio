@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 
 export const About = styled.section`
   display: flex;
@@ -29,7 +29,11 @@ export const AboutInner = styled.div`
     margin-top: 60px;
     flex-direction: column;
     height: auto;
-    padding: 25px 20px 30px;
+    padding: 30px 40px 20px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 20px 30px;
   }
 `;
 
@@ -52,6 +56,18 @@ export const AboutInnerImage = styled.div`
 
   @media (max-width: ${BREAKPOINT}px) {
     top: -10px;
+    width: 380px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    width: 250px;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 `;
 
@@ -62,6 +78,11 @@ export const AboutInnerBoxTitleInner = styled.div`
 
   @media (max-width: ${BREAKPOINT}px) {
     height: auto;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    gap: 20px;
+    padding-top: 300px;
   }
 `;
 
@@ -81,6 +102,11 @@ export const AboutInnerBoxDesc = styled.div`
     margin-top: 20px;
     font-size: 16px;
   }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    width: 100%;
+    font-size: 14px;
+  }
 `;
 
 export const AboutInnerBoxDescBold = styled.h3`
@@ -92,7 +118,11 @@ export const AboutInnerBoxDescBold = styled.h3`
   font-family: 'Paperozi', sans-serif;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 18px;
+    font-size: 30px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    margin-bottom: 20px;
   }
 `;
 
@@ -106,7 +136,7 @@ export const AboutQuestionText = styled.strong`
   line-height: 1.6;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 17px;
+    font-size: 19px;
   }
 `;
 
@@ -119,6 +149,10 @@ export const AboutAnswerText = styled.span`
 
   strong {
     font-weight: 600;
+  }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    font-size: 16px;
   }
 `;
 
@@ -159,7 +193,10 @@ export const AboutTextAniBtns = styled.div`
   margin: 120px 0 0 auto;
 
   @media (max-width: ${BREAKPOINT}px) {
-    /* flex-direction: column; */
+    margin: 120px auto 0;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
     margin: 160px auto 0;
   }
 `;
