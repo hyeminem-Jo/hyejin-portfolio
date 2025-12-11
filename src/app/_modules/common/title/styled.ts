@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 
 interface TitleProps {
   $isCenter: boolean;
@@ -18,5 +18,9 @@ export const Title = styled.h2<TitleProps>`
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 35px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    text-align: center;
   }
 `;

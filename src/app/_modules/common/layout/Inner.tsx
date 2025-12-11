@@ -19,6 +19,7 @@ export const InnerContent = styled.div<{ $hasTitle: boolean }>`
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
+    flex-direction: column;
     padding: 0 20px;
   }
 `;
@@ -36,8 +37,13 @@ export const InnerTitle = styled.div`
   gap: 20px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    top: 65px;
+    top: 100px;
     gap: 15px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    position: static;
+    top: 0;
   }
 `;
 

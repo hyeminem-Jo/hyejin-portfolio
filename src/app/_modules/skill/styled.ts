@@ -1,4 +1,4 @@
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import { INNER_WIDTH } from '@/app/_constant/commonSize';
 import styled from '@emotion/styled';
 
@@ -16,6 +16,10 @@ export const Skill = styled.section`
   @media (max-width: ${BREAKPOINT}px) {
     padding: 120px 0 100px;
   }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 100px 0 90px;
+  }
 `;
 
 export const SkillInnerBoxWrap = styled.div`
@@ -25,35 +29,50 @@ export const SkillInnerBoxWrap = styled.div`
   gap: 20px;
   perspective: ${INNER_WIDTH}px;
   transform-style: preserve-3d;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    perspective: 0;
+    gap: 0;
+  }
 `;
 
 export const SkillInner = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 130px;
-  filter: brightness(1);
-  transition: box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  height: 500px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
   padding: 50px 80px;
+  height: 500px;
+  filter: brightness(1);
+  transition: box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
   z-index: 10;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.05);
 
   @media (max-width: ${BREAKPOINT}px) {
+    top: 100px;
     flex-direction: column;
     gap: 20px;
     padding: 35px 30px;
 
     &:last-of-type {
       margin-top: 35px;
+    }
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    position: static;
+    top: 0;
+    height: auto;
+
+    &:last-of-type {
+      margin-top: 25px;
     }
   }
 `;
@@ -74,10 +93,6 @@ export const SkillInnerBoxList = styled.div`
   display: flex;
   gap: 20px;
   flex-direction: column;
-
-  /* @media (max-width: ${BREAKPOINT}px) {
-    flex-direction: column;
-  } */
 `;
 
 export const SkillInnerBoxItem = styled.strong``;
