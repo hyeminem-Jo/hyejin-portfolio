@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { INNER_WIDTH } from '@/app/_constant/commonSize';
 
 export const NavigationContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 1200px;
+  width: ${INNER_WIDTH}px;
   margin: 0 auto;
   padding: 120px 0;
 `;

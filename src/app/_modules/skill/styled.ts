@@ -1,4 +1,5 @@
 import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { INNER_WIDTH } from '@/app/_constant/commonSize';
 import styled from '@emotion/styled';
 
 interface Props {
@@ -22,7 +23,7 @@ export const SkillInnerBoxWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  perspective: 1200px;
+  perspective: ${INNER_WIDTH}px;
   transform-style: preserve-3d;
 `;
 

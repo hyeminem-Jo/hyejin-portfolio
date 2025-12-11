@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Title } from '../common/title/styled';
 import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
+import { INNER_WIDTH } from '@/app/_constant/commonSize';
 
 export const Footer = styled.footer`
   position: relative;
@@ -28,7 +29,7 @@ export const FooterInner = styled.div`
   justify-content: center;
   align-items: center;
   gap: 60px;
-  width: 1200px;
+  width: ${INNER_WIDTH}px;
   height: 70%;
   margin: 0 auto;
   padding: 40px;

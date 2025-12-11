@@ -1,4 +1,7 @@
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
+import { HEADER_HEIGHT } from '@/app/_constant/commonSize';
+import { HEADER_HEIGHT_MD } from '@/app/_constant/commonSize';
+import { HEADER_HEIGHT_SM } from '@/app/_constant/commonSize';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
@@ -11,7 +14,7 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: ${HEADER_HEIGHT}px;
   ${({ $isWorkDetailPage }) =>
     !$isWorkDetailPage &&
     `
@@ -21,7 +24,11 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   z-index: 100;
 
   @media (max-width: ${BREAKPOINT}px) {
-    height: 65px;
+    height: ${HEADER_HEIGHT_MD}px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    height: ${HEADER_HEIGHT_SM}px;
   }
 `;
 
@@ -33,6 +40,10 @@ export const ProgressBarContainer = styled.div`
 
   @media (max-width: ${BREAKPOINT}px) {
     gap: 10px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    display: none;
   }
 `;
 
@@ -55,7 +66,7 @@ export const ProgressBarWrapper = styled.div`
   }
 
   @media (max-width: ${BREAKPOINT}px) {
-    width: 150px;
+    width: 350px;
   }
 `;
 
@@ -118,7 +129,11 @@ export const HeaderLogo = styled.button`
   }
 
   @media (max-width: ${BREAKPOINT}px) {
-    height: 65px;
+    height: ${HEADER_HEIGHT_MD}px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    height: ${HEADER_HEIGHT_SM}px;
   }
 `;
 
@@ -129,7 +144,7 @@ export const HeaderNav = styled.nav`
 
   @media (max-width: ${BREAKPOINT}px) {
     position: absolute;
-    top: 65px;
+    top: ${HEADER_HEIGHT_MD}px;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -137,7 +152,7 @@ export const HeaderNav = styled.nav`
     padding-top: 100px;
     gap: 25px;
     width: 100%;
-    height: calc(100dvh - 65px);
+    height: calc(100dvh - ${HEADER_HEIGHT_MD}px);
     background-color: #fff;
     opacity: 0;
     visibility: hidden;
@@ -147,6 +162,11 @@ export const HeaderNav = styled.nav`
       opacity: 1;
       visibility: visible;
     }
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    top: ${HEADER_HEIGHT_SM}px;
+    height: calc(100dvh - ${HEADER_HEIGHT_SM}px);
   }
 `;
 
@@ -189,6 +209,11 @@ export const HeaderNavItem = styled(Link)`
     transform: translateX(-10px);
     opacity: 0;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    color: #aaa;
+
+    &.active {
+      opacity: 0;
+    }
 
     &.menu-open {
       transform: translateX(0);

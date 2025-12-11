@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { INNER_WIDTH } from '@/app/_constant/commonSize';
 
 interface ModalContainerProps {
   $size: 'sm' | 'md' | 'lg';
@@ -138,7 +139,7 @@ export const ImageContentInner = styled.div``;
 export const ImageCloseButton = styled.button`
   position: fixed;
   top: 40px;
-  right: calc((100vw - 1200px - 20px) / 2);
+  right: calc((100vw - ${INNER_WIDTH}px - 20px) / 2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,11 +199,11 @@ export const ModalSliderContainer = styled.div`
   }
 
   .slick-prev {
-    left: calc((100vw - 1200px - 20px) / 2);
+    left: calc((100vw - ${INNER_WIDTH}px - 20px) / 2);
   }
 
   .slick-next {
-    right: calc((100vw - 1200px - 20px) / 2);
+    right: calc((100vw - ${INNER_WIDTH}px - 20px) / 2);
   }
 
   .slick-arrow {

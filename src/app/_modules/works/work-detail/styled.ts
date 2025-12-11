@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { BREAKPOINT } from '@/app/_constant/breakpoint';
 import Image from 'next/image';
 import Link from 'next/link';
+import { INNER_WIDTH } from '@/app/_constant/commonSize';
 
 export const WorkDetailContainer = styled.div`
   background-color: whitesmoke;
@@ -225,7 +226,7 @@ export const WorkDetailContentBg = styled.div`
 `;
 
 export const WorkDetailContentWrap = styled.div`
-  max-width: 1200px;
+  max-width: ${INNER_WIDTH}px;
   margin: 0 auto;
   padding: 40px 20px 100px;
 
@@ -243,7 +244,7 @@ export const WorkDetailContentBottom = styled.div`
 `;
 
 export const WorkDetailContentBottomWrap = styled.div`
-  width: 1200px;
+  width: ${INNER_WIDTH}px;
   margin: 0 auto;
   padding: 80px 20px;
   @media (max-width: ${BREAKPOINT}px) {

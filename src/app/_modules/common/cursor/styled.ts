@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import { INNER_WIDTH } from '@/app/_constant/commonSize';
 
 interface CursorCircleProps {
   $isHovering: boolean;
@@ -35,7 +36,7 @@ export const CursorCircle = styled.div<CursorCircleProps>`
       height: 20px;
     `}
 
-  @media (max-width: 1200px) {
+  @media (max-width: ${INNER_WIDTH}px) {
     display: none;
   }
 `;
