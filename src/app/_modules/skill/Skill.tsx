@@ -6,7 +6,6 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef } from 'react';
 import Inner from '../common/layout/Inner';
-import Title from '../common/title/Title';
 import { BREAKPOINT } from '@/app/_constant/breakpoint';
 
 const skillList = [

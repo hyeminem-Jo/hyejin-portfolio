@@ -10,6 +10,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useState } from 'react';
 import { useIsMobile } from '../common/hooks/useIsMobile';
+import { BREAKPOINT } from '@/app/_constant/breakpoint';
 
 const sideProjectsList = [
   {
@@ -27,7 +28,7 @@ const sideProjectsList = [
     image: '/assets/images/side-project/side-project-06.png',
     introduction:
       '회원가입, 로그인, 및 게시글과 메시지 기능의 SNS 서비스입니다. \n 카카오 소셜로그인 및 게시글 CRUD, supabase 의 리얼타임 기능을 활용하여 \n실시간으로 채팅이 가능하도록 구현하였습니다.\n Jotai 를 사용하여 내 정보 상태관리를 구현하였습니다. \n (일반 회원가입의 경우 이메일 인증 횟수가 제한되어있어 일정 시간 인증 이메일이 발송되지 않을 수 있습니다.)',
-    skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
+    skills: ['React', 'Next.js', 'TypeScript', 'Gsap', 'Emotion'],
     link: 'https://hyejin-toy-project.vercel.app/j-stagram',
     github: 'https://github.com/hyeminem-Jo/j-stagram/blob/main/README.md',
     demo: 'https://j-stagram-demo.vercel.app',
@@ -77,74 +78,79 @@ const SideProjects = () => {
   const { isMobile, isLoaded } = useIsMobile();
 
   useGSAP(() => {
-    if (!isLoaded || isMobile) return;
+    if (!isLoaded) return;
     if (!sectionRef.current || !wrapperRef.current) return;
 
-    gsap.registerPlugin(ScrollTrigger);
+    const mm = gsap.matchMedia();
 
-    const section = sectionRef.current;
-    const wrapper = wrapperRef.current;
-    const sections = gsap.utils.toArray<HTMLLIElement>('.my-projects-section');
+    mm.add(`(min-width: ${BREAKPOINT + 1}px)`, () => {
+      gsap.registerPlugin(ScrollTrigger);
 
-    if (sections.length === 0) return;
+      const section = sectionRef.current;
+      const wrapper = wrapperRef.current;
+      const sections = gsap.utils.toArray<HTMLLIElement>('.my-projects-section');
 
-    const gap = 70;
-    const boxWidth = 800;
-    const viewportWidth = window.innerWidth;
+      if (!section || !wrapper || sections.length === 0) return;
 
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const wrapperLeft = wrapperRect.left;
-    const centerOffset = (viewportWidth - boxWidth) / 2 - wrapperLeft;
+      const gap = 70;
+      const boxWidth = 800;
+      const viewportWidth = window.innerWidth;
 
-    gsap.set(wrapper, { x: centerOffset });
+      const wrapperRect = wrapper.getBoundingClientRect();
+      const wrapperLeft = wrapperRect.left;
+      const centerOffset = (viewportWidth - boxWidth) / 2 - wrapperLeft;
 
-    const totalSections = sections.length;
-    const scrollDistance = (boxWidth + gap) * (totalSections - 1);
+      gsap.set(wrapper, { x: centerOffset });
 
-    const snapPoints = sections.map((_, index) => index / (totalSections - 1));
+      const totalSections = sections.length;
+      const scrollDistance = (boxWidth + gap) * (totalSections - 1);
 
-    const animation = gsap.to(wrapper, {
-      x: centerOffset - scrollDistance,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top top',
-        end: () => `+=${scrollDistance + viewportWidth}`,
-        pin: true,
-        scrub: 0.5,
-        snap: {
-          snapTo: (progress) => {
-            // 가장 가까운 snap 포인트 찾기
-            let closest = snapPoints[0];
-            let minDistance = Math.abs(progress - snapPoints[0]);
+      const snapPoints = sections.map((_, index) => index / (totalSections - 1));
 
-            snapPoints.forEach((point) => {
-              const distance = Math.abs(progress - point);
-              if (distance < minDistance) {
-                minDistance = distance;
-                closest = point;
-              }
-            });
+      const animation = gsap.to(wrapper, {
+        x: centerOffset - scrollDistance,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: () => `+=${scrollDistance + viewportWidth}`,
+          pin: true,
+          scrub: 0.5,
+          snap: {
+            snapTo: (progress) => {
+              let closest = snapPoints[0];
+              let minDistance = Math.abs(progress - snapPoints[0]);
 
-            return closest;
+              snapPoints.forEach((point) => {
+                const distance = Math.abs(progress - point);
+                if (distance < minDistance) {
+                  minDistance = distance;
+                  closest = point;
+                }
+              });
+
+              return closest;
+            },
+            duration: { min: 0.1, max: 0.3 }, // 빠른 snap
+            delay: 0,
           },
-          duration: { min: 0.1, max: 0.3 }, // 빠른 snap
-          delay: 0,
+          invalidateOnRefresh: true,
         },
-        invalidateOnRefresh: true,
-      },
+      });
+
+      ScrollTrigger.refresh();
+
+      return () => {
+        animation.kill();
+        ScrollTrigger.getAll().forEach((trigger) => {
+          if (trigger.vars.trigger === section) {
+            trigger.kill();
+          }
+        });
+      };
     });
 
-    ScrollTrigger.refresh();
-
-    return () => {
-      animation.kill();
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === section) {
-          trigger.kill();
-        }
-      });
-    };
+    return () => mm.revert();
   }, [isLoaded, isMobile]);
 
   return (

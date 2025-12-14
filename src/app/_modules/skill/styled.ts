@@ -11,7 +11,7 @@ export const Skill = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 280px 0 100px;
+  padding: 280px 0 0;
 
   @media (max-width: ${BREAKPOINT}px) {
     padding: 120px 0 130px;

@@ -110,20 +110,22 @@ const Visual = () => {
 
   return (
     <S.Visual id='visual' className={`visual ${isMobile ? 'mobile' : ''}`}>
-      <S.MainTextList className='mainText'>
-        <S.MainTextInner>
-          <S.MainText>FE DEVELOPER</S.MainText>
-        </S.MainTextInner>
-        <S.MainTextInner>
-          <S.MainText>PORTFOLIO</S.MainText>
-        </S.MainTextInner>
-      </S.MainTextList>
-      <S.SubText className='subText'>
-        Designing & developing <br className='mo-only' />
-        user-friendly web experiences.
-        <br />
-        <span>On screen. And behind the scenes.</span>
-      </S.SubText>
+      <S.VisualText>
+        <S.MainTextList className='mainText'>
+          <S.MainTextInner>
+            <S.MainText>FE DEVELOPER</S.MainText>
+          </S.MainTextInner>
+          <S.MainTextInner>
+            <S.MainText>PORTFOLIO</S.MainText>
+          </S.MainTextInner>
+        </S.MainTextList>
+        <S.SubText className='subText'>
+          Designing & developing <br className='mo-only' />
+          user-friendly web experiences.
+          <br />
+          <span>On screen. And behind the scenes.</span>
+        </S.SubText>
+      </S.VisualText>
       <LogoWrap className={`logoWrap ${isMobile ? 'mobile' : ''}`} />
     </S.Visual>
   );

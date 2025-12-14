@@ -33,6 +33,7 @@ export const AboutInner = styled.div`
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
+    margin-top: 0;
     padding: 20px 30px;
   }
 `;
@@ -56,18 +57,20 @@ export const AboutInnerImage = styled.div`
 
   @media (max-width: ${BREAKPOINT}px) {
     top: -10px;
-    width: 380px;
-  }
-
-  @media (max-width: ${BREAKPOINT_SM}px) {
-    width: 250px;
-    height: 300px;
+    width: 40%;
+    height: auto;
+    aspect-ratio: 8/9;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    width: 75%;
+    aspect-ratio: 5/6;
   }
 `;
 

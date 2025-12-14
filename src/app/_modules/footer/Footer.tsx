@@ -3,6 +3,7 @@
 import * as S from './styled';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LogoWrap from '../common/logo-wrap/LogoWrap';
 import Button from '../common/button/Button';
 import { useIsMobile } from '../common/hooks/useIsMobile';
@@ -15,71 +16,90 @@ const Footer = () => {
   const ease = 'power1.inOut';
 
   useGSAP(() => {
-    if (!isLoaded || isMobile) return;
-    gsap
-      .timeline({
-        duration: 2,
-        scrollTrigger: {
-          trigger: '.footer',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1,
-        },
-      })
-      .to(
-        '.logoWrap2',
-        {
-          y: -50,
-          scale: 1.1,
-          duration,
-          ease,
-        },
-        0,
-      )
-      .to(
-        '.logoWrap2 #f',
-        {
-          x: -30,
-          y: -50,
-          rotation: 25,
-          duration,
-          ease,
-        },
-        0,
-      )
-      .to(
-        '.logoWrap2 #e',
-        {
-          x: -30,
-          y: -30,
-          rotation: -10,
-          duration,
-          ease,
-        },
-        0,
-      )
-      .to(
-        '.logoWrap2 #h',
-        {
-          x: 20,
-          y: -80,
-          rotation: 5,
-          duration,
-          ease,
-        },
-        0,
-      )
-      .to(
-        '.logoWrap2 #j',
-        {
-          x: -10,
-          y: -60,
-          rotation: -25,
-          duration,
-          ease,
-        },
-        0,
-      );
+    if (!isLoaded) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add(`(min-width: ${BREAKPOINT_SM + 1}px)`, () => {
+      if (isMobile) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap
+        .timeline({
+          duration: 2,
+          scrollTrigger: {
+            trigger: '.footer',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        })
+        .to(
+          '.logoWrap2',
+          {
+            y: -50,
+            scale: 1.1,
+            duration,
+            ease,
+          },
+          0,
+        )
+        .to(
+          '.logoWrap2 #f',
+          {
+            x: -30,
+            y: -50,
+            rotation: 25,
+            duration,
+            ease,
+          },
+          0,
+        )
+        .to(
+          '.logoWrap2 #e',
+          {
+            x: -30,
+            y: -30,
+            rotation: -10,
+            duration,
+            ease,
+          },
+          0,
+        )
+        .to(
+          '.logoWrap2 #h',
+          {
+            x: 20,
+            y: -80,
+            rotation: 5,
+            duration,
+            ease,
+          },
+          0,
+        )
+        .to(
+          '.logoWrap2 #j',
+          {
+            x: -10,
+            y: -60,
+            rotation: -25,
+            duration,
+            ease,
+          },
+          0,
+        );
+
+      return () => {
+        tl.kill();
+        ScrollTrigger.getAll().forEach((trigger) => {
+          if (trigger.vars.trigger === '.footer') {
+            trigger.kill();
+          }
+        });
+      };
+    });
+
+    return () => mm.revert();
   }, [isLoaded, isMobile]);
 
   return (

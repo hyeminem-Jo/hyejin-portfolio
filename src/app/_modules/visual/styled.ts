@@ -1,25 +1,41 @@
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import styled from '@emotion/styled';
+import { HEADER_HEIGHT, HEADER_HEIGHT_MD, HEADER_HEIGHT_SM } from '@/app/_constant/commonSize';
 
 export const Visual = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  height: calc(100dvh - 80px);
+  height: calc(100dvh - ${HEADER_HEIGHT}px);
   padding: 0 30px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    height: auto;
-    padding: 0 20px;
+    height: calc(100dvh - ${HEADER_HEIGHT_MD}px);
+    padding: 0 30px 100px;
   }
 
-  /* 모바일에서 GSAP 애니메이션 비활성화 */
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    height: calc(100dvh - ${HEADER_HEIGHT_SM}px);
+    padding: 0 20px 100px;
+  }
+
   &.mobile .logoWrap #f,
   &.mobile .logoWrap #e,
   &.mobile .logoWrap #h,
   &.mobile .logoWrap #j {
     transform: none !important;
+  }
+`;
+
+export const VisualText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    justify-content: center !important;
   }
 `;
 
@@ -50,7 +66,7 @@ export const MainTextInner = styled.span`
   }
 `;
 
-export const MainText = styled.i`
+export const MainText = styled.h3`
   display: inline-block;
   transition: transform 0.5s linear;
   font-style: normal;
@@ -74,6 +90,11 @@ export const MainText = styled.i`
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 45px;
   }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    font-size: 42px;
+    line-height: 0.8;
+  }
 `;
 
 export const SubText = styled.h4`
@@ -92,9 +113,15 @@ export const SubText = styled.h4`
   font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   @media (max-width: ${BREAKPOINT}px) {
+    flex: initial;
     justify-content: flex-start;
     line-height: 1.5;
     margin-top: 40px;
     margin-bottom: 100px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    margin-top: 50px;
+    margin-bottom: 0;
   }
 `;

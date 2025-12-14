@@ -13,6 +13,10 @@ export const Works = styled.section`
   @media (max-width: ${BREAKPOINT}px) {
     padding: 0 0 130px;
   }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 0 0 110px;
+  }
 `;
 
 export const WorksInner = styled.div`

@@ -7,11 +7,14 @@ export const SideProjects = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 0 110px;
-  /* border: 2px solid gold; */
+  padding: 100px 0 110px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding: 0;
+    padding: 10px 0 150px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 0 0 30px;
   }
 `;
 
@@ -25,12 +28,19 @@ export const SideProjectsInner = styled.ul`
   will-change: transform;
   left: -50px;
 
-  @media (max-width: ${BREAKPOINT_SM}px) {
-    flex-direction: column;
-    gap: 20px;
+  @media (max-width: ${BREAKPOINT}px) {
+    position: static;
+    left: 0;
+    flex-wrap: wrap;
+    gap: 30px;
     margin-top: 30px;
     overflow: visible;
     margin-left: 0;
+    padding: 0 30px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 0 20px;
   }
 `;
 
@@ -47,26 +57,17 @@ export const SideProjectsInnerBox = styled.li`
   overflow: hidden;
 
   @media (max-width: ${BREAKPOINT}px) {
-    padding: 40px;
-  }
-
-  @media (max-width: ${BREAKPOINT_SM}px) {
-    flex: 0 0 100%;
+    flex: initial;
     flex-direction: column;
-    padding: 25px;
-    gap: 15px;
-  }
-
-  @media (max-width: ${BREAKPOINT}px) {
-    padding: 40px;
-  }
-
-  @media (max-width: ${BREAKPOINT_SM}px) {
-    flex: 0 0 100%;
+    width: calc((100% - 30px) / 2);
     height: auto;
-    flex-direction: column;
-    padding: 25px;
-    gap: 15px;
+    aspect-ratio: 1.2/1;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    width: 100%;
+    border-radius: 10px;
+    aspect-ratio: initial;
   }
 `;
 
@@ -82,10 +83,20 @@ export const SideProjectsImageWrap = styled.div`
     bottom: 0 !important;
   }
 
+  @media (max-width: ${BREAKPOINT}px) {
+    width: 100%;
+    height: auto;
+
+    img {
+      aspect-ratio: 2/1;
+      object-position: center;
+    }
+  }
+
   @media (max-width: ${BREAKPOINT_SM}px) {
-    flex: initial;
+    /* flex: initial;
     aspect-ratio: initial;
-    height: 180px;
+    height: 180px; */
   }
 `;
 
@@ -98,7 +109,11 @@ export const SideProjectsInfo = styled.div`
   align-items: flex-start;
 
   @media (max-width: ${BREAKPOINT}px) {
-    flex: 2;
+    padding: 20px;
+    width: 100%;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
   }
 `;
 
@@ -113,8 +128,12 @@ export const SideProjectsButtons = styled.div`
   display: flex;
   gap: 5px;
 
+  @media (max-width: ${BREAKPOINT}px) {
+    margin-top: 25px;
+  }
+
   @media (max-width: ${BREAKPOINT_SM}px) {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 `;
 
@@ -123,8 +142,13 @@ export const SideProjectsTitle = styled.h4`
   font-size: 24px;
   font-weight: 700;
 
-  @media (max-width: ${BREAKPOINT_SM}px) {
+  @media (max-width: ${BREAKPOINT}px) {
     margin-bottom: 0;
+    font-size: 20px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    font-size: 19px;
   }
 `;
 
@@ -147,6 +171,10 @@ export const SideProjectsSkills = styled.ul`
   font-size: 14px;
   font-weight: 400;
   color: #555;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    gap: 5px;
+  }
 `;
 
 export const SideProjectsSkillsItem = styled.li`
@@ -159,6 +187,7 @@ export const SideProjectsSkillsItem = styled.li`
 
   @media (max-width: ${BREAKPOINT}px) {
     padding: 4px 8px;
+    font-size: 12px;
   }
 `;
 
