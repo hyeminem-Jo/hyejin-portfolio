@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import { INNER_WIDTH } from '@/app/_constant/commonSize';
 
 interface ModalContainerProps {
@@ -67,6 +67,15 @@ export const ImageModalContainer = styled.div`
   top: 50px;
   left: calc((100vw - 1100px - 20px) / 2);
   padding-bottom: 50px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    left: 0;
+    padding: 0 40px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 0;
+  }
 `;
 
 export const Header = styled.div`

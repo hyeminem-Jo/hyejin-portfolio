@@ -304,7 +304,7 @@ export const ProjectDesc = styled.p`
   margin: 0 0 16px 0;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 14px;
+    display: none;
   }
 `;
 

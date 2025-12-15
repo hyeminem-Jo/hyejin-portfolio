@@ -4,9 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { companyList } from '@/app/_data/companyList';
 import { Company, Project, ProblemSolving, MainFunction, FunctionDesc } from '@/app/_constant/type';
 import * as S from './styled';
-import Slider from 'react-slick';
 import Image from 'next/image';
-import Link from 'next/link';
 import ScrollTop from '@/app/_modules/common/scroll-top/ScrollTop';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -25,21 +23,6 @@ const WorkDetail = ({ id }: { id: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    adaptiveHeight: true,
-    swipeToSlide: true,
-    touchThreshold: 10,
-    beforeChange: (current: number, next: number) => {
-      setCurrentImageIndex(next);
-    },
-  };
 
   let targetProject: Project | null = null;
   let targetCompany: Company | null = null;
@@ -90,6 +73,16 @@ const WorkDetail = ({ id }: { id: string }) => {
     window.scrollTo(0, 0);
   }, [id]);
 
+  useEffect(() => {
+    document.body.style.overscrollBehavior = 'none';
+    document.documentElement.style.overscrollBehavior = 'none';
+
+    return () => {
+      document.body.style.overscrollBehavior = '';
+      document.documentElement.style.overscrollBehavior = '';
+    };
+  }, []);
+
   useGSAP(() => {
     if (!bgRef.current || !visualRef.current || !contentRef.current || !targetProject) return;
 
@@ -98,7 +91,7 @@ const WorkDetail = ({ id }: { id: string }) => {
 
     if (imageUrl) {
       bg.style.backgroundImage = `url(${imageUrl})`;
-      bg.style.backgroundPosition = '50% 0px';
+      bg.style.backgroundPosition = '50% 50%';
 
       // visualRef에 pin 적용
       ScrollTrigger.create({

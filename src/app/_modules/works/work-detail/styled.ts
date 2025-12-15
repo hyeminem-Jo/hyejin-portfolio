@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import Image from 'next/image';
 import Link from 'next/link';
 import { INNER_WIDTH } from '@/app/_constant/commonSize';
@@ -29,6 +29,14 @@ export const WorkDetailVisual = styled.div`
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
   }
+
+  @media (max-width: ${BREAKPOINT}px) {
+    height: 35dvh;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    height: 60dvh;
+  }
 `;
 
 export const WorkDetailImageBg = styled.div`
@@ -41,6 +49,11 @@ export const WorkDetailImageBg = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    background-size: initial;
+    background-position: top center;
+  }
 `;
 
 export const WorkDetailImage = styled(Image)`
@@ -49,6 +62,11 @@ export const WorkDetailImage = styled(Image)`
   object-fit: cover;
   position: relative;
   z-index: 1;
+  border: 2px solid red;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    object-position: center;
+  }
 `;
 
 export const WorkDetailThumbnail = styled(Image)`
@@ -87,6 +105,10 @@ export const WorkDetailIntro = styled.div`
 
   @media (max-width: ${BREAKPOINT}px) {
   }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    gap: 50px;
+  }
 `;
 
 export const ProjectTitle = styled.h1`
@@ -94,9 +116,10 @@ export const ProjectTitle = styled.h1`
   font-weight: 700;
   margin: 0 0 16px 0;
   text-align: center;
+  white-space: pre-line;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 25px;
+    font-size: 40px;
     margin-bottom: 0;
   }
 `;
@@ -108,15 +131,25 @@ export const ProjectInfoList = styled.ul`
   @media (max-width: ${BREAKPOINT}px) {
     gap: 15px;
   }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ProjectInfoListInner = styled.ul`
   display: flex;
+  /* border: 1px solid yellow; */
   flex-direction: column;
   gap: 18px;
 
   @media (max-width: ${BREAKPOINT}px) {
     gap: 15px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    width: 80%;
   }
 `;
 
@@ -221,7 +254,6 @@ export const ProjectProblemAndSolving = styled.p`
 
 export const WorkDetailContentBg = styled.div`
   background-color: whitesmoke;
-  /* background-color: #fff; */
   box-shadow: 0 -15px 30px -15px rgba(0, 0, 0, 0.2);
 `;
 
@@ -232,7 +264,11 @@ export const WorkDetailContentWrap = styled.div`
 
   @media (max-width: ${BREAKPOINT}px) {
     width: 100%;
-    padding: 20px 16px;
+    padding: 40px 30px 80px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 30px 20px 60px;
   }
 `;
 
@@ -247,7 +283,10 @@ export const WorkDetailContentBottomWrap = styled.div`
   width: ${INNER_WIDTH}px;
   margin: 0 auto;
   padding: 80px 20px;
+
   @media (max-width: ${BREAKPOINT}px) {
+    width: 100%;
+    padding: 40px 30px;
   }
 `;
 

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import { INNER_WIDTH } from '@/app/_constant/commonSize';
 
 export const NavigationContainer = styled.div`
@@ -11,6 +11,14 @@ export const NavigationContainer = styled.div`
   width: ${INNER_WIDTH}px;
   margin: 0 auto;
   padding: 120px 0;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    width: 100%;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 80px 0;
+  }
 `;
 
 export const NavigationItem = styled(Link)`
