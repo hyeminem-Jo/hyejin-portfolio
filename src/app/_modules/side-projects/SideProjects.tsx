@@ -8,9 +8,14 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useIsMobile } from '../common/hooks/useIsMobile';
 import { BREAKPOINT } from '@/app/_constant/breakpoint';
+
+// GSAP ScrollTrigger 플러그인 등록
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const sideProjectsList = [
   {
@@ -28,7 +33,7 @@ const sideProjectsList = [
     image: '/assets/images/side-project/side-project-06.png',
     introduction:
       '회원가입, 로그인, 및 게시글과 메시지 기능의 SNS 서비스입니다. \n 카카오 소셜로그인 및 게시글 CRUD, supabase 의 리얼타임 기능을 활용하여 \n실시간으로 채팅이 가능하도록 구현하였습니다.\n Jotai 를 사용하여 내 정보 상태관리를 구현하였습니다. \n (일반 회원가입의 경우 이메일 인증 횟수가 제한되어있어 일정 시간 인증 이메일이 발송되지 않을 수 있습니다.)',
-    skills: ['React', 'Next.js', 'TypeScript', 'Gsap', 'Emotion'],
+    skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
     link: 'https://hyejin-toy-project.vercel.app/j-stagram',
     github: 'https://github.com/hyeminem-Jo/j-stagram/blob/main/README.md',
     demo: 'https://j-stagram-demo.vercel.app',
@@ -77,6 +82,13 @@ const SideProjects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { isMobile, isLoaded } = useIsMobile();
 
+  // 애니메이션 대상 요소의 원본 스타일을 저장
+  useEffect(() => {
+    if (typeof window !== 'undefined' && isLoaded) {
+      ScrollTrigger.saveStyles('.my-projects-section, .my-projects-section *');
+    }
+  }, [isLoaded]);
+
   useGSAP(() => {
     if (!isLoaded) return;
     if (!sectionRef.current || !wrapperRef.current) return;
@@ -84,8 +96,6 @@ const SideProjects = () => {
     const mm = gsap.matchMedia();
 
     mm.add(`(min-width: ${BREAKPOINT + 1}px)`, () => {
-      gsap.registerPlugin(ScrollTrigger);
-
       const section = sectionRef.current;
       const wrapper = wrapperRef.current;
       const sections = gsap.utils.toArray<HTMLLIElement>('.my-projects-section');
@@ -118,6 +128,7 @@ const SideProjects = () => {
           scrub: 0.5,
           snap: {
             snapTo: (progress) => {
+              // 가장 가까운 snap 포인트 찾기
               let closest = snapPoints[0];
               let minDistance = Math.abs(progress - snapPoints[0]);
 
@@ -151,68 +162,12 @@ const SideProjects = () => {
     });
 
     return () => mm.revert();
-  }, [isLoaded, isMobile]);
+  }, [isLoaded]);
 
   return (
     <S.SideProjects id='my-projects' ref={sectionRef}>
       <Inner>
         <Title text={`MY ✨ \nPROJECTS`} />
-
-        {/* 프로젝트 상세 모달 */}
-        {/* <Modal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          title={selectedProject?.title}
-          size='lg'
-        >
-          {selectedProject && (
-            <S.ModalContent>
-              <S.ModalImageWrap>
-                <Image
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  width={600}
-                  height={400}
-                  style={{ objectFit: 'cover', borderRadius: '8px' }}
-                />
-              </S.ModalImageWrap>
-
-              <S.ModalSection>
-                <S.ModalSectionTitle>프로젝트 소개</S.ModalSectionTitle>
-                <S.ModalDescription>{selectedProject.description}</S.ModalDescription>
-              </S.ModalSection>
-
-              <S.ModalSection>
-                <S.ModalSectionTitle>사용 기술</S.ModalSectionTitle>
-                <S.ModalSkills>
-                  {selectedProject.skills.map((skill, index) => (
-                    <S.SkillTag key={`${skill}-${index}`}>{skill}</S.SkillTag>
-                  ))}
-                </S.ModalSkills>
-              </S.ModalSection>
-
-              <S.ModalSection>
-                <S.ModalSectionTitle>링크</S.ModalSectionTitle>
-                <S.ModalLinks>
-                  <S.LinkButton
-                    href={selectedProject.github}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    GitHub
-                  </S.LinkButton>
-                  <S.LinkButton
-                    href={selectedProject.demo}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    Live Demo
-                  </S.LinkButton>
-                </S.ModalLinks>
-              </S.ModalSection>
-            </S.ModalContent>
-          )}
-        </Modal> */}
       </Inner>
       <S.SideProjectsInner ref={wrapperRef}>
         {sideProjectsList.map((item, index) => (
