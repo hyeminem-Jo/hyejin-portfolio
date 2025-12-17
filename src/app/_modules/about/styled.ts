@@ -47,10 +47,11 @@ export const AboutInnerImage = styled.div`
   height: 450px;
   overflow: hidden;
   border: 10px solid #fff;
-  border-bottom: 80px solid #fff;
+  border-bottom: none;
   background-color: #fff;
   box-shadow: 12px 14px 2px 0 rgba(0, 0, 0, 0.1);
   opacity: 0;
+
   img {
     object-fit: cover;
   }
@@ -62,8 +63,9 @@ export const AboutInnerImage = styled.div`
     aspect-ratio: 8/9;
 
     img {
-      width: 100%;
-      height: 100%;
+      width: 110%;
+      height: calc(100% - 80px);
+      object-position: center center;
       object-fit: cover;
     }
   }
@@ -72,6 +74,26 @@ export const AboutInnerImage = styled.div`
     width: 75%;
     aspect-ratio: 5/6;
   }
+`;
+
+export const AboutInnerImageInfo = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  opacity: 1;
+`;
+
+export const AboutInnerImageInfoItem = styled.span`
+  color: #555;
+  font-size: 18px;
+  font-weight: 600;
 `;
 
 export const AboutInnerBoxTitleInner = styled.div`
