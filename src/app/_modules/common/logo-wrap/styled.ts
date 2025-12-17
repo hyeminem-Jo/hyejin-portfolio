@@ -1,18 +1,19 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { BREAKPOINT } from '@/app/_constant/breakpoint';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 
 interface LogoImageWrapProps {
   $isVisual?: boolean;
 }
 
-export const LogoWrap = styled.div`
+export const LogoWrap = styled.div<LogoImageWrapProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 2px;
 
   img {
     width: 100%;
@@ -20,23 +21,59 @@ export const LogoWrap = styled.div`
     object-fit: contain;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-`;
-
-export const LogoImageWrap = styled.span<LogoImageWrapProps>`
-  width: 24%;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: ${({ $isVisual }) => ($isVisual ? 0 : 1)};
-  transform: ${({ $isVisual }) => ($isVisual ? 'translateY(20px)' : 'translateY(0)')};
 
   @media (max-width: ${BREAKPOINT}px) {
     ${({ $isVisual }) =>
       $isVisual &&
       css`
-        &:nth-of-type(1),
-        &:nth-of-type(2) {
-          position: relative;
-          bottom: 90px;
-        }
+        flex-direction: column;
       `}
   }
+`;
+
+export const LogoGroup = styled.div<LogoImageWrapProps>`
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 48%;
+  gap: 2px;
+
+  ${({ $isVisual }) =>
+    $isVisual &&
+    css`
+      width: 100%;
+      @media (max-width: ${BREAKPOINT}px) {
+        &:nth-of-type(1) {
+          justify-content: flex-start;
+        }
+        &:nth-of-type(2) {
+          justify-content: flex-end;
+        }
+      }
+    `}
+`;
+
+export const LogoImageWrap = styled.span<LogoImageWrapProps>`
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  opacity: 1;
+  transform: translateY(0);
+
+  ${({ $isVisual }) =>
+    $isVisual &&
+    css`
+      opacity: 0;
+      transform: translateY(20px);
+
+      @media (max-width: ${BREAKPOINT}px) {
+        flex: initial;
+        width: 33.33333%;
+      }
+
+      @media (max-width: ${BREAKPOINT_SM}px) {
+        flex: initial;
+        width: 50%;
+      }
+    `}
 `;

@@ -49,7 +49,6 @@ export const MainTextList = styled.h1`
   width: 100%;
 
   @media (max-width: ${BREAKPOINT}px) {
-    /* margin-top: 60px; */
     line-height: 0.8;
     align-items: flex-start;
   }
@@ -88,7 +87,8 @@ export const MainText = styled.h3`
   animation: slideUp 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 45px;
+    font-size: 75px;
+    line-height: 1;
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
@@ -121,7 +121,7 @@ export const SubText = styled.h4`
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 0;
   }
 `;

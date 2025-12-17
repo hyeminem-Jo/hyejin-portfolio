@@ -34,7 +34,7 @@ export const AboutInner = styled.div`
 
   @media (max-width: ${BREAKPOINT_SM}px) {
     margin-top: 0;
-    padding: 20px 30px;
+    padding: 20px 20px;
   }
 `;
 

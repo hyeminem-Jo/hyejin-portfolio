@@ -15,14 +15,27 @@ interface LogoWrapProps {
   isVisual?: boolean;
 }
 
+const renderLogoItem = (logo: (typeof logoList)[0], isVisual: boolean) => (
+  <S.LogoImageWrap id={logo.id} key={logo.id} $isVisual={isVisual}>
+    <Image src={logo.src} alt={logo.alt} width={100} height={100} />
+  </S.LogoImageWrap>
+);
+
 const LogoWrap = ({ className, isVisual = true }: LogoWrapProps) => {
   return (
-    <S.LogoWrap className={className}>
-      {logoList.map((logo) => (
-        <S.LogoImageWrap id={logo.id} key={logo.id} $isVisual={isVisual}>
-          <Image src={logo.src} alt={logo.alt} width={100} height={100} />
-        </S.LogoImageWrap>
-      ))}
+    <S.LogoWrap className={className} $isVisual={isVisual}>
+      {isVisual ? (
+        <>
+          <S.LogoGroup $isVisual={isVisual}>
+            {logoList.slice(0, 2).map((logo) => renderLogoItem(logo, isVisual))}
+          </S.LogoGroup>
+          <S.LogoGroup $isVisual={isVisual}>
+            {logoList.slice(2, 4).map((logo) => renderLogoItem(logo, isVisual))}
+          </S.LogoGroup>
+        </>
+      ) : (
+        logoList.map((logo) => renderLogoItem(logo, isVisual))
+      )}
     </S.LogoWrap>
   );
 };

@@ -7,24 +7,31 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LogoWrap from '../common/logo-wrap/LogoWrap';
 import Button from '../common/button/Button';
 import { useIsMobile } from '../common/hooks/useIsMobile';
-import { BREAKPOINT_SM } from '@/app/_constant/breakpoint';
+import { useEffect } from 'react';
+import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const Footer = () => {
   const { isMobile, isLoaded } = useIsMobile(BREAKPOINT_SM);
-  gsap.registerPlugin(useGSAP);
   const duration = 1;
   const ease = 'power1.inOut';
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && isLoaded) {
+      ScrollTrigger.saveStyles('.logoWrap2, .logoWrap2 *');
+    }
+  }, [isLoaded]);
 
   useGSAP(() => {
     if (!isLoaded) return;
 
     const mm = gsap.matchMedia();
 
-    mm.add(`(min-width: ${BREAKPOINT_SM + 1}px)`, () => {
-      if (isMobile) return;
-      gsap.registerPlugin(ScrollTrigger);
-
-      const tl = gsap
+    mm.add(`(min-width: ${BREAKPOINT + 1}px)`, () => {
+      gsap
         .timeline({
           duration: 2,
           scrollTrigger: {
@@ -88,19 +95,10 @@ const Footer = () => {
           },
           0,
         );
-
-      return () => {
-        tl.kill();
-        ScrollTrigger.getAll().forEach((trigger) => {
-          if (trigger.vars.trigger === '.footer') {
-            trigger.kill();
-          }
-        });
-      };
     });
 
     return () => mm.revert();
-  }, [isLoaded, isMobile]);
+  }, [isLoaded]);
 
   return (
     <S.Footer className='footer'>

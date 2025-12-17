@@ -140,7 +140,6 @@ export const ProjectInfoList = styled.ul`
 
 export const ProjectInfoListInner = styled.ul`
   display: flex;
-  /* border: 1px solid yellow; */
   flex-direction: column;
   gap: 18px;
 
@@ -287,6 +286,10 @@ export const WorkDetailContentBottomWrap = styled.div`
   @media (max-width: ${BREAKPOINT}px) {
     width: 100%;
     padding: 40px 30px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 40px 20px;
   }
 `;
 
