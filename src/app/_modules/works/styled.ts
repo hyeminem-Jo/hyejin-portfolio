@@ -241,8 +241,15 @@ export const CompanyHeader = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
   margin-top: 20px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 
   @media (max-width: ${BREAKPOINT}px) {
     gap: 15px;

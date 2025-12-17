@@ -1,7 +1,7 @@
 import * as S from './styled';
 
 interface ButtonProps {
-  text: string;
+  text: string | React.ReactNode;
   onClick: () => void;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;

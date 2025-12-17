@@ -8,11 +8,15 @@ import Inner from '../common/layout/Inner';
 import { useState, useRef } from 'react';
 import { companyList } from '@/app/_data/companyList';
 import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
+import Button from '../common/button/Button';
+import { useRouter } from 'next/navigation';
+import { FaArrowDown } from 'react-icons/fa';
 
 const Works = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
   const [activeCompanyIndex, setActiveCompanyIndex] = useState(0);
   const companyRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const router = useRouter();
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -70,6 +74,18 @@ const Works = () => {
 
   const activeCompany = companyList[activeCompanyIndex] || companyList[0];
 
+  const handleSkipToProjects = () => {
+    const targetElement = document.querySelector('#my-projects');
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    } else {
+      router.push('/#my-projects');
+    }
+  };
+
   return (
     <S.Works id='work'>
       <Inner
@@ -81,6 +97,16 @@ const Works = () => {
               <S.CompanyName>{activeCompany.name}</S.CompanyName>
               <S.CompanyPeriod>{activeCompany.companyPeriod}</S.CompanyPeriod>
             </S.CompanyInfo>
+            <Button
+              text={
+                <>
+                  <FaArrowDown />
+                  <span>SKIP</span>
+                </>
+              }
+              size='sm'
+              onClick={handleSkipToProjects}
+            />
           </S.CompanyHeader>
         }
       >
