@@ -26,6 +26,19 @@ export const Button = styled.button<ButtonProps>`
     color: ${({ $mode }) => ($mode === 'light' ? '#fff' : '#222')};
   }
 
+  &:disabled {
+    background-color: #e5e5e5;
+    color: #999;
+    border-color: #e5e5e5;
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: #e5e5e5;
+      color: #999;
+    }
+  }
+
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 14px;
     padding: ${({ $size }) => ($size === 'sm' ? '8px 15px' : '12px 20px')};

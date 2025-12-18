@@ -2,7 +2,7 @@ import * as S from './styled';
 
 interface ButtonProps {
   text: string | React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   style?: React.CSSProperties;

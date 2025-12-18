@@ -17,6 +17,11 @@ export const Footer = styled.footer`
     padding: 0;
     min-height: 90dvh;
   }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    min-height: auto;
+    padding-bottom: 120px;
+  }
 `;
 
 export const FooterInner = styled.div`
@@ -30,43 +35,46 @@ export const FooterInner = styled.div`
   align-items: center;
   gap: 60px;
   width: ${INNER_WIDTH}px;
-  height: 70%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 75px 80px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(25px);
   z-index: 10;
 
   @media (max-width: ${BREAKPOINT}px) {
-    width: calc(100% - 40px);
+    width: calc(100% - 60px);
+    padding: 60px 60px;
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
-    top: 30%;
-    transform: translate(-50%, -30%);
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    /* top: 30%;
+    transform: translate(-50%, -30%); */
     gap: 40px;
+    width: calc(100% - 40px);
+    padding: 30px 15px;
   }
 `;
 
 export const FooterText = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
   width: 100%;
+  gap: 50px;
 
   @media (max-width: ${BREAKPOINT_SM}px) {
-    /* gap: 15px; */
   }
 `;
 
 export const StyledTitle = styled(Title)`
-  margin-bottom: 30px;
+  text-align: left;
 
   @media (max-width: ${BREAKPOINT_SM}px) {
-    margin-bottom: 20px;
   }
 `;
 
@@ -82,12 +90,6 @@ export const FooterTextWrap = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-
-  @media (max-width: ${BREAKPOINT_SM}px) {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
 `;
 
 export const FooterInnerTextTitle = styled.h3`
@@ -143,4 +145,69 @@ export const FooterButtons = styled.div`
   @media (max-width: ${BREAKPOINT_SM}px) {
     gap: 10px;
   }
+`;
+
+export const FooterContentWrap = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    gap: 50px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+`;
+
+export const FooterContentRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`;
+
+export const FooterContentComment = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  height: 100%;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #555;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    font-size: 20px;
+    text-align: center;
+  }
+`;
+
+export const FooterForm = styled.form`
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    width: 100%;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+`;
+
+export const ErrorMessage = styled.span`
+  color: #ff8200;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
 `;
