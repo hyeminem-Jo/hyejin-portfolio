@@ -82,8 +82,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Google Search Console 인증 코드가 있다면 추가
-    // google: 'your-verification-code',
+    google: 'Cug26p3MwhwWYdurcI0cyjPpm1aVgW25mTE7E8-nF0s',
   },
 };
 
