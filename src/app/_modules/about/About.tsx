@@ -118,7 +118,7 @@ const About = () => {
           <S.AboutInnerImage ref={imageRef}>
             <Image src='/assets/images/profile.JPG' alt='profile' width={400} height={400} />
             <S.AboutInnerImageInfo>
-              <S.AboutInnerImageInfoItem>Cho Hye Jin</S.AboutInnerImageInfoItem>
+              <S.AboutInnerImageInfoItem></S.AboutInnerImageInfoItem>
             </S.AboutInnerImageInfo>
           </S.AboutInnerImage>
           <S.AboutInnerBoxTitleInner>

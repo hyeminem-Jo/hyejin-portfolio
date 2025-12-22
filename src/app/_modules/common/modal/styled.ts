@@ -38,7 +38,7 @@ export const ModalContainer = styled.div<ModalContainerProps>`
   display: flex;
   flex-direction: column;
   animation: modalSlideIn 0.3s ease-out;
-  border: 2px solid green;
+  background-color: #fff;
 
   @keyframes modalSlideIn {
     from {
@@ -76,6 +76,35 @@ export const ImageModalContainer = styled.div`
   @media (max-width: ${BREAKPOINT_SM}px) {
     padding: 0;
   }
+`;
+
+export const DetailModalContainer = styled.div`
+  position: fixed;
+  max-width: 1100px;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  top: 50px;
+  left: calc((100vw - 1100px - 20px) / 2);
+  padding-bottom: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    left: 0;
+    border-radius: 0;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+  }
+`;
+
+export const DetailContent = styled.div`
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
 `;
 
 export const Header = styled.div`

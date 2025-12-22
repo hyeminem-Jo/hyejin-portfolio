@@ -16,6 +16,7 @@ interface ModalProps {
   showCloseButton?: boolean;
   closeOnOverlayClick?: boolean;
   isImageModal?: boolean;
+  isDetailModal?: boolean;
   imageList?: string[];
   currentImageIndex?: number;
   onImageChange?: (index: number) => void;
@@ -30,12 +31,14 @@ const Modal = ({
   showCloseButton = true,
   closeOnOverlayClick = true,
   isImageModal = false,
+  isDetailModal = false,
   imageList = [],
   currentImageIndex = 0,
   onImageChange,
 }: ModalProps) => {
   const modalSliderRef = useRef<Slider>(null);
   const imageModalRef = useRef<HTMLDivElement>(null);
+  const detailModalRef = useRef<HTMLDivElement>(null);
 
   const sliderSettings = {
     dots: false,
@@ -110,8 +113,8 @@ const Modal = ({
 
   // 모달 내부 wheel을 강제로 모달 컨테이너에만 적용
   useEffect(() => {
-    if (!isImageModal || !isOpen) return;
-    const container = imageModalRef.current;
+    if ((!isImageModal && !isDetailModal) || !isOpen) return;
+    const container = isImageModal ? imageModalRef.current : detailModalRef.current;
     if (!container) return;
 
     const handleWheel = (event: WheelEvent) => {
@@ -129,7 +132,23 @@ const Modal = ({
     return () => {
       container.removeEventListener('wheel', handleWheel);
     };
-  }, [isImageModal, isOpen]);
+  }, [isImageModal, isDetailModal, isOpen]);
+
+  // ScrollTrigger 비활성화 (Detail Modal도 적용)
+  useEffect(() => {
+    if (typeof window === 'undefined' || (!isImageModal && !isDetailModal)) return;
+    const triggers = typeof ScrollTrigger !== 'undefined' ? ScrollTrigger.getAll() : [];
+
+    if (isOpen) {
+      triggers.forEach((trigger) => trigger.disable(false));
+    } else {
+      triggers.forEach((trigger) => trigger.enable());
+    }
+
+    return () => {
+      triggers.forEach((trigger) => trigger.enable());
+    };
+  }, [isOpen, isImageModal, isDetailModal]);
 
   const handleOverlayClick = (event: React.MouseEvent) => {
     if (closeOnOverlayClick && event.target === event.currentTarget) {
@@ -142,19 +161,7 @@ const Modal = ({
   const modalContent = (
     <S.Overlay onClick={handleOverlayClick}>
       <div>
-        {!isImageModal ? (
-          <S.ModalContainer $size={size}>
-            <S.Header>
-              {title && <S.Title>{title}</S.Title>}
-              {showCloseButton && (
-                <S.CloseButton onClick={onClose} aria-label='Close modal'>
-                  <IoClose size={24} />
-                </S.CloseButton>
-              )}
-            </S.Header>
-            <S.Content>{children}</S.Content>
-          </S.ModalContainer>
-        ) : (
+        {isImageModal ? (
           <S.ImageModalContainer ref={imageModalRef}>
             <S.ImageContent>
               <S.ImageContentInner>
@@ -200,6 +207,25 @@ const Modal = ({
               <IoClose />
             </S.ImageCloseButton>
           </S.ImageModalContainer>
+        ) : isDetailModal ? (
+          <S.DetailModalContainer ref={detailModalRef}>
+            <S.DetailContent>{children}</S.DetailContent>
+            <S.ImageCloseButton onClick={onClose} aria-label='Close modal'>
+              <IoClose />
+            </S.ImageCloseButton>
+          </S.DetailModalContainer>
+        ) : (
+          <S.ModalContainer $size={size}>
+            <S.Header>
+              {title && <S.Title>{title}</S.Title>}
+              {showCloseButton && (
+                <S.CloseButton onClick={onClose} aria-label='Close modal'>
+                  <IoClose size={24} />
+                </S.CloseButton>
+              )}
+            </S.Header>
+            <S.Content>{children}</S.Content>
+          </S.ModalContainer>
         )}
       </div>
     </S.Overlay>

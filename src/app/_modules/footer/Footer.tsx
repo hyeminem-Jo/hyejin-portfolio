@@ -28,16 +28,24 @@ const Footer = () => {
 
   const validateEmail = (emailValue: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const hasKorean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(emailValue);
+
     if (emailValue.trim() === '') {
       setEmailError('');
       return false;
     }
-    if (!emailRegex.test(emailValue)) {
+    if (hasKorean || !emailRegex.test(emailValue)) {
       setEmailError('올바른 이메일 형식을 입력해주세요.');
       return false;
     }
     setEmailError('');
     return true;
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    validateEmail(value);
   };
 
   const isFormValid = email.trim() !== '' && message.trim() !== '' && emailError === '';
@@ -180,12 +188,9 @@ const Footer = () => {
                 label='Email'
                 type='email'
                 name='user_email'
-                placeholder='이메일'
+                placeholder='이메일을 입력해주세요'
                 value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  validateEmail(e.target.value);
-                }}
+                onChange={handleEmailChange}
               />
               <Textarea
                 label='Message'

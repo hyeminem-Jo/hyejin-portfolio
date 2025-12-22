@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { BREAKPOINT, BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const SideProjects = styled.section`
   display: flex;
@@ -61,7 +62,7 @@ export const SideProjectsInnerBox = styled.li`
     flex-direction: column;
     width: calc((100% - 30px) / 2);
     height: auto;
-    aspect-ratio: 1.2/1;
+    aspect-ratio: 1/1;
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
@@ -104,11 +105,13 @@ export const SideProjectsInfo = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   padding: 30px;
   justify-content: space-between;
   align-items: flex-start;
 
   @media (max-width: ${BREAKPOINT}px) {
+    gap: 0;
     padding: 20px;
     width: 100%;
   }
@@ -121,6 +124,10 @@ export const SideProjectsInfoTop = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    gap: 10px;
+  }
 `;
 
 export const SideProjectsButtons = styled.div`
@@ -138,12 +145,10 @@ export const SideProjectsButtons = styled.div`
 `;
 
 export const SideProjectsTitle = styled.h4`
-  margin-bottom: 10px;
   font-size: 24px;
   font-weight: 700;
 
   @media (max-width: ${BREAKPOINT}px) {
-    margin-bottom: 0;
     font-size: 20px;
   }
 
@@ -172,8 +177,8 @@ export const SideProjectsSkills = styled.ul`
   font-weight: 400;
   color: #555;
 
-  @media (max-width: ${BREAKPOINT_SM}px) {
-    gap: 5px;
+  @media (max-width: ${BREAKPOINT}px) {
+    display: none;
   }
 `;
 
@@ -191,7 +196,7 @@ export const SideProjectsSkillsItem = styled.li`
   }
 `;
 
-export const SideProjectsSkillsLink = styled(Link)`
+const baseButtonLinkStyles = `
   display: inline-block;
   padding: 7px 18px;
   font-weight: 500;
@@ -201,6 +206,9 @@ export const SideProjectsSkillsLink = styled(Link)`
   color: #fff;
   border: 1px solid #222;
   transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
 
   &:hover {
     background-color: #fff;
@@ -209,22 +217,41 @@ export const SideProjectsSkillsLink = styled(Link)`
   }
 `;
 
+export const SideProjectsSkillsLink = styled(Link)`
+  ${baseButtonLinkStyles}
+`;
+
+export const SideProjectsSkillsButton = styled.button`
+  ${baseButtonLinkStyles}
+`;
+
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
 `;
 
 export const ModalImageWrap = styled.div`
   width: 100%;
   height: 300px;
-  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   @media (max-width: ${BREAKPOINT}px) {
     height: 200px;
   }
+`;
+
+export const ModalImage = styled(Image)`
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+`;
+
+export const ModalSectionWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 60px 80px;
 `;
 
 export const ModalSection = styled.div`
@@ -234,26 +261,62 @@ export const ModalSection = styled.div`
 `;
 
 export const ModalSectionTitle = styled.h3`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #222;
   margin: 0;
   border-bottom: 2px solid #f0f0f0;
   padding-bottom: 8px;
 
-  @media (max-width: ${BREAKPOINT}px) {
+  /* @media (max-width: ${BREAKPOINT}px) {
     font-size: 16px;
-  }
+  } */
 `;
 
 export const ModalDescription = styled.p`
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
-  color: #555;
+  font-weight: 500;
+  color: #222;
   margin: 0;
 
-  @media (max-width: ${BREAKPOINT}px) {
+  /* @media (max-width: ${BREAKPOINT}px) {
     font-size: 14px;
+  } */
+`;
+
+export const ModalMeaningfulPoint = styled.p`
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222;
+  margin: 0;
+  white-space: pre-line;
+`;
+
+export const ModalFuncList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+`;
+
+export const ModalFuncListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+export const ModalFuncListItemText = styled.span`
+  position: relative;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222;
+  margin: 0;
+
+  &::before {
+    content: '•';
+    font-weight: bold;
+    margin-right: 8px;
   }
 `;
 
@@ -271,12 +334,6 @@ export const SkillTag = styled.span`
   font-size: 14px;
   font-weight: 500;
   border: 1px solid #e0e0e0;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: #e0e0e0;
-    transform: translateY(-1px);
-  }
 `;
 
 export const ModalLinks = styled.div`
@@ -286,37 +343,5 @@ export const ModalLinks = styled.div`
 
   @media (max-width: ${BREAKPOINT}px) {
     flex-direction: column;
-  }
-`;
-
-export const LinkButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  background-color: #222;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  border: 1px solid #222;
-
-  &:hover {
-    background-color: #fff;
-    color: #222;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  &:focus {
-    outline: 2px solid #007bff;
-    outline-offset: 2px;
-  }
-
-  @media (max-width: ${BREAKPOINT}px) {
-    padding: 12px 16px;
-    font-size: 13px;
   }
 `;

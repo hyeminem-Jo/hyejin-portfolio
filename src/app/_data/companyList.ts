@@ -450,7 +450,7 @@ export const companyList = [
         projectThumbnail: '/assets/images/thumbnails-webp/thumbnail-kcmf-new3.webp',
         projectDetailImage: '/assets/images/details/detail-kcmf.webp',
         projectDescDetail:
-          '시청자미디어재단은 참여형 방송 문화를 위해 시청자가 직접 방송사를 선택하고 프로그램을 제작 및 신청할 수 있는 환경을 제공하고 있습니다. \n이 플랫폼은 시청자가 주체적으로 방송 제작에 참여할 수 있도록 기획되었으며, 방송사와 시청자를 연결하는 소통 창구 역할을 합니다. \n<해당 프로젝트에서 사용자 페이지와 관리자 페이지를 모두 맡아 개발을 진행하였습니다.>',
+          '시청자미디어재단은 참여형 방송 문화를 위해 시청자가 직접 방송사를 선택하고 프로그램을 제작 및 신청할 수 있는 환경을 제공하고 있습니다. \n이 플랫폼은 시청자가 주체적으로 방송 제작에 참여할 수 있도록 기획되었으며, 방송사와 시청자를 연결하는 소통 창구 역할을 합니다. \n<해당 프로젝트에서 사용자 페이지와 관리자 페이지를 모두 맡아 퍼블리싱 및 개발을 진행하였습니다.>',
         projectContribution: '사용자(30%) 관리자(30%)',
         projectRole: '프론트엔드 개발, 퍼블리싱',
         projectDevice: '사용자/관리자 PC',
