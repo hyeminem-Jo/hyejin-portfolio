@@ -228,6 +228,7 @@ export const SideProjectsSkillsButton = styled.button`
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: #fff;
 `;
 
 export const ModalImageWrap = styled.div`
@@ -252,6 +253,14 @@ export const ModalSectionWrap = styled.div`
   flex-direction: column;
   gap: 40px;
   padding: 60px 80px;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    padding: 30px 40px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    padding: 30px 25px;
+  }
 `;
 
 export const ModalSection = styled.div`
@@ -291,6 +300,11 @@ export const ModalMeaningfulPoint = styled.p`
   color: #222;
   margin: 0;
   white-space: pre-line;
+
+  strong {
+    font-weight: 600;
+    text-decoration: underline;
+  }
 `;
 
 export const ModalFuncList = styled.ul`

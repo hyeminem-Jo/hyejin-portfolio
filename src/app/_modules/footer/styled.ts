@@ -21,6 +21,7 @@ export const Footer = styled.footer`
   @media (max-width: ${BREAKPOINT_SM}px) {
     min-height: auto;
     padding-bottom: 120px;
+    margin-top: 50px;
   }
 `;
 

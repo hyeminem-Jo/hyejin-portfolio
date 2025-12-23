@@ -31,7 +31,24 @@ const sideProjectsList = [
       'Jotai 를 사용하여 내 정보 상태관리를 구현',
       '반응형으로 제작',
     ],
-    meaningfulPoint: `프론트 작업만 해온 경험을 넘어 백엔드까지 구현된 "완성된 서비스" 에 도전해보고 싶었습니다. \n그 결과, Supabase 를 활용하여 전반적인 CRUD 를 구현해보는 경험을 가질 수 있었습니다.\n특히 Supabase 의 RealTime 기능을 활용하여 데이터를 실시간으로 구독하는 방식으로 실시간 채팅 기능을 구현해보는 경험을 가질 수 있었습니다.\n로그인 기능 역시 Supabase 의 Auth 기능을 활용하여 이메일 OTP 인증과 소셜로그인 기능을 간편하게 구현할 수 있었습니다.\n또한 사진 업로드 기능을 구현할 때 대용량 파일을 업로드하는 과정에서 Signed URL(서명된 URL) 방식을 알게 되었는데,\n이를 활용하여 서버 부하 없이 안전하게 파일을 업로드 할 수 있었습니다.`,
+    meaningfulPoint: (
+      <>
+        프론트 작업만 해온 경험을 넘어 백엔드까지 구현된 "완성된 서비스" 에 도전해보고 싶었습니다.{' '}
+        <br />그 결과, Supabase 를 활용하여 <strong>전반적인 CRUD 를 구현해보는 경험</strong>을 가질
+        수 있었습니다.
+        <br />
+        특히 Supabase 의 RealTime 기능을 활용하여 데이터를 실시간으로 구독하는 방식으로{' '}
+        <strong>실시간 채팅 기능을 구현해보는 경험</strong>을 가질 수 있었습니다.
+        <br />
+        로그인 기능 역시 Supabase 의 Auth 기능을 활용하여 이메일{' '}
+        <strong>OTP 인증과 소셜로그인 기능을 간편하게 구현</strong>할 수 있었습니다.
+        <br />
+        또한 사진 업로드 기능을 구현할 때 대용량 파일을 업로드하는 과정에서 Signed URL(서명된 URL)
+        방식을 알게 되었는데,
+        <br />
+        이를 활용하여 서버 부하 없이 안전하게 파일을 업로드 할 수 있었습니다.
+      </>
+    ),
     skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
     link: 'https://hyejin-toy-project.vercel.app/j-stagram',
     github: 'https://github.com/hyeminem-Jo/j-stagram/blob/main/README.md',
@@ -46,8 +63,23 @@ const sideProjectsList = [
       'Email.js 를 활용한 이메일 전송 기능 구현',
       '반응형으로 제작',
     ],
-    meaningfulPoint:
-      '저의 스펙을 소개하는 포트폴리오 사이트로 어떻게 하면 효과적으로 저의 프로젝트 경험을 소개할 수 있을까 고민하며 제작하였습니다. \n사용자 경험을 해치지 않는 선에서 심심하지 않도록 GSAP 을 활용해 인터렉션을 구현하면서 반응형으로 제작하였습니다. \n또한 포트폴리오 사이트가 잘 검색될 수 있도록 SEO 기능에 최적화된 Next.js 를 사용하였는데, \n 이때 미흡했던 SEO 에 대한 이해와 MetaData 작성 및 동적 메타데이터와 관련해서도 고민하여 \n개발을 하게되는 과정을 경험하게 되었습니다. \n이외에도 이메일 전송 기능을 구현할 때, 이전에 하드코딩으로 구현하였던 것에서 \nEmail.js 라는 라이브러리를 활용해보면서 더 간편하게 기능을 적용할 수 있었습니다.',
+    meaningfulPoint: (
+      <>
+        저의 스펙을 소개하는 포트폴리오 사이트로 어떻게 하면 효과적으로 저의 프로젝트 경험을 소개할
+        수 있을까 고민하며 제작하였습니다. <br />
+        사용자 경험을 해치지 않는 선에서 심심하지 않도록{' '}
+        <strong>GSAP 을 활용해 인터렉션을 구현</strong>하면서 반응형으로 제작하였습니다. <br />
+        또한 포트폴리오 사이트가 잘 검색될 수 있도록 SEO 기능에 최적화된 Next.js 를 사용하였는데,{' '}
+        <br />
+        이때 미흡했던{' '}
+        <strong>
+          SEO 에 대한 이해와 MetaData 작성 및 동적 메타데이터와 관련해서도 고민
+        </strong>하여 <br />
+        개발을 하게되는 과정을 경험하게 되었습니다. <br />
+        이외에도 이메일 전송 기능을 구현할 때, 이전에 하드코딩으로 구현하였던 것에서 <br />
+        Email.js 라는 라이브러리를 활용해보면서 더 간편하게 기능을 적용할 수 있었습니다.
+      </>
+    ),
     skills: ['React', 'Next.js', 'TypeScript', 'Emotion', 'Email.js'],
     link: 'https://hyejin-portfolio.vercel.app/',
     github: 'https://hyejin-portfolio.vercel.app/',
@@ -62,34 +94,25 @@ const sideProjectsList = [
       'SASS 를 활용한 스타일링 및 게임 배경/캐릭터 디자인 직접 제작',
       'Parcel 을 활용한 간단한 번들링',
     ],
-    meaningfulPoint: `AI 코딩이 필수가 된 시대임에도 불구하고 이론에 대한 기반 지식은 필수적입니다. \n처음 프론트엔드로 입문할 당시, 해당 프로젝트를 통해 Vanilla JavaScript 로 하드코딩하는 경험을 쌓았으며 \n이후 코드를 생성하는 만큼 중요한 "디버깅 능력"을 기를 수 있었습니다. \n각 게임마다 JavaScript의 기본 메서드부터 개념, 알고리즘 등을 학습하고, 이를 게임 개발에 직접 적용해보는 실전 경험을 쌓았습니다. \n특히 피셔-예이츠 셔플 알고리즘, 재귀 함수, 클래스 상속과 객체지향 프로그래밍 등 핵심 개념들을 게임을 통해 배울 수 있었습니다. \n게임은 시각적 요소가 중요하다고 판단하여 직접 캐릭터를 제작하고 게임 상황에 맞는 화면을 기획했습니다.`,
+    meaningfulPoint: (
+      <>
+        AI 코딩이 필수가 된 시대임에도 불구하고 이론에 대한 기반 지식은 필수적입니다. <br />
+        처음 프론트엔드로 입문할 당시, 해당 프로젝트를 통해{' '}
+        <strong>Vanilla JavaScript 로 하드코딩</strong>하는 경험을 쌓았으며 <br />
+        이후 코드를 생성하는 만큼 중요한 "디버깅 능력"을 기를 수 있었습니다. <br />각 게임마다
+        <strong>JavaScript의 기본 메서드부터 개념, 알고리즘 등을 학습</strong>하고, 이를 게임 개발에
+        직접 적용해보는 실전 경험을 쌓았습니다. <br />
+        특히 피셔-예이츠 셔플 알고리즘, 재귀 함수, 클래스 상속과 객체지향 프로그래밍 등 핵심
+        개념들을 게임을 통해 배울 수 있었습니다. <br />
+        또한 게임은 시각적 요소가 중요하다고 판단하여{' '}
+        <strong>직접 캐릭터를 제작하고 게임 상황에 맞는 화면을 기획</strong>했습니다.
+      </>
+    ),
     // \n또한 다양한 디바이스에서 사용할 수 있도록 반응형으로 업데이트를 진행했습니다`,
     skills: ['JavaScript', 'HTML', 'CSS', 'SASS', 'Parcel'],
     link: 'https://jinny-game.netlify.app/',
     github: 'https://github.com/hyeminem-Jo/Jinny-game',
   },
-  // {
-  //   title: '갤러리',
-  //   image: '/assets/images/side-project/side-project-03.png',
-  //   introduction:
-  //     '개인 이미지 갤러리 관리 애플리케이션입니다. \n supabase 의 Storge 기능을 사용하였으며,\n다중 이미지 업로드/삭제 및 체크 여부에 따른 정렬을 구현하였습니다. ',
-  //   skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Supabase'],
-  //   link: 'https://hyejin-toy-project.vercel.app/gallery',
-  //   github:
-  //     'https://github.com/hyeminem-Jo/j-stagram/blob/main/README.md#3-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C-gallery',
-  // },
-  // {
-  //   title: 'Netflix',
-  //   image: '/assets/images/side-project/side-project-02.png',
-  //   introduction:
-  //     '여러 영화를 검색하고 영화 정보를 확인할 수 있는 넷플릭스 클론 프로젝트 입니다. \n상세정보를 볼 수 있는 상세페이지가 있으며, react-query 를 활용하여 \n무한 스크롤링과 실시간 검색 기능을 통해 사용자가 원하는 영화를 쉽게 찾을 수 있습니다.',
-  //   description:
-  //     '넷플릭스의 UI/UX를 참고하여 영화 검색 및 정보 확인 기능을 구현했습니다. 무한 스크롤링과 실시간 검색 기능을 통해 사용자가 원하는 영화를 쉽게 찾을 수 있습니다.',
-  //   skills: ['React', 'Next.js', 'TypeScript', 'React-query', 'Jotai', 'Supabase'],
-  //   link: 'https://hyejin-toy-project.vercel.app/movie',
-  //   github:
-  //     'https://github.com/hyeminem-Jo/j-stagram/blob/main/README.md#4-%EB%84%B7%ED%94%8C%EB%A6%AD%EC%8A%A4-%ED%81%B4%EB%A1%A0',
-  // },
 ];
 
 const SideProjects = () => {

@@ -145,7 +145,6 @@ const About = () => {
                 기획단계에서 능동적인 개선을 이끌어내거나, Storybook 및 Postman 을 도입하는 등 팀
                 전체의 협업 흐름과 생산성 개선에도 큰 장점을 가지고 있습니다.
               </S.AboutAnswerText>
-
               <br />
               <br />
               <br />

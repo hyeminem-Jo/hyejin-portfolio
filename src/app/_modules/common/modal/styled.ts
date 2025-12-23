@@ -89,7 +89,6 @@ export const DetailModalContainer = styled.div`
   left: calc((100vw - 1100px - 20px) / 2);
   padding-bottom: 50px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
 
   @media (max-width: ${BREAKPOINT}px) {
     left: 0;
@@ -97,6 +96,10 @@ export const DetailModalContainer = styled.div`
   }
 
   @media (max-width: ${BREAKPOINT_SM}px) {
+    top: 0;
+    height: 100dvh;
+    border-radius: 10px;
+    overflow: hidden;
   }
 `;
 
@@ -209,6 +212,17 @@ export const ImageCloseButton = styled.button`
     svg {
       width: 30px;
       height: 30px;
+    }
+  }
+
+  @media (max-width: ${BREAKPOINT_SM}px) {
+    background-color: #222;
+    border-radius: 50%;
+    color: #fff;
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: #fff;
     }
   }
 `;
