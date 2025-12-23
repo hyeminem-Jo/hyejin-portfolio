@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: '%s | 조혜진의 포트폴리오',
   },
   description:
-    '프론트엔드 개발자 조혜진의 포트폴리오 사이트입니다. 저의 웹 개발 경험과 프로젝트를 소개합니다 :)',
+    '조혜진의 프론트엔드 개발자 포트폴리오 사이트입니다. 저의 웹 개발 경험과 프로젝트를 소개합니다 :)',
   keywords: [
     '프론트엔드 개발자',
     'React',
@@ -83,6 +83,11 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'Cug26p3MwhwWYdurcI0cyjPpm1aVgW25mTE7E8-nF0s',
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 };
 
