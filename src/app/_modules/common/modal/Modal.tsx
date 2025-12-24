@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { BREAKPOINT } from '@/app/_constant/breakpoint';
 import * as S from './styled';
 
 interface ModalProps {
@@ -66,23 +67,35 @@ const Modal = ({
     if (isOpen) {
       // 모달이 열릴 때 body 스크롤 방지
       const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
+      const isMobile = window.innerWidth <= BREAKPOINT;
+
+      if (isMobile) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'relative';
+      } else {
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+      }
 
       document.addEventListener('keydown', handleEscape);
 
       return () => {
         document.removeEventListener('keydown', handleEscape);
         // 모달이 닫힐 때 body 스크롤 복원
-        const scrollY = document.body.style.top;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        document.body.style.overflow = '';
-        if (scrollY) {
-          window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        if (isMobile) {
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+        } else {
+          const scrollY = document.body.style.top;
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          document.body.style.overflow = '';
+          if (scrollY) {
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+          }
         }
       };
     }

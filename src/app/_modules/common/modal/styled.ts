@@ -99,7 +99,8 @@ export const DetailModalContainer = styled.div`
     top: 0;
     height: 100dvh;
     border-radius: 10px;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 `;
 
