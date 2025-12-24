@@ -68,9 +68,33 @@ const WorkDetail = ({ id }: { id: string }) => {
   const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null;
   const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null;
 
-  // 페이지 진입 시 스크롤을 맨 위로 이동
+  // 페이지 진입 시 스크롤을 맨 위로 이동 (모바일 대응)
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // 즉시 스크롤 위치 초기화
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // 모바일에서 스크롤 복원 방지를 위한 짧은 시간 동안 스크롤 위치 모니터링
+    const scrollCheck = setInterval(() => {
+      if (
+        window.scrollY > 0 ||
+        document.documentElement.scrollTop > 0 ||
+        document.body.scrollTop > 0
+      ) {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }
+    }, 10);
+
+    setTimeout(() => {
+      clearInterval(scrollCheck);
+    }, 500);
+
+    return () => {
+      clearInterval(scrollCheck);
+    };
   }, [id]);
 
   useEffect(() => {

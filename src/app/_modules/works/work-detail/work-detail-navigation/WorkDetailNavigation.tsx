@@ -23,10 +23,20 @@ const WorkDetailNavigation = ({
     return null;
   }
 
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+
   return (
     <S.NavigationContainer>
       {prevProject && (
-        <S.NavigationItem href={`/work/${prevProject.project.id}`}>
+        <S.NavigationItem
+          href={`/work/${prevProject.project.id}`}
+          onClick={handleLinkClick}
+          scroll={true}
+        >
           <S.NavigationArrow>
             <FaArrowUp />
           </S.NavigationArrow>
@@ -35,7 +45,11 @@ const WorkDetailNavigation = ({
         </S.NavigationItem>
       )}
       {nextProject && (
-        <S.NavigationItem href={`/work/${nextProject.project.id}`}>
+        <S.NavigationItem
+          href={`/work/${nextProject.project.id}`}
+          onClick={handleLinkClick}
+          scroll={true}
+        >
           <S.NavigationArrow>
             <FaArrowDown />
           </S.NavigationArrow>
