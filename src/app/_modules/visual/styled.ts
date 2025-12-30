@@ -84,7 +84,9 @@ export const MainText = styled.h3`
     }
   }
 
-  animation: slideUp 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  &.animate {
+    animation: slideUp 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
 
   @media (max-width: ${BREAKPOINT}px) {
     font-size: 75px;
