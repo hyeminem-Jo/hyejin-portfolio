@@ -29,8 +29,8 @@ const righteous = Righteous({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Hyejin Jo | 프론트엔드 개발자 포트폴리오',
-    template: '%s | Hyejin Jo Portfolio',
+    default: '조혜진의 포트폴리오',
+    template: '%s | 조혜진의 포트폴리오',
   },
   description:
     '프론트엔드 개발자 조혜진의 포트폴리오 사이트입니다. React, Next.js, TypeScript를 활용한 웹 개발 경험과 프로젝트를 소개합니다.',
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     url: 'https://hyejin-portfolio.vercel.app',
-    siteName: 'Hyejin Jo Portfolio',
-    title: 'Hyejin Jo | 프론트엔드 개발자 포트폴리오',
+    siteName: '조혜진의 포트폴리오',
+    title: '조혜진의 포트폴리오',
     description:
       '프론트엔드 개발자 조혜진의 포트폴리오 사이트입니다. React, Next.js, TypeScript를 활용한 웹 개발 경험과 프로젝트를 소개합니다.',
     images: [
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hyejin Jo | 프론트엔드 개발자 포트폴리오',
+    title: '조혜진의 포트폴리오',
     description: '프론트엔드 개발자 조혜진의 포트폴리오 사이트입니다.',
     images: ['https://hyejin-portfolio.vercel.app/assets/images/portfolio-logo.webp'],
   },
