@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import Image from 'next/image';
 import * as S from './styled';
 import { useLoading } from './LoadingContext';
+import { BREAKPOINT } from '@/app/_constant/breakpoint';
 
 const logoList = [
   { id: 'f', src: '/assets/images/logo/fat-logo-01.png', alt: 'F' },
@@ -93,39 +94,68 @@ const LoadingScreen = () => {
       exitAnimationStarted.current = true;
       setIsExiting(true);
 
-      // 왼쪽 아래 모서리에서 시작해서 부채꼴 모양으로 둥글어지면서 사라짐
+      const isMobile = window.innerWidth <= BREAKPOINT;
       const maxRadius = Math.sqrt(
         window.innerWidth * window.innerWidth + window.innerHeight * window.innerHeight,
       );
 
-      // border-radius 애니메이션
-      gsap.to(containerRef.current, {
-        borderBottomLeftRadius: `${maxRadius}px`,
-        duration: 0.8,
-        ease: 'power2.in',
-      });
-
-      // 퇴장 애니메이션
-      gsap.to(containerRef.current, {
-        x: '100vw',
-        y: '-100vh',
-        duration: 1,
-        ease: 'power2.in',
-        onComplete: () => {
-          // 애니메이션 완료 후 상태 업데이트
-          setIsAnimationComplete(true);
-          setLoadingComplete(true);
-        },
-      });
-
-      // FEHJ는 반대 방향으로 이동하여 그 자리에 고정
-      if (logoWrapRef.current) {
-        gsap.to(logoWrapRef.current, {
-          x: '-100vw',
-          y: '100vh',
-          duration: 1,
+      if (isMobile) {
+        // border-radius 애니메이션
+        gsap.to(containerRef.current, {
+          borderBottomLeftRadius: `${maxRadius}px`,
+          borderBottomRightRadius: `${maxRadius}px`,
+          duration: 0.8,
           ease: 'power2.in',
         });
+
+        // 아래에서 위로 올라가는 애니메이션 (x는 이동하지 않음)
+        gsap.to(containerRef.current, {
+          y: '-100vh',
+          duration: 1,
+          ease: 'power2.in',
+          onComplete: () => {
+            setIsAnimationComplete(true);
+            setLoadingComplete(true);
+          },
+        });
+
+        if (logoWrapRef.current) {
+          gsap.to(logoWrapRef.current, {
+            y: '100vh',
+            duration: 1,
+            ease: 'power2.in',
+          });
+        }
+      } else {
+        // 1080px 초과: 왼쪽 아래 모서리에서 시작해서 부채꼴 모양으로 둥글어지면서 사라짐
+        // border-radius 애니메이션
+        gsap.to(containerRef.current, {
+          borderBottomLeftRadius: `${maxRadius}px`,
+          duration: 0.8,
+          ease: 'power2.in',
+        });
+
+        // 퇴장 애니메이션
+        gsap.to(containerRef.current, {
+          x: '100vw',
+          y: '-100vh',
+          duration: 1,
+          ease: 'power2.in',
+          onComplete: () => {
+            setIsAnimationComplete(true);
+            setLoadingComplete(true);
+          },
+        });
+
+        // FEHJ는 반대 방향으로 이동하여 그 자리에 고정
+        if (logoWrapRef.current) {
+          gsap.to(logoWrapRef.current, {
+            x: '-100vw',
+            y: '100vh',
+            duration: 1,
+            ease: 'power2.in',
+          });
+        }
       }
     }
   }, [isLoading, setLoadingComplete]);
