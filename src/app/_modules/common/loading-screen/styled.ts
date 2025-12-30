@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT } from '@/app/_constant/breakpoint';
 
 export const LoadingScreenContainer = styled.div`
   position: fixed;
@@ -13,7 +14,12 @@ export const LoadingScreenContainer = styled.div`
   z-index: 9999;
   overflow: hidden;
   border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   transform-origin: left bottom;
+
+  @media (max-width: ${BREAKPOINT}px) {
+    transform-origin: center bottom;
+  }
 `;
 
 export const LoadingLogoWrap = styled.div`
