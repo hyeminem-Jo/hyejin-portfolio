@@ -29,7 +29,7 @@ const righteous = Righteous({
 
 export const metadata: Metadata = {
   title: {
-    default: '조혜진의 포트폴리오',
+    default: '조혜진의 프론트엔드 개발자 포트폴리오',
     template: '%s | 조혜진의 포트폴리오',
   },
   description:
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     url: 'https://hyejin-portfolio.vercel.app',
     siteName: '조혜진의 포트폴리오',
-    title: '조혜진의 포트폴리오',
+    title: '조혜진의 프론트엔드 개발자 포트폴리오',
     description:
       '프론트엔드 개발자 조혜진의 포트폴리오 사이트입니다. React, Next.js, TypeScript를 활용한 웹 개발 경험과 프로젝트를 소개합니다.',
     images: [
