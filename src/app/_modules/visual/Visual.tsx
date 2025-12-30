@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LogoWrap from '../common/logo-wrap/LogoWrap';
 import { useIsMobile } from '../common/hooks/useIsMobile';
+import { useLoading } from '../common/loading-screen/LoadingContext';
 import { useEffect } from 'react';
 import { BREAKPOINT_SM } from '@/app/_constant/breakpoint';
 
@@ -15,9 +16,17 @@ if (typeof window !== 'undefined') {
 
 const Visual = () => {
   const { isMobile, isLoaded } = useIsMobile();
+  const { isLoadingComplete } = useLoading();
+
+  // 해시가 있으면 로딩 화면이 표시되지 않으므로 즉시 시작 가능한지 체크
+  const canStartAnimation = () => {
+    const hasHash = typeof window !== 'undefined' && window.location.hash;
+    return hasHash || isLoadingComplete;
+  };
 
   useEffect(() => {
     if (!isLoaded) return;
+    if (!canStartAnimation()) return;
 
     let initialAnimationCompleted = false;
 
@@ -93,10 +102,11 @@ const Visual = () => {
       clearTimeout(resizeTimer);
       window.removeEventListener('resize', handleResize);
     };
-  }, [isLoaded]);
+  }, [isLoaded, isLoadingComplete]);
 
   useGSAP(() => {
     if (!isLoaded) return;
+    if (!canStartAnimation()) return;
 
     const mm = gsap.matchMedia();
 
@@ -165,7 +175,17 @@ const Visual = () => {
     });
 
     return () => mm.revert();
-  }, [isLoaded]);
+  }, [isLoaded, isLoadingComplete]);
+
+  // 로딩 완료 후 CSS 애니메이션 시작
+  useEffect(() => {
+    if (!canStartAnimation()) return;
+
+    const mainTextElements = document.querySelectorAll('.mainText h3');
+    mainTextElements.forEach((element) => {
+      element.classList.add('animate');
+    });
+  }, [isLoadingComplete]);
 
   return (
     <S.Visual id='visual' className={`visual ${isMobile ? 'mobile' : ''}`}>
